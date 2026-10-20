@@ -18,7 +18,7 @@ export async function qualifyFeeds({settings,table,base,adminToken,checks}) {
  const admin=new Client({host:'127.0.0.1',port:19081,user:'postgres',password:settings.QA_DB_PASSWORD,database:'postgres',connectionTimeoutMillis:5000,query_timeout:10000});
  const rolePassword=randomBytes(32).toString('hex');const origin='http://localhost:3307';
  let child;const summary=[];let apiToken;
- async function native(path,method='GET',body){const r=await fetch('http://127.0.0.1:19080'+path,{method,headers:{'xc-auth':adminToken,...(body?{'content-type':'application/json'}:{})},body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(15000)});assert.equal(r.status,200,`Feed fixture native ${method} ${path} returned ${r.status}`);return r.json();}
+ async function native(path,method='GET',body){const r=await fetch('http://127.0.0.1:19080'+path,{method,headers:{...(apiToken?{'xc-token':apiToken}:{'xc-auth':adminToken}),...(body?{'content-type':'application/json'}:{})},body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(15000)});assert.equal(r.status,200,`Feed fixture native ${method} ${path} returned ${r.status}`);return r.json();}
  async function request(path,body,credential,status=200,cookie=''){
   const r=await fetch(origin+path,{method:body?'POST':'GET',headers:{...(body?{origin,'content-type':'application/json'}:{}),...(credential?{authorization:`Bearer ${credential}`}:{cookie})},body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(60000)});
   assert.equal(r.status,status,`Feed compiled endpoint ${path.split('?')[0]} expected ${status}, observed ${r.status}`);return r.json();

@@ -123,7 +123,7 @@ export class FeedService {
             e instanceof FeedSchemaError
               ? e.change
               : {
-                  version: hash(e.message),
+                  version: hash(canonical({ mapping: source, reason: e.message })),
                   fields: current.grant.fields,
                   migration: 'Review the source mapping and create a new approved grant.',
                 };

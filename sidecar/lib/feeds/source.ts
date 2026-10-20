@@ -341,11 +341,16 @@ export async function verifyView(source: Source) {
 
 export class FeedSchemaError extends HttpError {
   readonly change: { version: string; fields: string[]; migration: string };
-  constructor(field: string, observed: unknown) {
-    super(409, `Schema changed for approved field ${field}; pause and reapprove the mapping.`);
+  constructor(field: string | string[], observed: unknown, reason?: string) {
+    const fields = Array.isArray(field) ? field : [field];
+    super(
+      409,
+      reason ||
+        `Schema changed for approved field ${fields.join(',')}; pause and reapprove the mapping.`,
+    );
     this.change = {
       version: hash(canonical(observed)),
-      fields: [field],
+      fields,
       migration:
         'Review the changed field and create a newly approved grant. Existing consumers remain paused.',
     };
