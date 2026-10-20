@@ -46,7 +46,7 @@ export async function qualifyWorkspace({password,tableId,baseId,checks=[],roleSe
   if(roleSetup)await qualifyRoleWorkspace({origin,fixtures:await roleSetup(),checks});
   const freshLogin=await request('/api/auth/login',{email:'qa@example.test',password});cookie=freshLogin.headers.get('set-cookie').split(';')[0];
   await writeFile(join(temporary,'access.json'),JSON.stringify({tables:[{id:tableId,name:'Synthetic recovery context',fields:['Title']}],users:{'qa@example.test':[tableId]}}),{mode:0o600});
-  const preview=await(await request('/api/ai/context',{tableId})).json();assert.equal(preview.providerCalled,false);
+  const preview=await(await request('/api/ai/context',{tableId})).json();assert.equal(preview.providerCalled,false);assert.equal(preview.context.rowsIncluded,100);assert.equal(preview.context.rows.length,100);assert.equal(preview.context.complete,false);assert.ok(preview.context.rows.every(row=>Object.keys(row).join(',')==='Title'));
   checks.push('Explicit synthetic Title grant produces a bounded real-engine preview and a persistent budget reservation without a provider');
   successful=true;return checks;
  }finally{

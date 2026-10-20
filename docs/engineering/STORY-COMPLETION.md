@@ -85,3 +85,10 @@ Native invitation compatibility finding: in this CE version mail delivery can re
 
 
 Attachment compatibility: this version returns local-storage `signedPath`, while externally backed attachments may use `signedUrl`/`url`. The recovery verifier accepts the native signed-path contract, restricts resolution to the isolated origin and never falls back to an unsigned protected path. Restored viewer sign-in must retain the previously removed base membership denial.
+
+
+## Observed scoped qualification — 20 October 2026
+
+Revision `9deb62421652a248ff9a90db13408a035a141a33`, Actions run `39470919968`: engineering and reference/secrets jobs passed. Twenty scoped actual-engine/application checks include Chromium, viewer/editor and membership-removal boundaries, native administrator copy-invitation and a no-provider preview reservation. Three recovery groups reconciled 257 exact records, native attachment bytes/access, account/interface sign-in, removed-member denial and exact prior SQLite/config/unit state on clean target volumes. Observed restore phase was 26.517 seconds with no loss of known fixture rows; this is not an agreed RTO/RPO guarantee. Source/target volumes were cleaned up. The reviewer checked qualifier and compatibility changes read-only; technical evidence does not create human/trusted approval.
+
+This supersedes earlier unexecuted-engine/browser/role/recovery wording only for the described scoped fixtures. Complete production shell orchestration, Redis/legacy, actual host Caddy/systemd, SMTP delivery, provider inference, shared-host workload and native product/QA/owner acceptance remain separate. The aggregate gate remains held. Additional assertions explicitly exercise page-local search/sort, saving-backdrop behavior and 100-row Title-only preview projection.

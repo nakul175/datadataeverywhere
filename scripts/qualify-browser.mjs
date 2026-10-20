@@ -21,6 +21,11 @@ export async function qualifyBrowser({origin,password,baseId,email='qa@example.t
   const cookie=(await context.cookies()).find(c=>c.name==='dde_session');assert.ok(cookie?.httpOnly&&cookie?.secure&&cookie?.sameSite==='Lax');
   await page.getByLabel('Workspace',{exact:true}).selectOption(baseId);await ready();
   checks.push('Chromium signs in after an invalid attempt using the actual Secure/HttpOnly/SameSite cookie');
+  await expect(page.locator('.data-grid tbody tr')).toHaveCount(50);
+  await page.getByLabel('Search this page',{exact:true}).fill('Needle');await expect(page.locator('.data-grid tbody tr')).toHaveCount(0);await expect(page.getByText('No matches on this page.',{exact:true})).toBeVisible();
+  await page.getByLabel('Search this page',{exact:true}).fill('');await expect(page.locator('.data-grid tbody tr')).toHaveCount(50);
+  await page.getByLabel('Sort this page by',{exact:true}).selectOption('Title');await page.getByRole('button',{name:'Sort descending',exact:true}).click();
+  await expect(page.locator('.data-grid tbody tr').first().locator('td').nth(2)).toHaveText('Fixture 049');await page.getByLabel('Sort this page by',{exact:true}).selectOption('');
   const ids=[];
   for(let n=1;n<=6;n++){
    await ready();await expect(page.locator('.grid-footer')).toContainText(`Page ${n}`);
@@ -51,7 +56,7 @@ export async function qualifyBrowser({origin,password,baseId,email='qa@example.t
   });
   await dialog.getByRole('button',{name:'Save record'}).click();
   let startTimer;try{await Promise.race([started,new Promise((_,reject)=>{startTimer=setTimeout(()=>reject(new Error('Browser save did not issue a create request within 15 seconds')),15000);})]);}finally{clearTimeout(startTimer);}
-  await expect(dialog.getByRole('button',{name:'Close dialog'})).toBeDisabled();await expect(dialog.getByRole('button',{name:'Cancel',exact:true})).toBeDisabled();await page.keyboard.press('Escape');await expect(dialog).toBeVisible();
+  await expect(dialog.getByRole('button',{name:'Close dialog'})).toBeDisabled();await expect(dialog.getByRole('button',{name:'Cancel',exact:true})).toBeDisabled();await page.keyboard.press('Escape');await expect(dialog).toBeVisible();await page.locator('.modal-shade').click({position:{x:5,y:5}});await expect(dialog).toBeVisible();
   releaseSave();await expect(dialog).toHaveCount(0);await page.unroute('**/api/workspace');await ready();await expect(page.locator('.data-grid')).toContainText('Browser created record');
   checks.push('Browser creates workspace/table/record; pending save prevents dismissal and persists through the configured engine');
   await page.getByRole('button',{name:'Edit record 1',exact:true}).click();await dialog.getByRole('button',{name:'Save record'}).click();await expect(dialog.getByRole('alert')).toContainText('No changed fields');
