@@ -66,6 +66,21 @@ jobs:
       - run: npm run build
         working-directory: sidecar
       - run: node scripts/workspace-smoke.mjs
+      - name: Qualify the actual engine with disposable synthetic data
+        run: bash scripts/start-qualification.sh
+      - name: Remove only the disposable qualification stack
+        if: always()
+        run: |
+          if [ -f .qualification/stack.env ]; then
+            docker compose --env-file .qualification/stack.env -f docker-compose.qualification.yml -p dde-qualification down --volumes
+          fi
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: engine-qualification-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .quality/evidence/engine-qualification.json
+          if-no-files-found: warn
+          retention-days: 14
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
