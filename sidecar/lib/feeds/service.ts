@@ -100,14 +100,17 @@ export class FeedService {
     };
   }
   async verify(feed: Feed, actor?: Actor) {
+    this.guard();
     const source = this.deps.sourceFor(feed.grant.source);
     try {
       if (hash(canonical(source)) !== feed.mapping)
         throw new HttpError(409, 'Reviewed source mapping changed; create a newly approved grant.');
       const schema = await this.deps.authority(source, feed.grant.owner, feed.grant, actor);
+      this.guard();
       if (schema.version !== feed.schema.version)
         throw new HttpError(409, 'Export schema changed; reapproval required.');
       await this.deps.verifyView(source);
+      this.guard();
       return source;
     } catch (e) {
       if (e instanceof HttpError && e.status === 409 && feed.status !== 'revoked')
@@ -320,6 +323,7 @@ export class FeedService {
         },
         signal,
       );
+      this.guard();
       await this.verify(feed, actor);
       manifest.rowCount = count;
       manifest.digest = digest.digest('hex');

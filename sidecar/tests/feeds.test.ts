@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { mkdtempSync, rmSync } from 'node:fs';
+import { mkdtempSync, rmSync, mkdirSync, symlinkSync, statSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 vi.mock('server-only', () => ({}));
@@ -71,6 +71,16 @@ async function ready() {
   return { ...created, ...snapshot };
 }
 describe('Governed feed boundaries and snapshot lifecycle', () => {
+  it('keeps state and sidecars private and refuses public directories/symlinks', () => {
+    expect(statSync(join(folder, 'state.sqlite')).mode & 0o777).toBe(0o600);
+    expect(statSync(join(folder, 'state.sqlite-wal')).mode & 0o777).toBe(0o600);
+    const publicDir = join(folder, 'public');
+    mkdirSync(publicDir, { mode: 0o755 });
+    expect(() => new FeedStore(join(publicDir, 'state.sqlite'))).toThrow(HttpError);
+    const link = join(folder, 'symlink.sqlite');
+    symlinkSync(join(folder, 'state.sqlite'), link);
+    expect(() => new FeedStore(link)).toThrow(HttpError);
+  });
   it('requires explicit scope/fields/consumer/owner/expiry and refuses hidden fields', async () => {
     for (const patch of [
       { scope: undefined },

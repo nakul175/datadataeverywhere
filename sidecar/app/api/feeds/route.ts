@@ -20,7 +20,9 @@ export async function GET(req: Request) {
       const after = Number(q.get('after') || 0);
       if (!Number.isSafeInteger(after) || after < 0)
         throw new HttpError(400, 'Invalid history cursor.');
-      return json(await service.history(id.parse(q.get('id')), actor, after));
+      const parsedId = id.safeParse(q.get('id'));
+      if (!parsedId.success) throw new HttpError(400, 'Invalid feed identifier.');
+      return json(await service.history(parsedId.data, actor, after));
     }
     const available = [];
     for (const source of sources()) {
@@ -59,7 +61,9 @@ export async function POST(req: Request) {
   try {
     sameOrigin(req);
     const actor = await currentSession();
-    const body = command.parse(await boundedBody(req));
+    const parsed = command.safeParse(await boundedBody(req));
+    if (!parsed.success) throw new HttpError(400, 'Invalid feed command.');
+    const body = parsed.data;
     const service = new FeedService();
     release = service.store.admit();
     if (body.action === 'create') return json(await service.create(body.grant, actor));

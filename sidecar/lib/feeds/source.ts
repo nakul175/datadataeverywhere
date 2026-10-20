@@ -43,7 +43,7 @@ export function sourceFor(id: string) {
 async function service(path: string) {
   const token = process.env.FEEDS_NOCODB_TOKEN;
   if (!token) throw new HttpError(503, 'Source authority verification is not configured.');
-  // A separate read-only metadata credential; never reuse a consumer credential or AI grant.
+  // A separate metadata verification credential; this client issues GET requests only.
   const response = await fetch(new URL(path, process.env.NOCODB_URL || 'http://127.0.0.1:8080'), {
     headers: { 'xc-token': token },
     redirect: 'error',
@@ -190,6 +190,9 @@ export async function extract(
     await client.connect();
     await client.query('BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY');
     await assertView(client, source);
+    await client.query("SET LOCAL TIME ZONE 'UTC'");
+    await client.query("SET LOCAL DateStyle = 'ISO, YMD'");
+    await client.query('SET LOCAL extra_float_digits = 3');
     await client.query("SET LOCAL idle_in_transaction_session_timeout = '10000ms'");
     const role = await client.query(
       'SELECT rolsuper, rolbypassrls FROM pg_roles WHERE rolname=current_user',
