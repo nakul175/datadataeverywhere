@@ -1,6 +1,6 @@
 import 'server-only';
 import { DatabaseSync } from 'node:sqlite';
-import { mkdirSync, chmodSync } from 'node:fs';
+import { mkdirSync, chmodSync, lstatSync } from 'node:fs';
 import { dirname, isAbsolute } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { HttpError } from '../errors';
@@ -11,6 +11,15 @@ export class FeedStore {
     if (!isAbsolute(path))
       throw new HttpError(503, 'Feed storage requires an absolute private path.');
     mkdirSync(dirname(path), { recursive: true, mode: 0o700 });
+    const parent = lstatSync(dirname(path));
+    if (parent.isSymbolicLink() || (parent.mode & 0o077) !== 0)
+      throw new HttpError(503, 'Feed state requires a private 0700 directory.');
+    try {
+      if (lstatSync(path).isSymbolicLink())
+        throw new HttpError(503, 'Feed state must not be a symlink.');
+    } catch (e) {
+      if (!(e instanceof Error && 'code' in e && e.code === 'ENOENT')) throw e;
+    }
     this.db = new DatabaseSync(path);
     chmodSync(path, 0o600);
     this.db.exec(`PRAGMA journal_mode=WAL; PRAGMA busy_timeout=3000; PRAGMA foreign_keys=ON;

@@ -267,7 +267,7 @@ export class FeedService {
   }
   async build(id: string, actor: Actor, signal?: AbortSignal) {
     const feed = await this.admin(id, actor);
-    await this.verify(feed, actor);
+    const source = await this.verify(feed, actor);
     if (feed.status === 'revoked' || Date.parse(feed.grant.expiresAt) <= Date.now())
       throw new HttpError(403, 'Grant expired or revoked.');
     this.store.cleanup();
@@ -300,7 +300,7 @@ export class FeedService {
       .run(snapshot, id, feed.generation, Date.now() + 120000, '{}');
     try {
       await this.deps.extract(
-        this.deps.sourceFor(feed.grant.source),
+        source,
         feed.grant,
         feed.schema,
         (key, values) => {

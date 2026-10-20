@@ -5,6 +5,7 @@ import {spawn} from 'node:child_process';
 import {mkdtemp,writeFile,rm,mkdir} from 'node:fs/promises';
 import {join,resolve} from 'node:path';
 import {tmpdir} from 'node:os';
+import {chromium} from '@playwright/test';
 const require=createRequire(resolve('sidecar/package.json'));
 const {Client}=require('pg');
 const hash=v=>createHash('sha256').update(v).digest('hex');
@@ -109,9 +110,37 @@ export async function qualifyFeeds({settings,table,base,adminToken,checks}) {
   await request(`/api/feeds/export?feed=${slowGrant.feed.id}&snapshot=${slowSnapshot.manifest.id}`,undefined,slowGrant.credential,409);
   const paused=await request('/api/feeds',undefined,undefined,200,cookie);assert.equal(paused.feeds.find(f=>f.id===slowGrant.feed.id).status,'paused');
   summary.push('SQL-view policy drift pauses the grant and refuses previously valid snapshots');
+  const schemaGrant=await request('/api/feeds',{action:'create',grant},undefined,200,cookie);
+  const schemaSnapshot=await request('/api/feeds',{action:'snapshot',id:schemaGrant.feed.id},undefined,200,cookie);
+  await request('/api/feeds',{action:'resume',id:schemaGrant.feed.id},undefined,200,cookie);
+  try{
+    await native(`/api/v2/meta/columns/${title.id}`,'PATCH',{title:'Renamed feed Title'});
+    await request(`/api/feeds/export?feed=${schemaGrant.feed.id}&snapshot=${schemaSnapshot.manifest.id}`,undefined,schemaGrant.credential,409);
+    const changed=await request('/api/feeds',undefined,undefined,200,cookie);const detail=changed.feeds.find(f=>f.id===schemaGrant.feed.id);assert.equal(detail.status,'paused');assert.deepEqual(detail.schemaChange.fields,[title.id]);assert.match(detail.schemaChange.version,/^[a-f0-9]{64}$/);
+  }finally{await native(`/api/v2/meta/columns/${title.id}`,'PATCH',{title:title.title});}
+  summary.push('Native field rename pauses consumers with a safe field identity, new observed schema fingerprint and explicit reapproval action');
+  const browser=await chromium.launch({headless:true});
+  try{
+    const context=await browser.newContext();await context.addCookies([{name:'dde_session',value:cookie.slice('dde_session='.length),domain:'localhost',path:'/',httpOnly:true,secure:true,sameSite:'Lax'}]);
+    const page=await context.newPage();page.setDefaultTimeout(20000);await page.goto(origin+'/feeds');
+    await page.getByRole('heading',{name:'Governed data feeds',exact:true}).waitFor();
+    await page.getByLabel('Reviewed workspace / table').selectOption('fixture');
+    await page.getByLabel(title.title,{exact:true}).check();await page.getByLabel(notes.title,{exact:true}).check();
+    await page.getByLabel('Row scope field').selectOption(notes.id);await page.getByLabel('equals',{exact:true}).fill('approved');
+    await page.getByLabel('Named consumer').fill('Browser feed fixture');await page.getByLabel('Expiry (within 30 days)').fill(new Date(Date.now()+3600000).toISOString().slice(0,16));
+    await page.getByRole('button',{name:'Create paused grant'}).click();await page.getByRole('heading',{name:'Credential shown once'}).waitFor();
+    const article=page.locator('article').filter({has:page.getByRole('heading',{name:'Browser feed fixture · paused'})});
+    await article.getByRole('button',{name:'Build snapshot & preview'}).click();
+    await page.waitForFunction(()=>{const p=document.querySelector('pre');return p&&p.textContent.includes('"rowCount": 257');});
+    const preview=JSON.parse(await page.locator('pre').innerText());assert.equal(preview.preview.length,10);assert.equal(preview.completePreview,false);
+    await article.getByRole('button',{name:'resume',exact:true}).click();await page.getByRole('heading',{name:'Browser feed fixture · active'}).waitFor();
+    const active=page.locator('article').filter({has:page.getByRole('heading',{name:'Browser feed fixture · active'})});await active.getByRole('button',{name:'pause',exact:true}).click();await page.getByRole('heading',{name:'Browser feed fixture · paused'}).waitFor();
+    await context.close();
+  }finally{await browser.close();}
+  summary.push('Chromium administrator selects explicit fields/row scope/consumer/expiry, creates a paused grant, previews the complete snapshot and resumes/pauses sharing');
   checks.push(...summary);
   await mkdir('.quality/evidence',{recursive:true});await writeFile('.quality/evidence/feed-qualification.json',JSON.stringify({status:'scoped_feed_checks_passed',checks:summary,records:257,providerCalls:0,productionAccess:false,limits:'Synthetic same-table source mapping only; no production delegation attestation, 50-user SLA, release acceptance or feed-state recovery guarantee.'},null,2),{mode:0o600});
- }catch(e){await mkdir('.quality/evidence',{recursive:true});await writeFile('.quality/evidence/feed-qualification.json',JSON.stringify({status:'failed',checks:summary,error:(e instanceof Error?e.message:'Feed qualification failed').replaceAll(settings.QA_DB_PASSWORD,'[redacted]').replaceAll(rolePassword,'[redacted]').replaceAll(apiToken||'__absent__','[redacted]')},null,2),{mode:0o600});throw new Error('Isolated feed qualification failed; inspect the redacted report.');}
+ }catch(e){await mkdir('.quality/evidence',{recursive:true});await writeFile('.quality/evidence/feed-qualification.json',JSON.stringify({status:'failed',checks:summary,error:(e instanceof Error?e.message:'Feed qualification failed').replaceAll(settings.QA_DB_PASSWORD,'[redacted]').replaceAll(rolePassword,'[redacted]').replaceAll(apiToken||'__absent__','[redacted]').replaceAll(adminToken,'[redacted]').replaceAll(settings.QA_ADMIN_PASSWORD,'[redacted]')},null,2),{mode:0o600});throw new Error('Isolated feed qualification failed; inspect the redacted report.');}
  finally{
   if(child&&child.exitCode===null&&child.signalCode===null){child.kill('SIGTERM');const timer=setTimeout(()=>child.kill('SIGKILL'),5000);await new Promise(r=>child.once('exit',r));clearTimeout(timer);}
   await admin.end().catch(()=>{});await rm(dir,{recursive:true,force:true});

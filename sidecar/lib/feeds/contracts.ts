@@ -59,7 +59,7 @@ export const canonical = (v: unknown): string => {
 export const schemaFor = (s: Source, g: Grant): Schema => {
   const fields = s.fields
     .filter((f) => g.fields.includes(f.id))
-    .sort((a, b) => a.id.localeCompare(b.id));
+    .sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
   return { version: hash(canonical(fields)), fields };
 };
 export const LIMITS = {
