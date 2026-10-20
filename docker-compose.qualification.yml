@@ -25,6 +25,7 @@ services:
       NC_ADMIN_EMAIL: qa@example.test
       NC_ADMIN_PASSWORD: ${QA_ADMIN_PASSWORD:?Run the qualification setup script}
       NODE_OPTIONS: "--max-old-space-size=1024"
+      NC_PUBLIC_URL: "http://127.0.0.1:19080"
       NC_DISABLE_TELE: "true"
       NC_INVITE_ONLY_SIGNUP: "true"
     ports: ["127.0.0.1:19080:8080"]

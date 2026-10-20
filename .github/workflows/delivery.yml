@@ -70,17 +70,24 @@ jobs:
         run: npx playwright install --with-deps --only-shell chromium
       - name: Qualify the actual engine with disposable synthetic data
         run: bash scripts/start-qualification.sh
+      - name: Restore and reconcile the disposable recovery fixture
+        run: node scripts/qualify-recovery.mjs
       - name: Remove only the disposable qualification stack
         if: always()
         run: |
           if [ -f .qualification/stack.env ]; then
             docker compose --env-file .qualification/stack.env -f docker-compose.qualification.yml -p dde-qualification down --volumes
+            if [ -f .qualification/recovery-target-created ]; then
+              docker compose --env-file .qualification/stack.env -f docker-compose.qualification.yml -p dde-recovery-qualification down --volumes
+            fi
           fi
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
           name: engine-qualification-${{ github.run_id }}-${{ github.run_attempt }}
-          path: .quality/evidence/engine-qualification.json
+          path: |
+            .quality/evidence/engine-qualification.json
+            .quality/evidence/recovery-qualification.json
           if-no-files-found: warn
           retention-days: 14
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

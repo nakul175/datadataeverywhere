@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';
-import {mkdtemp,writeFile,rm} from 'node:fs/promises';
+import {mkdtemp,writeFile,rm,mkdir,cp} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join,resolve} from 'node:path';
 import {qualifyBrowser} from './qualify-browser.mjs';
@@ -12,7 +12,7 @@ export async function qualifyWorkspace({password,tableId,baseId,checks=[],roleSe
  const origin='http://localhost:3306';
  await writeFile(join(temporary,'access.json'),JSON.stringify({tables:[],users:{}}),{mode:0o600});
  const app=spawn(process.execPath,[resolve('sidecar/.next/standalone/server.js')],{cwd:resolve('sidecar/.next/standalone'),env:{...process.env,NODE_ENV:'production',PORT:'3306',HOSTNAME:'127.0.0.1',AUTH_MODE:'nocodb',APP_ORIGIN:origin,NOCODB_URL:'http://127.0.0.1:19080',ACCESS_FILE:join(temporary,'access.json'),SQLITE_BUDGET_FILE:join(temporary,'budget.sqlite'),OPENAI_API_KEY:'',ANTHROPIC_API_KEY:'',NEXT_TELEMETRY_DISABLED:'1'},stdio:'ignore'});
- let cookie='';
+ let cookie='';let successful=false;
  async function request(path,body,status=200){
   const response=await fetch(origin+path,{method:body===undefined?'GET':'POST',redirect:'manual',signal:AbortSignal.timeout(15000),headers:{...(cookie?{cookie}:{}),...(body===undefined?{}:{origin,'content-type':'application/json'})},body:body===undefined?undefined:JSON.stringify(body)});
   assert.equal(response.status,status,`Compiled engine journey ${path.split('?')[0]} expected ${status}, observed ${response.status}`);return response;
@@ -44,12 +44,17 @@ export async function qualifyWorkspace({password,tableId,baseId,checks=[],roleSe
   checks.push('Compiled app persists an actual edit and refuses raw filters and ungranted AI disclosure');
   await qualifyBrowser({origin,password,baseId,checks});
   if(roleSetup)await qualifyRoleWorkspace({origin,fixtures:await roleSetup(),checks});
-  return checks;
+  const freshLogin=await request('/api/auth/login',{email:'qa@example.test',password});cookie=freshLogin.headers.get('set-cookie').split(';')[0];
+  await writeFile(join(temporary,'access.json'),JSON.stringify({tables:[{id:tableId,name:'Synthetic recovery context',fields:['Title']}],users:{'qa@example.test':[tableId]}}),{mode:0o600});
+  const preview=await(await request('/api/ai/context',{tableId})).json();assert.equal(preview.providerCalled,false);
+  checks.push('Explicit synthetic Title grant produces a bounded real-engine preview and a persistent budget reservation without a provider');
+  successful=true;return checks;
  }finally{
   if(app.exitCode===null&&app.signalCode===null){
    app.kill('SIGTERM');const timer=setTimeout(()=>app.kill('SIGKILL'),5000);
    await new Promise(resolve=>app.once('exit',resolve));clearTimeout(timer);
   }
+  if(successful){await mkdir('.qualification',{recursive:true,mode:0o700});await cp(temporary,'.qualification/unified-runtime',{recursive:true,errorOnExist:true,force:false});}
   await rm(temporary,{recursive:true,force:true});
  }
 }
