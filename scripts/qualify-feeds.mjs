@@ -24,6 +24,9 @@ export async function qualifyFeeds({settings,table,base,adminToken,checks}) {
  }
  try {
   await admin.connect();
+  table=await native(`/api/v2/meta/bases/${base.id}/tables`,'POST',{title:'Governed feed fixture',table_name:'governed_feed_fixture',columns:[{title:'Id',column_name:'id',uidt:'ID',dt:'int4',pk:true,ai:true,rqd:true},{title:'Title',column_name:'title',uidt:'SingleLineText',dt:'text',pv:true},{title:'Notes',column_name:'notes',uidt:'LongText',dt:'text'},{title:'Secret',column_name:'secret',uidt:'LongText',dt:'text'}]});
+  const fixtures=Array.from({length:270},(_,i)=>({Title:`Feed fixture ${i}`,Notes:i<257?'approved':'excluded',Secret:'Protected synthetic field'}));
+  for(let i=0;i<fixtures.length;i+=50)await native(`/api/v2/tables/${table.id}/records`,'POST',fixtures.slice(i,i+50));
   const meta=await native(`/api/v2/meta/tables/${table.id}`);
   const title=meta.columns.find(c=>c.title==='Title'),notes=meta.columns.find(c=>c.title==='Notes'),key=meta.columns.find(c=>c.pk);
   assert.ok(title&&notes&&key);
@@ -45,13 +48,13 @@ export async function qualifyFeeds({settings,table,base,adminToken,checks}) {
   let ready=false;for(let i=0;i<100;i++){try{if((await fetch(origin+'/api/health',{signal:AbortSignal.timeout(500)})).ok){ready=true;break;}}catch{}await new Promise(r=>setTimeout(r,100));}assert.ok(ready);
   const login=await fetch(origin+'/api/auth/login',{method:'POST',headers:{origin,'content-type':'application/json'},body:JSON.stringify({email:'qa@example.test',password:settings.QA_ADMIN_PASSWORD}),signal:AbortSignal.timeout(15000)});assert.equal(login.status,200);const cookie=login.headers.get('set-cookie').split(';')[0];
   const catalog=await request('/api/feeds',undefined,undefined,200,cookie);assert.equal(catalog.sources.length,1,'Actual source role and schema must be verified');
-  const grant={source:'fixture',fields:[title.id],scope:{kind:'all',confirmed:true},consumer:'Synthetic consumer',owner:catalog.owner,expiresAt:new Date(Date.now()+3600000).toISOString()};
+  const grant={source:'fixture',fields:[title.id,notes.id],scope:{kind:'equals',field:notes.id,values:['approved']},consumer:'Synthetic consumer',owner:catalog.owner,expiresAt:new Date(Date.now()+3600000).toISOString()};
   const created=await request('/api/feeds',{action:'create',grant},undefined,200,cookie);const feed=created.feed.id,secret=created.credential;
   const snapshot=await request('/api/feeds',{action:'snapshot',id:feed},undefined,200,cookie);assert.equal(snapshot.manifest.rowCount,257);assert.equal(snapshot.preview.length,10);
   await request('/api/feeds',{action:'resume',id:feed},undefined,200,cookie);
   const rows=[];let page=await request(`/api/feeds/export?feed=${feed}&snapshot=${snapshot.manifest.id}`,undefined,secret);const initialNext=page.next;rows.push(...page.records);
   while(page.next){const replay=await request(`/api/feeds/export?feed=${feed}&cursor=${encodeURIComponent(page.next)}`,undefined,secret);assert.deepEqual(await request(`/api/feeds/export?feed=${feed}&cursor=${encodeURIComponent(page.next)}`,undefined,secret),replay);page=replay;rows.push(...page.records);}
-  assert.equal(rows.length,257);assert.equal(new Set(rows.map(r=>r.key)).size,257);assert.equal(hash(rows.map(r=>canonical(r)+'\n').join('')),page.completion.digest);assert.deepEqual(rows.slice(0,10),snapshot.preview);assert.ok(rows.every(r=>Object.keys(r.values).join()===title.id));
+  assert.equal(rows.length,257);assert.equal(new Set(rows.map(r=>r.key)).size,257);assert.equal(hash(rows.map(r=>canonical(r)+'\n').join('')),page.completion.digest);assert.deepEqual(rows.slice(0,10),snapshot.preview);assert.ok(rows.every(r=>Object.keys(r.values).sort().join()===[title.id,notes.id].sort().join()&&r.values[notes.id]==='approved'));assert.ok(!JSON.stringify(rows).includes('Protected synthetic field'));
   summary.push('Actual NocoDB mapping/metadata token and restricted PostgreSQL view export exactly 257 records with matching preview, replay, digest and excluded-field projection');
   await request(`/api/feeds/export?feed=${feed}&snapshot=${snapshot.manifest.id}&fields=Notes`,undefined,secret,400);
   await request(`/api/feeds/export?feed=${feed}&snapshot=${snapshot.manifest.id}`,undefined,undefined,401,cookie);
@@ -61,7 +64,7 @@ export async function qualifyFeeds({settings,table,base,adminToken,checks}) {
   // All mutations are on the same native physical table through the supported NocoDB API.
   const original=(await native(`/api/v2/tables/${table.id}/records?limit=1`)).list[0];
   await native(`/api/v2/tables/${table.id}/records`,'PATCH',{[key.title]:original[key.title],[title.title]:'Synthetic feed changed'});
-  const added=await native(`/api/v2/tables/${table.id}/records`,'POST',{[title.title]:'Synthetic feed added'});
+  const added=await native(`/api/v2/tables/${table.id}/records`,'POST',{[title.title]:'Synthetic feed added',[notes.title]:'approved'});
   let newer;
   try{
     newer=await request('/api/feeds',{action:'snapshot',id:feed},undefined,200,cookie);assert.equal(newer.manifest.rowCount,258);
