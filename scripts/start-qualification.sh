@@ -22,6 +22,20 @@ p.chmod(0o600)
 PY
 fi
 docker compose --env-file .qualification/stack.env -f docker-compose.qualification.yml -p dde-qualification config --quiet
-docker compose --env-file .qualification/stack.env -f docker-compose.qualification.yml -p dde-qualification up -d --wait --wait-timeout 360
+if ! docker compose --env-file .qualification/stack.env -f docker-compose.qualification.yml -p dde-qualification up -d --wait --wait-timeout 360; then
+  # This stack contains synthetic fixtures only; redact every generated secret before diagnostics.
+  python3 - <<'PY'
+from pathlib import Path
+import subprocess
+result=subprocess.run(['docker','compose','--env-file','.qualification/stack.env','-f','docker-compose.qualification.yml','-p','dde-qualification','logs','--no-color','--tail','80'],capture_output=True,text=True,timeout=30)
+diagnostic=result.stdout+result.stderr
+for line in Path('.qualification/stack.env').read_text().splitlines():
+    if '=' in line:
+        value=line.split('=',1)[1]
+        if value: diagnostic=diagnostic.replace(value,'[redacted-fixture-secret]')
+print(diagnostic)
+PY
+  exit 1
+fi
 echo 'Isolated qualification engine is on loopback 19080. No public proxy was changed.'
 node scripts/qualify-engine.mjs
