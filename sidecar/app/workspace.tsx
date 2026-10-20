@@ -66,6 +66,8 @@ export default function Workspace({
   const [modal, setModal] = useState<'createBase' | 'createTable' | 'record' | null>(null);
   const [edit, setEdit] = useState<Record<string, unknown> | null>(null);
   const [saving, setSaving] = useState(false);
+  const savingRef = useRef(false);
+  const modalReturnFocus = useRef<HTMLElement | null>(null);
   const [modalError, setModalError] = useState('');
   const router = useRouter();
   useEffect(() => {
@@ -109,8 +111,11 @@ export default function Workspace({
     };
   }, [base, refresh]);
   useEffect(() => {
+    savingRef.current = saving;
+  }, [saving]);
+  useEffect(() => {
     if (!modal) return;
-    const previous = document.activeElement as HTMLElement | null;
+    const previous = modalReturnFocus.current;
     const dialog = document.querySelector<HTMLElement>('[role=dialog]');
     const focusables = () =>
       Array.from(
@@ -120,7 +125,7 @@ export default function Workspace({
       );
     (dialog?.querySelector<HTMLElement>('input,textarea') || focusables()[0])?.focus();
     const keydown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && !saving) {
+      if (e.key === 'Escape' && !savingRef.current) {
         e.preventDefault();
         setModal(null);
       }
@@ -140,9 +145,9 @@ export default function Workspace({
     document.addEventListener('keydown', keydown);
     return () => {
       document.removeEventListener('keydown', keydown);
-      previous?.focus();
+      if (previous?.isConnected) previous.focus();
     };
-  }, [modal, saving]);
+  }, [modal]);
   const reload = useRef(0);
   const [recordRefresh, setRecordRefresh] = useState(0);
   useEffect(() => {
@@ -195,6 +200,7 @@ export default function Workspace({
     kind: 'createBase' | 'createTable' | 'record',
     row: Record<string, unknown> | null = null,
   ) {
+    modalReturnFocus.current = document.activeElement as HTMLElement | null;
     setEdit(row);
     setModalError('');
     setModal(kind);
@@ -279,15 +285,19 @@ export default function Workspace({
           <button
             className="subtle-link"
             onClick={async () => {
-              const res = await fetch('/api/auth/logout', {
-                method: 'POST',
-                headers: { 'content-type': 'application/json' },
-                body: '{}',
-              });
-              if (res.ok) {
-                router.replace('/signin');
-                router.refresh();
-              } else setError('Unable to sign out. Please try again.');
+              try {
+                const res = await fetch('/api/auth/logout', {
+                  method: 'POST',
+                  headers: { 'content-type': 'application/json' },
+                  body: '{}',
+                });
+                if (res.ok) {
+                  router.replace('/signin');
+                  router.refresh();
+                } else setError('Unable to sign out. Please try again.');
+              } catch {
+                setError('Unable to sign out. Please try again.');
+              }
             }}
           >
             Sign out
@@ -690,16 +700,20 @@ export default function Workspace({
                   </p>
                   {editable.map((col) => (
                     <label className="record-field" key={col.id}>
-                      {col.title}
-                      {col.required && ' *'}
+                      <span id={`record-label-${col.id}`}>
+                        {col.title}
+                        {col.required && ' *'}
+                      </span>
                       {col.type === 'Checkbox' ? (
                         <input
+                          aria-labelledby={`record-label-${col.id}`}
                           name={col.id}
                           type="checkbox"
                           defaultChecked={Boolean(edit?.[col.title])}
                         />
                       ) : col.type === 'LongText' ? (
                         <textarea
+                          aria-labelledby={`record-label-${col.id}`}
                           name={col.id}
                           defaultValue={display(edit?.[col.title])}
                           maxLength={10000}
@@ -708,6 +722,7 @@ export default function Workspace({
                         />
                       ) : (
                         <input
+                          aria-labelledby={`record-label-${col.id}`}
                           name={col.id}
                           defaultValue={display(edit?.[col.title])}
                           maxLength={10000}

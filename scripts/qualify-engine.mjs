@@ -2,6 +2,7 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {qualifyWorkspace} from './qualify-workspace.mjs';
+import {prepareRoleFixtures} from './qualify-roles.mjs';
 
 const settings=Object.fromEntries((await readFile('.qualification/stack.env','utf8')).trim().split('\n').map(line=>line.split('=')));
 const origin='http://127.0.0.1:19080';
@@ -45,7 +46,7 @@ try {
   await call(`/api/v2/tables/${table.id}/records`,'PATCH',{Id:filtered.list[0].Id,Notes:'Qualification update'});
   const updated=await call(`/api/v2/tables/${table.id}/records?${q}`);
   assert.equal(updated.list[0].Notes,'Qualification update');checks.push('Single-primary-key PATCH persists on the actual isolated engine');
-  checks.push(...await qualifyWorkspace({password:settings.QA_ADMIN_PASSWORD,tableId:table.id,baseId:base.id}));
+  await qualifyWorkspace({password:settings.QA_ADMIN_PASSWORD,tableId:table.id,baseId:base.id,checks,roleSetup:()=>prepareRoleFixtures({password:settings.QA_ADMIN_PASSWORD,adminToken:token,baseId:base.id,tableId:table.id,checks})});
   const report={status:'scoped_engine_checks_passed',startedAt,endedAt:new Date().toISOString(),environment:'isolated-loopback-dde-qualification',data:'257 synthetic fixture rows',checks,fixtureDigest:createHash('sha256').update(JSON.stringify(fixture)).digest('hex'),limits:'Not a restore, permission-matrix, provider, concurrent-snapshot, 50-user performance or product-acceptance result.'};
   await mkdir('.quality/evidence',{recursive:true});
   await writeFile('.quality/evidence/engine-qualification.json',JSON.stringify(report,null,2),{mode:0o600});

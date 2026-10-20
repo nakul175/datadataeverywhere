@@ -65,3 +65,10 @@ Formal completion still needs independently verified native bindings/reviews, ac
 ## Browser qualification follow-up — APL-3018
 
 The user requested continued completion on 20 October 2026. Extend the existing isolated qualifier with exact Playwright 1.64.1 / Chromium, production-mode compiled app cookies, synthetic invalid/valid login, pagination, full-table query, dialog focus/saving states, create/edit/reload, failure correction, mobile navigation and logout/back/re-login. No trace/video/storage-state exports or provider calls; report errors redact fixture credentials. Browser state remains ephemeral. CI installs its matching headless browser and cleans up the existing isolated engine project. This executes engineering qualification against the original criterion allocation, without inventing accessibility conformance, trusted approval, acceptance or live deployment.
+
+
+## Role qualification follow-up — APL-3020
+
+Use the version-matched official NocoDB v1 signup and v2 base-member contracts in the disposable stack. Invite-only remains enabled; the documented offline invitation token is consumed in memory because this fixture has no SMTP. Create a viewer on one base and editor on another, qualify native and compiled-app read/write/schema boundaries, then remove membership and recheck the existing session. Missing/forged sessions and separate AI grants are tested directly. Unsupported edition/API behavior is a retained failure; no license bypass, production account/role mutation or email-delivery claim. Browser qualification executes first so an unsupported invitation path does not erase independently executed evidence.
+
+Browser qualification exposed and fixed dialog focus restoration after autofocus, unstable prefilled multiline labels and unhandled network logout failure. The focus handler captures its trigger before opening and reads saving state without restarting its lifecycle; fields have stable label IDs; logout failures retain a retry message. Partial executed checks survive test failures; screenshots are private, synthetic and password-masked. Required native gates remain intact.
