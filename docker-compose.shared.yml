@@ -1,0 +1,129 @@
+name: datadataeverywhere
+x-logging: &logging
+  driver: json-file
+  options: {max-size: "10m", max-file: "3"}
+services:
+  postgres:
+    image: ${POSTGRES_IMAGE:-postgres:17-alpine}
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Run scripts/configure.py}
+      NOCODB_DB_PASSWORD: ${NOCODB_DB_PASSWORD:?Run scripts/configure.py}
+      TEAM_DB_PASSWORD: ${TEAM_DB_PASSWORD:?Run scripts/configure.py}
+    command: ["postgres", "-c", "max_connections=120", "-c", "shared_buffers=512MB", "-c", "effective_cache_size=2GB", "-c", "work_mem=4MB", "-c", "maintenance_work_mem=128MB", "-c", "password_encryption=scram-sha-256", "-c", "idle_in_transaction_session_timeout=60s", "-c", "log_min_duration_statement=1000"]
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./postgres/init.sh:/docker-entrypoint-initdb.d/10-init.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U postgres -d postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    shm_size: 512mb
+    mem_limit: 2g
+    networks: [backend]
+    logging: *logging
+  redis:
+    image: ${REDIS_IMAGE:-redis:7-alpine}
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes", "--appendfsync", "always", "--maxmemory", "128mb", "--maxmemory-policy", "noeviction"]
+    volumes: [redisdata:/data]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    mem_limit: 256m
+    networks: [backend]
+    logging: *logging
+  nocodb-cache:
+    image: ${REDIS_IMAGE:-redis:7-alpine}
+    restart: unless-stopped
+    command: ["redis-server", "--maxmemory", "128mb", "--maxmemory-policy", "allkeys-lru"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    mem_limit: 256m
+    networks: [backend]
+    logging: *logging
+  nocodb:
+    image: ${NOCODB_IMAGE:-nocodb/nocodb:2026.09.1}
+    restart: unless-stopped
+    depends_on:
+      postgres: {condition: service_healthy}
+      nocodb-cache: {condition: service_healthy}
+    environment:
+      NC_DB: "pg://postgres:5432?u=nocodb&p=${NOCODB_DB_PASSWORD}&d=nocodb_meta"
+      NC_AUTH_JWT_SECRET: ${NC_AUTH_JWT_SECRET:?Run scripts/configure.py}
+      NC_SITE_URL: https://nocodb.datadataeverywhere.aplyd.org
+      NC_PUBLIC_URL: https://nocodb.datadataeverywhere.aplyd.org
+      NC_DB_POOL_MAX: "20"
+      NC_CACHE_REDIS_URL: redis://nocodb-cache:6379/0
+      NC_CONNECTION_ENCRYPT_KEY: ${NC_CONNECTION_ENCRYPT_KEY:?Run scripts/configure.py}
+      NC_ATTACHMENT_ACCESS_CONTROL_ENABLED: "true"
+      NC_SMTP_REJECT_UNAUTHORIZED: "true"
+      NC_DISABLE_TELE: "true"
+      NC_INVITE_ONLY_SIGNUP: "true"
+      NC_ADMIN_EMAIL: ${NC_ADMIN_EMAIL:?Run scripts/configure.py}
+      NC_ADMIN_PASSWORD: ${NC_ADMIN_PASSWORD:?Run scripts/configure.py}
+      NC_SMTP_HOST: ${NC_SMTP_HOST:-}
+      NC_SMTP_PORT: ${NC_SMTP_PORT:-587}
+      NC_SMTP_USERNAME: ${NC_SMTP_USERNAME:-}
+      NC_SMTP_PASSWORD: ${NC_SMTP_PASSWORD:-}
+      NC_SMTP_FROM: ${NC_SMTP_FROM:-}
+      NC_SMTP_SECURE: ${NC_SMTP_SECURE:-false}
+    ports: ["127.0.0.1:8080:8080"]
+    volumes: [ncdata:/usr/app/data]
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8080/api/v1/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 20s
+      timeout: 5s
+      retries: 15
+      start_period: 60s
+    mem_limit: 2g
+    networks: [backend]
+    logging: *logging
+  sidecar:
+    ports: ["127.0.0.1:3300:3000"]
+    build:
+      context: ./sidecar
+      args:
+        NODE_IMAGE: ${NODE_IMAGE:-node:24-alpine}
+    restart: unless-stopped
+    depends_on:
+      redis: {condition: service_healthy}
+      nocodb: {condition: service_healthy}
+    environment:
+      AI_PROVIDER: ${AI_PROVIDER:-openai}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      ANTHROPIC_MODEL: ${ANTHROPIC_MODEL:-claude-sonnet-5-5}
+      NOCODB_API_TOKEN: ${NOCODB_API_TOKEN:-}
+      PROXY_SECRET: ${PROXY_SECRET}
+      USER_DAILY_TOKEN_BUDGET: ${USER_DAILY_TOKEN_BUDGET:-500000}
+      GLOBAL_DAILY_TOKEN_BUDGET: ${GLOBAL_DAILY_TOKEN_BUDGET:-5000000}
+      NODE_ENV: production
+      NOCODB_URL: http://nocodb:8080
+      REDIS_URL: redis://redis:6379
+      APP_ORIGIN: https://datadataeverywhere.aplyd.org
+      ACCESS_FILE: /app/config/access.json
+    volumes: [./config:/app/config:ro]
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+    mem_limit: 1g
+    networks: [backend]
+    logging: *logging
+networks:
+  backend:
+volumes:
+  pgdata:
+  ncdata:
+  redisdata:
+  caddydata:
+  caddyconfig:

@@ -1,0 +1,42 @@
+{
+	email {$ACME_EMAIL}
+}
+
+datadataeverywhere.aplyd.org {
+	encode zstd gzip
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options nosniff
+		Referrer-Policy same-origin
+		X-Frame-Options DENY
+		-Server
+	}
+	route {
+		basic_auth {
+			import /etc/caddy/users/users.caddy
+		}
+		request_body {
+			max_size 64KB
+		}
+		@nocodb path /nocodb /nocodb/* /dashboard /dashboard/*
+		redir @nocodb https://nocodb.datadataeverywhere.aplyd.org 302
+		reverse_proxy sidecar:3000 {
+			# Always replace client-supplied identity and trust headers.
+			header_up X-DDE-User {http.auth.user.id}
+			header_up X-DDE-Proxy-Secret {$PROXY_SECRET}
+			header_up -Authorization
+			flush_interval -1
+		}
+	}
+}
+
+nocodb.datadataeverywhere.aplyd.org {
+	encode zstd gzip
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options nosniff
+		Referrer-Policy same-origin
+		-Server
+	}
+	reverse_proxy nocodb:8080
+}

@@ -1,0 +1,25 @@
+node_modules/
+.next/
+.env
+.env.*
+!.env.example
+config/access.json
+caddy/users.caddy
+backups/
+*.log
+*.tsbuildinfo
+__pycache__/
+.DS_Store
+
+# Private runtime settings, local state and credentials
+runtime.env
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+shared/
+Caddyfile.before-*
