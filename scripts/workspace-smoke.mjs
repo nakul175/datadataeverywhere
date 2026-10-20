@@ -19,7 +19,7 @@ async function request(path,body,expected=200,selectedCookie=cookie){
 }
 async function login(email){const res=await request('/api/auth/login',{email,password:'local-fixture-only'},200,'');return res.headers.get('set-cookie').split(';')[0];}
 try{
- let healthy=false;for(let i=0;i<100;i++){try{if((await fetch(origin+'/api/health')).ok){healthy=true;break;}}catch{}await new Promise(r=>setTimeout(r,100));}
+ let healthy=false;const startupDeadline=Date.now()+15000;while(Date.now()<startupDeadline){try{if((await fetch(origin+'/api/health',{signal:AbortSignal.timeout(Math.min(1000,startupDeadline-Date.now()))})).ok){healthy=true;break;}}catch{}await new Promise(r=>setTimeout(r,100));}
  assert.ok(healthy,'Compiled standalone server must become responsive');
  await request('/api/workspace',undefined,401,'');checks.push('Protected workspace refuses missing session');
  await request('/api/auth/login',{email:'owner@example.test',password:'wrong-fixture-password'},401,'');
