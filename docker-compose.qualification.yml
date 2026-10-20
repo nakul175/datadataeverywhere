@@ -24,11 +24,12 @@ services:
       NC_CONNECTION_ENCRYPT_KEY: ${QA_CONNECTION_KEY:?Run the qualification setup script}
       NC_ADMIN_EMAIL: qa@example.test
       NC_ADMIN_PASSWORD: ${QA_ADMIN_PASSWORD:?Run the qualification setup script}
+      NODE_OPTIONS: "--max-old-space-size=1024"
       NC_DISABLE_TELE: "true"
       NC_INVITE_ONLY_SIGNUP: "true"
     ports: ["127.0.0.1:19080:8080"]
     volumes: [qa_nc:/usr/app/data]
-    mem_limit: 768m
+    mem_limit: 1536m
     networks: [qa]
     healthcheck:
       test: [CMD, node, -e, "fetch('http://127.0.0.1:8080/api/v1/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]

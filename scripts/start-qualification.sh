@@ -5,8 +5,8 @@ umask 077
 node -e 'if (Number(process.versions.node.split(".")[0]) < 22) process.exit(1)'
 # Deliberately separate names/volumes/network/port; never load the production .env.
 available=$(awk '/MemAvailable:/ {print $2}' /proc/meminfo)
-if [ "${available:-0}" -lt 2097152 ]; then
-  echo 'At least 2 GiB of available memory is required before starting this isolated qualification stack.' >&2
+if [ "${available:-0}" -lt 3145728 ]; then
+  echo 'At least 3 GiB of available memory is required before starting this isolated qualification stack.' >&2
   exit 1
 fi
 mkdir -p .qualification
