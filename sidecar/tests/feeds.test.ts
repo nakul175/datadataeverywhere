@@ -329,6 +329,18 @@ describe('Governed feed boundaries and snapshot lifecycle', () => {
     expect(svc.get(f.feed.id).status).toBe('active');
     fail.mockRestore();
   });
+  it('records an already-aborted read as interrupted without issuing page completion', async () => {
+    const f = await ready();
+    const controller = new AbortController();
+    controller.abort();
+    await expect(
+      svc.page(f.feed.id, f.credential, { snapshot: f.manifest.id }, controller.signal),
+    ).rejects.toMatchObject({ status: 499 });
+    const events = await svc.history(f.feed.id, actor, 0);
+    expect(events.events.some((e) => e.action === 'page' && e.outcome === 'interrupted')).toBe(
+      true,
+    );
+  });
   it('rejects an expired snapshot and removes interrupted builds without completion', async () => {
     const f = await ready();
     store.db.prepare('UPDATE snapshots SET expires=0').run();

@@ -143,13 +143,18 @@ export class FeedService {
   }
   async admin(id: string, actor: Actor) {
     const feed = this.get(id);
-    await this.deps.authority(
-      this.deps.sourceFor(feed.grant.source),
-      feed.grant.owner,
-      feed.grant,
-      actor,
-      false,
-    );
+    try {
+      await this.deps.authority(
+        this.deps.sourceFor(feed.grant.source),
+        feed.grant.owner,
+        feed.grant,
+        actor,
+        false,
+      );
+    } catch (e) {
+      this.store.audit(id, actor.id, 'admin-authorize', 'denied', feed.policy);
+      throw e;
+    }
     return feed;
   }
   async list(actor: Actor) {
@@ -433,9 +438,12 @@ export class FeedService {
     id: string,
     secret: string,
     input: { snapshot?: string; cursor?: string; before?: string },
+    signal?: AbortSignal,
   ) {
     const feed = await this.consumer(id, secret);
     try {
+      if (signal?.aborted)
+        throw new HttpError(499, 'Feed read interrupted; retry the same authorized cursor.');
       const manifest = input.cursor ? undefined : this.snapshot(feed, input.snapshot || '');
       const c = input.cursor
         ? this.parse(feed, input.cursor)
@@ -474,6 +482,8 @@ export class FeedService {
       records = records.slice(0, LIMITS.page);
       const next = more ? this.sign(feed, { ...c, position: c.position + records.length }) : null;
       return this.store.transaction(() => {
+        if (signal?.aborted)
+          throw new HttpError(499, 'Feed read interrupted; retry the same authorized cursor.');
         const latest = this.get(id);
         this.assertActive(latest);
         if (latest.generation !== feed.generation)
@@ -499,7 +509,13 @@ export class FeedService {
         };
       });
     } catch (e) {
-      this.store.audit(id, feed.grant.consumer, 'page', 'denied', feed.policy);
+      this.store.audit(
+        id,
+        feed.grant.consumer,
+        'page',
+        e instanceof HttpError && e.status === 499 ? 'interrupted' : 'denied',
+        feed.policy,
+      );
       throw e;
     }
   }
@@ -512,6 +528,7 @@ export class FeedService {
       );
       return {
         retention: 'Last 10000 events globally; older history is explicitly unavailable.',
+        oldestRetainedSequence: oldest,
         gap: after > 0 && after < oldest,
         events: this.store.db
           .prepare(

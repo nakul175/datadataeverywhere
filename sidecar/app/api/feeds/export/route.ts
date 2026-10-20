@@ -27,7 +27,7 @@ export async function GET(req: Request) {
     const { feed, ...input } = q.data;
     const service = new FeedService();
     release = service.store.admit();
-    return Response.json(await service.page(feed, header.slice(7), input), {
+    return Response.json(await service.page(feed, header.slice(7), input, req.signal), {
       headers: { 'Cache-Control': 'no-store', 'Referrer-Policy': 'no-referrer' },
     });
   } catch (e) {
