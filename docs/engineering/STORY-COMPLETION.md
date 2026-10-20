@@ -82,3 +82,6 @@ Target volumes are refused if they exist, and cleanup requires a target-created 
 
 
 Native invitation compatibility finding: in this CE version mail delivery can return false without throwing, so a successful invitation response need not contain `invite_token`. The owner-only base-member listing exposes the native copy-invitation token; the fixture uses that legitimate administrator path when needed, never direct database seeding, disabled invite-only signup or a license bypass. Fixture passwords include all common character classes. Full email delivery remains unverified.
+
+
+Attachment compatibility: this version returns local-storage `signedPath`, while externally backed attachments may use `signedUrl`/`url`. The recovery verifier accepts the native signed-path contract, restricts resolution to the isolated origin and never falls back to an unsigned protected path. Restored viewer sign-in must retain the previously removed base membership denial.
