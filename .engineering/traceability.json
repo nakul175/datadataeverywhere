@@ -485,6 +485,84 @@
       "qa_case_ids": [],
       "qa_run_ids": [],
       "notes": "Candidate-only C1 template correction; isolated Caddy validation pending. No live header, firewall, renewal, release or product acceptance claim."
+    },
+    {
+      "task_id": "APL-3026",
+      "kind": "engineering",
+      "authorization_ref": "docs/engineering/GOVERNED-FEEDS.md",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3026",
+      "story_ids": [
+        "APL-2934",
+        "APL-2935",
+        "APL-2936",
+        "APL-2937"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-01-AC01",
+        "DDE-01-AC02",
+        "DDE-01-AC03",
+        "DDE-01-AC04",
+        "DDE-01-AC05",
+        "DDE-01-AC06",
+        "DDE-01-AC07",
+        "DDE-02-AC01",
+        "DDE-02-AC02",
+        "DDE-02-AC03",
+        "DDE-02-AC04",
+        "DDE-02-AC05",
+        "DDE-02-AC06",
+        "DDE-02-AC07",
+        "DDE-03-AC01",
+        "DDE-03-AC02",
+        "DDE-03-AC03",
+        "DDE-03-AC04",
+        "DDE-03-AC05",
+        "DDE-03-AC06",
+        "DDE-03-AC07",
+        "DDE-04-AC01",
+        "DDE-04-AC02",
+        "DDE-04-AC03",
+        "DDE-04-AC04",
+        "DDE-04-AC05",
+        "DDE-04-AC06",
+        "DDE-04-AC07",
+        "DDE-04-AC08"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2934",
+        "https://linear.app/aplyd-sandbox/issue/APL-2935",
+        "https://linear.app/aplyd-sandbox/issue/APL-2936",
+        "https://linear.app/aplyd-sandbox/issue/APL-2937"
+      ],
+      "design_refs": [
+        "docs/engineering/GOVERNED-FEEDS.md"
+      ],
+      "rationale": "Owner explicitly approved development of the proposed opt-in read-only PostgreSQL connector on 21 October 2026. No live source access or sharing activation.",
+      "paths": [
+        "sidecar/lib/feeds/",
+        "sidecar/app/api/feeds/",
+        "sidecar/app/feeds/",
+        "sidecar/app/workspace.tsx",
+        "sidecar/tests/feeds.test.ts",
+        "scripts/qualify-feeds.mjs",
+        "docker-compose.feeds-qualification.yml",
+        ".github/workflows/delivery.yml",
+        "sidecar/package.json",
+        "sidecar/package-lock.json",
+        ".env.example",
+        ".gitignore"
+      ],
+      "status": "implemented",
+      "branch": "feat/story-completion",
+      "commit": null,
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": null,
+      "release": null,
+      "deployment_evidence": null,
+      "legacy_ids": [],
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Candidate development only. Focused unit tests/typecheck/build passed; actual PostgreSQL/NocoDB integration qualification and further independent review pending. Native adoption/release holds preserved; no criterion acceptance or deployment."
     }
   ]
 }

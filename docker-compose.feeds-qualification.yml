@@ -1,0 +1,4 @@
+# Used only with the disposable qualification project, never production or recovery.
+services:
+  postgres:
+    ports: ["127.0.0.1:19081:5432"]

@@ -22,8 +22,8 @@ with p.open('x') as f:
 p.chmod(0o600)
 PY
 fi
-docker compose --env-file .qualification/stack.env -f docker-compose.qualification.yml -p dde-qualification config --quiet
-if ! docker compose --env-file .qualification/stack.env -f docker-compose.qualification.yml -p dde-qualification up -d --wait --wait-timeout 360; then
+docker compose --env-file .qualification/stack.env -f docker-compose.qualification.yml -f docker-compose.feeds-qualification.yml -p dde-qualification config --quiet
+if ! docker compose --env-file .qualification/stack.env -f docker-compose.qualification.yml -f docker-compose.feeds-qualification.yml -p dde-qualification up -d --wait --wait-timeout 360; then
   # This stack contains synthetic fixtures only; redact every generated secret before diagnostics.
   python3 - <<'PY'
 from pathlib import Path

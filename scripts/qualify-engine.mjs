@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {qualifyWorkspace} from './qualify-workspace.mjs';
 import {prepareRoleFixtures} from './qualify-roles.mjs';
+import {qualifyFeeds} from './qualify-feeds.mjs';
 
 const settings=Object.fromEntries((await readFile('.qualification/stack.env','utf8')).trim().split('\n').map(line=>line.split('=')));
 const origin='http://127.0.0.1:19080';
@@ -47,6 +48,8 @@ try {
   const updated=await call(`/api/v2/tables/${table.id}/records?${q}`);
   assert.equal(updated.list[0].Notes,'Qualification update');checks.push('Single-primary-key PATCH persists on the actual isolated engine');
   await qualifyWorkspace({password:settings.QA_ADMIN_PASSWORD,tableId:table.id,baseId:base.id,checks,roleSetup:async()=>{const fresh=await call('/api/v1/auth/user/signin','POST',{email:'qa@example.test',password:settings.QA_ADMIN_PASSWORD});assert.equal(typeof fresh.token,'string');token=fresh.token;return prepareRoleFixtures({password:settings.QA_ADMIN_PASSWORD,adminToken:token,baseId:base.id,tableId:table.id,checks});}});
+  const feedLogin=await call('/api/v1/auth/user/signin','POST',{email:'qa@example.test',password:settings.QA_ADMIN_PASSWORD});
+  await qualifyFeeds({settings,table,base,adminToken:feedLogin.token,checks});
   await mkdir('.qualification',{recursive:true,mode:0o700});await writeFile('.qualification/fixture.json',JSON.stringify({baseId:base.id,tableId:table.id}),{mode:0o600});
   const report={status:'scoped_engine_checks_passed',startedAt,endedAt:new Date().toISOString(),environment:'isolated-loopback-dde-qualification',data:'257 synthetic fixture rows',checks,fixtureDigest:createHash('sha256').update(JSON.stringify(fixture)).digest('hex'),limits:'Not a restore, permission-matrix, provider, concurrent-snapshot, 50-user performance or product-acceptance result.'};
   await mkdir('.quality/evidence',{recursive:true});

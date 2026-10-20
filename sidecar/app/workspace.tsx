@@ -327,6 +327,9 @@ export default function Workspace({
         <a className="nav-item" href={nocodbUrl} target="_blank" rel="noreferrer">
           <span>↗</span> Advanced spreadsheet
         </a>
+        <a className="nav-item" href="/feeds">
+          <span>⇄</span> Governed feeds
+        </a>
         <a className="nav-item" href={tasksUrl} target="_blank" rel="noreferrer">
           <span>☑</span> SheetHappensOfficer
         </a>
