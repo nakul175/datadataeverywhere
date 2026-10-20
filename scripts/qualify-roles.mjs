@@ -12,9 +12,15 @@ export async function prepareRoleFixtures({password,adminToken,baseId,tableId,ch
  await native(`/api/v2/tables/${privateTable.id}/records`,adminToken,'POST',{Title:'Private role fixture',Notes:'Protected synthetic role value'});
  async function invite(email,base,role){
   const invitation=await native(`/api/v2/meta/bases/${base}/users`,adminToken,'POST',{email,roles:role});
-  // With no SMTP configured, the documented native response supplies an offline invite token.
-  assert.equal(typeof invitation.invite_token,'string','Isolated offline invitation must return its native token');
-  const signup=await native('/api/v1/auth/user/signup',undefined,'POST',{email,password,firstname:'Qualification',lastname:role,token:invitation.invite_token,ignore_subscribe:1});
+  // Current CE can return success without SMTP. Its owner-only member listing supplies the native copy-invitation token.
+  let inviteToken=invitation.invite_token;
+  if(typeof inviteToken!=='string'){
+   const members=await native(`/api/v2/meta/bases/${base}/users`,adminToken);
+   const list=members.users?.list||members.users||members.list;assert.ok(Array.isArray(list),'Expected native administrator member list');
+   inviteToken=list.find(member=>member.email===email)?.invite_token;
+  }
+  assert.equal(typeof inviteToken,'string','Native administrator copy-invitation token is required');
+  const signup=await native('/api/v1/auth/user/signup',undefined,'POST',{email,password,firstname:'Qualification',lastname:role,token:inviteToken,ignore_subscribe:1});
   assert.equal(typeof signup.token,'string');
   const user=await native('/api/v1/auth/user/me',signup.token);assert.equal(user.email,email);assert.equal(typeof user.id,'string');
   return {email,id:user.id,token:signup.token};

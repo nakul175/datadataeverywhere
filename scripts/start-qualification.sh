@@ -17,7 +17,8 @@ import secrets
 p=Path('.qualification/stack.env')
 with p.open('x') as f:
     for name in ['QA_DB_PASSWORD','QA_JWT_SECRET','QA_CONNECTION_KEY','QA_ADMIN_PASSWORD']:
-        f.write(name+'='+secrets.token_hex(16 if name=='QA_CONNECTION_KEY' else 32)+'\n')
+        value=('Qa9!'+secrets.token_hex(30)) if name=='QA_ADMIN_PASSWORD' else secrets.token_hex(16 if name=='QA_CONNECTION_KEY' else 32)
+        f.write(name+'='+value+'\n')
 p.chmod(0o600)
 PY
 fi

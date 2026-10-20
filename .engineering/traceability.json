@@ -362,17 +362,17 @@
         ".github/workflows/delivery.yml",
         "sidecar/app/workspace.tsx"
       ],
-      "status": "planned",
+      "status": "implemented",
       "branch": "feat/story-completion",
-      "commit": null,
+      "commit": "6726a9efe65cc9f9270eaf043d07839757f0c6e4",
       "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
-      "review_ref": null,
+      "review_ref": "docs/engineering/STORY-COMPLETION.md",
       "release": null,
       "deployment_evidence": null,
       "legacy_ids": [],
       "qa_case_ids": [],
       "qa_run_ids": [],
-      "notes": "Execution and review pending. Original criteria preserved; no accepted verdict or production change."
+      "notes": "Implemented candidate and separate user-authorized read-only technical review exist. Browser checks executed; role/recovery reruns pending. Not criterion acceptance, trusted native approval, merge or deployment."
     },
     {
       "task_id": "APL-3020",
@@ -401,17 +401,17 @@
         "scripts/qualify-workspace.mjs",
         "scripts/qualify-engine.mjs"
       ],
-      "status": "planned",
+      "status": "implemented",
       "branch": "feat/story-completion",
-      "commit": null,
+      "commit": "6726a9efe65cc9f9270eaf043d07839757f0c6e4",
       "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
-      "review_ref": null,
+      "review_ref": "docs/engineering/STORY-COMPLETION.md",
       "release": null,
       "deployment_evidence": null,
       "legacy_ids": [],
       "qa_case_ids": [],
       "qa_run_ids": [],
-      "notes": "Execution and review pending. Original criteria preserved; no accepted verdict or production change."
+      "notes": "Implemented candidate and separate user-authorized read-only technical review exist. Browser checks executed; role/recovery reruns pending. Not criterion acceptance, trusted native approval, merge or deployment."
     },
     {
       "task_id": "APL-3022",
@@ -440,17 +440,17 @@
         "docker-compose.qualification.yml",
         ".github/workflows/delivery.yml"
       ],
-      "status": "planned",
+      "status": "implemented",
       "branch": "feat/story-completion",
-      "commit": null,
+      "commit": "6726a9efe65cc9f9270eaf043d07839757f0c6e4",
       "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
-      "review_ref": null,
+      "review_ref": "docs/engineering/STORY-COMPLETION.md",
       "release": null,
       "deployment_evidence": null,
       "legacy_ids": [],
       "qa_case_ids": [],
       "qa_run_ids": [],
-      "notes": "Execution and review pending. Original criteria preserved; no accepted verdict or production change."
+      "notes": "Implemented candidate and separate user-authorized read-only technical review exist. Browser checks executed; role/recovery reruns pending. Not criterion acceptance, trusted native approval, merge or deployment."
     }
   ]
 }
