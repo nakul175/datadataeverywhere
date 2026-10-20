@@ -554,15 +554,15 @@
       ],
       "status": "implemented",
       "branch": "feat/story-completion",
-      "commit": null,
+      "commit": "43ac62fa6903295eb946fcf6631200f6d9fc34db",
       "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
-      "review_ref": null,
+      "review_ref": "docs/engineering/GOVERNED-FEEDS.md",
       "release": null,
       "deployment_evidence": null,
       "legacy_ids": [],
       "qa_case_ids": [],
       "qa_run_ids": [],
-      "notes": "Candidate development only. Focused unit tests/typecheck/build passed; actual PostgreSQL/NocoDB integration qualification and further independent review pending. Native adoption/release holds preserved; no criterion acceptance or deployment."
+      "notes": "Candidate-only connector implemented and independently technically reviewed. CI39480268021 passed 99 application tests, 29 actual-engine/browser/roles/feed groups including nine governed-feed groups, and three scoped recovery groups. Final state-based removal-version correction has focused regression coverage and final full CI pending. No native criterion acceptance, production mapping attestation, feed-state recovery, merge or deployment."
     }
   ]
 }
