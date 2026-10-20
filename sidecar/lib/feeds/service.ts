@@ -474,7 +474,13 @@ export class FeedService {
           .all(before.id, current.id, current.id, before.id, LIMITS.page + 1, c.position)
           .map((r) =>
             r.kind === 'remove'
-              ? { kind: 'remove', key: r.key, version: hash(`${current.id}:${r.key}:remove`) }
+              ? {
+                  kind: 'remove',
+                  key: r.key,
+                  version: hash(
+                    canonical({ kind: 'remove', key: r.key, previousVersion: r.version }),
+                  ),
+                }
               : { kind: 'upsert', ...JSON.parse(String(r.payload)) },
           );
       } else records = this.rows(c.snapshot, c.position, LIMITS.page + 1);

@@ -247,6 +247,10 @@ describe('Governed feed boundaries and snapshot lifecycle', () => {
     ).toEqual(p);
     const removed = p.records.find((r) => (r as { kind: string }).kind === 'remove');
     expect(Object.keys(removed as object).sort()).toEqual(['key', 'kind', 'version']);
+    const prior = f.preview.find((r) => r.key === (removed as { key: string }).key)!;
+    expect((removed as { version: string }).version).toBe(
+      hash(canonical({ kind: 'remove', key: prior.key, previousVersion: prior.version })),
+    );
     await new Promise((r) => setTimeout(r, 2));
     await svc.build(f.feed.id, actor);
     await expect(
