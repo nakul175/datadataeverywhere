@@ -257,6 +257,56 @@ describe('Governed feed boundaries and snapshot lifecycle', () => {
       svc.history(f.feed.id, { id: 'outsider', token: 'other' }, 0),
     ).rejects.toMatchObject({ status: 403 });
   });
+  it('never lets a deferred schema failure undo committed revocation', async () => {
+    const f = await ready();
+    let release!: () => void;
+    let started!: () => void;
+    const waiting = new Promise<void>((r) => {
+      release = r;
+    });
+    const start = new Promise<void>((r) => {
+      started = r;
+    });
+    svc.deps.verifyView = async () => {
+      started();
+      await waiting;
+      throw new HttpError(409, 'Schema drift');
+    };
+    const reading = svc.page(f.feed.id, f.credential, { snapshot: f.manifest.id });
+    await start;
+    await svc.lifecycle(f.feed.id, 'revoke', actor);
+    release();
+    await expect(reading).rejects.toMatchObject({ status: 409 });
+    expect(svc.get(f.feed.id).status).toBe('revoked');
+    await expect(svc.lifecycle(f.feed.id, 'resume', actor)).rejects.toBeInstanceOf(HttpError);
+  });
+  it('rejects oversized staging and recovers its build lease', async () => {
+    const f = await svc.create(grant(), actor);
+    svc.deps.extract = async (_s, _g, _schema, accept) => {
+      accept('one', { title: 'x'.repeat(16000001) });
+    };
+    await expect(svc.build(f.feed.id, actor)).rejects.toMatchObject({ status: 413 });
+    expect(store.db.prepare('SELECT count(*) AS n FROM snapshots').get()?.n).toBe(0);
+    expect(store.db.prepare('SELECT count(*) AS n FROM locks').get()?.n).toBe(0);
+  });
+  it('enforces cross-worker HTTP and snapshot concurrency using SQLite', () => {
+    const other = new FeedStore(join(folder, 'state.sqlite'));
+    const release = Array.from({ length: 4 }, () => store.admit());
+    try {
+      expect(() => other.admit()).toThrow(HttpError);
+    } finally {
+      release.forEach((f) => f());
+    }
+    const one = store.lock('one'),
+      two = other.lock('two');
+    try {
+      expect(() => store.lock('three')).toThrow(HttpError);
+    } finally {
+      one();
+      two();
+      other.db.close();
+    }
+  });
   it('fails closed on audit failure and rolls back a lifecycle change', async () => {
     const f = await ready();
     const fail = vi.spyOn(store, 'audit').mockImplementation(() => {

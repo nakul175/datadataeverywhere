@@ -81,6 +81,34 @@ export async function qualifyFeeds({settings,table,base,adminToken,checks}) {
   summary.push('Rotation/revocation are permanent for old artifacts and protected history contains bounded digest/count evidence without credentials or row payloads');
   const reader=new Client({connectionString:dbUrl.href,connectionTimeoutMillis:5000});await reader.connect();try{await assert.rejects(reader.query(`SELECT * FROM ${physical} LIMIT 1`));await assert.rejects(reader.query('UPDATE dde_feed_fixture.approved SET '+quote(title.column_name)+"='blocked'"));}finally{await reader.end();}
   summary.push('Restricted connector role is denied direct base-table reads and view writes');
+  // Slow synthetic view makes the concurrent commit deterministic without production test hooks.
+  await admin.query(`CREATE VIEW dde_feed_fixture.slow AS SELECT native.${quote(key.column_name)},native.${quote(title.column_name)},native.${quote(notes.column_name)} FROM ${physical} native CROSS JOIN LATERAL (SELECT pg_sleep(0.004) WHERE native.${quote(key.column_name)} IS NOT NULL) delay`);
+  await admin.query('GRANT SELECT ON dde_feed_fixture.slow TO dde_feed_reader');
+  const slowDefinition=await admin.query("SELECT pg_get_viewdef('dde_feed_fixture.slow'::regclass,true) AS value");
+  const slowSource={...source,id:'slow',view:'slow',viewDefinitionHash:hash(slowDefinition.rows[0].value)};
+  await writeFile(join(dir,'sources.json'),JSON.stringify([source,slowSource]),{mode:0o600});
+  const slowGrant=await request('/api/feeds',{action:'create',grant:{...grant,source:'slow'}},undefined,200,cookie);
+  await admin.query(`CREATE TEMP TABLE dde_feed_titles AS SELECT ${quote(key.column_name)},${quote(title.column_name)} FROM ${physical}`);
+  let slowSnapshot;
+  try{
+    const building=request('/api/feeds',{action:'snapshot',id:slowGrant.feed.id},undefined,200,cookie);
+    let extracting=false;
+    for(let i=0;i<200;i++){const activity=await admin.query("SELECT 1 FROM pg_stat_activity WHERE application_name='dde-readonly-feed' AND state='active' AND query LIKE 'FETCH FORWARD%' LIMIT 1");if(activity.rows.length){extracting=true;break;}await new Promise(r=>setTimeout(r,25));}
+    // Always consume the build promise even if the synchronization precondition fails.
+    if(!extracting){await building;throw new Error('Concurrent snapshot fixture did not observe active extraction');}
+    await admin.query(`UPDATE ${physical} SET ${quote(title.column_name)}='Concurrent fixture epoch'`);
+    slowSnapshot=await building;assert.equal(slowSnapshot.manifest.rowCount,257);
+    await request('/api/feeds',{action:'resume',id:slowGrant.feed.id},undefined,200,cookie);
+    let p=await request(`/api/feeds/export?feed=${slowGrant.feed.id}&snapshot=${slowSnapshot.manifest.id}`,undefined,slowGrant.credential);const stable=[...p.records];
+    while(p.next){p=await request(`/api/feeds/export?feed=${slowGrant.feed.id}&cursor=${encodeURIComponent(p.next)}`,undefined,slowGrant.credential);stable.push(...p.records);}
+    assert.equal(stable.length,257);assert.ok(stable.every(r=>r.values[title.id].startsWith('Feed fixture ')),'Concurrent commit must not mix source epochs into the snapshot');
+  }finally{await admin.query(`UPDATE ${physical} n SET ${quote(title.column_name)}=o.${quote(title.column_name)} FROM dde_feed_titles o WHERE n.${quote(key.column_name)}=o.${quote(key.column_name)}`);}
+  summary.push('Repeatable-read extraction remains one coherent 257-row epoch while a concurrent SQL transaction updates the actual native source table');
+  // A definition drift denies an old immutable snapshot too; it cannot freeze authorization.
+  await admin.query(`CREATE OR REPLACE VIEW dde_feed_fixture.slow AS SELECT native.${quote(key.column_name)},native.${quote(title.column_name)},native.${quote(notes.column_name)} FROM ${physical} native WHERE FALSE`);
+  await request(`/api/feeds/export?feed=${slowGrant.feed.id}&snapshot=${slowSnapshot.manifest.id}`,undefined,slowGrant.credential,409);
+  const paused=await request('/api/feeds',undefined,undefined,200,cookie);assert.equal(paused.feeds.find(f=>f.id===slowGrant.feed.id).status,'paused');
+  summary.push('SQL-view policy drift pauses the grant and refuses previously valid snapshots');
   checks.push(...summary);
   await mkdir('.quality/evidence',{recursive:true});await writeFile('.quality/evidence/feed-qualification.json',JSON.stringify({status:'scoped_feed_checks_passed',checks:summary,records:257,providerCalls:0,productionAccess:false,limits:'Synthetic same-table source mapping only; no production delegation attestation, 50-user SLA, release acceptance or feed-state recovery guarantee.'},null,2),{mode:0o600});
  }catch(e){await mkdir('.quality/evidence',{recursive:true});await writeFile('.quality/evidence/feed-qualification.json',JSON.stringify({status:'failed',checks:summary,error:(e instanceof Error?e.message:'Feed qualification failed').replaceAll(settings.QA_DB_PASSWORD,'[redacted]').replaceAll(rolePassword,'[redacted]').replaceAll(apiToken||'__absent__','[redacted]')},null,2),{mode:0o600});throw new Error('Isolated feed qualification failed; inspect the redacted report.');}

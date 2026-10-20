@@ -24,6 +24,7 @@ export async function GET(req: Request) {
     }
     const available = [];
     for (const source of sources()) {
+      service.guard();
       const grant = {
         source: source.id,
         owner: actor.id,

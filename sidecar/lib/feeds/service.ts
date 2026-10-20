@@ -68,6 +68,11 @@ export class FeedService {
     readonly store: FeedStore = feedStore(),
     readonly deps = { sourceFor, authority, extract, verifyView },
   ) {}
+  readonly deadline = Date.now() + 45000;
+  guard() {
+    if (Date.now() > this.deadline)
+      throw new HttpError(503, 'Feed operation timed out; retry without changing the grant.');
+  }
   get(id: string): Feed {
     const row = this.store.db.prepare('SELECT body FROM feeds WHERE id=?').get(id);
     if (!row) throw new HttpError(404, 'Feed unavailable.');
@@ -108,6 +113,7 @@ export class FeedService {
       if (e instanceof HttpError && e.status === 409 && feed.status !== 'revoked')
         this.store.transaction(() => {
           const current = this.get(feed.id);
+          if (current.status === 'revoked' || current.generation !== feed.generation) return;
           current.status = 'paused';
           current.reason = e.message;
           current.schemaChange =
@@ -146,6 +152,7 @@ export class FeedService {
   async list(actor: Actor) {
     const items = [];
     for (const row of this.store.db.prepare('SELECT id FROM feeds LIMIT 64').all()) {
+      this.guard();
       const feed = this.get(String(row.id));
       // Only the accountable owner sees an existing grant, including paused mapping failures.
       if (feed.grant.owner !== actor.id) continue;
