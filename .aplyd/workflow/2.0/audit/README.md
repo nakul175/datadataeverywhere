@@ -1,0 +1,1 @@
+Integrity only. Do not load audit files by default. The manifest is not independent approval or executable product-test evidence. An externally trusted digest must be managed outside the authoring agent.

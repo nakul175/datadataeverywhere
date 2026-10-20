@@ -1,0 +1,16 @@
+test_actual_guide_complete_and_bound_to_input_bytes (test_verify_guide.GuideVerificationTests.test_actual_guide_complete_and_bound_to_input_bytes) ... ok
+test_ai_heading_punctuation_must_be_exact_in_heading_paragraph (test_verify_guide.GuideVerificationTests.test_ai_heading_punctuation_must_be_exact_in_heading_paragraph) ... ok
+test_assurance_suffix_edit_reopens_only_all_40_gate_06_definitions (test_verify_guide.GuideVerificationTests.test_assurance_suffix_edit_reopens_only_all_40_gate_06_definitions) ... ok
+test_base_criterion_edit_reopens_its_five_stage_reconstructions (test_verify_guide.GuideVerificationTests.test_base_criterion_edit_reopens_its_five_stage_reconstructions) ... ok
+test_catalogue_source_pin_is_checked_against_actual_source (test_verify_guide.GuideVerificationTests.test_catalogue_source_pin_is_checked_against_actual_source) ... ok
+test_cli_is_read_only_and_uses_actual_word_not_cached_document_text (test_verify_guide.GuideVerificationTests.test_cli_is_read_only_and_uses_actual_word_not_cached_document_text) ... ok
+test_component_label_missing_from_its_own_row_is_refused (test_verify_guide.GuideVerificationTests.test_component_label_missing_from_its_own_row_is_refused) ... ok
+test_field_id_elsewhere_cannot_substitute_for_owning_row (test_verify_guide.GuideVerificationTests.test_field_id_elsewhere_cannot_substitute_for_owning_row) ... ok
+test_invalid_cli_flag_returns_3_without_traceback_or_file_write (test_verify_guide.GuideVerificationTests.test_invalid_cli_flag_returns_3_without_traceback_or_file_write) ... ok
+test_malformed_word_cli_returns_3_without_traceback (test_verify_guide.GuideVerificationTests.test_malformed_word_cli_returns_3_without_traceback) ... ok
+test_shared_stage_edit_reopens_all_56_criteria_in_that_stage (test_verify_guide.GuideVerificationTests.test_shared_stage_edit_reopens_all_56_criteria_in_that_stage) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.636s
+
+OK

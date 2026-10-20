@@ -1,0 +1,319 @@
+{
+  "schemaVersion": "1.0",
+  "reviewedAt": "2026-10-10T17:04:59.459929+00:00",
+  "reviewType": "independent_catalogue_self_repinning_counterexample",
+  "legacyCheckerSha256": "ded9080be9a6d5be6a6bb837d217290f37dc1e22123c57b2279dcb5d5f97f94a",
+  "authoritativeCatalogueCanonicalSha256": "a72502ce4dcfe5ec1e8537cd377f93e77ad32b9d998fdad62c252605089759fe",
+  "syntheticOnly": true,
+  "assuranceBoundary": "Generated local mechanics inputs, including the real-mode API route, remain synthetic. No actual product, independent identity, approval, readiness or delivery is established.",
+  "results": {
+    "canonical_real_mode_positive_control": {
+      "catalogueCanonicalSha256": "a72502ce4dcfe5ec1e8537cd377f93e77ad32b9d998fdad62c252605089759fe",
+      "catalogueSchemaErrors": [],
+      "inputMode": "real",
+      "exitCode": 0,
+      "qualityStatus": "stage_checks_satisfied",
+      "counts": {
+        "passed": 79,
+        "not_applicable": 0,
+        "missing": 0,
+        "failed": 0,
+        "stale": 0,
+        "invalid": 0
+      },
+      "certificationGranted": false,
+      "changedRequiredFieldPending": false,
+      "byteDifferentCatalogue": true,
+      "advisoryBoundaryExcerpt": "ADVISORY ONLY. Documentation checks relative to the selected stage/catalogue and supplied review fil"
+    },
+    "same_canonical_reformatted_positive_control": {
+      "catalogueCanonicalSha256": "a72502ce4dcfe5ec1e8537cd377f93e77ad32b9d998fdad62c252605089759fe",
+      "catalogueSchemaErrors": [],
+      "inputMode": "real",
+      "exitCode": 0,
+      "qualityStatus": "stage_checks_satisfied",
+      "counts": {
+        "passed": 79,
+        "not_applicable": 0,
+        "missing": 0,
+        "failed": 0,
+        "stale": 0,
+        "invalid": 0
+      },
+      "certificationGranted": false,
+      "changedRequiredFieldPending": false,
+      "byteDifferentCatalogue": true,
+      "advisoryBoundaryExcerpt": "ADVISORY ONLY. Documentation checks relative to the selected stage/catalogue and supplied review fil"
+    },
+    "canonical_missing_evidence_refusal": {
+      "catalogueCanonicalSha256": "a72502ce4dcfe5ec1e8537cd377f93e77ad32b9d998fdad62c252605089759fe",
+      "catalogueSchemaErrors": [],
+      "inputMode": "real",
+      "exitCode": 2,
+      "qualityStatus": "needs_input",
+      "counts": {
+        "passed": 77,
+        "not_applicable": 0,
+        "missing": 2,
+        "failed": 0,
+        "stale": 0,
+        "invalid": 0
+      },
+      "certificationGranted": false,
+      "changedRequiredFieldPending": true,
+      "byteDifferentCatalogue": true,
+      "advisoryBoundaryExcerpt": "ADVISORY ONLY. Documentation checks relative to the selected stage/catalogue and supplied review fil"
+    },
+    "altered_real_mode_self_repin_bypass": {
+      "catalogueCanonicalSha256": "c91a41cd8a83ca3bd5c8ff4c5b0fab7e0adbf5f0b76572636e7b6e3243b72593",
+      "catalogueSchemaErrors": [],
+      "inputMode": "real",
+      "exitCode": 0,
+      "qualityStatus": "stage_checks_satisfied",
+      "counts": {
+        "passed": 79,
+        "not_applicable": 0,
+        "missing": 0,
+        "failed": 0,
+        "stale": 0,
+        "invalid": 0
+      },
+      "certificationGranted": false,
+      "changedRequiredFieldPending": true,
+      "byteDifferentCatalogue": true,
+      "advisoryBoundaryExcerpt": "ADVISORY ONLY. Documentation checks relative to the selected stage/catalogue and supplied review fil"
+    },
+    "altered_synthetic_self_repin_bypass": {
+      "catalogueCanonicalSha256": "c91a41cd8a83ca3bd5c8ff4c5b0fab7e0adbf5f0b76572636e7b6e3243b72593",
+      "catalogueSchemaErrors": [],
+      "inputMode": "synthetic_fixture",
+      "exitCode": 0,
+      "qualityStatus": "synthetic_checks_satisfied",
+      "counts": {
+        "passed": 78,
+        "not_applicable": 0,
+        "missing": 0,
+        "failed": 0,
+        "stale": 0,
+        "invalid": 0
+      },
+      "certificationGranted": false,
+      "changedRequiredFieldPending": true,
+      "byteDifferentCatalogue": true,
+      "advisoryBoundaryExcerpt": "SYNTHETIC FIXTURE ONLY — not product approval or real delivery."
+    },
+    "canonical_all_fields_unfilled_refusal": {
+      "catalogueCanonicalSha256": "a72502ce4dcfe5ec1e8537cd377f93e77ad32b9d998fdad62c252605089759fe",
+      "catalogueSchemaErrors": [],
+      "inputMode": "real",
+      "exitCode": 2,
+      "qualityStatus": "needs_input",
+      "counts": {
+        "passed": 23,
+        "not_applicable": 0,
+        "missing": 56,
+        "failed": 0,
+        "stale": 0,
+        "invalid": 0
+      },
+      "certificationGranted": false,
+      "changedRequiredFieldPending": true,
+      "byteDifferentCatalogue": true,
+      "advisoryBoundaryExcerpt": "ADVISORY ONLY. Documentation checks relative to the selected stage/catalogue and supplied review fil"
+    },
+    "altered_empty_fields_real_mode_self_repin_bypass": {
+      "catalogueCanonicalSha256": "8c1320d3589bcd5e33d1650e92b20861ee50ee6bb5e62afaf36f14755bcede7f",
+      "catalogueSchemaErrors": [],
+      "inputMode": "real",
+      "exitCode": 0,
+      "qualityStatus": "stage_checks_satisfied",
+      "counts": {
+        "passed": 79,
+        "not_applicable": 0,
+        "missing": 0,
+        "failed": 0,
+        "stale": 0,
+        "invalid": 0
+      },
+      "certificationGranted": false,
+      "changedRequiredFieldPending": true,
+      "byteDifferentCatalogue": true,
+      "advisoryBoundaryExcerpt": "ADVISORY ONLY. Documentation checks relative to the selected stage/catalogue and supplied review fil"
+    },
+    "altered_empty_fields_synthetic_self_repin_bypass": {
+      "catalogueCanonicalSha256": "8c1320d3589bcd5e33d1650e92b20861ee50ee6bb5e62afaf36f14755bcede7f",
+      "catalogueSchemaErrors": [],
+      "inputMode": "synthetic_fixture",
+      "exitCode": 0,
+      "qualityStatus": "synthetic_checks_satisfied",
+      "counts": {
+        "passed": 78,
+        "not_applicable": 0,
+        "missing": 0,
+        "failed": 0,
+        "stale": 0,
+        "invalid": 0
+      },
+      "certificationGranted": false,
+      "changedRequiredFieldPending": true,
+      "byteDifferentCatalogue": true,
+      "advisoryBoundaryExcerpt": "SYNTHETIC FIXTURE ONLY — not product approval or real delivery."
+    }
+  },
+  "executedCommands": [
+    {
+      "label": "canonical_real_mode_positive_control",
+      "arguments": [
+        "--catalogue",
+        "<temporary-counterexample>/canonical_real_mode_positive_control-catalogue.json",
+        "check",
+        "--document",
+        "<temporary-counterexample>/canonical_real_mode_positive_control-document.json",
+        "--report",
+        "<temporary-counterexample>/canonical_real_mode_positive_control-report.json",
+        "--trust-store",
+        "<temporary-counterexample>/canonical_real_mode_positive_control-trust.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "stdoutSha256": "226d8ab5e30755c6be39ef6d905034e8e30c38465a2d3372e2e3eae84d4a81d9",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "same_canonical_reformatted_positive_control",
+      "arguments": [
+        "--catalogue",
+        "<temporary-counterexample>/same_canonical_reformatted_positive_control-catalogue.json",
+        "check",
+        "--document",
+        "<temporary-counterexample>/same_canonical_reformatted_positive_control-document.json",
+        "--report",
+        "<temporary-counterexample>/same_canonical_reformatted_positive_control-report.json",
+        "--trust-store",
+        "<temporary-counterexample>/same_canonical_reformatted_positive_control-trust.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "stdoutSha256": "a86a9f330cb31df3756fc5c850c99998a081c47ee9f4b54e85b5bd3e99a44f0d",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "canonical_missing_evidence_refusal",
+      "arguments": [
+        "--catalogue",
+        "<temporary-counterexample>/canonical_missing_evidence_refusal-catalogue.json",
+        "check",
+        "--document",
+        "<temporary-counterexample>/canonical_missing_evidence_refusal-document.json",
+        "--report",
+        "<temporary-counterexample>/canonical_missing_evidence_refusal-report.json",
+        "--trust-store",
+        "<temporary-counterexample>/canonical_missing_evidence_refusal-trust.json"
+      ],
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "stdoutSha256": "abb89b5ca5670edf2b73f5671af442392ba070c720cf95dfcffae7d1b8f2c73e",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "altered_real_mode_self_repin_bypass",
+      "arguments": [
+        "--catalogue",
+        "<temporary-counterexample>/altered_real_mode_self_repin_bypass-catalogue.json",
+        "check",
+        "--document",
+        "<temporary-counterexample>/altered_real_mode_self_repin_bypass-document.json",
+        "--report",
+        "<temporary-counterexample>/altered_real_mode_self_repin_bypass-report.json",
+        "--trust-store",
+        "<temporary-counterexample>/altered_real_mode_self_repin_bypass-trust.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "stdoutSha256": "19338a251c6ee57e658d462fa93b34d47a3858994c55bfd83054bff58f58262a",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "altered_synthetic_self_repin_bypass",
+      "arguments": [
+        "--catalogue",
+        "<temporary-counterexample>/altered_synthetic_self_repin_bypass-catalogue.json",
+        "check",
+        "--document",
+        "<temporary-counterexample>/altered_synthetic_self_repin_bypass-document.json",
+        "--report",
+        "<temporary-counterexample>/altered_synthetic_self_repin_bypass-report.json",
+        "--allow-synthetic"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "stdoutSha256": "81822ad66a1d95b3455b8c1d7266e925f9f72937599b544cdd75ad28392f3ff2",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "canonical_all_fields_unfilled_refusal",
+      "arguments": [
+        "--catalogue",
+        "<temporary-counterexample>/canonical_all_fields_unfilled_refusal-catalogue.json",
+        "check",
+        "--document",
+        "<temporary-counterexample>/canonical_all_fields_unfilled_refusal-document.json",
+        "--report",
+        "<temporary-counterexample>/canonical_all_fields_unfilled_refusal-report.json",
+        "--trust-store",
+        "<temporary-counterexample>/canonical_all_fields_unfilled_refusal-trust.json"
+      ],
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "stdoutSha256": "61557b7d1bacb47a9f6b7643dbf87f97306e359bcba3be7932791957658ea787",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "altered_empty_fields_real_mode_self_repin_bypass",
+      "arguments": [
+        "--catalogue",
+        "<temporary-counterexample>/altered_empty_fields_real_mode_self_repin_bypass-catalogue.json",
+        "check",
+        "--document",
+        "<temporary-counterexample>/altered_empty_fields_real_mode_self_repin_bypass-document.json",
+        "--report",
+        "<temporary-counterexample>/altered_empty_fields_real_mode_self_repin_bypass-report.json",
+        "--trust-store",
+        "<temporary-counterexample>/altered_empty_fields_real_mode_self_repin_bypass-trust.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "stdoutSha256": "8660b233faf53fcf0b794ddc6fc4609d0aba36cfe07f99fb7cb464fedc3f5077",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "altered_empty_fields_synthetic_self_repin_bypass",
+      "arguments": [
+        "--catalogue",
+        "<temporary-counterexample>/altered_empty_fields_synthetic_self_repin_bypass-catalogue.json",
+        "check",
+        "--document",
+        "<temporary-counterexample>/altered_empty_fields_synthetic_self_repin_bypass-document.json",
+        "--report",
+        "<temporary-counterexample>/altered_empty_fields_synthetic_self_repin_bypass-report.json",
+        "--allow-synthetic"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "stdoutSha256": "4c127a93624646d5e45f9c8ba4cb7d7d7b0ce3d8e3848cd834c902d46e9a1c3d",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "mutatedGates": [
+    "gate.vision.planning.01",
+    "gate.vision.planning.03"
+  ],
+  "confirmedBypass": {
+    "canonicalInputBlocksMissingEvidence": true,
+    "alteredRealModePassesWithSameUnresolvedField": true,
+    "allAlteredCatalogueDocReviewEvidenceAndTrustHashesSelfRepinned": true,
+    "noProductCertificationGranted": true
+  },
+  "status": "confirmed_legacy_catalogue_weakening_bypass",
+  "commandPathNormalization": "CLI arguments replace only the ephemeral fixture directory with <temporary-counterexample>. Exit codes and output hashes are observations of actual unnormalized execution."
+}

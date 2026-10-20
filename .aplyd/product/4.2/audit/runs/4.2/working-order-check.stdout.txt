@@ -1,0 +1,69 @@
+{
+  "qualityState": {
+    "status": "needs_input",
+    "passed": 19,
+    "applicable": 78,
+    "exemptions": 0,
+    "counts": {
+      "passed": 19,
+      "not_applicable": 0,
+      "missing": 58,
+      "failed": 0,
+      "stale": 1,
+      "invalid": 0
+    },
+    "score": null,
+    "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+    "certificationGranted": false
+  },
+  "readinessState": {
+    "status": "supplied_unverified",
+    "suppliedClaim": {
+      "status": "not_assessed",
+      "reason": "Documentation quality does not authorize implementation or launch."
+    },
+    "assessedByChecker": false,
+    "authorizationGranted": false
+  },
+  "deliveryState": {
+    "status": "supplied_unverified",
+    "suppliedClaim": {
+      "status": "not_assessed",
+      "reason": "No implementation, launch, operational availability or acceptance inferred."
+    },
+    "assessedByChecker": false,
+    "deliveryObservedByChecker": false
+  },
+  "assurance": "SYNTHETIC FIXTURE ONLY — not product approval or real delivery.",
+  "report": "/var/folders/wm/vfx1992n25g3q8n5myd2gy0c0000gn/T/generic-pm-pin-qualification-q8hisrw5/report.json",
+  "questionPacket": "/var/folders/wm/vfx1992n25g3q8n5myd2gy0c0000gn/T/generic-pm-pin-qualification-q8hisrw5/review-state/questions.json",
+  "loopStatus": "needs_input",
+  "newQuestionCount": 59,
+  "pendingQuestionCount": 59,
+  "reviewerQueueCount": 0,
+  "repairQueueCount": 0,
+  "currentBatchId": "B-1bc70eed8e8ae70d846a",
+  "nextBatch": [
+    {
+      "id": "Q-eda3b0d01e132262a663",
+      "elementId": null,
+      "fieldId": null,
+      "question": "For workspace, resolve source_pin_source-001: Retain and pin exact source text, source version and approval/originality state. What verified fact, explicit decision or evidence resolves this current gap? The decision owner is unresolved; identify the actual accountable decision owner if this requires a decision.",
+      "checksToResolve": 1
+    },
+    {
+      "id": "Q-c5659ff90451df93ba3e",
+      "elementId": null,
+      "fieldId": null,
+      "question": "For workspace, resolve productProfile.ai: Resolve ai applicability from authoritative scope before this decision-dependent stage; all branch obligations remain unsampled. What verified fact, explicit decision or evidence resolves this current gap? The decision owner is unresolved; identify the actual accountable decision owner if this requires a decision.",
+      "checksToResolve": 1
+    },
+    {
+      "id": "Q-64d4b9c65de425beed66",
+      "elementId": null,
+      "fieldId": null,
+      "question": "For workspace, resolve productProfile.personalData: Resolve personalData applicability from authoritative scope before this decision-dependent stage; all branch obligations remain unsampled. What verified fact, explicit decision or evidence resolves this current gap? The decision owner is unresolved; identify the actual accountable decision owner if this requires a decision.",
+      "checksToResolve": 1
+    }
+  ]
+}

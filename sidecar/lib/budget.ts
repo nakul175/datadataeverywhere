@@ -21,19 +21,37 @@ redis.call('ZADD', KEYS[5], now + 180000, ARGV[3]); redis.call('EXPIRE', KEYS[5]
 return 1
 `;
 export async function reserve(user: string, cost: number) {
-  if (process.env.SQLITE_BUDGET_FILE) return (await import('./local-limits')).localReserve(user, cost);
-  const r = await redis(); const now = Date.now(); const id = randomUUID();
+  if (process.env.SQLITE_BUDGET_FILE)
+    return (await import('./local-limits')).localReserve(user, cost);
+  const r = await redis();
+  const now = Date.now();
+  const id = randomUUID();
   const day = new Date(now).toISOString().slice(0, 10);
-  const userLease = `dde:active:user:${user}`; const globalLease = 'dde:active:global';
+  const userLease = `dde:active:user:${user}`;
+  const globalLease = 'dde:active:global';
   const result = await r.eval(reserveLua, {
-    keys: [`dde:rpm:${user}:${Math.floor(now / 60000)}`, `dde:day:${day}:user:${user}`, `dde:day:${day}:global`, userLease, globalLease],
-    arguments: [String(now), String(cost), id, day,
-      process.env.USER_DAILY_TOKEN_BUDGET || '500000', process.env.GLOBAL_DAILY_TOKEN_BUDGET || '5000000'],
+    keys: [
+      `dde:rpm:${user}:${Math.floor(now / 60000)}`,
+      `dde:day:${day}:user:${user}`,
+      `dde:day:${day}:global`,
+      userLease,
+      globalLease,
+    ],
+    arguments: [
+      String(now),
+      String(cost),
+      id,
+      day,
+      process.env.USER_DAILY_TOKEN_BUDGET || '500000',
+      process.env.GLOBAL_DAILY_TOKEN_BUDGET || '5000000',
+    ],
   });
-  if (Number(result) !== 1) throw new HttpError(429, 'Rate, concurrency, or daily token budget reached. Try later.');
+  if (Number(result) !== 1)
+    throw new HttpError(429, 'Rate, concurrency, or daily token budget reached. Try later.');
   let released = false;
   return async () => {
-    if (released) return; released = true;
+    if (released) return;
+    released = true;
     await Promise.all([r.zRem(userLease, id), r.zRem(globalLease, id)]).catch(() => {});
   };
 }

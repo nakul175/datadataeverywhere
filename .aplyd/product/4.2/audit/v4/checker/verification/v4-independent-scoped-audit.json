@@ -1,0 +1,155 @@
+{
+  "checkerSha256": "ded9080be9a6d5be6a6bb837d217290f37dc1e22123c57b2279dcb5d5f97f94a",
+  "catalogueSha256": "cec6bc14f5976dd7e1a48ba9f224e18b1258abb08ed0479a7f080b2dc6245456",
+  "syntheticOnly": true,
+  "results": {
+    "baseline": {
+      "status": "synthetic_checks_satisfied",
+      "reviews": 84,
+      "stale": 0
+    },
+    "localTaskEdit": {
+      "stale": 8,
+      "targets": [
+        "technical_task-002:gate.technical_task.planning.01",
+        "technical_task-002:gate.technical_task.planning.02",
+        "technical_task-002:gate.technical_task.planning.03",
+        "technical_task-002:gate.technical_task.planning.04",
+        "technical_task-002:gate.technical_task.planning.05",
+        "technical_task-002:gate.technical_task.planning.06",
+        "technical_task-002:gate.technical_task.planning.07",
+        "user_story-002:gate.user_story.planning.01"
+      ],
+      "branch1AllPreserved": true,
+      "stagePassed": false
+    },
+    "auditQuestionMetadataEdit": {
+      "status": "synthetic_checks_satisfied",
+      "stale": 0
+    },
+    "parentStoryEdit": {
+      "stale": 22,
+      "targets": [
+        "acceptance_criterion-002:gate.acceptance_criterion.planning.01",
+        "acceptance_criterion-002:gate.acceptance_criterion.planning.02",
+        "acceptance_criterion-002:gate.acceptance_criterion.planning.03",
+        "acceptance_criterion-002:gate.acceptance_criterion.planning.04",
+        "acceptance_criterion-002:gate.acceptance_criterion.planning.05",
+        "acceptance_criterion-002:gate.acceptance_criterion.planning.06",
+        "acceptance_criterion-002:gate.acceptance_criterion.planning.07",
+        "epic-002:gate.epic.planning.01",
+        "technical_task-002:gate.technical_task.planning.01",
+        "technical_task-002:gate.technical_task.planning.02",
+        "technical_task-002:gate.technical_task.planning.03",
+        "technical_task-002:gate.technical_task.planning.04",
+        "technical_task-002:gate.technical_task.planning.05",
+        "technical_task-002:gate.technical_task.planning.06",
+        "technical_task-002:gate.technical_task.planning.07",
+        "user_story-002:gate.user_story.planning.01",
+        "user_story-002:gate.user_story.planning.02",
+        "user_story-002:gate.user_story.planning.03",
+        "user_story-002:gate.user_story.planning.04",
+        "user_story-002:gate.user_story.planning.05",
+        "user_story-002:gate.user_story.planning.06",
+        "user_story-002:gate.user_story.planning.07"
+      ]
+    },
+    "blockingPrerequisiteEdit": {
+      "targets": [
+        "technical_task-001:gate.technical_task.planning.01",
+        "technical_task-001:gate.technical_task.planning.02",
+        "technical_task-001:gate.technical_task.planning.03",
+        "technical_task-001:gate.technical_task.planning.04",
+        "technical_task-001:gate.technical_task.planning.05",
+        "technical_task-001:gate.technical_task.planning.06",
+        "technical_task-001:gate.technical_task.planning.07",
+        "technical_task-002:gate.technical_task.planning.01",
+        "technical_task-002:gate.technical_task.planning.02",
+        "technical_task-002:gate.technical_task.planning.03",
+        "technical_task-002:gate.technical_task.planning.04",
+        "technical_task-002:gate.technical_task.planning.05",
+        "technical_task-002:gate.technical_task.planning.06",
+        "technical_task-002:gate.technical_task.planning.07",
+        "user_story-001:gate.user_story.planning.01",
+        "user_story-002:gate.user_story.planning.01"
+      ],
+      "dependentReopened": true
+    },
+    "designReferenceEdit": {
+      "targets": [
+        "technical_task-001:gate.technical_task.planning.01",
+        "technical_task-001:gate.technical_task.planning.02",
+        "technical_task-001:gate.technical_task.planning.03",
+        "technical_task-001:gate.technical_task.planning.04",
+        "technical_task-001:gate.technical_task.planning.05",
+        "technical_task-001:gate.technical_task.planning.06",
+        "technical_task-001:gate.technical_task.planning.07",
+        "technical_task-002:gate.technical_task.planning.01",
+        "technical_task-002:gate.technical_task.planning.02",
+        "technical_task-002:gate.technical_task.planning.03",
+        "technical_task-002:gate.technical_task.planning.04",
+        "technical_task-002:gate.technical_task.planning.05",
+        "technical_task-002:gate.technical_task.planning.06",
+        "technical_task-002:gate.technical_task.planning.07",
+        "user_story-001:gate.user_story.planning.01",
+        "user_story-002:gate.user_story.planning.01"
+      ],
+      "dependentReopened": true
+    },
+    "deletedDependencyLink": {
+      "targets": [
+        "technical_task-001:gate.technical_task.planning.01",
+        "technical_task-001:gate.technical_task.planning.02",
+        "technical_task-001:gate.technical_task.planning.03",
+        "technical_task-001:gate.technical_task.planning.04",
+        "technical_task-001:gate.technical_task.planning.05",
+        "technical_task-001:gate.technical_task.planning.06",
+        "technical_task-001:gate.technical_task.planning.07",
+        "user_story-001:gate.user_story.planning.01"
+      ],
+      "dependentReopened": true
+    },
+    "unusedEvidenceAuthorityAddition": {
+      "status": "synthetic_checks_satisfied",
+      "stale": 0
+    },
+    "citedEvidenceEdit": {
+      "targets": [
+        "technical_task-002:gate.technical_task.planning.01",
+        "technical_task-002:gate.technical_task.planning.02",
+        "technical_task-002:gate.technical_task.planning.03",
+        "technical_task-002:gate.technical_task.planning.04",
+        "technical_task-002:gate.technical_task.planning.05",
+        "technical_task-002:gate.technical_task.planning.06",
+        "technical_task-002:gate.technical_task.planning.07"
+      ],
+      "onlyTargetAffected": true
+    },
+    "usedReviewerAuthorityEdit": {
+      "stale": 84,
+      "reviews": 84
+    },
+    "duplicateEvidenceBinding": {
+      "status": "blocked",
+      "invalid": 1
+    },
+    "legacyBindingRefused": {
+      "status": "needs_input",
+      "stale": 1
+    },
+    "assertions": {
+      "localTaskPreservesUnrelatedBranch": true,
+      "localEditDoesNotPass": true,
+      "metadataDoesNotStale": true,
+      "blockingPrerequisiteReopensDependent": true,
+      "designReferenceReopensDependent": true,
+      "deletedLinkReopensDependent": true,
+      "unusedEvidenceAuthorityDoNotStale": true,
+      "citedEvidenceIsScoped": true,
+      "usedAuthorityReopensAllItsReviews": true,
+      "duplicateEvidenceBindingRefused": true,
+      "legacyBindingRefused": true
+    }
+  },
+  "allAssertionsPassed": true
+}

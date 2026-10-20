@@ -1,0 +1,16 @@
+{
+  "bundleEdition": "4.0-generic",
+  "catalogueVersion": "3.0-generic",
+  "docxSHA256": "9caf07514b99d4cb3e40fef35e8f5f76963358fa702de8cbbcd67307d153fac8",
+  "catalogueSHA256": "cec6bc14f5976dd7e1a48ba9f224e18b1258abb08ed0479a7f080b2dc6245456",
+  "allStageCriteriaReconstructedExactly": 280,
+  "stageClauses": 5,
+  "baseCriteria": 56,
+  "conditionalAssuranceClauses": 1,
+  "allFieldIdsPresent": 189,
+  "allComponentLabelsPresent": 587,
+  "componentCheckCount": 0,
+  "wordScope": "Complete stage criteria and field/component reference; detailed reference-only check definitions remain in the catalogue and local rulebooks.",
+  "missingFields": [],
+  "missingComponents": []
+}

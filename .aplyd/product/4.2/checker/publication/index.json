@@ -1,0 +1,110 @@
+[
+  {
+    "element": "common",
+    "title": "Generic product management quality rules \u2014 Shared fields and integrity/reference rules",
+    "path": "publication/common.json",
+    "fields": 14,
+    "requiredComponents": 55,
+    "independentComponentChecks": 0,
+    "mandatoryStageGateDefinitions": 0,
+    "mandatoryGatesPerItemCurrentStage": 0,
+    "referenceChecks": 114,
+    "characters": 43769
+  },
+  {
+    "element": "vision",
+    "title": "Generic product management quality rules \u2014 Product vision",
+    "path": "publication/vision.json",
+    "fields": 17,
+    "requiredComponents": 43,
+    "independentComponentChecks": 0,
+    "mandatoryStageGateDefinitions": 35,
+    "mandatoryGatesPerItemCurrentStage": 7,
+    "referenceChecks": 121,
+    "characters": 86008
+  },
+  {
+    "element": "strategy",
+    "title": "Generic product management quality rules \u2014 Product strategy",
+    "path": "publication/strategy.json",
+    "fields": 19,
+    "requiredComponents": 54,
+    "independentComponentChecks": 0,
+    "mandatoryStageGateDefinitions": 35,
+    "mandatoryGatesPerItemCurrentStage": 7,
+    "referenceChecks": 135,
+    "characters": 92163
+  },
+  {
+    "element": "roadmap",
+    "title": "Generic product management quality rules \u2014 Roadmap",
+    "path": "publication/roadmap.json",
+    "fields": 22,
+    "requiredComponents": 61,
+    "independentComponentChecks": 0,
+    "mandatoryStageGateDefinitions": 35,
+    "mandatoryGatesPerItemCurrentStage": 7,
+    "referenceChecks": 156,
+    "characters": 97902
+  },
+  {
+    "element": "release_goal",
+    "title": "Generic product management quality rules \u2014 Release goal",
+    "path": "publication/release_goal.json",
+    "fields": 22,
+    "requiredComponents": 72,
+    "independentComponentChecks": 0,
+    "mandatoryStageGateDefinitions": 35,
+    "mandatoryGatesPerItemCurrentStage": 7,
+    "referenceChecks": 152,
+    "characters": 105353
+  },
+  {
+    "element": "epic",
+    "title": "Generic product management quality rules \u2014 Epic",
+    "path": "publication/epic.json",
+    "fields": 21,
+    "requiredComponents": 67,
+    "independentComponentChecks": 0,
+    "mandatoryStageGateDefinitions": 35,
+    "mandatoryGatesPerItemCurrentStage": 7,
+    "referenceChecks": 133,
+    "characters": 95392
+  },
+  {
+    "element": "user_story",
+    "title": "Generic product management quality rules \u2014 User story",
+    "path": "publication/user_story.json",
+    "fields": 35,
+    "requiredComponents": 122,
+    "independentComponentChecks": 0,
+    "mandatoryStageGateDefinitions": 35,
+    "mandatoryGatesPerItemCurrentStage": 7,
+    "referenceChecks": 227,
+    "characters": 139990
+  },
+  {
+    "element": "acceptance_criterion",
+    "title": "Generic product management quality rules \u2014 Acceptance criterion",
+    "path": "publication/acceptance_criterion.json",
+    "fields": 15,
+    "requiredComponents": 43,
+    "independentComponentChecks": 0,
+    "mandatoryStageGateDefinitions": 35,
+    "mandatoryGatesPerItemCurrentStage": 7,
+    "referenceChecks": 107,
+    "characters": 88963
+  },
+  {
+    "element": "technical_task",
+    "title": "Generic product management quality rules \u2014 Implementation or verification task",
+    "path": "publication/technical_task.json",
+    "fields": 24,
+    "requiredComponents": 70,
+    "independentComponentChecks": 0,
+    "mandatoryStageGateDefinitions": 35,
+    "mandatoryGatesPerItemCurrentStage": 7,
+    "referenceChecks": 162,
+    "characters": 111090
+  }
+]

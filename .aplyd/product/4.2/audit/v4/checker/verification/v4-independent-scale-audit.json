@@ -1,0 +1,56 @@
+{
+  "checkerSha256": "ded9080be9a6d5be6a6bb837d217290f37dc1e22123c57b2279dcb5d5f97f94a",
+  "catalogueSha256": "cec6bc14f5976dd7e1a48ba9f224e18b1258abb08ed0479a7f080b2dc6245456",
+  "results": {
+    "scale": {
+      "syntheticOnly": true,
+      "elements": 302,
+      "countsByLevel": {
+        "vision": 1,
+        "strategy": 1,
+        "roadmap": 1,
+        "release_goal": 1,
+        "epic": 8,
+        "user_story": 40,
+        "acceptance_criterion": 150,
+        "technical_task": 100
+      },
+      "reviewVerdicts": 2114,
+      "blockingChecks": 2430,
+      "baselineStatus": "synthetic_checks_satisfied",
+      "bindingSeconds": 18.243,
+      "checkingSeconds": 5.44,
+      "leafEditCheckingSeconds": 5.499,
+      "reportCanonicalBytes": 6972464,
+      "leafEditStaleReviews": 8,
+      "leafEditAffectedElements": [
+        "technical_task-100",
+        "user_story-020"
+      ],
+      "unchangedReviewsPreserved": 2106,
+      "wholeUnrelatedBranchPreserved": true
+    },
+    "realAdvisoryReceipt": {
+      "baselineStatus": "stage_checks_satisfied",
+      "metadataOnlyStatus": "stage_checks_satisfied",
+      "metadataOnlyStale": 0,
+      "identityAuthenticated": "not_authenticated_offline",
+      "advisoryOnly": true,
+      "certificationGranted": false,
+      "sourceChangeStatus": "needs_input",
+      "sourceChangeStale": 57,
+      "metadataReceiptCurrent": "passed",
+      "sourceBaselineRefused": true
+    },
+    "assertions": {
+      "302ItemsAnd2114Verdicts": true,
+      "baselineSyntheticMechanicsSatisfied": true,
+      "leafEditOnly8Reviews": true,
+      "unrelatedBranchPreserved": true,
+      "realMetadataDoesNotStale": true,
+      "realStillAdvisory": true,
+      "sourceChangeRefused": true
+    }
+  },
+  "allAssertionsPassed": true
+}

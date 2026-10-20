@@ -1,0 +1,5 @@
+# Unchanged supplied standards are reviewable references, not application source.
+.aplyd/engineering/** linguist-vendored=true
+.aplyd/product/** linguist-vendored=true
+.aplyd/testing/** linguist-vendored=true
+.aplyd/workflow/** linguist-vendored=true

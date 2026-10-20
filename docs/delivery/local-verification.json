@@ -1,0 +1,102 @@
+{
+  "scope": "Local standards-adoption verification; not independent approval, CI evidence or release readiness",
+  "base_commit": "d819af9c539d063b98b96df89ea5c54ec054c193",
+  "application_tests": {
+    "executed": 33,
+    "passed": 33,
+    "skipped": 0,
+    "failed": 0,
+    "fixture": "Disposable local Redis and SQLite, no production records"
+  },
+  "delivery_control_tests": {
+    "executed": 4,
+    "passed": 4
+  },
+  "native_engineering": {
+    "state": "BLOCKED",
+    "errors": [
+      "repository.approval_ref: an actual reference is required, not a placeholder",
+      "repository.adoption_state: draft is not approved configuration",
+      "repository.owners.engineering: actual accountable owner is required",
+      "repository.owners.security: actual accountable owner is required",
+      "repository.owners.operations: actual accountable owner is required",
+      "repository.approval_ref: actual value is required",
+      "repository.branch_policy_evidence_ref: server control evidence reference is required",
+      "commands.review_ref: an actual reference is required, not a placeholder",
+      "integration: native PM/QA bindings are not approved; combined gates remain BLOCKED",
+      "integration.approval_ref: an actual reference is required, not a placeholder",
+      "integration.release_record_ref: an actual reference is required, not a placeholder",
+      "integration.pm_catalogue_source_id: actual hash-pinned product catalogue is required",
+      "integration.qa_catalogue_source_id: actual hash-pinned qa catalogue is required",
+      "nakul175/datadataeverywhere#1: canonical task is absent from the pinned product source",
+      "integration: both native qa_lint and native qa_release invocations must be bound"
+    ],
+    "warnings": [
+      "Approver identity, reference truth and actual GitHub/Linear state are not verified by this local audit"
+    ]
+  },
+  "native_qa_planning": {
+    "mode": "STRUCTURE_AND_REPORT",
+    "errors": [],
+    "warnings": [],
+    "result_counts": {
+      "PASS": 0,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "NOT_RUN": 0,
+      "SKIPPED": 0,
+      "NOT_APPLICABLE": 0
+    },
+    "selected_unique_runs": 0,
+    "planned_coverage": {
+      "numerator": 0,
+      "denominator": 0,
+      "ratio": null
+    },
+    "validated_coverage": {
+      "numerator": 0,
+      "denominator": 0,
+      "ratio": null
+    },
+    "disclaimer": "Offline structural/coverage check only. Does not authenticate evidence, verify omitted ACs, approvals, numeric thresholds or complete release readiness."
+  },
+  "native_qa_release": {
+    "mode": "RELEASE_RECORD_GATE",
+    "errors": [
+      "release: evidence_root must be configured or overridden",
+      "release criteria pin: missing criteria_source_ref",
+      "release criteria pin: missing criteria_source_sha256",
+      "release criteria pin: missing expected_ac_ids_sha256",
+      "release criteria pin: missing criteria_source_review_ref",
+      "release: missing canonical criteria source snapshot",
+      "release scope: missing build_sha",
+      "release scope: missing artifact_digest",
+      "release scope: missing config_version",
+      "release scope: missing data_version",
+      "release scope: missing assessment_time",
+      "release: no applicable AC population"
+    ],
+    "warnings": [],
+    "result_counts": {
+      "PASS": 0,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "NOT_RUN": 0,
+      "SKIPPED": 0,
+      "NOT_APPLICABLE": 0
+    },
+    "selected_unique_runs": 0,
+    "planned_coverage": {
+      "numerator": 0,
+      "denominator": 0,
+      "ratio": null
+    },
+    "validated_coverage": {
+      "numerator": 0,
+      "denominator": 0,
+      "ratio": null
+    },
+    "disclaimer": "Offline structural/coverage check only. Does not authenticate evidence, verify omitted ACs, approvals, numeric thresholds or complete release readiness."
+  },
+  "failed_or_incomplete_runs_preserved": "Initial run executed 27 and skipped 6; the new report gate rejected it. Full rerun executed all 33. Native readiness remains held."
+}

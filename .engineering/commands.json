@@ -1,0 +1,175 @@
+{
+  "schema_version": 2,
+  "review_ref": null,
+  "setup_commands": [
+    {
+      "argv": [
+        "npm",
+        "ci",
+        "--ignore-scripts"
+      ],
+      "cwd": ".",
+      "timeout_seconds": 900
+    },
+    {
+      "argv": [
+        "npm",
+        "ci",
+        "--ignore-scripts"
+      ],
+      "cwd": "sidecar",
+      "timeout_seconds": 900
+    }
+  ],
+  "checks": [
+    {
+      "id": "format",
+      "state": "configured",
+      "commands": [
+        {
+          "argv": [
+            "npm",
+            "run",
+            "format:check"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 300
+        }
+      ],
+      "rationale": "Initial repository-specific commands proposed for independent configuration review. Redis integration tests require a disposable TEST_REDIS_URL.",
+      "approval_ref": null
+    },
+    {
+      "id": "lint",
+      "state": "configured",
+      "commands": [
+        {
+          "argv": [
+            "npm",
+            "run",
+            "lint"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 300
+        }
+      ],
+      "rationale": "Initial repository-specific commands proposed for independent configuration review. Redis integration tests require a disposable TEST_REDIS_URL.",
+      "approval_ref": null
+    },
+    {
+      "id": "types",
+      "state": "configured",
+      "commands": [
+        {
+          "argv": [
+            "npm",
+            "run",
+            "typecheck"
+          ],
+          "cwd": "sidecar",
+          "timeout_seconds": 300
+        }
+      ],
+      "rationale": "Initial repository-specific commands proposed for independent configuration review. Redis integration tests require a disposable TEST_REDIS_URL.",
+      "approval_ref": null
+    },
+    {
+      "id": "build",
+      "state": "configured",
+      "commands": [
+        {
+          "argv": [
+            "npm",
+            "run",
+            "build"
+          ],
+          "cwd": "sidecar",
+          "timeout_seconds": 900
+        }
+      ],
+      "rationale": "Initial repository-specific commands proposed for independent configuration review. Redis integration tests require a disposable TEST_REDIS_URL.",
+      "approval_ref": null
+    },
+    {
+      "id": "dependencies",
+      "state": "configured",
+      "commands": [
+        {
+          "argv": [
+            "npm",
+            "audit",
+            "--audit-level=high"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 300
+        },
+        {
+          "argv": [
+            "npm",
+            "audit",
+            "--audit-level=high"
+          ],
+          "cwd": "sidecar",
+          "timeout_seconds": 300
+        }
+      ],
+      "rationale": "Initial repository-specific commands proposed for independent configuration review. Redis integration tests require a disposable TEST_REDIS_URL.",
+      "approval_ref": null
+    },
+    {
+      "id": "secrets",
+      "state": "configured",
+      "commands": [
+        {
+          "argv": [
+            "python3",
+            "scripts/check-secrets.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 300
+        }
+      ],
+      "rationale": "Initial repository-specific commands proposed for independent configuration review. Redis integration tests require a disposable TEST_REDIS_URL.",
+      "approval_ref": null
+    },
+    {
+      "id": "tests",
+      "state": "configured",
+      "commands": [
+        {
+          "argv": [
+            "npm",
+            "test",
+            "--",
+            "--reporter=default",
+            "--reporter=junit",
+            "--outputFile.junit={evidence_dir}/vitest.xml"
+          ],
+          "cwd": "sidecar",
+          "timeout_seconds": 300
+        },
+        {
+          "argv": [
+            "python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-p",
+            "test_delivery_controls.py"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 120
+        }
+      ],
+      "rationale": "Initial repository-specific commands proposed for independent configuration review. Redis integration tests require a disposable TEST_REDIS_URL.",
+      "approval_ref": null,
+      "test_report": {
+        "format": "junit",
+        "path": "{evidence_dir}/vitest.xml",
+        "minimum_executed": 33
+      }
+    }
+  ]
+}

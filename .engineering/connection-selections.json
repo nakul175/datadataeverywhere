@@ -1,0 +1,9 @@
+{
+  "pm_catalogue": ".aplyd/product/4.2/checker/catalogue.json",
+  "qa_catalogue": ".aplyd/testing/1.3/workflow/pm-catalogue-index.json",
+  "qa_cases": ".quality/registers/case-register.csv",
+  "qa_links": ".quality/registers/traceability.csv",
+  "qa_runs": ".quality/registers/run-register.csv",
+  "qa_checker": ".aplyd/testing/1.3/checker/qa_lint.py",
+  "workflow_ref": ".aplyd/workflow/2.0/PROCESS.md"
+}

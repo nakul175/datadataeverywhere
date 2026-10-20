@@ -1,0 +1,19 @@
+{
+  "canonicalTaskId": null,
+  "storyId": null,
+  "dependencyTasks": [],
+  "sourceBaseline": null,
+  "leaseId": null,
+  "leaseFenceVersion": null,
+  "assignedAgent": null,
+  "ownedPaths": [],
+  "branchWorktree": null,
+  "environmentOwnership": null,
+  "capacityLimit": null,
+  "expiresAtUTC": null,
+  "heartbeatAtUTC": null,
+  "nativeRunIds": [],
+  "handoffRef": null,
+  "integrationCandidate": null,
+  "authoritativeRecordWriter": null
+}

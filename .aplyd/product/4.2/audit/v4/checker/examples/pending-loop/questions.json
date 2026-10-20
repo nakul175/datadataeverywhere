@@ -1,0 +1,272 @@
+{
+  "loopStatus": "needs_input",
+  "qualityStatus": "needs_input",
+  "subjectFingerprint": "3a84aad18a24e9c2b26e90a513e8b9d06aa6ce8c656b1529d8066b78f5a4ac8a",
+  "newQuestionCount": 0,
+  "pendingQuestionCount": 59,
+  "answeredButUnresolvedCount": 0,
+  "nextBatch": [
+    {
+      "id": "Q-eda3b0d01e132262a663",
+      "groupId": "check:workspace:source_pin_source-001",
+      "occurrence": 1,
+      "followup": 0,
+      "checkResultId": "workspace:source_pin_source-001",
+      "elementId": null,
+      "fieldId": null,
+      "requiredFieldIds": [],
+      "checkId": "source_pin_source-001",
+      "dimension": "integrity",
+      "resolutionKind": "author_repair_or_owner_decision",
+      "severity": "blocking",
+      "reason": "Retain and pin exact source text, source version and approval/originality state.",
+      "reasonDigest": "f2483e8767db9e3ec9226a598d3fb8e36eeaf70fa5c7fcbf2963fbd8ae9568ab",
+      "requiredPassCriterion": {
+        "excerpt": "Retain and pin exact source text, source version and approval/originality state.",
+        "truncated": false,
+        "contentDigest": "f2483e8767db9e3ec9226a598d3fb8e36eeaf70fa5c7fcbf2963fbd8ae9568ab"
+      },
+      "requiredEvidence": {
+        "excerpt": "Verified current input structure.",
+        "truncated": false,
+        "contentDigest": "067699b79cc9b36337843bc70b028ac1aa19a829c9471e22a4942be9e96ffe87"
+      },
+      "question": "For workspace, resolve source_pin_source-001: Retain and pin exact source text, source version and approval/originality state. What verified fact, explicit decision or evidence resolves this current gap? The decision owner is unresolved; identify the actual accountable decision owner if this requires a decision.",
+      "safeRepair": null,
+      "subjectFingerprint": "51917dba288f9896e543d1a55bec4873e5a970811515d865dcdf26522363d818",
+      "contextFingerprint": "f08f134aecc902890eb6a3c8b4cbc9863c9ea793284a6c9edf894acbea533cb4",
+      "targetContext": {
+        "elementId": null,
+        "fields": [],
+        "workspaceDecisionDigest": "2700f93feb5e4628052e7d5a69bacab5c685c518990d7e26393cf2ac0df5c092"
+      },
+      "checksToResolve": [
+        {
+          "id": "workspace:source_pin_source-001",
+          "checkId": "source_pin_source-001",
+          "dimension": "integrity",
+          "status": "stale",
+          "reasonDigest": "f2483e8767db9e3ec9226a598d3fb8e36eeaf70fa5c7fcbf2963fbd8ae9568ab",
+          "criterionDigest": "f2483e8767db9e3ec9226a598d3fb8e36eeaf70fa5c7fcbf2963fbd8ae9568ab",
+          "evidenceRequirementDigest": "067699b79cc9b36337843bc70b028ac1aa19a829c9471e22a4942be9e96ffe87",
+          "subjectFingerprint": "51917dba288f9896e543d1a55bec4873e5a970811515d865dcdf26522363d818"
+        }
+      ],
+      "decisionRevision": null,
+      "decisionOwnerId": null,
+      "decisionOwnerStatus": "unresolved",
+      "reportCheckReference": "workspace:source_pin_source-001",
+      "firstSeen": "2026-10-10T16:10:34.879939+00:00",
+      "status": "unanswered",
+      "presentedCount": 0,
+      "acknowledgedAt": null,
+      "contextHistory": [],
+      "latestReportFingerprint": "3a84aad18a24e9c2b26e90a513e8b9d06aa6ce8c656b1529d8066b78f5a4ac8a",
+      "answerIds": []
+    },
+    {
+      "id": "Q-c5659ff90451df93ba3e",
+      "groupId": "profile:ai",
+      "occurrence": 1,
+      "followup": 0,
+      "checkResultId": "workspace:profile_decision_ai",
+      "elementId": null,
+      "fieldId": null,
+      "requiredFieldIds": [
+        "productProfile.ai"
+      ],
+      "checkId": "profile_decision_ai",
+      "dimension": "integrity",
+      "resolutionKind": "author_repair_or_owner_decision",
+      "severity": "blocking",
+      "reason": "Resolve ai applicability from authoritative scope before this decision-dependent stage; all branch obligations remain unsampled.",
+      "reasonDigest": "f9628698cf2cfe40e153969f73db3432d453724d7b138d908eb7791a3d74ee47",
+      "requiredPassCriterion": {
+        "excerpt": "Resolve ai applicability from authoritative scope before this decision-dependent stage; all branch obligations remain unsampled.",
+        "truncated": false,
+        "contentDigest": "f9628698cf2cfe40e153969f73db3432d453724d7b138d908eb7791a3d74ee47"
+      },
+      "requiredEvidence": {
+        "excerpt": "Verified current input structure.",
+        "truncated": false,
+        "contentDigest": "067699b79cc9b36337843bc70b028ac1aa19a829c9471e22a4942be9e96ffe87"
+      },
+      "question": "For workspace, resolve productProfile.ai: Resolve ai applicability from authoritative scope before this decision-dependent stage; all branch obligations remain unsampled. What verified fact, explicit decision or evidence resolves this current gap? The decision owner is unresolved; identify the actual accountable decision owner if this requires a decision.",
+      "safeRepair": null,
+      "subjectFingerprint": "caa696dc1ec9c70cdbfe0edec4e409e904d3fd7935673cc6fa3d9ae604c87f63",
+      "contextFingerprint": "38577b4c5cd8e9adb0fdf139ed1875acd7a571ffab37d75ace33468e327114c2",
+      "targetContext": {
+        "elementId": null,
+        "fields": [
+          {
+            "fieldId": "productProfile.ai",
+            "excerpt": "{\"applicability\":\"unknown\",\"rationale\":\"\",\"sourceIds\":[]}",
+            "truncated": false,
+            "contentDigest": "b3c5234b0945d4cc472be2f092136cbb1486ed36fd362b372a531e40350ffe10"
+          }
+        ]
+      },
+      "checksToResolve": [
+        {
+          "id": "workspace:profile_decision_ai",
+          "checkId": "profile_decision_ai",
+          "dimension": "integrity",
+          "status": "missing",
+          "reasonDigest": "f9628698cf2cfe40e153969f73db3432d453724d7b138d908eb7791a3d74ee47",
+          "criterionDigest": "f9628698cf2cfe40e153969f73db3432d453724d7b138d908eb7791a3d74ee47",
+          "evidenceRequirementDigest": "067699b79cc9b36337843bc70b028ac1aa19a829c9471e22a4942be9e96ffe87",
+          "subjectFingerprint": "caa696dc1ec9c70cdbfe0edec4e409e904d3fd7935673cc6fa3d9ae604c87f63"
+        }
+      ],
+      "decisionRevision": null,
+      "decisionOwnerId": null,
+      "decisionOwnerStatus": "unresolved",
+      "reportCheckReference": "workspace:profile_decision_ai",
+      "firstSeen": "2026-10-10T16:10:34.879978+00:00",
+      "status": "unanswered",
+      "presentedCount": 0,
+      "acknowledgedAt": null,
+      "contextHistory": [],
+      "latestReportFingerprint": "3a84aad18a24e9c2b26e90a513e8b9d06aa6ce8c656b1529d8066b78f5a4ac8a",
+      "answerIds": []
+    },
+    {
+      "id": "Q-64d4b9c65de425beed66",
+      "groupId": "profile:personalData",
+      "occurrence": 1,
+      "followup": 0,
+      "checkResultId": "workspace:profile_decision_personalData",
+      "elementId": null,
+      "fieldId": null,
+      "requiredFieldIds": [
+        "productProfile.personalData"
+      ],
+      "checkId": "profile_decision_personalData",
+      "dimension": "integrity",
+      "resolutionKind": "author_repair_or_owner_decision",
+      "severity": "blocking",
+      "reason": "Resolve personalData applicability from authoritative scope before this decision-dependent stage; all branch obligations remain unsampled.",
+      "reasonDigest": "f81cc78546b8419646d50074bec49429e5280ce90249a100589bb18f03574cd4",
+      "requiredPassCriterion": {
+        "excerpt": "Resolve personalData applicability from authoritative scope before this decision-dependent stage; all branch obligations remain unsampled.",
+        "truncated": false,
+        "contentDigest": "f81cc78546b8419646d50074bec49429e5280ce90249a100589bb18f03574cd4"
+      },
+      "requiredEvidence": {
+        "excerpt": "Verified current input structure.",
+        "truncated": false,
+        "contentDigest": "067699b79cc9b36337843bc70b028ac1aa19a829c9471e22a4942be9e96ffe87"
+      },
+      "question": "For workspace, resolve productProfile.personalData: Resolve personalData applicability from authoritative scope before this decision-dependent stage; all branch obligations remain unsampled. What verified fact, explicit decision or evidence resolves this current gap? The decision owner is unresolved; identify the actual accountable decision owner if this requires a decision.",
+      "safeRepair": null,
+      "subjectFingerprint": "fc1bb760ad3850997d98c51ad0ed89489d4a9978ff23b2652a0c16fef5731e0b",
+      "contextFingerprint": "ba75163da5cb975d25d24446b6f4428db62ad5176d16f33060e4be35f1a49c7e",
+      "targetContext": {
+        "elementId": null,
+        "fields": [
+          {
+            "fieldId": "productProfile.personalData",
+            "excerpt": "{\"applicability\":\"unknown\",\"rationale\":\"\",\"sourceIds\":[]}",
+            "truncated": false,
+            "contentDigest": "b3c5234b0945d4cc472be2f092136cbb1486ed36fd362b372a531e40350ffe10"
+          }
+        ]
+      },
+      "checksToResolve": [
+        {
+          "id": "workspace:profile_decision_personalData",
+          "checkId": "profile_decision_personalData",
+          "dimension": "integrity",
+          "status": "missing",
+          "reasonDigest": "f81cc78546b8419646d50074bec49429e5280ce90249a100589bb18f03574cd4",
+          "criterionDigest": "f81cc78546b8419646d50074bec49429e5280ce90249a100589bb18f03574cd4",
+          "evidenceRequirementDigest": "067699b79cc9b36337843bc70b028ac1aa19a829c9471e22a4942be9e96ffe87",
+          "subjectFingerprint": "fc1bb760ad3850997d98c51ad0ed89489d4a9978ff23b2652a0c16fef5731e0b"
+        }
+      ],
+      "decisionRevision": null,
+      "decisionOwnerId": null,
+      "decisionOwnerStatus": "unresolved",
+      "reportCheckReference": "workspace:profile_decision_personalData",
+      "firstSeen": "2026-10-10T16:10:34.880006+00:00",
+      "status": "unanswered",
+      "presentedCount": 0,
+      "acknowledgedAt": null,
+      "contextHistory": [],
+      "latestReportFingerprint": "3a84aad18a24e9c2b26e90a513e8b9d06aa6ce8c656b1529d8066b78f5a4ac8a",
+      "answerIds": []
+    }
+  ],
+  "currentBatchId": "B-1bc70eed8e8ae70d846a",
+  "batchRequiresAcknowledgement": true,
+  "allUnresolvedQuestionIds": [
+    "Q-eda3b0d01e132262a663",
+    "Q-c5659ff90451df93ba3e",
+    "Q-64d4b9c65de425beed66",
+    "Q-115480531815aa1e5934",
+    "Q-0a4a2d928b4c114362cb",
+    "Q-5d50ae173a8e1cdcf5ea",
+    "Q-dbf5a5664172401b39d2",
+    "Q-036207f263986027db0a",
+    "Q-a2eca21066324fa19627",
+    "Q-189a62f54e53d78aa95b",
+    "Q-00bdd778bd6f18b2d165",
+    "Q-fe4e84d37bbcd06f2abf",
+    "Q-1a75ea0d367378088bd4",
+    "Q-053beb4095f3e3aaa693",
+    "Q-aa42d42cd8473fa38be0",
+    "Q-3d8237e2fdf60689dae1",
+    "Q-7d7ac1d352ff8238f8df",
+    "Q-fcf5670ac7f6a8b77239",
+    "Q-f629ab7942c31579ff43",
+    "Q-3f5d4668bd14baf2489d",
+    "Q-19fe84d411f68441b079",
+    "Q-8773ea55f164245a80dc",
+    "Q-4aa8c3ff6081e6b8fd70",
+    "Q-0bfda864bec2ee28e77f",
+    "Q-942778e2143f9e781c7f",
+    "Q-93fb28b516b96ca9223a",
+    "Q-46b0ddfeb6718f57eec3",
+    "Q-d3696565884f047743e0",
+    "Q-a3323daae8d77fcdf1af",
+    "Q-aed5b0e798374be5ac7f",
+    "Q-d0ff06979f4e45c5ae12",
+    "Q-c9cdfbbb715fcfdcd8d1",
+    "Q-e752c5881516b03df397",
+    "Q-462fbef7def85bbc673f",
+    "Q-567352d4a8689d121d17",
+    "Q-09e4f1ac20a3db3f30eb",
+    "Q-9251041d04bc6afa1e92",
+    "Q-d8e4af5b14a01956bca7",
+    "Q-fb52c25541ed43049c99",
+    "Q-d5282e5130143c319ba7",
+    "Q-9d03315da366ea2a742e",
+    "Q-b114d482795018ba339c",
+    "Q-6156c319fc01f7a69904",
+    "Q-d039a17c00599d776a2b",
+    "Q-c8fa201ac46d90a6a3cc",
+    "Q-222f1e4bbb1833dd66c2",
+    "Q-9b835fd30db7db59a296",
+    "Q-10f85cfaace9f2a550c4",
+    "Q-12c71b0dd9c3ced155b3",
+    "Q-c4517b4a6815dcde2b21",
+    "Q-b5c4d09c644e2a5b0555",
+    "Q-904bb38f5ebdd7920974",
+    "Q-0236a20ac895c3fc2866",
+    "Q-f2a9c5b26961b5e6a1e3",
+    "Q-af0b486110c3068d8450",
+    "Q-e746b861c7fdd689f82d",
+    "Q-6f57e8dc6c048ce771a3",
+    "Q-953995d9b902767c7839",
+    "Q-801fd6cc11cc0b833207"
+  ],
+  "awaitingAnswerIds": [],
+  "awaitingAnswers": [],
+  "dismissedQuestionIds": [],
+  "reviewerQueue": [],
+  "repairQueue": [],
+  "reviewerQueueCount": 0,
+  "repairQueueCount": 0,
+  "assessedStage": "planning",
+  "instruction": "Creating a batch is not acknowledgement. Keep the current unanswered batch until actual answers, explicit acknowledge-batch, current-check resolution or supersession. Acknowledgement/dismissal never passes a check; acknowledged unanswered questions remain awaiting answers. Missing/stale reviews belong to the reviewer queue. Answers require verified revision and independent recheck. Offline stage satisfaction is advisory; synthetic results are test-only. No iteration or time limit grants approval."
+}

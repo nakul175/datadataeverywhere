@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "1.0",
+  "edition": "4.0-generic",
+  "qualifiedAt": "2026-10-10T16:23:30.376862+00:00",
+  "qualificationScope": "Generic framework mechanics, synthetic checker behavior, independent counterexamples, Word content integrity and every-page layout. No real product quality, identity, approval, readiness or delivery is certified.",
+  "catalogueVersion": "3.0-generic",
+  "catalogueCanonicalHash": "a72502ce4dcfe5ec1e8537cd377f93e77ad32b9d998fdad62c252605089759fe",
+  "versionBoundary": "Bundle/engine 4.0 retains unchanged generic content catalogue 3.0 and AI module 3.0. Target binding protocol is scoped-v1.",
+  "pins": {
+    "documentation/Generic Product Management Operating Framework.docx": "9caf07514b99d4cb3e40fef35e8f5f76963358fa702de8cbbcd67307d153fac8",
+    "checker/catalogue.json": "cec6bc14f5976dd7e1a48ba9f224e18b1258abb08ed0479a7f080b2dc6245456",
+    "checker/source-standard.md": "89c5b91203828ed7e07e9da370c1b90cd309dc9434c303142b830c953d699729",
+    "checker/quality_checker.py": "ded9080be9a6d5be6a6bb837d217290f37dc1e22123c57b2279dcb5d5f97f94a",
+    "checker/quality_loop.py": "ad589c27c5794d7b7854d4ab4932060940ccc5ec8bf751e1c539344a2faa62c7",
+    "checker/quality_tools.py": "4b1d4db8e8041e0773b39776bde84983381d6501d2173be75ef032c09a46cceb",
+    "checker/qualification-runs.json": "dc9d69a8b4d714f749d20719433ee0315841e40e5bb0693b75660410dc4723b4",
+    "documentation/document-qualification-runs.json": "5df2d82a41ef48eddb6a39802d2e69a30c8e64b85e202f8940804d03a6fe5d20",
+    "AI-ASSURANCE.md": "2daca863175de55394f2b063c0ffcf8da4db2b4345d01bbdcf190ba18c65e66b"
+  },
+  "implementation": {
+    "testsPassed": 95,
+    "testsTotal": 95,
+    "qualificationRunsWithExpectedExitCodes": 17,
+    "qualificationRunsIncludeGenerationTestsAndCLI": true,
+    "evidence": "checker/qualification-runs.json",
+    "retainedTestOutput": "checker/test-execution.txt"
+  },
+  "defaultWorkload": {
+    "scope": "Labelled synthetic fixture with one item at each of eight levels",
+    "mandatorySemanticVerdicts": 56,
+    "automaticIntegrityChecks": 22,
+    "blockingChecksTotal": 78,
+    "advisoryTargets": 16,
+    "advisoryTargetsAreUnreviewed": true,
+    "pendingRepairOrOwnerPackets": 59,
+    "newPacketsOnUnchangedRepeat": 0,
+    "sameUnansweredBatchRetained": true,
+    "deferredReferenceInstances": 1909,
+    "fullCatalogueCertified": false
+  },
+  "scaleAndUsability": {
+    "syntheticOnly": true,
+    "assessedItems": 302,
+    "mandatorySemanticVerdicts": 2114,
+    "leafEditStaleReviews": 8,
+    "unchangedReviewsPreserved": 2106,
+    "compactSummaryBytes": 2220,
+    "detailedReportBytes": 9226723,
+    "performanceGuarantee": false,
+    "evidence": [
+      "checker/verification/v4-independent-scale-audit.json",
+      "checker/verification/helper-review.json"
+    ]
+  },
+  "loopHistory": {
+    "clarificationRoundsTested": 140,
+    "allAnswersRetained": true,
+    "activeStateStabilizedAfterRetentionLimit": true,
+    "historicArchiveTamperingRefused": true,
+    "totalAuditHistoryMayGrow": true,
+    "evidence": [
+      "checker/tests/test_loop_v4.py",
+      "checker/verification/v4-independent-loop-audit.json",
+      "checker/test-execution.txt"
+    ]
+  },
+  "catalogueCoverage": {
+    "totalFields": 189,
+    "requiredFieldComponents": 587,
+    "independentComponentChecks": 0,
+    "referenceFieldChecks": 1231,
+    "referenceElementChecks": 48,
+    "referenceHierarchyChecks": 28,
+    "dimensions": 20,
+    "mandatoryStageGateDefinitions": 280,
+    "mandatoryGatesPerItemCurrentStage": 7,
+    "stages": 5,
+    "hierarchyLevels": 8,
+    "maximumAdvisorySampleChecksPerHierarchyLevel": 2
+  },
+  "document": {
+    "path": "documentation/Generic Product Management Operating Framework.docx",
+    "pages": 77,
+    "allPagesIndividuallyVisuallyReviewed": true,
+    "materialLayoutFindings": [],
+    "exactStageCriteriaRepresented": 280,
+    "fieldIdsRepresented": 189,
+    "componentLabelsRepresented": 587,
+    "sourceHeadingPunctuationPreserved": true,
+    "readOnlyVerifier": "documentation/verify_guide.py",
+    "negativeVerifierTestsPassed": 11,
+    "evidence": [
+      "documentation/content-coverage-receipt.json",
+      "documentation/document-qualification-runs.json",
+      "documentation/visual-review-start.json",
+      "documentation/visual-review-middle.json",
+      "documentation/visual-review-end.json",
+      "documentation/visual-review-appendix.json"
+    ]
+  },
+  "independentImplementationReview": {
+    "evidence": "checker/independent-engine-review.json",
+    "status": "passed_with_disclosed_advisory_boundary",
+    "assertionsPassed": 72,
+    "assertionsTotal": 72,
+    "helperCLICommandsObserved": 17,
+    "remainingMandatoryFindings": []
+  },
+  "assuranceBoundary": {
+    "offlineMode": "advisory_only",
+    "reviewerIdentityAuthenticated": false,
+    "actualProductCertificationGranted": false,
+    "ownerApprovalGranted": false,
+    "readinessGranted": false,
+    "deliveryClaimed": false,
+    "generatedPositiveVerdictsAreSyntheticOnly": true
+  },
+  "preservedPreviousEditions": [
+    {
+      "archive": "product-management-agent-bundle-v3.zip",
+      "sha256": "3913d782b72650b8d79ac706c98d247af25ba0c0f0e40601ce0461aa3f3733b8"
+    },
+    {
+      "archive": "product-management-agent-bundle.zip",
+      "sha256": "68daf52689f70d89cc9f316364051ac7f7f715b41c1b2135f10a605eaa425db1"
+    }
+  ],
+  "feedbackResolution": "FEEDBACK-RESOLUTION.md"
+}

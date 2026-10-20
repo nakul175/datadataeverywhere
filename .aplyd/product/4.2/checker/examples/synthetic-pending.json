@@ -1,0 +1,1326 @@
+{
+  "schemaVersion": "1.0",
+  "documentId": "SYNTHETIC-PENDING-FIXTURE",
+  "revision": 1,
+  "authorId": "fixture-author",
+  "mode": "synthetic_fixture",
+  "catalogueHash": "a72502ce4dcfe5ec1e8537cd377f93e77ad32b9d998fdad62c252605089759fe",
+  "assessment": {
+    "mode": "profile",
+    "stage": "planning"
+  },
+  "productProfile": {
+    "ai": {
+      "applicability": "unknown",
+      "sourceIds": [],
+      "rationale": ""
+    },
+    "personalData": {
+      "applicability": "unknown",
+      "sourceIds": [],
+      "rationale": ""
+    }
+  },
+  "scope": {
+    "mode": "full_hierarchy",
+    "includedElementTypes": [
+      "vision",
+      "strategy",
+      "roadmap",
+      "release_goal",
+      "epic",
+      "user_story",
+      "acceptance_criterion",
+      "technical_task"
+    ],
+    "contextElementIds": []
+  },
+  "elements": [
+    {
+      "id": "vision-001",
+      "elementType": "vision",
+      "parentId": null,
+      "authorId": "fixture-author",
+      "approvalStatus": "draft",
+      "originality": "proposed",
+      "sourceIds": [
+        "source-001"
+      ],
+      "dependencyIds": [],
+      "fields": {
+        "common.identity": {
+          "value": "Pending: Identity",
+          "applicability": "applicable"
+        },
+        "common.purpose": {
+          "value": "Pending: Purpose",
+          "applicability": "applicable"
+        },
+        "common.traceability": {
+          "value": "Pending: Traceability",
+          "applicability": "applicable"
+        },
+        "common.boundary": {
+          "value": "Pending: Boundary",
+          "applicability": "applicable"
+        },
+        "common.responsibility": {
+          "value": "Pending: Responsibility",
+          "applicability": "applicable"
+        },
+        "common.state": {
+          "value": "Pending: State",
+          "applicability": "applicable"
+        },
+        "common.evidence": {
+          "value": "Pending: Evidence",
+          "applicability": "applicable"
+        },
+        "common.change_history": {
+          "value": "Pending: Change history",
+          "applicability": "applicable"
+        },
+        "vision.title_version": {
+          "value": "Pending: Title/version",
+          "applicability": "applicable"
+        },
+        "vision.owner_authority": {
+          "value": "Pending: Accountable product owner and review authority",
+          "applicability": "applicable"
+        },
+        "vision.research_sources": {
+          "value": "Pending: Source/research links",
+          "applicability": "applicable"
+        },
+        "vision.state_review": {
+          "value": "Pending: State and last review",
+          "applicability": "applicable"
+        },
+        "vision.primary_users_context": {
+          "value": "Pending: Primary users and their operating context",
+          "applicability": "applicable"
+        },
+        "vision.problem_evidence": {
+          "value": "Pending: Problem or unmet need, with supporting evidence",
+          "applicability": "applicable"
+        },
+        "vision.affected_users": {
+          "value": "Pending: Other affected users/operators",
+          "applicability": "applicable"
+        },
+        "vision.vision_statement": {
+          "value": "Pending: Vision statement",
+          "applicability": "applicable"
+        },
+        "vision.value": {
+          "value": "Pending: Value delivered to users and the organisation",
+          "applicability": "applicable"
+        },
+        "vision.principles": {
+          "value": "Pending: Principles that guide product decisions",
+          "applicability": "applicable"
+        },
+        "vision.non_goals": {
+          "value": "Pending: Boundaries and non-goals",
+          "applicability": "applicable"
+        },
+        "vision.success_signals": {
+          "value": "Pending: Long-term success signals",
+          "applicability": "applicable"
+        },
+        "vision.signal_measurement": {
+          "value": "Pending: For each measurable signal",
+          "applicability": "applicable"
+        },
+        "vision.assumptions_research": {
+          "value": "Pending: Assumptions requiring validation and research needed",
+          "applicability": "applicable"
+        },
+        "vision.review_strategy": {
+          "value": "Pending: Review triggers and linked strategy",
+          "applicability": "applicable"
+        },
+        "vision.change_history": {
+          "value": "Pending: Change history",
+          "applicability": "applicable"
+        },
+        "common.source_provenance": {
+          "value": "Pending: Source provenance",
+          "applicability": "applicable"
+        },
+        "common.approval_specification_state": {
+          "value": "Pending: Approval/specification state",
+          "applicability": "applicable"
+        },
+        "common.execution_result": {
+          "value": "Pending: Execution result",
+          "applicability": "applicable"
+        },
+        "common.context_profile": {
+          "value": "Pending: Actual product context and assurance applicability",
+          "applicability": "applicable"
+        },
+        "common.ai_assurance_reference": {
+          "value": "Pending: Pinned AI assurance record and current-stage groups",
+          "applicability": "applicable"
+        },
+        "common.personal_data_controls": {
+          "value": "Pending: Applicable personal-data rights and governance",
+          "applicability": "applicable"
+        },
+        "vision.learning_feedback": {
+          "value": "Pending: Outcome learning and strategy/roadmap feedback",
+          "applicability": "applicable"
+        }
+      }
+    },
+    {
+      "id": "strategy-001",
+      "elementType": "strategy",
+      "parentId": "vision-001",
+      "authorId": "fixture-author",
+      "approvalStatus": "draft",
+      "originality": "proposed",
+      "sourceIds": [
+        "source-001"
+      ],
+      "dependencyIds": [],
+      "fields": {
+        "common.identity": {
+          "value": "Pending: Identity",
+          "applicability": "applicable"
+        },
+        "common.purpose": {
+          "value": "Pending: Purpose",
+          "applicability": "applicable"
+        },
+        "common.traceability": {
+          "value": "Pending: Traceability",
+          "applicability": "applicable"
+        },
+        "common.boundary": {
+          "value": "Pending: Boundary",
+          "applicability": "applicable"
+        },
+        "common.responsibility": {
+          "value": "Pending: Responsibility",
+          "applicability": "applicable"
+        },
+        "common.state": {
+          "value": "Pending: State",
+          "applicability": "applicable"
+        },
+        "common.evidence": {
+          "value": "Pending: Evidence",
+          "applicability": "applicable"
+        },
+        "common.change_history": {
+          "value": "Pending: Change history",
+          "applicability": "applicable"
+        },
+        "strategy.identity_state": {
+          "value": "Pending: Title/version, owner, decision authority and state",
+          "applicability": "applicable"
+        },
+        "strategy.vision_sources": {
+          "value": "Pending: Parent vision and authoritative source links",
+          "applicability": "applicable"
+        },
+        "strategy.priority_problems": {
+          "value": "Pending: User/operational problems to address first",
+          "applicability": "applicable"
+        },
+        "strategy.diagnosis_evidence": {
+          "value": "Pending: Evidence supporting the diagnosis",
+          "applicability": "applicable"
+        },
+        "strategy.constraints": {
+          "value": "Pending: Constraints",
+          "applicability": "applicable"
+        },
+        "strategy.priority_users_use_cases": {
+          "value": "Pending: Priority users and use cases",
+          "applicability": "applicable"
+        },
+        "strategy.choices_tradeoffs": {
+          "value": "Pending: Strategic choices/bets, why each is worth pursuing, and alternatives/trade-offs",
+          "applicability": "applicable"
+        },
+        "strategy.deferral": {
+          "value": "Pending: What is deferred or excluded, with rationale",
+          "applicability": "applicable"
+        },
+        "strategy.reuse_decisions": {
+          "value": "Pending: Existing components to reuse and capabilities requiring separate decisions",
+          "applicability": "applicable"
+        },
+        "strategy.dependencies_assumptions": {
+          "value": "Pending: Dependencies and assumptions",
+          "applicability": "applicable"
+        },
+        "strategy.outcome_measures": {
+          "value": "Pending: Outcome measures",
+          "applicability": "applicable"
+        },
+        "strategy.targets": {
+          "value": "Pending: Agreed targets or explicit pending decision",
+          "applicability": "applicable"
+        },
+        "strategy.validation_plan": {
+          "value": "Pending: Validation/learning plan",
+          "applicability": "applicable"
+        },
+        "strategy.continue_adjust_stop": {
+          "value": "Pending: Conditions to continue, adjust, stop or revisit a choice",
+          "applicability": "applicable"
+        },
+        "strategy.roadmap_release_links": {
+          "value": "Pending: Linked roadmap and release goals",
+          "applicability": "applicable"
+        },
+        "strategy.open_decisions": {
+          "value": "Pending: Open decisions and their owners",
+          "applicability": "applicable"
+        },
+        "strategy.resource_commitments": {
+          "value": "Pending: Resource/capacity commitments only if established",
+          "applicability": "applicable"
+        },
+        "strategy.review_history": {
+          "value": "Pending: Review triggers and change history",
+          "applicability": "applicable"
+        },
+        "common.source_provenance": {
+          "value": "Pending: Source provenance",
+          "applicability": "applicable"
+        },
+        "common.approval_specification_state": {
+          "value": "Pending: Approval/specification state",
+          "applicability": "applicable"
+        },
+        "common.execution_result": {
+          "value": "Pending: Execution result",
+          "applicability": "applicable"
+        },
+        "common.context_profile": {
+          "value": "Pending: Actual product context and assurance applicability",
+          "applicability": "applicable"
+        },
+        "common.ai_assurance_reference": {
+          "value": "Pending: Pinned AI assurance record and current-stage groups",
+          "applicability": "applicable"
+        },
+        "common.personal_data_controls": {
+          "value": "Pending: Applicable personal-data rights and governance",
+          "applicability": "applicable"
+        },
+        "strategy.learning_feedback": {
+          "value": "Pending: Outcome learning and strategy/roadmap feedback",
+          "applicability": "applicable"
+        }
+      }
+    },
+    {
+      "id": "roadmap-001",
+      "elementType": "roadmap",
+      "parentId": "strategy-001",
+      "authorId": "fixture-author",
+      "approvalStatus": "draft",
+      "originality": "proposed",
+      "sourceIds": [
+        "source-001"
+      ],
+      "dependencyIds": [],
+      "fields": {
+        "common.identity": {
+          "value": "Pending: Identity",
+          "applicability": "applicable"
+        },
+        "common.purpose": {
+          "value": "Pending: Purpose",
+          "applicability": "applicable"
+        },
+        "common.traceability": {
+          "value": "Pending: Traceability",
+          "applicability": "applicable"
+        },
+        "common.boundary": {
+          "value": "Pending: Boundary",
+          "applicability": "applicable"
+        },
+        "common.responsibility": {
+          "value": "Pending: Responsibility",
+          "applicability": "applicable"
+        },
+        "common.state": {
+          "value": "Pending: State",
+          "applicability": "applicable"
+        },
+        "common.evidence": {
+          "value": "Pending: Evidence",
+          "applicability": "applicable"
+        },
+        "common.change_history": {
+          "value": "Pending: Change history",
+          "applicability": "applicable"
+        },
+        "roadmap.identity_state": {
+          "value": "Pending: Title/version, owner, planning state and sources",
+          "applicability": "applicable"
+        },
+        "roadmap.alignment_links": {
+          "value": "Pending: Linked vision, strategy and release-goal documents",
+          "applicability": "applicable"
+        },
+        "roadmap.now": {
+          "value": "Pending: Now",
+          "applicability": "applicable"
+        },
+        "roadmap.next": {
+          "value": "Pending: Next",
+          "applicability": "applicable"
+        },
+        "roadmap.later": {
+          "value": "Pending: Later",
+          "applicability": "applicable"
+        },
+        "roadmap.release_allocation": {
+          "value": "Pending: Complete release and horizon allocation with sources",
+          "applicability": "applicable"
+        },
+        "roadmap.shared_epics": {
+          "value": "Pending: Cross-release/shared epic links without duplicated issues",
+          "applicability": "applicable"
+        },
+        "roadmap.predecessor_outputs": {
+          "value": "Pending: Actual required predecessor outputs",
+          "applicability": "applicable"
+        },
+        "roadmap.design_relationships": {
+          "value": "Pending: Design relationships that inform work but do not block every story",
+          "applicability": "applicable"
+        },
+        "roadmap.horizon_gate_evidence": {
+          "value": "Pending: Evidence needed to move scope into the next horizon",
+          "applicability": "applicable"
+        },
+        "roadmap.capacity_uncertainty": {
+          "value": "Pending: Capacity assumptions and uncertainty",
+          "applicability": "applicable"
+        },
+        "roadmap.deferred_scope": {
+          "value": "Pending: Deferred scope and why",
+          "applicability": "applicable"
+        },
+        "roadmap.blockers_decisions": {
+          "value": "Pending: Open decisions/blockers, accountable owner and precise resume condition",
+          "applicability": "applicable"
+        },
+        "roadmap.change_history": {
+          "value": "Pending: Change history",
+          "applicability": "applicable"
+        },
+        "common.source_provenance": {
+          "value": "Pending: Source provenance",
+          "applicability": "applicable"
+        },
+        "common.approval_specification_state": {
+          "value": "Pending: Approval/specification state",
+          "applicability": "applicable"
+        },
+        "common.execution_result": {
+          "value": "Pending: Execution result",
+          "applicability": "applicable"
+        },
+        "roadmap.sequence_horizon_release": {
+          "value": "Pending: Sequence table: horizon/release",
+          "applicability": "applicable"
+        },
+        "roadmap.sequence_outcome": {
+          "value": "Pending: Sequence table: intended outcome",
+          "applicability": "applicable"
+        },
+        "roadmap.sequence_item_links": {
+          "value": "Pending: Sequence table: canonical epic/story links",
+          "applicability": "applicable"
+        },
+        "roadmap.sequence_rationale": {
+          "value": "Pending: Sequence table: sequencing rationale",
+          "applicability": "applicable"
+        },
+        "roadmap.sequence_gate": {
+          "value": "Pending: Sequence table: dependency/decision gate",
+          "applicability": "applicable"
+        },
+        "roadmap.sequence_confidence": {
+          "value": "Pending: Sequence table: confidence",
+          "applicability": "applicable"
+        },
+        "roadmap.sequence_timing": {
+          "value": "Pending: Sequence table: agreed timing, if any",
+          "applicability": "applicable"
+        },
+        "common.context_profile": {
+          "value": "Pending: Actual product context and assurance applicability",
+          "applicability": "applicable"
+        },
+        "common.ai_assurance_reference": {
+          "value": "Pending: Pinned AI assurance record and current-stage groups",
+          "applicability": "applicable"
+        },
+        "common.personal_data_controls": {
+          "value": "Pending: Applicable personal-data rights and governance",
+          "applicability": "applicable"
+        },
+        "roadmap.learning_feedback": {
+          "value": "Pending: Outcome learning and strategy/roadmap feedback",
+          "applicability": "applicable"
+        }
+      }
+    },
+    {
+      "id": "release_goal-001",
+      "elementType": "release_goal",
+      "parentId": "roadmap-001",
+      "authorId": "fixture-author",
+      "approvalStatus": "draft",
+      "originality": "proposed",
+      "sourceIds": [
+        "source-001"
+      ],
+      "dependencyIds": [],
+      "fields": {
+        "common.identity": {
+          "value": "Pending: Identity",
+          "applicability": "applicable"
+        },
+        "common.purpose": {
+          "value": "Pending: Purpose",
+          "applicability": "applicable"
+        },
+        "common.traceability": {
+          "value": "Pending: Traceability",
+          "applicability": "applicable"
+        },
+        "common.boundary": {
+          "value": "Pending: Boundary",
+          "applicability": "applicable"
+        },
+        "common.responsibility": {
+          "value": "Pending: Responsibility",
+          "applicability": "applicable"
+        },
+        "common.state": {
+          "value": "Pending: State",
+          "applicability": "applicable"
+        },
+        "common.evidence": {
+          "value": "Pending: Evidence",
+          "applicability": "applicable"
+        },
+        "common.change_history": {
+          "value": "Pending: Change history",
+          "applicability": "applicable"
+        },
+        "release_goal.identity_milestone": {
+          "value": "Pending: Release ID/name, version, milestone link, owner and state",
+          "applicability": "applicable"
+        },
+        "release_goal.alignment_sources": {
+          "value": "Pending: Parent roadmap/strategy and authoritative sources",
+          "applicability": "applicable"
+        },
+        "release_goal.users_journey": {
+          "value": "Pending: Target users, operating context and end-to-end journey",
+          "applicability": "applicable"
+        },
+        "release_goal.usable_outcome": {
+          "value": "Pending: Usable outcome this release must deliver",
+          "applicability": "applicable"
+        },
+        "release_goal.measures_targets": {
+          "value": "Pending: Measures and agreed targets, with baseline/measurement plan",
+          "applicability": "applicable"
+        },
+        "release_goal.included_items": {
+          "value": "Pending: Included canonical stories and supporting items",
+          "applicability": "applicable"
+        },
+        "release_goal.requirements_nfrs": {
+          "value": "Pending: Must-have source requirements and applicable NFRs",
+          "applicability": "applicable"
+        },
+        "release_goal.excluded_deferred": {
+          "value": "Pending: Excluded/deferred scope and rationale",
+          "applicability": "applicable"
+        },
+        "release_goal.dependencies_decisions": {
+          "value": "Pending: Dependencies, readiness assumptions and open decisions",
+          "applicability": "applicable"
+        },
+        "release_goal.entry_gate": {
+          "value": "Pending: Entry",
+          "applicability": "applicable"
+        },
+        "release_goal.exit_gate": {
+          "value": "Pending: Exit",
+          "applicability": "applicable"
+        },
+        "release_goal.approval_authorities": {
+          "value": "Pending: Applicable product, privacy, security, domain and human approval authorities",
+          "applicability": "applicable"
+        },
+        "release_goal.rollout_recovery": {
+          "value": "Pending: Rollout and recovery readiness through the authorized delivery route",
+          "applicability": "applicable"
+        },
+        "release_goal.qualified_revision_review": {
+          "value": "Pending: Final deliverable revision and change-review reference",
+          "applicability": "applicable"
+        },
+        "release_goal.final_tests_review": {
+          "value": "Pending: Final-revision qualification results and independent review",
+          "applicability": "applicable"
+        },
+        "release_goal.published_revision": {
+          "value": "Pending: Integrated or published revision evidence",
+          "applicability": "applicable"
+        },
+        "release_goal.available_revision": {
+          "value": "Pending: Observed operationally available revision, context and observation time",
+          "applicability": "applicable"
+        },
+        "release_goal.operational_verification": {
+          "value": "Pending: Operational journey verification, approved evaluation context and result",
+          "applicability": "applicable"
+        },
+        "release_goal.unmet_gates": {
+          "value": "Pending: Unmet gates, precise blockers and resume condition",
+          "applicability": "applicable"
+        },
+        "release_goal.change_history": {
+          "value": "Pending: Change history",
+          "applicability": "applicable"
+        },
+        "common.source_provenance": {
+          "value": "Pending: Source provenance",
+          "applicability": "applicable"
+        },
+        "common.approval_specification_state": {
+          "value": "Pending: Approval/specification state",
+          "applicability": "applicable"
+        },
+        "common.execution_result": {
+          "value": "Pending: Execution result",
+          "applicability": "applicable"
+        },
+        "common.context_profile": {
+          "value": "Pending: Actual product context and assurance applicability",
+          "applicability": "applicable"
+        },
+        "common.ai_assurance_reference": {
+          "value": "Pending: Pinned AI assurance record and current-stage groups",
+          "applicability": "applicable"
+        },
+        "common.personal_data_controls": {
+          "value": "Pending: Applicable personal-data rights and governance",
+          "applicability": "applicable"
+        },
+        "release_goal.post_release_review": {
+          "value": "Pending: Post-release outcome review and feedback",
+          "applicability": "applicable"
+        },
+        "release_goal.ai_release_controls": {
+          "value": "Pending: AI release and monitoring controls",
+          "applicability": "applicable"
+        }
+      }
+    },
+    {
+      "id": "epic-001",
+      "elementType": "epic",
+      "parentId": "release_goal-001",
+      "authorId": "fixture-author",
+      "approvalStatus": "draft",
+      "originality": "proposed",
+      "sourceIds": [
+        "source-001"
+      ],
+      "dependencyIds": [],
+      "fields": {
+        "common.identity": {
+          "value": "Pending: Identity",
+          "applicability": "applicable"
+        },
+        "common.purpose": {
+          "value": "Pending: Purpose",
+          "applicability": "applicable"
+        },
+        "common.traceability": {
+          "value": "Pending: Traceability",
+          "applicability": "applicable"
+        },
+        "common.boundary": {
+          "value": "Pending: Boundary",
+          "applicability": "applicable"
+        },
+        "common.responsibility": {
+          "value": "Pending: Responsibility",
+          "applicability": "applicable"
+        },
+        "common.state": {
+          "value": "Pending: State",
+          "applicability": "applicable"
+        },
+        "common.evidence": {
+          "value": "Pending: Evidence",
+          "applicability": "applicable"
+        },
+        "common.change_history": {
+          "value": "Pending: Change history",
+          "applicability": "applicable"
+        },
+        "epic.identity_workpackage": {
+          "value": "Pending: Epic ID/title, owner, state and source work package",
+          "applicability": "applicable"
+        },
+        "epic.alignment_requirements": {
+          "value": "Pending: Parent strategy/release goals and requirement references",
+          "applicability": "applicable"
+        },
+        "epic.problem": {
+          "value": "Pending: User/operational problem",
+          "applicability": "applicable"
+        },
+        "epic.capability_outcome": {
+          "value": "Pending: Coherent capability and intended outcome",
+          "applicability": "applicable"
+        },
+        "epic.included_scope": {
+          "value": "Pending: Included scope",
+          "applicability": "applicable"
+        },
+        "epic.excluded_handoffs": {
+          "value": "Pending: Excluded scope and hand-offs",
+          "applicability": "applicable"
+        },
+        "epic.shared_contracts": {
+          "value": "Pending: Shared experience, data, interface and quality contracts or decisions",
+          "applicability": "applicable"
+        },
+        "epic.children": {
+          "value": "Pending: Linked functional stories and supporting items",
+          "applicability": "applicable"
+        },
+        "epic.release_allocation": {
+          "value": "Pending: Release allocation of those items",
+          "applicability": "applicable"
+        },
+        "epic.primary_parent": {
+          "value": "Pending: Each item has one primary epic parent; cross-epic contributors are related links",
+          "applicability": "applicable"
+        },
+        "epic.dependencies": {
+          "value": "Pending: Design dependencies versus genuine completion prerequisites",
+          "applicability": "applicable"
+        },
+        "epic.risks_decisions": {
+          "value": "Pending: Risks/open decisions, owners and resume conditions",
+          "applicability": "applicable"
+        },
+        "epic.completion_boundary": {
+          "value": "Pending: Epic-level success/completion boundary",
+          "applicability": "applicable"
+        },
+        "epic.child_evidence_gaps": {
+          "value": "Pending: Child acceptance evidence and uncovered requirements",
+          "applicability": "applicable"
+        },
+        "epic.accepted_rollup": {
+          "value": "Pending: Accepted items / in-scope items, with denominator and scope version",
+          "applicability": "applicable"
+        },
+        "epic.gaps_history": {
+          "value": "Pending: Remaining gaps and change history",
+          "applicability": "applicable"
+        },
+        "common.source_provenance": {
+          "value": "Pending: Source provenance",
+          "applicability": "applicable"
+        },
+        "common.approval_specification_state": {
+          "value": "Pending: Approval/specification state",
+          "applicability": "applicable"
+        },
+        "common.execution_result": {
+          "value": "Pending: Execution result",
+          "applicability": "applicable"
+        },
+        "common.context_profile": {
+          "value": "Pending: Actual product context and assurance applicability",
+          "applicability": "applicable"
+        },
+        "common.ai_assurance_reference": {
+          "value": "Pending: Pinned AI assurance record and current-stage groups",
+          "applicability": "applicable"
+        },
+        "common.personal_data_controls": {
+          "value": "Pending: Applicable personal-data rights and governance",
+          "applicability": "applicable"
+        },
+        "epic.assumption_test": {
+          "value": "Pending: Riskiest assumption, discovery test and decision",
+          "applicability": "applicable"
+        },
+        "epic.priority_rationale": {
+          "value": "Pending: Priority rationale and trade-offs",
+          "applicability": "applicable"
+        },
+        "epic.size_estimate": {
+          "value": "Pending: Size range, unit and uncertainty",
+          "applicability": "applicable"
+        },
+        "epic.outcome_learning": {
+          "value": "Pending: Capability outcome learning",
+          "applicability": "applicable"
+        },
+        "epic.ai_validation_contract": {
+          "value": "Pending: AI discovery and capability validation",
+          "applicability": "applicable"
+        }
+      }
+    },
+    {
+      "id": "user_story-001",
+      "elementType": "user_story",
+      "parentId": "epic-001",
+      "authorId": "fixture-author",
+      "approvalStatus": "draft",
+      "originality": "proposed",
+      "sourceIds": [
+        "source-001"
+      ],
+      "dependencyIds": [],
+      "fields": {
+        "common.identity": {
+          "value": "Pending: Identity",
+          "applicability": "applicable"
+        },
+        "common.purpose": {
+          "value": "Pending: Purpose",
+          "applicability": "applicable"
+        },
+        "common.traceability": {
+          "value": "Pending: Traceability",
+          "applicability": "applicable"
+        },
+        "common.boundary": {
+          "value": "Pending: Boundary",
+          "applicability": "applicable"
+        },
+        "common.responsibility": {
+          "value": "Pending: Responsibility",
+          "applicability": "applicable"
+        },
+        "common.state": {
+          "value": "Pending: State",
+          "applicability": "applicable"
+        },
+        "common.evidence": {
+          "value": "Pending: Evidence",
+          "applicability": "applicable"
+        },
+        "common.change_history": {
+          "value": "Pending: Change history",
+          "applicability": "applicable"
+        },
+        "user_story.identity_parent": {
+          "value": "Pending: Canonical story ID/title, primary epic, release and owner",
+          "applicability": "applicable"
+        },
+        "user_story.source_clauses": {
+          "value": "Pending: Source requirement IDs, original clauses/test cases and decision links",
+          "applicability": "applicable"
+        },
+        "user_story.specification_state": {
+          "value": "Pending: Specification version and approval/readiness state",
+          "applicability": "applicable"
+        },
+        "user_story.context_trigger": {
+          "value": "Pending: Context, trigger and preconditions",
+          "applicability": "applicable"
+        },
+        "user_story.in_scope": {
+          "value": "Pending: In scope",
+          "applicability": "applicable"
+        },
+        "user_story.out_of_scope": {
+          "value": "Pending: Out of scope and existing behaviour to preserve",
+          "applicability": "applicable"
+        },
+        "user_story.main_journey": {
+          "value": "Pending: Main user journey and observable results",
+          "applicability": "applicable"
+        },
+        "user_story.adverse_behaviour": {
+          "value": "Pending: Applicable waiting, absence, refusal, failure and recovery behaviour",
+          "applicability": "applicable"
+        },
+        "user_story.interaction_accessibility": {
+          "value": "Pending: Applicable interaction, device and accessibility requirements",
+          "applicability": "applicable"
+        },
+        "user_story.experience_reference": {
+          "value": "Pending: Experience references or explicit interaction or service description",
+          "applicability": "applicable"
+        },
+        "user_story.inspected_components": {
+          "value": "Pending: Inspected existing components, processes and contracts proposed for reuse",
+          "applicability": "applicable"
+        },
+        "user_story.access_accountability": {
+          "value": "Pending: Applicable authoritative identity, authorization scope and accountability path",
+          "applicability": "applicable"
+        },
+        "user_story.operation_contracts": {
+          "value": "Pending: Inputs, operations, output and error contracts, and side effects",
+          "applicability": "applicable"
+        },
+        "user_story.permissions_refusal": {
+          "value": "Pending: Applicable permission or policy checks, refusal behaviour and prohibited effects",
+          "applicability": "applicable"
+        },
+        "user_story.information_continuity_coordination": {
+          "value": "Pending: Applicable retention, disconnected operation and concurrent-use rules",
+          "applicability": "applicable"
+        },
+        "user_story.nfr_thresholds": {
+          "value": "Pending: Applicable quality attributes, thresholds and measurement conditions",
+          "applicability": "applicable"
+        },
+        "user_story.criteria": {
+          "value": "Pending: Identified acceptance criteria using template 7",
+          "applicability": "applicable"
+        },
+        "user_story.scenario_coverage": {
+          "value": "Pending: Positive, refusal, error, authorization and recovery scenarios as applicable",
+          "applicability": "applicable"
+        },
+        "user_story.evaluation_mapping": {
+          "value": "Pending: Approved test or evaluation context and verification mapping",
+          "applicability": "applicable"
+        },
+        "user_story.source_supplement_separation": {
+          "value": "Pending: Source criteria and proposed supplements distinguished",
+          "applicability": "applicable"
+        },
+        "user_story.ready_prerequisites": {
+          "value": "Pending: Required predecessor outputs/decisions and Ready conditions",
+          "applicability": "applicable"
+        },
+        "user_story.task_links": {
+          "value": "Pending: Linked technical/verification tasks using template 8",
+          "applicability": "applicable"
+        },
+        "user_story.frozen_change": {
+          "value": "Pending: Frozen revision and change process when qualified",
+          "applicability": "applicable"
+        },
+        "user_story.done_reviews": {
+          "value": "Pending: Definition of Done and required independent review and governance checks",
+          "applicability": "applicable"
+        },
+        "user_story.delivery_evidence": {
+          "value": "Pending: Qualified revision, actual evaluation outputs, release transition, observed availability and user verification",
+          "applicability": "applicable"
+        },
+        "user_story.criterion_rollup_blockers": {
+          "value": "Pending: Criteria passed / declared criteria total, identified by criterion IDs and specification version (not task or assertion counts); blockers and exact resume condition",
+          "applicability": "applicable"
+        },
+        "user_story.change_history": {
+          "value": "Pending: Change history",
+          "applicability": "applicable"
+        },
+        "common.source_provenance": {
+          "value": "Pending: Source provenance",
+          "applicability": "applicable"
+        },
+        "common.approval_specification_state": {
+          "value": "Pending: Approval/specification state",
+          "applicability": "applicable"
+        },
+        "common.execution_result": {
+          "value": "Pending: Execution result",
+          "applicability": "applicable"
+        },
+        "user_story.story_statement": {
+          "value": "Pending: User-need statement",
+          "applicability": "applicable"
+        },
+        "user_story.supporting_item_variant": {
+          "value": "Pending: Supporting-item and investigation variant",
+          "applicability": "applicable"
+        },
+        "common.context_profile": {
+          "value": "Pending: Actual product context and assurance applicability",
+          "applicability": "applicable"
+        },
+        "common.ai_assurance_reference": {
+          "value": "Pending: Pinned AI assurance record and current-stage groups",
+          "applicability": "applicable"
+        },
+        "common.personal_data_controls": {
+          "value": "Pending: Applicable personal-data rights and governance",
+          "applicability": "applicable"
+        },
+        "user_story.priority_rationale": {
+          "value": "Pending: Priority rationale and trade-offs",
+          "applicability": "applicable"
+        },
+        "user_story.size_estimate": {
+          "value": "Pending: Size range, unit and uncertainty",
+          "applicability": "applicable"
+        },
+        "user_story.team_ready_reference": {
+          "value": "Pending: Canonical team Definition of Ready reference and item additions",
+          "applicability": "applicable"
+        },
+        "user_story.team_done_reference": {
+          "value": "Pending: Canonical team Definition of Done reference and item additions",
+          "applicability": "applicable"
+        },
+        "user_story.outcome_learning": {
+          "value": "Pending: Story outcome feedback",
+          "applicability": "applicable"
+        },
+        "user_story.ai_acceptance_contract": {
+          "value": "Pending: AI acceptance and fallback contract",
+          "applicability": "applicable"
+        }
+      }
+    },
+    {
+      "id": "acceptance_criterion-001",
+      "elementType": "acceptance_criterion",
+      "parentId": "user_story-001",
+      "authorId": "fixture-author",
+      "approvalStatus": "draft",
+      "originality": "proposed",
+      "sourceIds": [
+        "source-001"
+      ],
+      "dependencyIds": [],
+      "fields": {
+        "common.identity": {
+          "value": "Pending: Identity",
+          "applicability": "applicable"
+        },
+        "common.purpose": {
+          "value": "Pending: Purpose",
+          "applicability": "applicable"
+        },
+        "common.traceability": {
+          "value": "Pending: Traceability",
+          "applicability": "applicable"
+        },
+        "common.boundary": {
+          "value": "Pending: Boundary",
+          "applicability": "applicable"
+        },
+        "common.responsibility": {
+          "value": "Pending: Responsibility",
+          "applicability": "applicable"
+        },
+        "common.state": {
+          "value": "Pending: State",
+          "applicability": "applicable"
+        },
+        "common.evidence": {
+          "value": "Pending: Evidence",
+          "applicability": "applicable"
+        },
+        "common.change_history": {
+          "value": "Pending: Change history",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.identity_owner": {
+          "value": "Pending: Criterion ID and owning item",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.source_provenance": {
+          "value": "Pending: Source reference/provenance",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.approval_state": {
+          "value": "Pending: Approval/specification state",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.scenario_kind": {
+          "value": "Pending: Scenario kind",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.given": {
+          "value": "Pending: Given",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.when": {
+          "value": "Pending: When",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.then": {
+          "value": "Pending: Then",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.prohibited_effects": {
+          "value": "Pending: Prohibited effects",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.measurement": {
+          "value": "Pending: Measurement conditions",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.evaluation_method": {
+          "value": "Pending: Approved evaluation context and verification method identifier",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.expected_evidence": {
+          "value": "Pending: Expected evidence",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.actual_execution": {
+          "value": "Pending: Actual execution",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.observed_evidence": {
+          "value": "Pending: Observed evidence",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.gap_resume": {
+          "value": "Pending: Unresolved gap or blocker and resume condition",
+          "applicability": "applicable"
+        },
+        "common.source_provenance": {
+          "value": "Pending: Source provenance",
+          "applicability": "applicable"
+        },
+        "common.approval_specification_state": {
+          "value": "Pending: Approval/specification state",
+          "applicability": "applicable"
+        },
+        "common.execution_result": {
+          "value": "Pending: Execution result",
+          "applicability": "applicable"
+        },
+        "common.context_profile": {
+          "value": "Pending: Actual product context and assurance applicability",
+          "applicability": "applicable"
+        },
+        "common.ai_assurance_reference": {
+          "value": "Pending: Pinned AI assurance record and current-stage groups",
+          "applicability": "applicable"
+        },
+        "common.personal_data_controls": {
+          "value": "Pending: Applicable personal-data rights and governance",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.ai_evaluation_measurement": {
+          "value": "Pending: AI dataset, metric and threshold measurement",
+          "applicability": "applicable"
+        }
+      }
+    },
+    {
+      "id": "technical_task-001",
+      "elementType": "technical_task",
+      "parentId": "user_story-001",
+      "authorId": "fixture-author",
+      "approvalStatus": "draft",
+      "originality": "proposed",
+      "sourceIds": [
+        "source-001"
+      ],
+      "dependencyIds": [],
+      "fields": {
+        "common.identity": {
+          "value": "Pending: Identity",
+          "applicability": "applicable"
+        },
+        "common.purpose": {
+          "value": "Pending: Purpose",
+          "applicability": "applicable"
+        },
+        "common.traceability": {
+          "value": "Pending: Traceability",
+          "applicability": "applicable"
+        },
+        "common.boundary": {
+          "value": "Pending: Boundary",
+          "applicability": "applicable"
+        },
+        "common.responsibility": {
+          "value": "Pending: Responsibility",
+          "applicability": "applicable"
+        },
+        "common.state": {
+          "value": "Pending: State",
+          "applicability": "applicable"
+        },
+        "common.evidence": {
+          "value": "Pending: Evidence",
+          "applicability": "applicable"
+        },
+        "common.change_history": {
+          "value": "Pending: Change history",
+          "applicability": "applicable"
+        },
+        "technical_task.identity_type": {
+          "value": "Pending: Task ID/title, task type, actual assignee/owner, state",
+          "applicability": "applicable"
+        },
+        "technical_task.parent_owner": {
+          "value": "Pending: Primary parent",
+          "applicability": "applicable"
+        },
+        "technical_task.source_criteria": {
+          "value": "Pending: Source requirement and acceptance-criterion IDs",
+          "applicability": "applicable"
+        },
+        "technical_task.bounded_result": {
+          "value": "Pending: Bounded technical or verification result and why it is needed",
+          "applicability": "applicable"
+        },
+        "technical_task.components_contracts": {
+          "value": "Pending: Relevant components or processes, exact contracts and specification revision",
+          "applicability": "applicable"
+        },
+        "technical_task.data_environment_access": {
+          "value": "Pending: Required data/fixtures, approved environment and access",
+          "applicability": "applicable"
+        },
+        "technical_task.predecessors": {
+          "value": "Pending: Concrete predecessor output/decision links",
+          "applicability": "applicable"
+        },
+        "technical_task.native_blockers": {
+          "value": "Pending: Native completion blockers only where an output is genuinely required",
+          "applicability": "applicable"
+        },
+        "technical_task.affected_components": {
+          "value": "Pending: Components, artifacts, procedures or interfaces affected",
+          "applicability": "applicable"
+        },
+        "technical_task.work_steps": {
+          "value": "Pending: Work steps sufficient for execution",
+          "applicability": "applicable"
+        },
+        "technical_task.impacts": {
+          "value": "Pending: Applicable experience, information, interface, authorization and quality impacts",
+          "applicability": "applicable"
+        },
+        "technical_task.exclusions_preservation": {
+          "value": "Pending: Out of scope and behaviours to preserve",
+          "applicability": "applicable"
+        },
+        "technical_task.spike_plan": {
+          "value": "Pending: For a spike",
+          "applicability": "applicable"
+        },
+        "technical_task.deliverables": {
+          "value": "Pending: Reviewable deliverables",
+          "applicability": "applicable"
+        },
+        "technical_task.verification_cases": {
+          "value": "Pending: Verification cases and expected results mapped to parent criteria",
+          "applicability": "applicable"
+        },
+        "technical_task.qualification_review": {
+          "value": "Pending: Required qualification checks and independent review",
+          "applicability": "applicable"
+        },
+        "technical_task.done": {
+          "value": "Pending: Definition of Done",
+          "applicability": "applicable"
+        },
+        "technical_task.actual_outputs": {
+          "value": "Pending: Actual output evidence, final revision, review reference and evaluation results",
+          "applicability": "applicable"
+        },
+        "technical_task.release_verification": {
+          "value": "Pending: Integration, availability and operational-verification evidence within task scope",
+          "applicability": "applicable"
+        },
+        "technical_task.blocker_owner_resume": {
+          "value": "Pending: Blocker, owner and exact resume condition",
+          "applicability": "applicable"
+        },
+        "technical_task.remaining_history": {
+          "value": "Pending: Remaining work and change history",
+          "applicability": "applicable"
+        },
+        "common.source_provenance": {
+          "value": "Pending: Source provenance",
+          "applicability": "applicable"
+        },
+        "common.approval_specification_state": {
+          "value": "Pending: Approval/specification state",
+          "applicability": "applicable"
+        },
+        "common.execution_result": {
+          "value": "Pending: Execution result",
+          "applicability": "applicable"
+        },
+        "common.context_profile": {
+          "value": "Pending: Actual product context and assurance applicability",
+          "applicability": "applicable"
+        },
+        "common.ai_assurance_reference": {
+          "value": "Pending: Pinned AI assurance record and current-stage groups",
+          "applicability": "applicable"
+        },
+        "common.personal_data_controls": {
+          "value": "Pending: Applicable personal-data rights and governance",
+          "applicability": "applicable"
+        },
+        "technical_task.team_ready_reference": {
+          "value": "Pending: Canonical team Definition of Ready reference and item additions",
+          "applicability": "applicable"
+        },
+        "technical_task.team_done_reference": {
+          "value": "Pending: Canonical team Definition of Done reference and item additions",
+          "applicability": "applicable"
+        },
+        "technical_task.ai_artifact_evidence": {
+          "value": "Pending: AI artifact, evaluation and version evidence",
+          "applicability": "applicable"
+        }
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "source-001",
+      "text": "Pending: retain authoritative source text without editing it.",
+      "version": "Pending",
+      "originality": "proposed_placeholder",
+      "approvalStatus": "draft",
+      "protected": false
+    }
+  ],
+  "sourcePins": {
+    "source-001": "1164bc257442837ac670dbfc0f24d710d2c3c7dd86fb993b05de1bceed5e580b"
+  },
+  "authorities": [],
+  "evidence": [],
+  "reviews": [],
+  "approvalRecords": [],
+  "history": [],
+  "readinessState": {
+    "status": "not_assessed",
+    "reason": "Documentation quality does not authorize implementation or launch."
+  },
+  "deliveryState": {
+    "status": "not_assessed",
+    "reason": "No implementation, launch, operational availability or acceptance inferred."
+  }
+}

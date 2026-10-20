@@ -1,0 +1,14 @@
+{
+  "sourceVersion": null,
+  "branch": null,
+  "pullRequestUrl": null,
+  "activeStoryId": null,
+  "owningTaskIds": [],
+  "completedSteps": [],
+  "actualRunIds": [],
+  "evidenceLinks": [],
+  "staleEvidence": [],
+  "heldGates": [],
+  "cleanupAndRestoration": null,
+  "nextAuthorizedAction": null
+}

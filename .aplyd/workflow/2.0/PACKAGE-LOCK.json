@@ -1,0 +1,39 @@
+{
+  "workflowVersion": "2.0",
+  "companions": [
+    {
+      "archive": "product-management-agent-bundle-v4.2.zip",
+      "version": "4.2",
+      "sha256": "896507ea2140a05fac0b609b8f3f625538ca4c5d28222730444e33f4eacca43d",
+      "root": "product-management-agent-bundle-v4.2",
+      "manifest": "audit/BUNDLE-MANIFEST.json",
+      "manifestSha256": "a25027a77d6dcf3db6f982047f32dccb8c6efb6eeb63329b38f2adc64fd2a179",
+      "manifestFilesVerified": 158,
+      "nativeCompatibility": "not_executed",
+      "authority": "requires_project_adoption"
+    },
+    {
+      "archive": "APLYD-Software-Testing-QA-v1.3.zip",
+      "version": "1.3",
+      "sha256": "26c64346226f660f6a648e5cebcaf2ee893750e1fb8fe50b13821aae631b5e5a",
+      "root": "aplyd-testing-qa-v1.3",
+      "manifest": "MANIFEST.json",
+      "manifestSha256": "8e0c700a96c3b9a429f7a7dff43e9a22a84e32f1ec3fa33ff4dd086f4a3bfc37",
+      "manifestFilesVerified": 85,
+      "nativeCompatibility": "not_executed",
+      "authority": "requires_project_adoption"
+    },
+    {
+      "archive": "APLYD-Coding-Engineering-Package-v2.1.0.zip",
+      "version": "2.1.0",
+      "sha256": "0f0d865e387d39310f5f945066e9a6d4c91388d21cc8ae96281c6ebd8b8a1f38",
+      "root": "APLYD-Coding-Engineering-Package-v2.1.0",
+      "manifest": "PACKAGE_MANIFEST.json",
+      "manifestSha256": "7a9fc30ad1bebf699028d51d9c6e59c55fcbadc89d89cce13c811c9e41fd911a",
+      "manifestFilesVerified": 106,
+      "nativeCompatibility": "not_executed",
+      "authority": "requires_project_adoption"
+    }
+  ],
+  "externallyAuthenticated": false
+}

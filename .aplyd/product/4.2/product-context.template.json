@@ -1,0 +1,92 @@
+{
+  "templateVersion": "3.0-generic",
+  "purpose": "Context intake only; not executable checker input, a reviewer registry or an approval record",
+  "product": {
+    "name": null,
+    "productOrServiceType": null,
+    "problemAndDesiredOutcomes": null,
+    "primaryUsers": [],
+    "affectedOperatorsAndStakeholders": [],
+    "operatingEnvironment": null,
+    "lifecycleStage": "discovery"
+  },
+  "assessment": {
+    "targetGate": "documentation_quality",
+    "stage": "discovery",
+    "scope": null,
+    "contextualAncestors": [],
+    "canonicalWorkspace": null,
+    "existingRecordReferences": [],
+    "samplingPlanReference": null
+  },
+  "productProfile": {
+    "ai": {
+      "applicability": "unknown",
+      "sourceIds": [],
+      "rationale": null,
+      "resolutionPlan": null
+    },
+    "personalData": {
+      "applicability": "unknown",
+      "sourceIds": [],
+      "rationale": null,
+      "resolutionPlan": null
+    },
+    "jurisdictions": [],
+    "domainAndRiskClassification": null,
+    "classificationAuthoritySourceIds": []
+  },
+  "authoritativeSources": [],
+  "protectedOrFrozenRequirements": [],
+  "decisionOwnersAndAuthorityEvidence": [],
+  "applicableDomainAccessibilityPrivacySecurityContractualAndRegulatoryObligations": [],
+  "existingSystemsAndIntegrationContracts": [],
+  "resourcesConstraintsAndDependencies": [],
+  "teamReadinessChecklist": {
+    "id": null,
+    "version": null,
+    "contentHash": null,
+    "sourceIds": [],
+    "criteria": [],
+    "linkedStoryAndTaskReferences": []
+  },
+  "teamCompletionChecklist": {
+    "id": null,
+    "version": null,
+    "contentHash": null,
+    "sourceIds": [],
+    "criteria": [],
+    "linkedStoryAndTaskReferences": []
+  },
+  "productApprovalReadinessAcceptanceDeliveryAndLearningGates": [],
+  "reviewAuthority": {
+    "mode": "offline_advisory",
+    "externalRegistryOrServiceReference": null,
+    "externalTrustAnchorEvidence": [],
+    "reviewerRoleAndIndependenceEvidence": []
+  },
+  "discoveryAndPriority": {
+    "riskiestAssumptionEvidence": [],
+    "assumptionTestReferences": [],
+    "priorityRationaleMethodAndEvidence": [],
+    "sizeEstimateUnitRangeMethodAssumptionsAndConfidence": []
+  },
+  "aiAssuranceRecordIfApplicable": {
+    "recordReference": null,
+    "id": null,
+    "version": null,
+    "contentHash": null,
+    "stage": null,
+    "sevenGroupEvidenceReferences": [],
+    "catalogueFieldMapping": []
+  },
+  "postReleaseLearning": {
+    "reviewWindowAndOwner": null,
+    "measurementPermissionsAndSources": [],
+    "targetBaselineActualComparisons": [],
+    "strategyAndRoadmapActionReferences": []
+  },
+  "legacyFieldMappingEvidence": [],
+  "knownUnknownsAndSourceGaps": [],
+  "decisionsAndEvidenceNeeded": []
+}

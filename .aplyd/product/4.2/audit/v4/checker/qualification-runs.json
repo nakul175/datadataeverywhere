@@ -1,0 +1,1266 @@
+{
+  "schemaVersion": "1.0",
+  "edition": "4.0-generic",
+  "createdAt": "2026-10-10T16:10:38.467398+00:00",
+  "catalogueVersion": "3.0-generic",
+  "catalogueCanonicalHash": "a72502ce4dcfe5ec1e8537cd377f93e77ad32b9d998fdad62c252605089759fe",
+  "catalogueFileSha256": "cec6bc14f5976dd7e1a48ba9f224e18b1258abb08ed0479a7f080b2dc6245456",
+  "pins": {
+    "quality_checker.py": "ded9080be9a6d5be6a6bb837d217290f37dc1e22123c57b2279dcb5d5f97f94a",
+    "quality_loop.py": "ad589c27c5794d7b7854d4ab4932060940ccc5ec8bf751e1c539344a2faa62c7",
+    "quality_tools.py": "4b1d4db8e8041e0773b39776bde84983381d6501d2173be75ef032c09a46cceb",
+    "render_rulebooks.py": "8a4e50b680c6c48fe9c7e23945115f8ae4b273e9de7b3be9f2bc794ff2447699",
+    "tests/test_checker.py": "667913da5952bcf1aad5d9628636c7b16344399756954a2ae045b1cb5dd6555a",
+    "tests/test_core_v4.py": "7fbf04249106e3ebf0e2746ab8cf1a0e210b70867ffbbbac869e0aed9d45f009",
+    "tests/test_loop_v4.py": "c1655cbcc4f9bfc7fbc5817f8fb8bcd2fa6997a9eb45b88a31064c51c27a2736",
+    "tests/test_tools_v4.py": "ad1b6f5ae12098a8f7aa42fec783224b01154fd2cb076db2d7a103a66e928a4d"
+  },
+  "testCount": 95,
+  "testFailures": 0,
+  "runs": [
+    {
+      "label": "generate_fresh_fixtures",
+      "arguments": [
+        "python3",
+        "-B",
+        "examples/generate_fixtures.py"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "expectedExitMatched": true,
+      "stdoutSha256": "c18d092455696ee2f2d98e0a5e961891643857245f547d8b7126257a6c5e1ce8",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "outputExcerpt": "Generated explicitly SYNTHETIC stage, pending, stale and exhaustive mechanics fixtures. Stage fixtures have 56 mandatory generated test verdicts, not real semantic assessment. No actual product record was certified.\n"
+    },
+    {
+      "label": "behavioral_tests",
+      "arguments": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "expectedExitMatched": true,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "c3274f16ccc38c2adbe9746c702fb70892d51291c4baaf5c3d1ff94298911b18",
+      "testCount": 95,
+      "testFailures": 0
+    },
+    {
+      "label": "render_local_rulebooks",
+      "arguments": [
+        "python3",
+        "-B",
+        "render_rulebooks.py"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "expectedExitMatched": true,
+      "stdoutSha256": "54295846d36fcba45c7e15124cdb8590e343428ed8cdb442fffa2f9bf0cf701d",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": {
+        "generated": true
+      }
+    },
+    {
+      "label": "discovery_profile",
+      "arguments": [
+        "python3",
+        "-B",
+        "quality_checker.py",
+        "check",
+        "--document",
+        "examples/synthetic-discovery-pass.json",
+        "--allow-synthetic",
+        "--report",
+        "examples/discovery-report.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "expectedExitMatched": true,
+      "stdoutSha256": "36191a1e4b9da70294b82ea2b35f73fa9749429bcaec5d0160d9783b71630ac6",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": {
+        "qualityState": {
+          "status": "synthetic_checks_satisfied",
+          "passed": 78,
+          "applicable": 78,
+          "exemptions": 0,
+          "counts": {
+            "passed": 78,
+            "not_applicable": 0,
+            "missing": 0,
+            "failed": 0,
+            "stale": 0,
+            "invalid": 0
+          },
+          "score": null,
+          "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+          "certificationGranted": false
+        },
+        "readinessState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "Documentation quality does not authorize implementation or launch."
+          },
+          "assessedByChecker": false,
+          "authorizationGranted": false
+        },
+        "deliveryState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "No implementation, launch, operational availability or acceptance inferred."
+          },
+          "assessedByChecker": false,
+          "deliveryObservedByChecker": false
+        },
+        "assurance": "SYNTHETIC FIXTURE ONLY — not product approval or real delivery.",
+        "report": "examples/discovery-report.json"
+      },
+      "retainedReport": "examples/discovery-report.json",
+      "retainedReportSha256": "852a739195186e41adef30c62c49bdf202450f92b513826f901badeb63a57ef5",
+      "qualityState": {
+        "status": "synthetic_checks_satisfied",
+        "passed": 78,
+        "applicable": 78,
+        "exemptions": 0,
+        "counts": {
+          "passed": 78,
+          "not_applicable": 0,
+          "missing": 0,
+          "failed": 0,
+          "stale": 0,
+          "invalid": 0
+        },
+        "score": null,
+        "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+        "certificationGranted": false
+      },
+      "assessmentCoverage": {
+        "assessmentMode": "profile",
+        "stage": "discovery",
+        "selectedMandatoryReviewCount": 56,
+        "integrityChecksAlwaysRun": true,
+        "referenceCheckInstances": 1909,
+        "referenceChecksFullyAssessed": false,
+        "referenceInstancesDeferred": 1909,
+        "advisorySampleCount": 16,
+        "advisoryUnreviewedCount": 16,
+        "legacyDefaultWarning": null,
+        "conclusion": "Only the selected stage's seven mandatory gates per assessed item were checked. Advisory samples and deferred reference details do not count as passed."
+      }
+    },
+    {
+      "label": "planning_profile",
+      "arguments": [
+        "python3",
+        "-B",
+        "quality_checker.py",
+        "check",
+        "--document",
+        "examples/synthetic-planning-pass.json",
+        "--allow-synthetic",
+        "--report",
+        "examples/planning-report.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "expectedExitMatched": true,
+      "stdoutSha256": "b39013667618fbb272a581c387e2f170cd4349c9bd78d8573f90474415184085",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": {
+        "qualityState": {
+          "status": "synthetic_checks_satisfied",
+          "passed": 78,
+          "applicable": 78,
+          "exemptions": 0,
+          "counts": {
+            "passed": 78,
+            "not_applicable": 0,
+            "missing": 0,
+            "failed": 0,
+            "stale": 0,
+            "invalid": 0
+          },
+          "score": null,
+          "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+          "certificationGranted": false
+        },
+        "readinessState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "Documentation quality does not authorize implementation or launch."
+          },
+          "assessedByChecker": false,
+          "authorizationGranted": false
+        },
+        "deliveryState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "No implementation, launch, operational availability or acceptance inferred."
+          },
+          "assessedByChecker": false,
+          "deliveryObservedByChecker": false
+        },
+        "assurance": "SYNTHETIC FIXTURE ONLY — not product approval or real delivery.",
+        "report": "examples/planning-report.json"
+      },
+      "retainedReport": "examples/planning-report.json",
+      "retainedReportSha256": "0d1da45d8720ccc6f1b024dfddc1e24a0e55e0fbe57c1387860667d01d8bb42d",
+      "qualityState": {
+        "status": "synthetic_checks_satisfied",
+        "passed": 78,
+        "applicable": 78,
+        "exemptions": 0,
+        "counts": {
+          "passed": 78,
+          "not_applicable": 0,
+          "missing": 0,
+          "failed": 0,
+          "stale": 0,
+          "invalid": 0
+        },
+        "score": null,
+        "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+        "certificationGranted": false
+      },
+      "assessmentCoverage": {
+        "assessmentMode": "profile",
+        "stage": "planning",
+        "selectedMandatoryReviewCount": 56,
+        "integrityChecksAlwaysRun": true,
+        "referenceCheckInstances": 1909,
+        "referenceChecksFullyAssessed": false,
+        "referenceInstancesDeferred": 1909,
+        "advisorySampleCount": 16,
+        "advisoryUnreviewedCount": 16,
+        "legacyDefaultWarning": null,
+        "conclusion": "Only the selected stage's seven mandatory gates per assessed item were checked. Advisory samples and deferred reference details do not count as passed."
+      }
+    },
+    {
+      "label": "ready_profile",
+      "arguments": [
+        "python3",
+        "-B",
+        "quality_checker.py",
+        "check",
+        "--document",
+        "examples/synthetic-ready-pass.json",
+        "--allow-synthetic",
+        "--report",
+        "examples/ready-report.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "expectedExitMatched": true,
+      "stdoutSha256": "037e75221ee3b3ac1b3a900b9c1957bde47044e598439950133ba7caafe49943",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": {
+        "qualityState": {
+          "status": "synthetic_checks_satisfied",
+          "passed": 78,
+          "applicable": 78,
+          "exemptions": 0,
+          "counts": {
+            "passed": 78,
+            "not_applicable": 0,
+            "missing": 0,
+            "failed": 0,
+            "stale": 0,
+            "invalid": 0
+          },
+          "score": null,
+          "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+          "certificationGranted": false
+        },
+        "readinessState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "Documentation quality does not authorize implementation or launch."
+          },
+          "assessedByChecker": false,
+          "authorizationGranted": false
+        },
+        "deliveryState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "No implementation, launch, operational availability or acceptance inferred."
+          },
+          "assessedByChecker": false,
+          "deliveryObservedByChecker": false
+        },
+        "assurance": "SYNTHETIC FIXTURE ONLY — not product approval or real delivery.",
+        "report": "examples/ready-report.json"
+      },
+      "retainedReport": "examples/ready-report.json",
+      "retainedReportSha256": "691d50dbad740257c25f16fefa2d48783aceb6810fa43ef80d38633d916af85b",
+      "qualityState": {
+        "status": "synthetic_checks_satisfied",
+        "passed": 78,
+        "applicable": 78,
+        "exemptions": 0,
+        "counts": {
+          "passed": 78,
+          "not_applicable": 0,
+          "missing": 0,
+          "failed": 0,
+          "stale": 0,
+          "invalid": 0
+        },
+        "score": null,
+        "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+        "certificationGranted": false
+      },
+      "assessmentCoverage": {
+        "assessmentMode": "profile",
+        "stage": "ready",
+        "selectedMandatoryReviewCount": 56,
+        "integrityChecksAlwaysRun": true,
+        "referenceCheckInstances": 1909,
+        "referenceChecksFullyAssessed": false,
+        "referenceInstancesDeferred": 1909,
+        "advisorySampleCount": 16,
+        "advisoryUnreviewedCount": 16,
+        "legacyDefaultWarning": null,
+        "conclusion": "Only the selected stage's seven mandatory gates per assessed item were checked. Advisory samples and deferred reference details do not count as passed."
+      }
+    },
+    {
+      "label": "delivery_profile",
+      "arguments": [
+        "python3",
+        "-B",
+        "quality_checker.py",
+        "check",
+        "--document",
+        "examples/synthetic-delivery-pass.json",
+        "--allow-synthetic",
+        "--report",
+        "examples/delivery-report.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "expectedExitMatched": true,
+      "stdoutSha256": "9608c2512e4c13573f77e89c2b514ef1c64f74a09af8b4f965768d740d03224d",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": {
+        "qualityState": {
+          "status": "synthetic_checks_satisfied",
+          "passed": 78,
+          "applicable": 78,
+          "exemptions": 0,
+          "counts": {
+            "passed": 78,
+            "not_applicable": 0,
+            "missing": 0,
+            "failed": 0,
+            "stale": 0,
+            "invalid": 0
+          },
+          "score": null,
+          "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+          "certificationGranted": false
+        },
+        "readinessState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "Documentation quality does not authorize implementation or launch."
+          },
+          "assessedByChecker": false,
+          "authorizationGranted": false
+        },
+        "deliveryState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "No implementation, launch, operational availability or acceptance inferred."
+          },
+          "assessedByChecker": false,
+          "deliveryObservedByChecker": false
+        },
+        "assurance": "SYNTHETIC FIXTURE ONLY — not product approval or real delivery.",
+        "report": "examples/delivery-report.json"
+      },
+      "retainedReport": "examples/delivery-report.json",
+      "retainedReportSha256": "c1624e1bedcb85cae15fce6e93efeba9eea1d11cb96e5e0e8df93e7a6bb9a0c5",
+      "qualityState": {
+        "status": "synthetic_checks_satisfied",
+        "passed": 78,
+        "applicable": 78,
+        "exemptions": 0,
+        "counts": {
+          "passed": 78,
+          "not_applicable": 0,
+          "missing": 0,
+          "failed": 0,
+          "stale": 0,
+          "invalid": 0
+        },
+        "score": null,
+        "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+        "certificationGranted": false
+      },
+      "assessmentCoverage": {
+        "assessmentMode": "profile",
+        "stage": "delivery",
+        "selectedMandatoryReviewCount": 56,
+        "integrityChecksAlwaysRun": true,
+        "referenceCheckInstances": 1909,
+        "referenceChecksFullyAssessed": false,
+        "referenceInstancesDeferred": 1909,
+        "advisorySampleCount": 16,
+        "advisoryUnreviewedCount": 16,
+        "legacyDefaultWarning": null,
+        "conclusion": "Only the selected stage's seven mandatory gates per assessed item were checked. Advisory samples and deferred reference details do not count as passed."
+      }
+    },
+    {
+      "label": "learning_profile",
+      "arguments": [
+        "python3",
+        "-B",
+        "quality_checker.py",
+        "check",
+        "--document",
+        "examples/synthetic-learning-pass.json",
+        "--allow-synthetic",
+        "--report",
+        "examples/learning-report.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "expectedExitMatched": true,
+      "stdoutSha256": "0fb19e0c4e6b186bca3da644ff93852eddecddc8e01406c7a619f0b534d10729",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": {
+        "qualityState": {
+          "status": "synthetic_checks_satisfied",
+          "passed": 78,
+          "applicable": 78,
+          "exemptions": 0,
+          "counts": {
+            "passed": 78,
+            "not_applicable": 0,
+            "missing": 0,
+            "failed": 0,
+            "stale": 0,
+            "invalid": 0
+          },
+          "score": null,
+          "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+          "certificationGranted": false
+        },
+        "readinessState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "Documentation quality does not authorize implementation or launch."
+          },
+          "assessedByChecker": false,
+          "authorizationGranted": false
+        },
+        "deliveryState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "No implementation, launch, operational availability or acceptance inferred."
+          },
+          "assessedByChecker": false,
+          "deliveryObservedByChecker": false
+        },
+        "assurance": "SYNTHETIC FIXTURE ONLY — not product approval or real delivery.",
+        "report": "examples/learning-report.json"
+      },
+      "retainedReport": "examples/learning-report.json",
+      "retainedReportSha256": "b8468abc1324de29f3094eaba7c1d53720f290d91302aa5095e4c14ef23fc26b",
+      "qualityState": {
+        "status": "synthetic_checks_satisfied",
+        "passed": 78,
+        "applicable": 78,
+        "exemptions": 0,
+        "counts": {
+          "passed": 78,
+          "not_applicable": 0,
+          "missing": 0,
+          "failed": 0,
+          "stale": 0,
+          "invalid": 0
+        },
+        "score": null,
+        "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+        "certificationGranted": false
+      },
+      "assessmentCoverage": {
+        "assessmentMode": "profile",
+        "stage": "learning",
+        "selectedMandatoryReviewCount": 56,
+        "integrityChecksAlwaysRun": true,
+        "referenceCheckInstances": 1909,
+        "referenceChecksFullyAssessed": false,
+        "referenceInstancesDeferred": 1909,
+        "advisorySampleCount": 16,
+        "advisoryUnreviewedCount": 16,
+        "legacyDefaultWarning": null,
+        "conclusion": "Only the selected stage's seven mandatory gates per assessed item were checked. Advisory samples and deferred reference details do not count as passed."
+      }
+    },
+    {
+      "label": "default_profile",
+      "arguments": [
+        "python3",
+        "-B",
+        "quality_checker.py",
+        "check",
+        "--document",
+        "examples/synthetic-pass.json",
+        "--allow-synthetic",
+        "--report",
+        "examples/pass-report.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "expectedExitMatched": true,
+      "stdoutSha256": "5c4c3c2c0e87859ef48088cdcbf05686af925e2006186b80ea49da9ee81997ac",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": {
+        "qualityState": {
+          "status": "synthetic_checks_satisfied",
+          "passed": 78,
+          "applicable": 78,
+          "exemptions": 0,
+          "counts": {
+            "passed": 78,
+            "not_applicable": 0,
+            "missing": 0,
+            "failed": 0,
+            "stale": 0,
+            "invalid": 0
+          },
+          "score": null,
+          "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+          "certificationGranted": false
+        },
+        "readinessState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "Documentation quality does not authorize implementation or launch."
+          },
+          "assessedByChecker": false,
+          "authorizationGranted": false
+        },
+        "deliveryState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "No implementation, launch, operational availability or acceptance inferred."
+          },
+          "assessedByChecker": false,
+          "deliveryObservedByChecker": false
+        },
+        "assurance": "SYNTHETIC FIXTURE ONLY — not product approval or real delivery.",
+        "report": "examples/pass-report.json"
+      },
+      "retainedReport": "examples/pass-report.json",
+      "retainedReportSha256": "8bd00eb4be76050335e9ffdc7906572ce96d23e9996f0486446ec3b85d22ac8a",
+      "qualityState": {
+        "status": "synthetic_checks_satisfied",
+        "passed": 78,
+        "applicable": 78,
+        "exemptions": 0,
+        "counts": {
+          "passed": 78,
+          "not_applicable": 0,
+          "missing": 0,
+          "failed": 0,
+          "stale": 0,
+          "invalid": 0
+        },
+        "score": null,
+        "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+        "certificationGranted": false
+      },
+      "assessmentCoverage": {
+        "assessmentMode": "profile",
+        "stage": "planning",
+        "selectedMandatoryReviewCount": 56,
+        "integrityChecksAlwaysRun": true,
+        "referenceCheckInstances": 1909,
+        "referenceChecksFullyAssessed": false,
+        "referenceInstancesDeferred": 1909,
+        "advisorySampleCount": 16,
+        "advisoryUnreviewedCount": 16,
+        "legacyDefaultWarning": null,
+        "conclusion": "Only the selected stage's seven mandatory gates per assessed item were checked. Advisory samples and deferred reference details do not count as passed."
+      }
+    },
+    {
+      "label": "scoped_stale_refusal",
+      "arguments": [
+        "python3",
+        "-B",
+        "quality_checker.py",
+        "check",
+        "--document",
+        "examples/synthetic-stale.json",
+        "--allow-synthetic",
+        "--report",
+        "examples/stale-report.json"
+      ],
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "expectedExitMatched": true,
+      "stdoutSha256": "a0cce86039d7d0c79db3a7211a84f30817013ae1448e5d53d332f68c0cb00bb1",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": {
+        "qualityState": {
+          "status": "needs_input",
+          "passed": 70,
+          "applicable": 78,
+          "exemptions": 0,
+          "counts": {
+            "passed": 70,
+            "not_applicable": 0,
+            "missing": 0,
+            "failed": 0,
+            "stale": 8,
+            "invalid": 0
+          },
+          "score": null,
+          "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+          "certificationGranted": false
+        },
+        "readinessState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "Documentation quality does not authorize implementation or launch."
+          },
+          "assessedByChecker": false,
+          "authorizationGranted": false
+        },
+        "deliveryState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "No implementation, launch, operational availability or acceptance inferred."
+          },
+          "assessedByChecker": false,
+          "deliveryObservedByChecker": false
+        },
+        "assurance": "SYNTHETIC FIXTURE ONLY — not product approval or real delivery.",
+        "report": "examples/stale-report.json"
+      },
+      "retainedReport": "examples/stale-report.json",
+      "retainedReportSha256": "b74f6ad99b294923392434764743a936e0a5108f4336bf02430fdca99e37d857",
+      "qualityState": {
+        "status": "needs_input",
+        "passed": 70,
+        "applicable": 78,
+        "exemptions": 0,
+        "counts": {
+          "passed": 70,
+          "not_applicable": 0,
+          "missing": 0,
+          "failed": 0,
+          "stale": 8,
+          "invalid": 0
+        },
+        "score": null,
+        "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+        "certificationGranted": false
+      },
+      "assessmentCoverage": {
+        "assessmentMode": "profile",
+        "stage": "planning",
+        "selectedMandatoryReviewCount": 56,
+        "integrityChecksAlwaysRun": true,
+        "referenceCheckInstances": 1909,
+        "referenceChecksFullyAssessed": false,
+        "referenceInstancesDeferred": 1909,
+        "advisorySampleCount": 16,
+        "advisoryUnreviewedCount": 16,
+        "legacyDefaultWarning": null,
+        "conclusion": "Only the selected stage's seven mandatory gates per assessed item were checked. Advisory samples and deferred reference details do not count as passed."
+      }
+    },
+    {
+      "label": "synthetic_requires_explicit_permission",
+      "arguments": [
+        "python3",
+        "-B",
+        "quality_checker.py",
+        "check",
+        "--document",
+        "examples/synthetic-pass.json",
+        "--report",
+        "examples/permission-refusal.json"
+      ],
+      "exitCode": 3,
+      "expectedExitCode": 3,
+      "expectedExitMatched": true,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "2e6766a5acfb6150796090aad6edc619a24e1231491f10c8b1d369ded028f8c9",
+      "outputExcerpt": ""
+    },
+    {
+      "label": "pending_initial",
+      "arguments": [
+        "python3",
+        "-B",
+        "quality_checker.py",
+        "loop",
+        "--document",
+        "examples/synthetic-pending.json",
+        "--allow-synthetic",
+        "--report",
+        "examples/pending-report.json",
+        "--state-dir",
+        "examples/pending-loop"
+      ],
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "expectedExitMatched": true,
+      "stdoutSha256": "4d4e85123fdd7621ae15ff4df443970923aacadb303490ee9e90d215b5415b79",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": {
+        "qualityState": {
+          "status": "needs_input",
+          "passed": 19,
+          "applicable": 78,
+          "exemptions": 0,
+          "counts": {
+            "passed": 19,
+            "not_applicable": 0,
+            "missing": 58,
+            "failed": 0,
+            "stale": 1,
+            "invalid": 0
+          },
+          "score": null,
+          "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+          "certificationGranted": false
+        },
+        "readinessState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "Documentation quality does not authorize implementation or launch."
+          },
+          "assessedByChecker": false,
+          "authorizationGranted": false
+        },
+        "deliveryState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "No implementation, launch, operational availability or acceptance inferred."
+          },
+          "assessedByChecker": false,
+          "deliveryObservedByChecker": false
+        },
+        "assurance": "SYNTHETIC FIXTURE ONLY — not product approval or real delivery.",
+        "report": "examples/pending-report.json",
+        "questionPacket": "examples/pending-loop/questions.json",
+        "loopStatus": "needs_input",
+        "newQuestionCount": 59,
+        "pendingQuestionCount": 59,
+        "reviewerQueueCount": 0,
+        "repairQueueCount": 0,
+        "currentBatchId": "B-1bc70eed8e8ae70d846a",
+        "nextBatch": [
+          {
+            "id": "Q-eda3b0d01e132262a663",
+            "elementId": null,
+            "fieldId": null,
+            "question": "For workspace, resolve source_pin_source-001: Retain and pin exact source text, source version and approval/originality state. What verified fact, explicit decision or evidence resolves this current gap? The decision owner is unresolved; identify the actual accountable decision owner if this requires a decision.",
+            "checksToResolve": 1
+          },
+          {
+            "id": "Q-c5659ff90451df93ba3e",
+            "elementId": null,
+            "fieldId": null,
+            "question": "For workspace, resolve productProfile.ai: Resolve ai applicability from authoritative scope before this decision-dependent stage; all branch obligations remain unsampled. What verified fact, explicit decision or evidence resolves this current gap? The decision owner is unresolved; identify the actual accountable decision owner if this requires a decision.",
+            "checksToResolve": 1
+          },
+          {
+            "id": "Q-64d4b9c65de425beed66",
+            "elementId": null,
+            "fieldId": null,
+            "question": "For workspace, resolve productProfile.personalData: Resolve personalData applicability from authoritative scope before this decision-dependent stage; all branch obligations remain unsampled. What verified fact, explicit decision or evidence resolves this current gap? The decision owner is unresolved; identify the actual accountable decision owner if this requires a decision.",
+            "checksToResolve": 1
+          }
+        ]
+      },
+      "retainedReport": "examples/pending-report.json",
+      "retainedReportSha256": "65d4be29a2b186f31eca8a78e1325c7fac8069c8aa7e3fd44f52ff5500347598",
+      "qualityState": {
+        "status": "needs_input",
+        "passed": 19,
+        "applicable": 78,
+        "exemptions": 0,
+        "counts": {
+          "passed": 19,
+          "not_applicable": 0,
+          "missing": 58,
+          "failed": 0,
+          "stale": 1,
+          "invalid": 0
+        },
+        "score": null,
+        "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+        "certificationGranted": false
+      },
+      "assessmentCoverage": {
+        "assessmentMode": "profile",
+        "stage": "planning",
+        "selectedMandatoryReviewCount": 58,
+        "integrityChecksAlwaysRun": true,
+        "referenceCheckInstances": 1909,
+        "referenceChecksFullyAssessed": false,
+        "referenceInstancesDeferred": 1909,
+        "advisorySampleCount": 16,
+        "advisoryUnreviewedCount": 16,
+        "legacyDefaultWarning": null,
+        "conclusion": "Only the selected stage's seven mandatory gates per assessed item were checked. Advisory samples and deferred reference details do not count as passed."
+      }
+    },
+    {
+      "label": "pending_repeat_retains_batch",
+      "arguments": [
+        "python3",
+        "-B",
+        "quality_checker.py",
+        "loop",
+        "--document",
+        "examples/synthetic-pending.json",
+        "--allow-synthetic",
+        "--report",
+        "examples/pending-report.json",
+        "--state-dir",
+        "examples/pending-loop"
+      ],
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "expectedExitMatched": true,
+      "stdoutSha256": "6fe63e1a5832bec5e487990b0efcc2061b02fc70be432e2441e41cea2d51b070",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": {
+        "qualityState": {
+          "status": "needs_input",
+          "passed": 19,
+          "applicable": 78,
+          "exemptions": 0,
+          "counts": {
+            "passed": 19,
+            "not_applicable": 0,
+            "missing": 58,
+            "failed": 0,
+            "stale": 1,
+            "invalid": 0
+          },
+          "score": null,
+          "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+          "certificationGranted": false
+        },
+        "readinessState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "Documentation quality does not authorize implementation or launch."
+          },
+          "assessedByChecker": false,
+          "authorizationGranted": false
+        },
+        "deliveryState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "No implementation, launch, operational availability or acceptance inferred."
+          },
+          "assessedByChecker": false,
+          "deliveryObservedByChecker": false
+        },
+        "assurance": "SYNTHETIC FIXTURE ONLY — not product approval or real delivery.",
+        "report": "examples/pending-report.json",
+        "questionPacket": "examples/pending-loop/questions.json",
+        "loopStatus": "needs_input",
+        "newQuestionCount": 0,
+        "pendingQuestionCount": 59,
+        "reviewerQueueCount": 0,
+        "repairQueueCount": 0,
+        "currentBatchId": "B-1bc70eed8e8ae70d846a",
+        "nextBatch": [
+          {
+            "id": "Q-eda3b0d01e132262a663",
+            "elementId": null,
+            "fieldId": null,
+            "question": "For workspace, resolve source_pin_source-001: Retain and pin exact source text, source version and approval/originality state. What verified fact, explicit decision or evidence resolves this current gap? The decision owner is unresolved; identify the actual accountable decision owner if this requires a decision.",
+            "checksToResolve": 1
+          },
+          {
+            "id": "Q-c5659ff90451df93ba3e",
+            "elementId": null,
+            "fieldId": null,
+            "question": "For workspace, resolve productProfile.ai: Resolve ai applicability from authoritative scope before this decision-dependent stage; all branch obligations remain unsampled. What verified fact, explicit decision or evidence resolves this current gap? The decision owner is unresolved; identify the actual accountable decision owner if this requires a decision.",
+            "checksToResolve": 1
+          },
+          {
+            "id": "Q-64d4b9c65de425beed66",
+            "elementId": null,
+            "fieldId": null,
+            "question": "For workspace, resolve productProfile.personalData: Resolve personalData applicability from authoritative scope before this decision-dependent stage; all branch obligations remain unsampled. What verified fact, explicit decision or evidence resolves this current gap? The decision owner is unresolved; identify the actual accountable decision owner if this requires a decision.",
+            "checksToResolve": 1
+          }
+        ]
+      },
+      "retainedReport": "examples/pending-report.json",
+      "retainedReportSha256": "e24cacfa01bedc25f1be03bdda576d9f206f517c233a3b70d5967e62aa7fb059",
+      "qualityState": {
+        "status": "needs_input",
+        "passed": 19,
+        "applicable": 78,
+        "exemptions": 0,
+        "counts": {
+          "passed": 19,
+          "not_applicable": 0,
+          "missing": 58,
+          "failed": 0,
+          "stale": 1,
+          "invalid": 0
+        },
+        "score": null,
+        "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+        "certificationGranted": false
+      },
+      "assessmentCoverage": {
+        "assessmentMode": "profile",
+        "stage": "planning",
+        "selectedMandatoryReviewCount": 58,
+        "integrityChecksAlwaysRun": true,
+        "referenceCheckInstances": 1909,
+        "referenceChecksFullyAssessed": false,
+        "referenceInstancesDeferred": 1909,
+        "advisorySampleCount": 16,
+        "advisoryUnreviewedCount": 16,
+        "legacyDefaultWarning": null,
+        "conclusion": "Only the selected stage's seven mandatory gates per assessed item were checked. Advisory samples and deferred reference details do not count as passed."
+      }
+    },
+    {
+      "label": "explicit_exhaustive",
+      "arguments": [
+        "python3",
+        "-B",
+        "quality_checker.py",
+        "check",
+        "--document",
+        "examples/synthetic-exhaustive-pass.json",
+        "--allow-synthetic",
+        "--report",
+        "examples/exhaustive-report.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "expectedExitMatched": true,
+      "stdoutSha256": "c0b8af1dbc8c7bf1526dc371c72c3c19fece28990299d80f31b0c3acbf4b6610",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": {
+        "qualityState": {
+          "status": "synthetic_checks_satisfied",
+          "passed": 1931,
+          "applicable": 1931,
+          "exemptions": 0,
+          "counts": {
+            "passed": 1931,
+            "not_applicable": 0,
+            "missing": 0,
+            "failed": 0,
+            "stale": 0,
+            "invalid": 0
+          },
+          "score": null,
+          "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+          "certificationGranted": false
+        },
+        "readinessState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "Documentation quality does not authorize implementation or launch."
+          },
+          "assessedByChecker": false,
+          "authorizationGranted": false
+        },
+        "deliveryState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "No implementation, launch, operational availability or acceptance inferred."
+          },
+          "assessedByChecker": false,
+          "deliveryObservedByChecker": false
+        },
+        "assurance": "SYNTHETIC FIXTURE ONLY — not product approval or real delivery.",
+        "report": "examples/exhaustive-report.json"
+      },
+      "retainedReport": "examples/exhaustive-report.json",
+      "retainedReportSha256": "cfd3ac6366d3b6686748794440aac92cd01a10673509743e3ef95a146272649c",
+      "qualityState": {
+        "status": "synthetic_checks_satisfied",
+        "passed": 1931,
+        "applicable": 1931,
+        "exemptions": 0,
+        "counts": {
+          "passed": 1931,
+          "not_applicable": 0,
+          "missing": 0,
+          "failed": 0,
+          "stale": 0,
+          "invalid": 0
+        },
+        "score": null,
+        "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+        "certificationGranted": false
+      },
+      "assessmentCoverage": {
+        "assessmentMode": "exhaustive",
+        "stage": "planning",
+        "selectedMandatoryReviewCount": 1622,
+        "integrityChecksAlwaysRun": true,
+        "referenceCheckInstances": 1909,
+        "referenceChecksFullyAssessed": true,
+        "referenceInstancesDeferred": 0,
+        "advisorySampleCount": 0,
+        "advisoryUnreviewedCount": 0,
+        "legacyDefaultWarning": null,
+        "conclusion": "Explicit exhaustive reference assessment; offline conclusions remain advisory for real inputs."
+      }
+    },
+    {
+      "label": "compact_summary",
+      "arguments": [
+        "python3",
+        "-B",
+        "quality_checker.py",
+        "summary",
+        "--report",
+        "examples/pass-report.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "expectedExitMatched": true,
+      "stdoutSha256": "5103969cddf0436d9a214757d0ef4d51749886d1323860b55a15f589e7d0b8cf",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": {
+        "documentId": "SYNTHETIC-WORKSHOP",
+        "revision": 1,
+        "qualityState": {
+          "status": "synthetic_checks_satisfied",
+          "passed": 78,
+          "applicable": 78,
+          "exemptions": 0,
+          "counts": {
+            "passed": 78,
+            "not_applicable": 0,
+            "missing": 0,
+            "failed": 0,
+            "stale": 0,
+            "invalid": 0
+          },
+          "score": null,
+          "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+          "certificationGranted": false
+        },
+        "assessmentCoverage": {
+          "assessmentMode": "profile",
+          "stage": "planning",
+          "selectedMandatoryReviewCount": 56,
+          "integrityChecksAlwaysRun": true,
+          "referenceCheckInstances": 1909,
+          "referenceChecksFullyAssessed": false,
+          "referenceInstancesDeferred": 1909,
+          "advisorySampleCount": 16,
+          "advisoryUnreviewedCount": 16,
+          "legacyDefaultWarning": null,
+          "conclusion": "Only the selected stage's seven mandatory gates per assessed item were checked. Advisory samples and deferred reference details do not count as passed."
+        },
+        "unresolvedByResolutionKind": {},
+        "unresolvedBlockingCount": 0,
+        "advisorySamples": {
+          "count": 16,
+          "unreviewed": 16,
+          "failed": 0
+        },
+        "reviewerAuthentication": {
+          "status": "synthetic_test_only",
+          "advisoryOnly": true,
+          "registryCanBeAuthorCreated": true,
+          "externalApprovalRequired": true
+        },
+        "readinessState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "Documentation quality does not authorize implementation or launch."
+          },
+          "assessedByChecker": false,
+          "authorizationGranted": false
+        },
+        "deliveryState": {
+          "status": "supplied_unverified",
+          "suppliedClaim": {
+            "status": "not_assessed",
+            "reason": "No implementation, launch, operational availability or acceptance inferred."
+          },
+          "assessedByChecker": false,
+          "deliveryObservedByChecker": false
+        },
+        "assurance": "SYNTHETIC FIXTURE ONLY — not product approval or real delivery.",
+        "inspectionOnly": true
+      }
+    },
+    {
+      "label": "compact_next",
+      "arguments": [
+        "python3",
+        "-B",
+        "quality_checker.py",
+        "next",
+        "--state-dir",
+        "examples/pending-loop",
+        "--limit",
+        "3"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "expectedExitMatched": true,
+      "stdoutSha256": "2ab4ec959d29d91e2b820e5cd586ce793596e39983f40b401b6e3b98a5549e3d",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": {
+        "loopStatus": "needs_input",
+        "currentBatchId": "B-1bc70eed8e8ae70d846a",
+        "pendingQuestionCount": 59,
+        "awaitingAnswerIds": [],
+        "inspectionOnly": true,
+        "ownerQueue": [
+          {
+            "id": "Q-eda3b0d01e132262a663",
+            "groupId": "check:workspace:source_pin_source-001",
+            "elementId": null,
+            "fieldId": null,
+            "checkId": "source_pin_source-001",
+            "question": "For workspace, resolve source_pin_source-001: Retain and pin exact source text, source version and approval/originality state. What verified fact, explicit decision or evidence resolves this current gap? The decision owner is unresolved; identify the actual accountable decision owner if this requires a decision.",
+            "reason": "Retain and pin exact source text, source version and approval/originality state.",
+            "decisionOwnerId": null,
+            "status": "unanswered",
+            "resolutionKind": "author_repair_or_owner_decision",
+            "occurrence": 1
+          },
+          {
+            "id": "Q-c5659ff90451df93ba3e",
+            "groupId": "profile:ai",
+            "elementId": null,
+            "fieldId": null,
+            "checkId": "profile_decision_ai",
+            "question": "For workspace, resolve productProfile.ai: Resolve ai applicability from authoritative scope before this decision-dependent stage; all branch obligations remain unsampled. What verified fact, explicit decision or evidence resolves this current gap? The decision owner is unresolved; identify the actual accountable decision owner if this requires a decision.",
+            "reason": "Resolve ai applicability from authoritative scope before this decision-dependent stage; all branch obligations remain unsampled.",
+            "decisionOwnerId": null,
+            "status": "unanswered",
+            "resolutionKind": "author_repair_or_owner_decision",
+            "occurrence": 1
+          },
+          {
+            "id": "Q-64d4b9c65de425beed66",
+            "groupId": "profile:personalData",
+            "elementId": null,
+            "fieldId": null,
+            "checkId": "profile_decision_personalData",
+            "question": "For workspace, resolve productProfile.personalData: Resolve personalData applicability from authoritative scope before this decision-dependent stage; all branch obligations remain unsampled. What verified fact, explicit decision or evidence resolves this current gap? The decision owner is unresolved; identify the actual accountable decision owner if this requires a decision.",
+            "reason": "Resolve personalData applicability from authoritative scope before this decision-dependent stage; all branch obligations remain unsampled.",
+            "decisionOwnerId": null,
+            "status": "unanswered",
+            "resolutionKind": "author_repair_or_owner_decision",
+            "occurrence": 1
+          }
+        ],
+        "ownerQueueTotal": 3,
+        "ownerQueueTruncated": false,
+        "reviewerQueue": [],
+        "reviewerQueueTotal": 0,
+        "reviewerQueueTruncated": false,
+        "repairQueue": [],
+        "repairQueueTotal": 0,
+        "repairQueueTruncated": false
+      }
+    },
+    {
+      "label": "criterion_explain",
+      "arguments": [
+        "python3",
+        "-B",
+        "quality_checker.py",
+        "explain",
+        "gate.technical_task.planning.04",
+        "--report",
+        "examples/pass-report.json",
+        "--element-id",
+        "technical_task-001"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "expectedExitMatched": true,
+      "stdoutSha256": "33d1f9e42133cb716a5ead4142a6cd025a0c9d6ce75656f57f526faf308f8a66",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": {
+        "id": "technical_task-001:gate.technical_task.planning.04",
+        "checkId": "gate.technical_task.planning.04",
+        "elementId": "technical_task-001",
+        "fieldId": null,
+        "status": "passed",
+        "blocking": true,
+        "resolutionKind": "independent_review_task",
+        "reason": "Current independent review and retained evidence supplied; truth requires human verification.",
+        "passCriterion": "Verification cases and expected outputs map to parent acceptance criteria and actual product qualification method; no mirror-only demonstration substitutes for the declared user/operating requirement. Planning stage: require a bounded testable plan, sourced priority/dependency rationale and honestly attributed size uncertainty where relevant. Unagreed targets/owners/estimates may remain explicitly pending only before a dependent commitment, approval or ready decision; record the exact unresolved decision and evidence needed. Future execution/launch results remain planned, never fabricated.",
+        "evidenceRequirement": "Current Implementation or verification task revision; explicit applicable field components and pinned authoritative sources. Exact evidence locators and stage-specific decision/evaluation/observation records; no invented facts or substituted future results.",
+        "evidenceIds": [
+          "fixture-audit"
+        ],
+        "questionPrompt": "Which precise current-stage fact, evidence or actual decision is still needed for measures and verification?",
+        "repairPrompt": "Repair verified gaps, ask only for unavailable necessary facts/authority, bind new evidence to the actual revision and recheck this gate.",
+        "subjectFingerprint": "581ce005f8728290e09fb059b0e836ce0d0d74a2fc0eb066b292a6bdbaf3a2ee",
+        "missingFieldIds": [],
+        "requiredFieldIds": [
+          "technical_task.verification_cases",
+          "technical_task.qualification_review"
+        ],
+        "inspectionOnly": true
+      }
+    }
+  ],
+  "allExpectedExitCodesMatched": true,
+  "batchPersistence": {
+    "firstBatchId": "B-1bc70eed8e8ae70d846a",
+    "secondBatchId": "B-1bc70eed8e8ae70d846a",
+    "unchangedBatchRetained": true,
+    "initialQuestionPackets": 59,
+    "newPacketsOnRepeat": 0,
+    "reviewerQueueCount": 0
+  },
+  "syntheticOnly": true,
+  "actualProductCertificationGranted": false
+}

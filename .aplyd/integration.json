@@ -1,0 +1,16 @@
+{
+  "schema_version": 2,
+  "state": "draft",
+  "approval_ref": null,
+  "sources": [],
+  "entities": [],
+  "gates": [],
+  "pm_catalogue_source_id": null,
+  "qa_catalogue_source_id": null,
+  "team_dod_ref": "docs/delivery/READY-DONE.md",
+  "workflow_ref": ".aplyd/workflow/2.0/PROCESS.md",
+  "release_record_ref": null,
+  "exception_register_path": ".governance/exceptions.json",
+  "root_agent_file": "AGENTS.md",
+  "root_agent_sha256": "2d97977fbaecf88b11945b31451c7829ab01baa94509e5882a94fb1ab1b0ee2a"
+}

@@ -1,0 +1,25 @@
+{
+  "workflowVersion": "2.0",
+  "files": {
+    "ACTIVATION-CHECKLIST.md": "2a10734d1cce091c82ff3f2a1241cfcb0d6f51988cb6490e9d2e9809e0d7e9f9",
+    "AGENTS.md": "e9603592f9167ccb83cb161f0bae05c821bad35142e50f1bd6cbd49b6851d767",
+    "COMMAND-ROUTING.md": "aea98202e89a682a53307bc9b4ee73e00fafa84196a782a69bfbe7a6782f81b8",
+    "FLOW.mmd": "b7452721096ae0fc4496016eccee1af3623c0be19fd5078122e36a544412f963",
+    "GATE-CHECKLIST.md": "2e0e1ab3f8d318f91478201dd055a68cbd467c3d7f585c69f05ae31011bc21c6",
+    "PACKAGE-CONTRACT.md": "7fec4e4e73c1da7538a1593fd58bd185f05ff2b3753936b45ba67c6bef7d046e",
+    "PACKAGE-LOCK.json": "8068ab6561e4da111bd8ce2d38292a21efce3f439ee5f877b6735f3678657b9a",
+    "PROCESS.md": "39e400c4def1c440daebb8fbf2d2e2a39551ec4b113aafcece3d1fad66624684",
+    "PROJECT-CONFIG.template.json": "5313fad0e13358c8205154d5213d2e885effa9c0cac986bc2fad113e388f7dfe",
+    "START-HERE.md": "555ff7f4da02293ca4d0695b327e7642a0de036ea63643b3def9038898f56599",
+    "Workflow and Process Orchestration Guide.docx": "930a7c68bd1b1338d848640eab65dbb0fbb8aa2d9ea5379fb9fce01c1c1714b3",
+    "audit/PACKAGE-QA.json": "ed093dce93563bbc15528c02c8e073328507376788dd922a20c05e22c4e24e2e",
+    "audit/README.md": "3f6c927e59f3dc7b58634b3bc69143afdcb47000918615630b45a9492ffe4e9c",
+    "templates/DECISION.template.json": "88af974e4c222310b6fe2fe5d4a205d32ac4dce00b33ec48fa67fca670ef0e2f",
+    "templates/HANDOFF.template.json": "8380eb27dfe556970063f1b374db056e3efb11ec2c4e9847804dea056ce38f8f",
+    "templates/PARALLEL-WORK.template.json": "56c150b9c4809de52f61ac39db080b169089aeb9a23048057a03a36b237da4bf",
+    "templates/README.md": "180db70adc359cbd6dc6fea423d49b0e8e6be869cd85015a361a4fc904ac3b37",
+    "verify_companions.py": "94347e3fbb9994a29d9d47588b91d6c2ce509feba697e65543b73cf4343b04e6",
+    "verify_integrity.py": "451dfe419f544afad2bf00b7d13870c50265d0d7295b09a95b64ff41615bc1f4"
+  },
+  "scope": "byte integrity only"
+}

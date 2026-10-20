@@ -1,0 +1,363 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-10-10T16:13:03.965989+00:00",
+  "scope": "Independent actual-CLI helper acceptance; mechanical hashes, routing, source preservation and output scale. This is not a product-quality or reviewer-authentication certification.",
+  "commandPathNormalization": "Ephemeral arguments under the generated temporary test directory are replaced with <temporary-audit-directory>; exit codes, byte counts, output hashes and timings are observations of actual unnormalized CLI execution.",
+  "verificationScriptSha256": "19f09b857319d072d73bd4ebd9a01476eb84a7e3cbdb00c645a66eb0b0caedfd",
+  "pins": {
+    "quality_checker.py": "ded9080be9a6d5be6a6bb837d217290f37dc1e22123c57b2279dcb5d5f97f94a",
+    "quality_tools.py": "4b1d4db8e8041e0773b39776bde84983381d6501d2173be75ef032c09a46cceb",
+    "quality_loop.py": "ad589c27c5794d7b7854d4ab4932060940ccc5ec8bf751e1c539344a2faa62c7",
+    "catalogue.json": "cec6bc14f5976dd7e1a48ba9f224e18b1258abb08ed0479a7f080b2dc6245456"
+  },
+  "assertions": {
+    "deniedSyntheticExit": true,
+    "labelledSyntheticExit": true,
+    "fixtureStatusIsDistinct": true,
+    "summaryExit": true,
+    "summaryReadOnly": true,
+    "summaryCompact": true,
+    "explainExit": true,
+    "explainExactCriterion": true,
+    "scopedFingerprintExit": true,
+    "scopedFingerprintMatchesCore": true,
+    "unknownFingerprintExit": true,
+    "reviewHashesExit": true,
+    "reviewHashesExactNoStamp": true,
+    "hashesCannotOverwriteSourceExit": true,
+    "hashesSourcePreserved": true,
+    "trustTemplateExit": true,
+    "trustTemplateIsIncomplete": true,
+    "bindSyntheticDeniedExit": true,
+    "bindEvidenceExit": true,
+    "bindExactContentAndTarget": true,
+    "bindCreatesNoVerdictsOrApproval": true,
+    "bindUnknownTargetDeniedExit": true,
+    "invalidBindWritesNothing": true,
+    "pendingLoopExit": true,
+    "nextReadOnlyExit": true,
+    "nextDoesNotAcknowledgeOrMutate": true,
+    "scaleCheckExit": true,
+    "scaleSummaryExit": true,
+    "scaleReviewHashesExit": true,
+    "scaleSummaryStillCompact": true
+  },
+  "allAssertionsPassed": true,
+  "metrics": {
+    "elements": 302,
+    "generatedFixtureVerdicts": 2114,
+    "reportFileBytes": 9226723,
+    "summaryStdoutBytes": 2220,
+    "reviewHashesStdoutBytes": 152545,
+    "syntheticOnly": true
+  },
+  "runs": [
+    {
+      "name": "deniedSynthetic",
+      "command": [
+        "check",
+        "--document",
+        "<temporary-audit-directory>/document.json",
+        "--report",
+        "<temporary-audit-directory>/denied.json"
+      ],
+      "exitCode": 3,
+      "expectedExitCode": 3,
+      "seconds": 0.0422,
+      "stdoutBytes": 0,
+      "stderrBytes": 223,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "2e6766a5acfb6150796090aad6edc619a24e1231491f10c8b1d369ded028f8c9"
+    },
+    {
+      "name": "labelledSynthetic",
+      "command": [
+        "check",
+        "--document",
+        "<temporary-audit-directory>/document.json",
+        "--report",
+        "<temporary-audit-directory>/report.json",
+        "--allow-synthetic"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "seconds": 0.0983,
+      "stdoutBytes": 1337,
+      "stderrBytes": 0,
+      "stdoutSha256": "faf4be7a2ed0cca6916e2360d5ed0eb3b1012bdc2e7ed9c3503dcda3ee5dd97f",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "summary",
+      "command": [
+        "summary",
+        "--report",
+        "<temporary-audit-directory>/report.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "seconds": 0.036,
+      "stdoutBytes": 2202,
+      "stderrBytes": 0,
+      "stdoutSha256": "5103969cddf0436d9a214757d0ef4d51749886d1323860b55a15f589e7d0b8cf",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "explain",
+      "command": [
+        "explain",
+        "vision-001:gate.vision.planning.01",
+        "--report",
+        "<temporary-audit-directory>/report.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "seconds": 0.0358,
+      "stdoutBytes": 1847,
+      "stderrBytes": 0,
+      "stdoutSha256": "f16d8d80a48789ed39686e4eece7f6dbae9b5be574317351ec6e16ec10d8d36b",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "scopedFingerprint",
+      "command": [
+        "fingerprint",
+        "--document",
+        "<temporary-audit-directory>/document.json",
+        "--element-id",
+        "vision-001",
+        "--check-id",
+        "gate.vision.planning.01",
+        "--allow-synthetic"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "seconds": 0.047,
+      "stdoutBytes": 65,
+      "stderrBytes": 0,
+      "stdoutSha256": "b75ac538c84ae107bfcfe579452a3292c5e7e752e60a46de47ebadd54cfb7373",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "unknownFingerprint",
+      "command": [
+        "fingerprint",
+        "--document",
+        "<temporary-audit-directory>/document.json",
+        "--check-id",
+        "invented",
+        "--allow-synthetic"
+      ],
+      "exitCode": 3,
+      "expectedExitCode": 3,
+      "seconds": 0.0414,
+      "stdoutBytes": 0,
+      "stderrBytes": 145,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "f4b689e569f2787ca2746970f19a5e61f71155a24261880470f64f34ea85cd2c"
+    },
+    {
+      "name": "reviewHashes",
+      "command": [
+        "review-hashes",
+        "--document",
+        "<temporary-audit-directory>/document.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "seconds": 0.0586,
+      "stdoutBytes": 4359,
+      "stderrBytes": 0,
+      "stdoutSha256": "9445eab8a703e76f61a1533bd8ce36d62e6811341450a421cfac4bb064494bdc",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "hashesCannotOverwriteSource",
+      "command": [
+        "review-hashes",
+        "--document",
+        "<temporary-audit-directory>/document.json",
+        "--output",
+        "<temporary-audit-directory>/document.json"
+      ],
+      "exitCode": 3,
+      "expectedExitCode": 3,
+      "seconds": 0.0417,
+      "stdoutBytes": 0,
+      "stderrBytes": 131,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "202bca88f23dbb0bd0d9cae57e68197330b769ca2ce0b2c02c379c5dbf74c4c6"
+    },
+    {
+      "name": "trustTemplate",
+      "command": [
+        "trust-template",
+        "--document",
+        "<temporary-audit-directory>/document.json",
+        "--output",
+        "<temporary-audit-directory>/trust.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "seconds": 0.0595,
+      "stdoutBytes": 257,
+      "stderrBytes": 0,
+      "stdoutSha256": "362ebb8866038af1d7f15c71a27df76c302919b75d0900a2f4bafb70cc46a14d",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "bindSyntheticDenied",
+      "command": [
+        "bind-evidence",
+        "--document",
+        "<temporary-audit-directory>/document.json",
+        "--evidence-id",
+        "fixture-audit",
+        "--element-id",
+        "vision-001",
+        "--check-id",
+        "gate.vision.planning.01",
+        "--output",
+        "<temporary-audit-directory>/bound.json"
+      ],
+      "exitCode": 3,
+      "expectedExitCode": 3,
+      "seconds": 0.0413,
+      "stdoutBytes": 0,
+      "stderrBytes": 162,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "66ad0e17bf59c1f48cf8846c182cdf20b2a97c0ea8a03adfbb9c11b63ea83193"
+    },
+    {
+      "name": "bindEvidence",
+      "command": [
+        "bind-evidence",
+        "--document",
+        "<temporary-audit-directory>/document.json",
+        "--evidence-id",
+        "fixture-audit",
+        "--element-id",
+        "vision-001",
+        "--check-id",
+        "gate.vision.planning.01",
+        "--output",
+        "<temporary-audit-directory>/bound.json",
+        "--allow-synthetic"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "seconds": 0.0571,
+      "stdoutBytes": 676,
+      "stderrBytes": 0,
+      "stdoutSha256": "263d0c138df7a1e6b26f5cd5b50d1e951b0c81d0857c6f697e859bc0434eeb97",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "bindUnknownTargetDenied",
+      "command": [
+        "bind-evidence",
+        "--document",
+        "<temporary-audit-directory>/document.json",
+        "--evidence-id",
+        "fixture-audit",
+        "--element-id",
+        "vision-001",
+        "--check-id",
+        "invented",
+        "--output",
+        "<temporary-audit-directory>/bad-bind.json",
+        "--allow-synthetic"
+      ],
+      "exitCode": 3,
+      "expectedExitCode": 3,
+      "seconds": 0.0493,
+      "stdoutBytes": 0,
+      "stderrBytes": 129,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "c2f3cf170df155abf09dfbe52ab6a6dc1c0c527f4ea9ce258f859fe2d4cd69cd"
+    },
+    {
+      "name": "pendingLoop",
+      "command": [
+        "loop",
+        "--document",
+        "<temporary-audit-directory>/pending.json",
+        "--report",
+        "<temporary-audit-directory>/pending-report.json",
+        "--state-dir",
+        "<temporary-audit-directory>/state",
+        "--allow-synthetic"
+      ],
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "seconds": 0.0934,
+      "stdoutBytes": 3146,
+      "stderrBytes": 0,
+      "stdoutSha256": "d870e1312f1eba871c7509dbcfa96b1e6eba192b669aac0b2a659692dd8b8607",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "nextReadOnly",
+      "command": [
+        "next",
+        "--state-dir",
+        "<temporary-audit-directory>/state"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "seconds": 0.0376,
+      "stdoutBytes": 2909,
+      "stderrBytes": 0,
+      "stdoutSha256": "529a3a04bf361ec6fd1a4d9cf26ed30dea524f6fa53da6578102cd48c31c4de7",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "scaleCheck",
+      "command": [
+        "check",
+        "--document",
+        "<temporary-audit-directory>/scale.json",
+        "--report",
+        "<temporary-audit-directory>/scale-report.json",
+        "--allow-synthetic"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "seconds": 5.4352,
+      "stdoutBytes": 1349,
+      "stderrBytes": 0,
+      "stdoutSha256": "a5a1b61cad57145e1462c48bc52b583f79caaf817a69cef7fd35e41e14eb6ede",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "scaleSummary",
+      "command": [
+        "summary",
+        "--report",
+        "<temporary-audit-directory>/scale-report.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "seconds": 0.0587,
+      "stdoutBytes": 2220,
+      "stderrBytes": 0,
+      "stdoutSha256": "fe54dae1fb3b7a20cb48fa23b32c5a5ac6be0739e8d73cc66b7b258ccacb500b",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "scaleReviewHashes",
+      "command": [
+        "review-hashes",
+        "--document",
+        "<temporary-audit-directory>/scale.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "seconds": 3.4022,
+      "stdoutBytes": 152545,
+      "stderrBytes": 0,
+      "stdoutSha256": "22a860d05a5b5c7e80efb419a0f1759e3ed4d3d19db5c2d0cc50247f8378235e",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

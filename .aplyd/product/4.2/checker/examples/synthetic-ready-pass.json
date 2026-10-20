@@ -1,0 +1,2601 @@
+{
+  "schemaVersion": "1.0",
+  "documentId": "SYNTHETIC-WORKSHOP",
+  "revision": 1,
+  "authorId": "fixture-author",
+  "mode": "synthetic_fixture",
+  "catalogueHash": "a72502ce4dcfe5ec1e8537cd377f93e77ad32b9d998fdad62c252605089759fe",
+  "assessment": {
+    "mode": "profile",
+    "stage": "ready"
+  },
+  "productProfile": {
+    "ai": {
+      "applicability": "no",
+      "sourceIds": [
+        "source-001"
+      ],
+      "rationale": "Synthetic mechanics fixture excludes product-runtime AI and actual personal data; test labels are generated identifiers, not actual participants."
+    },
+    "personalData": {
+      "applicability": "no",
+      "sourceIds": [
+        "source-001"
+      ],
+      "rationale": "Synthetic mechanics fixture excludes product-runtime AI and actual personal data; test labels are generated identifiers, not actual participants."
+    }
+  },
+  "scope": {
+    "mode": "full_hierarchy",
+    "includedElementTypes": [
+      "vision",
+      "strategy",
+      "roadmap",
+      "release_goal",
+      "epic",
+      "user_story",
+      "acceptance_criterion",
+      "technical_task"
+    ],
+    "contextElementIds": []
+  },
+  "elements": [
+    {
+      "id": "vision-001",
+      "elementType": "vision",
+      "parentId": null,
+      "authorId": "fixture-author",
+      "approvalStatus": "draft",
+      "originality": "proposed",
+      "sourceIds": [
+        "source-001"
+      ],
+      "dependencyIds": [],
+      "fields": {
+        "common.identity": {
+          "value": "Synthetic vision common.identity: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.purpose": {
+          "value": "Synthetic vision common.purpose: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.traceability": {
+          "value": "Synthetic vision common.traceability: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.boundary": {
+          "value": "Synthetic vision common.boundary: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.responsibility": {
+          "value": "Synthetic vision common.responsibility: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.state": {
+          "value": "Synthetic vision common.state: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.evidence": {
+          "value": "Synthetic vision common.evidence: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.change_history": {
+          "value": "Synthetic vision common.change_history: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "vision.title_version": {
+          "value": "Synthetic vision vision.title_version: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "vision.owner_authority": {
+          "value": "Synthetic vision vision.owner_authority: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "vision.research_sources": {
+          "value": "Synthetic vision vision.research_sources: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "vision.state_review": {
+          "value": "Synthetic vision vision.state_review: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "vision.primary_users_context": {
+          "value": "Synthetic vision vision.primary_users_context: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "vision.problem_evidence": {
+          "value": "Synthetic vision vision.problem_evidence: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "vision.affected_users": {
+          "value": "Synthetic vision vision.affected_users: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "vision.vision_statement": {
+          "value": "Synthetic vision vision.vision_statement: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "vision.value": {
+          "value": "Synthetic vision vision.value: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "vision.principles": {
+          "value": "Synthetic vision vision.principles: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "vision.non_goals": {
+          "value": "Synthetic vision vision.non_goals: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "vision.success_signals": {
+          "value": "Synthetic vision vision.success_signals: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "vision.signal_measurement": {
+          "value": "Synthetic vision vision.signal_measurement: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "vision.assumptions_research": {
+          "value": "Synthetic vision vision.assumptions_research: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "vision.review_strategy": {
+          "value": "Synthetic vision vision.review_strategy: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "vision.change_history": {
+          "value": "Synthetic vision vision.change_history: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.source_provenance": {
+          "value": "Synthetic vision common.source_provenance: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.approval_specification_state": {
+          "value": "Synthetic vision common.approval_specification_state: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.execution_result": {
+          "value": "Synthetic vision common.execution_result: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.context_profile": {
+          "value": "Synthetic vision common.context_profile: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.ai_assurance_reference": {
+          "value": "Synthetic vision common.ai_assurance_reference: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.personal_data_controls": {
+          "value": "Synthetic vision common.personal_data_controls: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "vision.learning_feedback": {
+          "value": "Synthetic vision vision.learning_feedback: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        }
+      }
+    },
+    {
+      "id": "strategy-001",
+      "elementType": "strategy",
+      "parentId": "vision-001",
+      "authorId": "fixture-author",
+      "approvalStatus": "draft",
+      "originality": "proposed",
+      "sourceIds": [
+        "source-001"
+      ],
+      "dependencyIds": [],
+      "fields": {
+        "common.identity": {
+          "value": "Synthetic strategy common.identity: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.purpose": {
+          "value": "Synthetic strategy common.purpose: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.traceability": {
+          "value": "Synthetic strategy common.traceability: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.boundary": {
+          "value": "Synthetic strategy common.boundary: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.responsibility": {
+          "value": "Synthetic strategy common.responsibility: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.state": {
+          "value": "Synthetic strategy common.state: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.evidence": {
+          "value": "Synthetic strategy common.evidence: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.change_history": {
+          "value": "Synthetic strategy common.change_history: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "strategy.identity_state": {
+          "value": "Synthetic strategy strategy.identity_state: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "strategy.vision_sources": {
+          "value": "Synthetic strategy strategy.vision_sources: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "strategy.priority_problems": {
+          "value": "Synthetic strategy strategy.priority_problems: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "strategy.diagnosis_evidence": {
+          "value": "Synthetic strategy strategy.diagnosis_evidence: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "strategy.constraints": {
+          "value": "Synthetic strategy strategy.constraints: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "strategy.priority_users_use_cases": {
+          "value": "Synthetic strategy strategy.priority_users_use_cases: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "strategy.choices_tradeoffs": {
+          "value": "Synthetic strategy strategy.choices_tradeoffs: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "strategy.deferral": {
+          "value": "Synthetic strategy strategy.deferral: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "strategy.reuse_decisions": {
+          "value": "Synthetic strategy strategy.reuse_decisions: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "strategy.dependencies_assumptions": {
+          "value": "Synthetic strategy strategy.dependencies_assumptions: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "strategy.outcome_measures": {
+          "value": "Synthetic strategy strategy.outcome_measures: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "strategy.targets": {
+          "value": "Synthetic strategy strategy.targets: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "strategy.validation_plan": {
+          "value": "Synthetic strategy strategy.validation_plan: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "strategy.continue_adjust_stop": {
+          "value": "Synthetic strategy strategy.continue_adjust_stop: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "strategy.roadmap_release_links": {
+          "value": "Synthetic strategy strategy.roadmap_release_links: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "strategy.open_decisions": {
+          "value": "Synthetic strategy strategy.open_decisions: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "strategy.resource_commitments": {
+          "value": "Synthetic strategy strategy.resource_commitments: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "strategy.review_history": {
+          "value": "Synthetic strategy strategy.review_history: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.source_provenance": {
+          "value": "Synthetic strategy common.source_provenance: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.approval_specification_state": {
+          "value": "Synthetic strategy common.approval_specification_state: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.execution_result": {
+          "value": "Synthetic strategy common.execution_result: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.context_profile": {
+          "value": "Synthetic strategy common.context_profile: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.ai_assurance_reference": {
+          "value": "Synthetic strategy common.ai_assurance_reference: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.personal_data_controls": {
+          "value": "Synthetic strategy common.personal_data_controls: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "strategy.learning_feedback": {
+          "value": "Synthetic strategy strategy.learning_feedback: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        }
+      }
+    },
+    {
+      "id": "roadmap-001",
+      "elementType": "roadmap",
+      "parentId": "strategy-001",
+      "authorId": "fixture-author",
+      "approvalStatus": "draft",
+      "originality": "proposed",
+      "sourceIds": [
+        "source-001"
+      ],
+      "dependencyIds": [],
+      "fields": {
+        "common.identity": {
+          "value": "Synthetic roadmap common.identity: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.purpose": {
+          "value": "Synthetic roadmap common.purpose: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.traceability": {
+          "value": "Synthetic roadmap common.traceability: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.boundary": {
+          "value": "Synthetic roadmap common.boundary: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.responsibility": {
+          "value": "Synthetic roadmap common.responsibility: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.state": {
+          "value": "Synthetic roadmap common.state: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.evidence": {
+          "value": "Synthetic roadmap common.evidence: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.change_history": {
+          "value": "Synthetic roadmap common.change_history: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.identity_state": {
+          "value": "Synthetic roadmap roadmap.identity_state: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.alignment_links": {
+          "value": "Synthetic roadmap roadmap.alignment_links: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.now": {
+          "value": "Synthetic roadmap roadmap.now: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.next": {
+          "value": "Synthetic roadmap roadmap.next: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.later": {
+          "value": "Synthetic roadmap roadmap.later: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.release_allocation": {
+          "value": "Synthetic roadmap roadmap.release_allocation: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.shared_epics": {
+          "value": "Synthetic roadmap roadmap.shared_epics: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.predecessor_outputs": {
+          "value": "Synthetic roadmap roadmap.predecessor_outputs: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.design_relationships": {
+          "value": "Synthetic roadmap roadmap.design_relationships: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.horizon_gate_evidence": {
+          "value": "Synthetic roadmap roadmap.horizon_gate_evidence: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.capacity_uncertainty": {
+          "value": "Synthetic roadmap roadmap.capacity_uncertainty: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.deferred_scope": {
+          "value": "Synthetic roadmap roadmap.deferred_scope: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.blockers_decisions": {
+          "value": "Synthetic roadmap roadmap.blockers_decisions: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.change_history": {
+          "value": "Synthetic roadmap roadmap.change_history: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.source_provenance": {
+          "value": "Synthetic roadmap common.source_provenance: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.approval_specification_state": {
+          "value": "Synthetic roadmap common.approval_specification_state: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.execution_result": {
+          "value": "Synthetic roadmap common.execution_result: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.sequence_horizon_release": {
+          "value": "Synthetic roadmap roadmap.sequence_horizon_release: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.sequence_outcome": {
+          "value": "Synthetic roadmap roadmap.sequence_outcome: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.sequence_item_links": {
+          "value": "Synthetic roadmap roadmap.sequence_item_links: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.sequence_rationale": {
+          "value": "Synthetic roadmap roadmap.sequence_rationale: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.sequence_gate": {
+          "value": "Synthetic roadmap roadmap.sequence_gate: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.sequence_confidence": {
+          "value": "Synthetic roadmap roadmap.sequence_confidence: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.sequence_timing": {
+          "value": "Synthetic roadmap roadmap.sequence_timing: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.context_profile": {
+          "value": "Synthetic roadmap common.context_profile: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.ai_assurance_reference": {
+          "value": "Synthetic roadmap common.ai_assurance_reference: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.personal_data_controls": {
+          "value": "Synthetic roadmap common.personal_data_controls: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "roadmap.learning_feedback": {
+          "value": "Synthetic roadmap roadmap.learning_feedback: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        }
+      }
+    },
+    {
+      "id": "release_goal-001",
+      "elementType": "release_goal",
+      "parentId": "roadmap-001",
+      "authorId": "fixture-author",
+      "approvalStatus": "draft",
+      "originality": "proposed",
+      "sourceIds": [
+        "source-001"
+      ],
+      "dependencyIds": [],
+      "fields": {
+        "common.identity": {
+          "value": "Synthetic release_goal common.identity: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.purpose": {
+          "value": "Synthetic release_goal common.purpose: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.traceability": {
+          "value": "Synthetic release_goal common.traceability: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.boundary": {
+          "value": "Synthetic release_goal common.boundary: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.responsibility": {
+          "value": "Synthetic release_goal common.responsibility: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.state": {
+          "value": "Synthetic release_goal common.state: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.evidence": {
+          "value": "Synthetic release_goal common.evidence: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.change_history": {
+          "value": "Synthetic release_goal common.change_history: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.identity_milestone": {
+          "value": "Synthetic release_goal release_goal.identity_milestone: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.alignment_sources": {
+          "value": "Synthetic release_goal release_goal.alignment_sources: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.users_journey": {
+          "value": "Synthetic release_goal release_goal.users_journey: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.usable_outcome": {
+          "value": "Synthetic release_goal release_goal.usable_outcome: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.measures_targets": {
+          "value": "Synthetic release_goal release_goal.measures_targets: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.included_items": {
+          "value": "Synthetic release_goal release_goal.included_items: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.requirements_nfrs": {
+          "value": "Synthetic release_goal release_goal.requirements_nfrs: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.excluded_deferred": {
+          "value": "Synthetic release_goal release_goal.excluded_deferred: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.dependencies_decisions": {
+          "value": "Synthetic release_goal release_goal.dependencies_decisions: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.entry_gate": {
+          "value": "Synthetic release_goal release_goal.entry_gate: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.exit_gate": {
+          "value": "Synthetic release_goal release_goal.exit_gate: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.approval_authorities": {
+          "value": "Synthetic release_goal release_goal.approval_authorities: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.rollout_recovery": {
+          "value": "Synthetic release_goal release_goal.rollout_recovery: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.qualified_revision_review": {
+          "value": "Synthetic release_goal release_goal.qualified_revision_review: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.final_tests_review": {
+          "value": "Synthetic release_goal release_goal.final_tests_review: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.published_revision": {
+          "value": "Synthetic release_goal release_goal.published_revision: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.available_revision": {
+          "value": "Synthetic release_goal release_goal.available_revision: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.operational_verification": {
+          "value": "Synthetic release_goal release_goal.operational_verification: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.unmet_gates": {
+          "value": "Synthetic release_goal release_goal.unmet_gates: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.change_history": {
+          "value": "Synthetic release_goal release_goal.change_history: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.source_provenance": {
+          "value": "Synthetic release_goal common.source_provenance: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.approval_specification_state": {
+          "value": "Synthetic release_goal common.approval_specification_state: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.execution_result": {
+          "value": "Synthetic release_goal common.execution_result: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.context_profile": {
+          "value": "Synthetic release_goal common.context_profile: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.ai_assurance_reference": {
+          "value": "Synthetic release_goal common.ai_assurance_reference: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.personal_data_controls": {
+          "value": "Synthetic release_goal common.personal_data_controls: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.post_release_review": {
+          "value": "Synthetic release_goal release_goal.post_release_review: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "release_goal.ai_release_controls": {
+          "value": "Synthetic release_goal release_goal.ai_release_controls: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        }
+      }
+    },
+    {
+      "id": "epic-001",
+      "elementType": "epic",
+      "parentId": "release_goal-001",
+      "authorId": "fixture-author",
+      "approvalStatus": "draft",
+      "originality": "proposed",
+      "sourceIds": [
+        "source-001"
+      ],
+      "dependencyIds": [],
+      "fields": {
+        "common.identity": {
+          "value": "Synthetic epic common.identity: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.purpose": {
+          "value": "Synthetic epic common.purpose: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.traceability": {
+          "value": "Synthetic epic common.traceability: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.boundary": {
+          "value": "Synthetic epic common.boundary: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.responsibility": {
+          "value": "Synthetic epic common.responsibility: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.state": {
+          "value": "Synthetic epic common.state: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.evidence": {
+          "value": "Synthetic epic common.evidence: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.change_history": {
+          "value": "Synthetic epic common.change_history: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.identity_workpackage": {
+          "value": "Synthetic epic epic.identity_workpackage: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.alignment_requirements": {
+          "value": "Synthetic epic epic.alignment_requirements: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.problem": {
+          "value": "Synthetic epic epic.problem: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.capability_outcome": {
+          "value": "Synthetic epic epic.capability_outcome: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.included_scope": {
+          "value": "Synthetic epic epic.included_scope: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.excluded_handoffs": {
+          "value": "Synthetic epic epic.excluded_handoffs: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.shared_contracts": {
+          "value": "Synthetic epic epic.shared_contracts: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.children": {
+          "value": "Synthetic epic epic.children: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.release_allocation": {
+          "value": "Synthetic epic epic.release_allocation: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.primary_parent": {
+          "value": "Synthetic epic epic.primary_parent: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.dependencies": {
+          "value": "Synthetic epic epic.dependencies: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.risks_decisions": {
+          "value": "Synthetic epic epic.risks_decisions: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.completion_boundary": {
+          "value": "Synthetic epic epic.completion_boundary: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.child_evidence_gaps": {
+          "value": "Synthetic epic epic.child_evidence_gaps: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.accepted_rollup": {
+          "value": "Synthetic epic epic.accepted_rollup: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.gaps_history": {
+          "value": "Synthetic epic epic.gaps_history: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.source_provenance": {
+          "value": "Synthetic epic common.source_provenance: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.approval_specification_state": {
+          "value": "Synthetic epic common.approval_specification_state: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.execution_result": {
+          "value": "Synthetic epic common.execution_result: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.context_profile": {
+          "value": "Synthetic epic common.context_profile: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.ai_assurance_reference": {
+          "value": "Synthetic epic common.ai_assurance_reference: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.personal_data_controls": {
+          "value": "Synthetic epic common.personal_data_controls: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.assumption_test": {
+          "value": "Synthetic epic epic.assumption_test: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.priority_rationale": {
+          "value": "Synthetic epic epic.priority_rationale: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.size_estimate": {
+          "value": "Synthetic epic epic.size_estimate: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.outcome_learning": {
+          "value": "Synthetic epic epic.outcome_learning: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "epic.ai_validation_contract": {
+          "value": "Synthetic epic epic.ai_validation_contract: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        }
+      }
+    },
+    {
+      "id": "user_story-001",
+      "elementType": "user_story",
+      "parentId": "epic-001",
+      "authorId": "fixture-author",
+      "approvalStatus": "draft",
+      "originality": "proposed",
+      "sourceIds": [
+        "source-001"
+      ],
+      "dependencyIds": [],
+      "fields": {
+        "common.identity": {
+          "value": "Synthetic user_story common.identity: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.purpose": {
+          "value": "Synthetic user_story common.purpose: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.traceability": {
+          "value": "Synthetic user_story common.traceability: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.boundary": {
+          "value": "Synthetic user_story common.boundary: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.responsibility": {
+          "value": "Synthetic user_story common.responsibility: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.state": {
+          "value": "Synthetic user_story common.state: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.evidence": {
+          "value": "Synthetic user_story common.evidence: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.change_history": {
+          "value": "Synthetic user_story common.change_history: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.identity_parent": {
+          "value": "Synthetic user_story user_story.identity_parent: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.source_clauses": {
+          "value": "Synthetic user_story user_story.source_clauses: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.specification_state": {
+          "value": "Synthetic user_story user_story.specification_state: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.context_trigger": {
+          "value": "Synthetic user_story user_story.context_trigger: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.in_scope": {
+          "value": "Synthetic user_story user_story.in_scope: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.out_of_scope": {
+          "value": "Synthetic user_story user_story.out_of_scope: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.main_journey": {
+          "value": "Synthetic user_story user_story.main_journey: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.adverse_behaviour": {
+          "value": "Synthetic user_story user_story.adverse_behaviour: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.interaction_accessibility": {
+          "value": "Synthetic user_story user_story.interaction_accessibility: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.experience_reference": {
+          "value": "Synthetic user_story user_story.experience_reference: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.inspected_components": {
+          "value": "Synthetic user_story user_story.inspected_components: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.access_accountability": {
+          "value": "Synthetic user_story user_story.access_accountability: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.operation_contracts": {
+          "value": "Synthetic user_story user_story.operation_contracts: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.permissions_refusal": {
+          "value": "Synthetic user_story user_story.permissions_refusal: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.information_continuity_coordination": {
+          "value": "Synthetic user_story user_story.information_continuity_coordination: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.nfr_thresholds": {
+          "value": "Synthetic user_story user_story.nfr_thresholds: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.criteria": {
+          "value": "Synthetic user_story user_story.criteria: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.scenario_coverage": {
+          "value": "Synthetic user_story user_story.scenario_coverage: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.evaluation_mapping": {
+          "value": "Synthetic user_story user_story.evaluation_mapping: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.source_supplement_separation": {
+          "value": "Synthetic user_story user_story.source_supplement_separation: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.ready_prerequisites": {
+          "value": "Synthetic user_story user_story.ready_prerequisites: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.task_links": {
+          "value": "Synthetic user_story user_story.task_links: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.frozen_change": {
+          "value": "Synthetic user_story user_story.frozen_change: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.done_reviews": {
+          "value": "Synthetic user_story user_story.done_reviews: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.delivery_evidence": {
+          "value": "Synthetic user_story user_story.delivery_evidence: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.criterion_rollup_blockers": {
+          "value": "Synthetic user_story user_story.criterion_rollup_blockers: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.change_history": {
+          "value": "Synthetic user_story user_story.change_history: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.source_provenance": {
+          "value": "Synthetic user_story common.source_provenance: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.approval_specification_state": {
+          "value": "Synthetic user_story common.approval_specification_state: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.execution_result": {
+          "value": "Synthetic user_story common.execution_result: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.story_statement": {
+          "value": "Synthetic user_story user_story.story_statement: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.supporting_item_variant": {
+          "value": "Synthetic user_story user_story.supporting_item_variant: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.context_profile": {
+          "value": "Synthetic user_story common.context_profile: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.ai_assurance_reference": {
+          "value": "Synthetic user_story common.ai_assurance_reference: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.personal_data_controls": {
+          "value": "Synthetic user_story common.personal_data_controls: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.priority_rationale": {
+          "value": "Synthetic user_story user_story.priority_rationale: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.size_estimate": {
+          "value": "Synthetic user_story user_story.size_estimate: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.team_ready_reference": {
+          "value": "Synthetic user_story user_story.team_ready_reference: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.team_done_reference": {
+          "value": "Synthetic user_story user_story.team_done_reference: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.outcome_learning": {
+          "value": "Synthetic user_story user_story.outcome_learning: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "user_story.ai_acceptance_contract": {
+          "value": "Synthetic user_story user_story.ai_acceptance_contract: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        }
+      }
+    },
+    {
+      "id": "acceptance_criterion-001",
+      "elementType": "acceptance_criterion",
+      "parentId": "user_story-001",
+      "authorId": "fixture-author",
+      "approvalStatus": "draft",
+      "originality": "proposed",
+      "sourceIds": [
+        "source-001"
+      ],
+      "dependencyIds": [],
+      "fields": {
+        "common.identity": {
+          "value": "Synthetic acceptance_criterion common.identity: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.purpose": {
+          "value": "Synthetic acceptance_criterion common.purpose: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.traceability": {
+          "value": "Synthetic acceptance_criterion common.traceability: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.boundary": {
+          "value": "Synthetic acceptance_criterion common.boundary: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.responsibility": {
+          "value": "Synthetic acceptance_criterion common.responsibility: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.state": {
+          "value": "Synthetic acceptance_criterion common.state: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.evidence": {
+          "value": "Synthetic acceptance_criterion common.evidence: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.change_history": {
+          "value": "Synthetic acceptance_criterion common.change_history: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.identity_owner": {
+          "value": "Synthetic acceptance_criterion acceptance_criterion.identity_owner: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.source_provenance": {
+          "value": "Synthetic acceptance_criterion acceptance_criterion.source_provenance: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.approval_state": {
+          "value": "Synthetic acceptance_criterion acceptance_criterion.approval_state: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.scenario_kind": {
+          "value": "Synthetic acceptance_criterion acceptance_criterion.scenario_kind: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.given": {
+          "value": "Synthetic acceptance_criterion acceptance_criterion.given: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.when": {
+          "value": "Synthetic acceptance_criterion acceptance_criterion.when: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.then": {
+          "value": "Synthetic acceptance_criterion acceptance_criterion.then: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.prohibited_effects": {
+          "value": "Synthetic acceptance_criterion acceptance_criterion.prohibited_effects: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.measurement": {
+          "value": "Synthetic acceptance_criterion acceptance_criterion.measurement: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.evaluation_method": {
+          "value": "Synthetic acceptance_criterion acceptance_criterion.evaluation_method: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.expected_evidence": {
+          "value": "Synthetic acceptance_criterion acceptance_criterion.expected_evidence: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.actual_execution": {
+          "value": "Synthetic acceptance_criterion acceptance_criterion.actual_execution: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.observed_evidence": {
+          "value": "Synthetic acceptance_criterion acceptance_criterion.observed_evidence: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.gap_resume": {
+          "value": "Synthetic acceptance_criterion acceptance_criterion.gap_resume: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.source_provenance": {
+          "value": "Synthetic acceptance_criterion common.source_provenance: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.approval_specification_state": {
+          "value": "Synthetic acceptance_criterion common.approval_specification_state: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.execution_result": {
+          "value": "Synthetic acceptance_criterion common.execution_result: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.context_profile": {
+          "value": "Synthetic acceptance_criterion common.context_profile: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.ai_assurance_reference": {
+          "value": "Synthetic acceptance_criterion common.ai_assurance_reference: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.personal_data_controls": {
+          "value": "Synthetic acceptance_criterion common.personal_data_controls: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "acceptance_criterion.ai_evaluation_measurement": {
+          "value": "Synthetic acceptance_criterion acceptance_criterion.ai_evaluation_measurement: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        }
+      }
+    },
+    {
+      "id": "technical_task-001",
+      "elementType": "technical_task",
+      "parentId": "user_story-001",
+      "authorId": "fixture-author",
+      "approvalStatus": "draft",
+      "originality": "proposed",
+      "sourceIds": [
+        "source-001"
+      ],
+      "dependencyIds": [],
+      "fields": {
+        "common.identity": {
+          "value": "Synthetic technical_task common.identity: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.purpose": {
+          "value": "Synthetic technical_task common.purpose: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.traceability": {
+          "value": "Synthetic technical_task common.traceability: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.boundary": {
+          "value": "Synthetic technical_task common.boundary: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.responsibility": {
+          "value": "Synthetic technical_task common.responsibility: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.state": {
+          "value": "Synthetic technical_task common.state: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.evidence": {
+          "value": "Synthetic technical_task common.evidence: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.change_history": {
+          "value": "Synthetic technical_task common.change_history: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.identity_type": {
+          "value": "Synthetic technical_task technical_task.identity_type: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.parent_owner": {
+          "value": "Synthetic technical_task technical_task.parent_owner: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.source_criteria": {
+          "value": "Synthetic technical_task technical_task.source_criteria: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.bounded_result": {
+          "value": "Synthetic technical_task technical_task.bounded_result: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.components_contracts": {
+          "value": "Synthetic technical_task technical_task.components_contracts: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.data_environment_access": {
+          "value": "Synthetic technical_task technical_task.data_environment_access: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.predecessors": {
+          "value": "Synthetic technical_task technical_task.predecessors: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.native_blockers": {
+          "value": "Synthetic technical_task technical_task.native_blockers: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.affected_components": {
+          "value": "Synthetic technical_task technical_task.affected_components: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.work_steps": {
+          "value": "Synthetic technical_task technical_task.work_steps: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.impacts": {
+          "value": "Synthetic technical_task technical_task.impacts: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.exclusions_preservation": {
+          "value": "Synthetic technical_task technical_task.exclusions_preservation: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.spike_plan": {
+          "value": "Synthetic technical_task technical_task.spike_plan: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.deliverables": {
+          "value": "Synthetic technical_task technical_task.deliverables: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.verification_cases": {
+          "value": "Synthetic technical_task technical_task.verification_cases: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.qualification_review": {
+          "value": "Synthetic technical_task technical_task.qualification_review: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.done": {
+          "value": "Synthetic technical_task technical_task.done: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.actual_outputs": {
+          "value": "Synthetic technical_task technical_task.actual_outputs: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.release_verification": {
+          "value": "Synthetic technical_task technical_task.release_verification: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.blocker_owner_resume": {
+          "value": "Synthetic technical_task technical_task.blocker_owner_resume: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.remaining_history": {
+          "value": "Synthetic technical_task technical_task.remaining_history: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.source_provenance": {
+          "value": "Synthetic technical_task common.source_provenance: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.approval_specification_state": {
+          "value": "Synthetic technical_task common.approval_specification_state: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.execution_result": {
+          "value": "Synthetic technical_task common.execution_result: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.context_profile": {
+          "value": "Synthetic technical_task common.context_profile: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.ai_assurance_reference": {
+          "value": "Synthetic technical_task common.ai_assurance_reference: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "common.personal_data_controls": {
+          "value": "Synthetic technical_task common.personal_data_controls: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.team_ready_reference": {
+          "value": "Synthetic technical_task technical_task.team_ready_reference: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.team_done_reference": {
+          "value": "Synthetic technical_task technical_task.team_done_reference: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        },
+        "technical_task.ai_artifact_evidence": {
+          "value": "Synthetic technical_task technical_task.ai_artifact_evidence: workshop registration scope, existing fixture session identifiers, source fixture-1 and explicit observable outcome.",
+          "applicability": "applicable"
+        }
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "source-001",
+      "text": "Synthetic workshop plan: participants register, reserve a session and receive a confirmation within the controlled fixture environment. No actual users or recipients.",
+      "version": "fixture-1",
+      "originality": "original",
+      "approvalStatus": "draft",
+      "protected": true
+    }
+  ],
+  "sourcePins": {
+    "source-001": "55805e7f3826bbaf99c0d8f29a546690edfcf1bcad8240f3d83d076a7efb812c"
+  },
+  "authorities": [
+    {
+      "id": "fixture-reviewer",
+      "kind": "independent_ai",
+      "permissions": [
+        "quality_review"
+      ],
+      "elementIds": [
+        "*"
+      ],
+      "authoritySource": "Synthetic test harness registry, not an actual identity or approval."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "fixture-audit",
+      "kind": "independent_review_snapshot",
+      "description": "Synthetic audit matrix exercising checker mechanics. Its verdicts are deliberately generated test fixtures and do not assess real quality.",
+      "origin": "Local synthetic fixture generator",
+      "syntheticFixture": true,
+      "content": {
+        "label": "SYNTHETIC TEST ONLY",
+        "coveredElements": [
+          "vision-001",
+          "strategy-001",
+          "roadmap-001",
+          "release_goal-001",
+          "epic-001",
+          "user_story-001",
+          "acceptance_criterion-001",
+          "technical_task-001"
+        ],
+        "method": "This fixture tests schema validation, fingerprints, evidence and gates, not semantic truth."
+      },
+      "contentHash": "e88ba8d0989c6d0beabf5cff5b58e856a21f36cef3efc099cffc6288fbfa90fe",
+      "boundTo": "e6061656348ae61243a6ada6e007eddb89003485e43bb1bcb1f31e466dc65b9e",
+      "bindings": [
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "vision-001",
+          "fieldId": null,
+          "checkId": "gate.vision.ready.01",
+          "subjectFingerprint": "c12f71ba0ec84186005da86aa5290ac42f80c4b3f07db287d3121158ec7b9c3a"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "vision-001",
+          "fieldId": null,
+          "checkId": "gate.vision.ready.02",
+          "subjectFingerprint": "0864978832d2f35786cfc118e22a0a9433dbb7eea207238a01a704a28ce935ae"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "vision-001",
+          "fieldId": null,
+          "checkId": "gate.vision.ready.03",
+          "subjectFingerprint": "7f36180f526dcebf5ec4f56d1d4b4a280724188cd1bbd34c83301443eebce4de"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "vision-001",
+          "fieldId": null,
+          "checkId": "gate.vision.ready.04",
+          "subjectFingerprint": "c11a4f7eeaf72150a3b4973af2d7cd86cc73c8bbfc813bab2538e03e64c1abd2"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "vision-001",
+          "fieldId": null,
+          "checkId": "gate.vision.ready.05",
+          "subjectFingerprint": "1b72a3a59ed582884d559bab13dd58ea8e6b7be6fa5a8b82647d021c10d3355c"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "vision-001",
+          "fieldId": null,
+          "checkId": "gate.vision.ready.06",
+          "subjectFingerprint": "46f781fa1f377f4333208f0e2fd98049b9b28a0273b92b82f5efe6af4c5c1059"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "vision-001",
+          "fieldId": null,
+          "checkId": "gate.vision.ready.07",
+          "subjectFingerprint": "4bc57cf798e6878f20e33faf03bfa0652aca4eea5d9f3d5443a313d04a9b354d"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "strategy-001",
+          "fieldId": null,
+          "checkId": "gate.strategy.ready.01",
+          "subjectFingerprint": "33100fba47a5ceb253a610b20614c0d895e53f69ca8c1465e238d223bfc462be"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "strategy-001",
+          "fieldId": null,
+          "checkId": "gate.strategy.ready.02",
+          "subjectFingerprint": "74807a8ccba5c9a97a0774843c39e75ac5ec8f8a38021e2a404759746b95a593"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "strategy-001",
+          "fieldId": null,
+          "checkId": "gate.strategy.ready.03",
+          "subjectFingerprint": "1bbdbf3a31a177abdc024a5e7b460a939f10779777c936d97a298ebe000571be"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "strategy-001",
+          "fieldId": null,
+          "checkId": "gate.strategy.ready.04",
+          "subjectFingerprint": "797f321bc2f1f31853bed5953ce0cf320e9dbbe851f3d6ab9469539bc1ffc580"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "strategy-001",
+          "fieldId": null,
+          "checkId": "gate.strategy.ready.05",
+          "subjectFingerprint": "ab723eee5d3254e9941c9ae8fbafed8b6dae469e71061b767c0e588929d1fb48"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "strategy-001",
+          "fieldId": null,
+          "checkId": "gate.strategy.ready.06",
+          "subjectFingerprint": "b8a09f8ab0173c9cf4c7c24945760fad962c1d7719ec16ddca337f45abaea9b5"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "strategy-001",
+          "fieldId": null,
+          "checkId": "gate.strategy.ready.07",
+          "subjectFingerprint": "35fc3bc47779a7a0c5feaef80183ac3c3ecefe14aa39d09b2e19b1cf5c24d212"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "roadmap-001",
+          "fieldId": null,
+          "checkId": "gate.roadmap.ready.01",
+          "subjectFingerprint": "0f4d3bc7e44ef9cdcb36af6e5460ec363c3729e21cae9fb936ffa185e6c3aa9e"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "roadmap-001",
+          "fieldId": null,
+          "checkId": "gate.roadmap.ready.02",
+          "subjectFingerprint": "404fad5b64ea3bc4a4d0c4420a5430a8b085a3bd1db541e9f6686c1063251afe"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "roadmap-001",
+          "fieldId": null,
+          "checkId": "gate.roadmap.ready.03",
+          "subjectFingerprint": "026f5d26f489d6ec846cdc0cb96e48ffada4c7393cdbe149e0c33b20177326b7"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "roadmap-001",
+          "fieldId": null,
+          "checkId": "gate.roadmap.ready.04",
+          "subjectFingerprint": "cdb82603df01980015bfb24b32bee1088b4340f405c9d78620c015c98aa15a8b"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "roadmap-001",
+          "fieldId": null,
+          "checkId": "gate.roadmap.ready.05",
+          "subjectFingerprint": "b62b8ae8cbaa311d4a8d007bb7e2079320395bee0951f5986aecd357241b3b62"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "roadmap-001",
+          "fieldId": null,
+          "checkId": "gate.roadmap.ready.06",
+          "subjectFingerprint": "0a950c2a656073424e57d8554b58933c2226a15e47388f396e782d2213e685c6"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "roadmap-001",
+          "fieldId": null,
+          "checkId": "gate.roadmap.ready.07",
+          "subjectFingerprint": "eafee24a4f800e5b6586d6733bda228d7c85857330b1fe7c3e88bdf52add632f"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "release_goal-001",
+          "fieldId": null,
+          "checkId": "gate.release_goal.ready.01",
+          "subjectFingerprint": "1e73d687e7d4b2bd74b975004cf7757ff790b6c24e6477ce947fbab90cc2d2ba"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "release_goal-001",
+          "fieldId": null,
+          "checkId": "gate.release_goal.ready.02",
+          "subjectFingerprint": "a3e167e49fda57d7d382eef829a016d6bbdcc7ae593c0e363ccf1ed77cc17570"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "release_goal-001",
+          "fieldId": null,
+          "checkId": "gate.release_goal.ready.03",
+          "subjectFingerprint": "c8a0055f411f4c7d1dc6a3f60397ac2e2a85902cbbf1a84d7b1498671b85b54e"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "release_goal-001",
+          "fieldId": null,
+          "checkId": "gate.release_goal.ready.04",
+          "subjectFingerprint": "dffe2910b21f69daaf6ad9579c5fd9758c1e16be7d738af54ec83ed0803816e5"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "release_goal-001",
+          "fieldId": null,
+          "checkId": "gate.release_goal.ready.05",
+          "subjectFingerprint": "1a76d053a61118f8103812fe3bc6ab7c4caca9de37808f118921cb8d2aa8f754"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "release_goal-001",
+          "fieldId": null,
+          "checkId": "gate.release_goal.ready.06",
+          "subjectFingerprint": "6d2f238309760206780c123849e897460a4fcf8554522b923ecbfe781cd878f0"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "release_goal-001",
+          "fieldId": null,
+          "checkId": "gate.release_goal.ready.07",
+          "subjectFingerprint": "05d302ebfc56405cc00c93bdd96e41bd64019a174cbe8c510227a70cee556fc1"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "epic-001",
+          "fieldId": null,
+          "checkId": "gate.epic.ready.01",
+          "subjectFingerprint": "cbac08d1018371fdc383a6f03059137e30880139147c0df1b3162409fdb5abad"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "epic-001",
+          "fieldId": null,
+          "checkId": "gate.epic.ready.02",
+          "subjectFingerprint": "6a646ca94fcac61a289ea323991b4a80b81a240f50f23904b7f6dec09abf06ae"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "epic-001",
+          "fieldId": null,
+          "checkId": "gate.epic.ready.03",
+          "subjectFingerprint": "4380760ffb147747d4bf83bd2c688b4f722f5117dfad769c894cf6469733c336"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "epic-001",
+          "fieldId": null,
+          "checkId": "gate.epic.ready.04",
+          "subjectFingerprint": "fea9ff9eb4dfdd0d7e8a62d37d221753202cde18e858340912ae3a99187bf52e"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "epic-001",
+          "fieldId": null,
+          "checkId": "gate.epic.ready.05",
+          "subjectFingerprint": "06143a8a9814073bc1a8268076aa6657dafb20ebb269336e4737125661a99607"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "epic-001",
+          "fieldId": null,
+          "checkId": "gate.epic.ready.06",
+          "subjectFingerprint": "b6dfabe44efa481f8058f97ae5184534d020a74440914ff3ddf50d1ed75f76c5"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "epic-001",
+          "fieldId": null,
+          "checkId": "gate.epic.ready.07",
+          "subjectFingerprint": "4464c115548a31f2e028253b3a94819e40d4c81ce1e805ad3158be1289ca5ac4"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "user_story-001",
+          "fieldId": null,
+          "checkId": "gate.user_story.ready.01",
+          "subjectFingerprint": "62b4574cab6d6575294eec89c6db48588be6e826f967ed5a60f9523bee4bb83b"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "user_story-001",
+          "fieldId": null,
+          "checkId": "gate.user_story.ready.02",
+          "subjectFingerprint": "d28ecdf91d73ba39734276f5797f3e79c8221fc942d531af209a780b68b84ecd"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "user_story-001",
+          "fieldId": null,
+          "checkId": "gate.user_story.ready.03",
+          "subjectFingerprint": "348817e308de151d7c9e08d164f3ec96229a95c718c135390f1ac149ecd33871"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "user_story-001",
+          "fieldId": null,
+          "checkId": "gate.user_story.ready.04",
+          "subjectFingerprint": "3b027d5278ce4c427fc6d7d429bd2b1439f75632c805fa79636ea93a05e84a81"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "user_story-001",
+          "fieldId": null,
+          "checkId": "gate.user_story.ready.05",
+          "subjectFingerprint": "f1a4564a1488a8481bef40e44641b02ec3a0c6d80da27c40a4711b4cbb141002"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "user_story-001",
+          "fieldId": null,
+          "checkId": "gate.user_story.ready.06",
+          "subjectFingerprint": "0494d76d552775860495918826b0142b1932447ba79431cef7dedd3c50c4352b"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "user_story-001",
+          "fieldId": null,
+          "checkId": "gate.user_story.ready.07",
+          "subjectFingerprint": "ec305f44701652c852caf933b7508e0b15383132ec25bbc336ddf9c3707179fd"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "acceptance_criterion-001",
+          "fieldId": null,
+          "checkId": "gate.acceptance_criterion.ready.01",
+          "subjectFingerprint": "add38f79bf9deb16b88bd71f115c3bbf4802ff18d7cd6f3bd5ce40e86eb6cc30"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "acceptance_criterion-001",
+          "fieldId": null,
+          "checkId": "gate.acceptance_criterion.ready.02",
+          "subjectFingerprint": "9a11b118c47b8fdd4c70a95326bc4b3f9f7902ce5ff88b219f48cffbba0ab4df"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "acceptance_criterion-001",
+          "fieldId": null,
+          "checkId": "gate.acceptance_criterion.ready.03",
+          "subjectFingerprint": "59094c78e2b7c474d062df70f293b3f7c308d71f23b6bed3a166253924b2bae2"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "acceptance_criterion-001",
+          "fieldId": null,
+          "checkId": "gate.acceptance_criterion.ready.04",
+          "subjectFingerprint": "5a07cdb915e7547bdee4f5885c1992876da97d81021e390f92175d8cfadbdad1"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "acceptance_criterion-001",
+          "fieldId": null,
+          "checkId": "gate.acceptance_criterion.ready.05",
+          "subjectFingerprint": "c5962175e36a143b16b548bc46e9bcfdb702f315cbf4cba2b2ff969f6aae00c4"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "acceptance_criterion-001",
+          "fieldId": null,
+          "checkId": "gate.acceptance_criterion.ready.06",
+          "subjectFingerprint": "a8a356b0e2afaa1e403d13e69624a3b204a344c1c193ae3946ab94b1acc7dcdd"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "acceptance_criterion-001",
+          "fieldId": null,
+          "checkId": "gate.acceptance_criterion.ready.07",
+          "subjectFingerprint": "3023b9c723f088e12a79c2a7211025534a9fa2a3cb9ede2904b2ef28b71925a9"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "technical_task-001",
+          "fieldId": null,
+          "checkId": "gate.technical_task.ready.01",
+          "subjectFingerprint": "d81eed4a3818717a0d5da65cbb70fd2c0e74a356ced8e46355b9fd34c51269b2"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "technical_task-001",
+          "fieldId": null,
+          "checkId": "gate.technical_task.ready.02",
+          "subjectFingerprint": "776aaec6fc0bf7b1df578c5942265ac64e0234fce7e1f50c202548d179c89110"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "technical_task-001",
+          "fieldId": null,
+          "checkId": "gate.technical_task.ready.03",
+          "subjectFingerprint": "d8f37e62a2cce2ce3527312c0cbf3cd7f7c6a9dab1e30048e0bf71dafc6d862c"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "technical_task-001",
+          "fieldId": null,
+          "checkId": "gate.technical_task.ready.04",
+          "subjectFingerprint": "045c70ba3fcc8f249c928f497f08f31f4a0d8771841087b945186e832f5ce635"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "technical_task-001",
+          "fieldId": null,
+          "checkId": "gate.technical_task.ready.05",
+          "subjectFingerprint": "e00cef6f2970af39d535a5267b091bc97fb2f4f00eba502ddf2b2c65d5eb4dca"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "technical_task-001",
+          "fieldId": null,
+          "checkId": "gate.technical_task.ready.06",
+          "subjectFingerprint": "d14d69e9c47b2001169c316bb011342fae1100f2c9c8a77fa2523f41b1ec3a49"
+        },
+        {
+          "bindingVersion": "scoped-v1",
+          "elementId": "technical_task-001",
+          "fieldId": null,
+          "checkId": "gate.technical_task.ready.07",
+          "subjectFingerprint": "acb41973647c5311ad21adcc0b95d3f02402b23a113b283c85897be17bba8659"
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "fixture-review-0000",
+      "elementId": "vision-001",
+      "fieldId": null,
+      "checkId": "gate.vision.ready.01",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "c12f71ba0ec84186005da86aa5290ac42f80c4b3f07db287d3121158ec7b9c3a",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: The direction names actual users/operators, their problem and a durable outcome; parent/source links resolve to current authoritative evidence rather than a feature inventory. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0001",
+      "elementId": "vision-001",
+      "fieldId": null,
+      "checkId": "gate.vision.ready.02",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "0864978832d2f35786cfc118e22a0a9433dbb7eea207238a01a704a28ce935ae",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Operating context, affected people, non-goals and decision principles distinguish in-scope outcomes from exclusions without waiving protected requirements. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0002",
+      "elementId": "vision-001",
+      "fieldId": null,
+      "checkId": "gate.vision.ready.03",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "7f36180f526dcebf5ec4f56d1d4b4a280724188cd1bbd34c83301443eebce4de",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Claims and assumptions are distinguished; relevant research has population, method, source and limitations, and the most important remaining uncertainty has a falsifiable research/decision plan. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0003",
+      "elementId": "vision-001",
+      "fieldId": null,
+      "checkId": "gate.vision.ready.04",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "c11a4f7eeaf72150a3b4973af2d7cd86cc73c8bbfc813bab2538e03e64c1abd2",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Success signals describe observable user/organization outcomes; each relevant measure has definition, population, method and review horizon, with agreed targets or explicit pending decision. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0004",
+      "elementId": "vision-001",
+      "fieldId": null,
+      "checkId": "gate.vision.ready.05",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "1b72a3a59ed582884d559bab13dd58ea8e6b7be6fa5a8b82647d021c10d3355c",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: The chosen direction explains value and major alternatives/trade-offs and connects to strategy; resource or timing commitments are sourced, and pending feasibility decisions remain visible. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0005",
+      "elementId": "vision-001",
+      "fieldId": null,
+      "checkId": "gate.vision.ready.06",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "46f781fa1f377f4333208f0e2fd98049b9b28a0273b92b82f5efe6af4c5c1059",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: The actual profile identifies AI, affected rights, safety, security, access, privacy and accessibility applicability; scope/principles protect these obligations and prohibited effects. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready. Unsampled conditional assurance: resolve product AI yes/no/unknown from the pinned actual context. If AI is used, AI-01 to AI-07 in the pinned module apply at their current-stage requirements: dataset quality/rights, predeclared overall and critical-slice metrics/thresholds, observed safety/refusal/fallback, exact model/prompt/configuration revision, applicable personal-data/jurisdiction decisions and monitoring/drift/rollback. An evidence-backed no-use exclusion must not waive other applicable obligations. Unknown applicability or absent required rights/results is unresolved, never N/A.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0006",
+      "elementId": "vision-001",
+      "fieldId": null,
+      "checkId": "gate.vision.ready.07",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "4bc57cf798e6878f20e33faf03bfa0652aca4eea5d9f3d5443a313d04a9b354d",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Actual product ownership/review authority, version and state are distinct from approval and delivery; review triggers connect observed learning to a decision and canonical strategy/roadmap updates. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0007",
+      "elementId": "strategy-001",
+      "fieldId": null,
+      "checkId": "gate.strategy.ready.01",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "33100fba47a5ceb253a610b20614c0d895e53f69ca8c1465e238d223bfc462be",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Each strategic choice resolves to the vision and an evidenced priority problem/user outcome; sources distinguish established facts from proposed bets. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0008",
+      "elementId": "strategy-001",
+      "fieldId": null,
+      "checkId": "gate.strategy.ready.02",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "74807a8ccba5c9a97a0774843c39e75ac5ec8f8a38021e2a404759746b95a593",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Priority users/use cases, constraints, exclusions and reuse decisions bound the strategy and identify affected operators and prohibited scope expansion. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0009",
+      "elementId": "strategy-001",
+      "fieldId": null,
+      "checkId": "gate.strategy.ready.03",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "1bbdbf3a31a177abdc024a5e7b460a939f10779777c936d97a298ebe000571be",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Diagnosis and major bets have cited evidence, counterevidence and limitations; the validation plan can disprove the riskiest choice and has a predeclared continue/change/stop rule. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0010",
+      "elementId": "strategy-001",
+      "fieldId": null,
+      "checkId": "gate.strategy.ready.04",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "797f321bc2f1f31853bed5953ce0cf320e9dbbe851f3d6ab9469539bc1ffc580",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Outcome measures, baseline and agreed targets define population, method and horizon; pending target decisions are explicit before the stage that depends on them. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0011",
+      "elementId": "strategy-001",
+      "fieldId": null,
+      "checkId": "gate.strategy.ready.05",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "ab723eee5d3254e9941c9ae8fbafed8b6dae469e71061b767c0e588929d1fb48",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Choice and sequencing rationale compare meaningful alternatives and opportunity cost; dependencies, capacity/resource assumptions and uncertainty support any actual commitment. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0012",
+      "elementId": "strategy-001",
+      "fieldId": null,
+      "checkId": "gate.strategy.ready.06",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "b8a09f8ab0173c9cf4c7c24945760fad962c1d7719ec16ddca337f45abaea9b5",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Applicable assurance obligations, including product AI and personal-data jurisdiction, constrain strategic choices; unsafe or unauthorized benefits cannot justify bypassing required controls. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready. Unsampled conditional assurance: resolve product AI yes/no/unknown from the pinned actual context. If AI is used, AI-01 to AI-07 in the pinned module apply at their current-stage requirements: dataset quality/rights, predeclared overall and critical-slice metrics/thresholds, observed safety/refusal/fallback, exact model/prompt/configuration revision, applicable personal-data/jurisdiction decisions and monitoring/drift/rollback. An evidence-backed no-use exclusion must not waive other applicable obligations. Unknown applicability or absent required rights/results is unresolved, never N/A.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0013",
+      "elementId": "strategy-001",
+      "fieldId": null,
+      "checkId": "gate.strategy.ready.07",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "35fc3bc47779a7a0c5feaef80183ac3c3ecefe14aa39d09b2e19b1cf5c24d212",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Actual decision authority and change state are explicit; observed discovery/release learning drives a recorded continue/change/stop decision and strategy/roadmap feedback, with actual follow-up owner. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0014",
+      "elementId": "roadmap-001",
+      "fieldId": null,
+      "checkId": "gate.roadmap.ready.01",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "0f4d3bc7e44ef9cdcb36af6e5460ec363c3729e21cae9fb936ffa185e6c3aa9e",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Canonical roadmap outcomes and items resolve to current strategy and release goals; no duplicate backlog competes with the owning records. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0015",
+      "elementId": "roadmap-001",
+      "fieldId": null,
+      "checkId": "gate.roadmap.ready.02",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "404fad5b64ea3bc4a4d0c4420a5430a8b085a3bd1db541e9f6686c1063251afe",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Now/Next/Later and release allocation bound a versioned scope; deferrals, shared contributors and confidence distinguish intended direction from agreed commitments. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0016",
+      "elementId": "roadmap-001",
+      "fieldId": null,
+      "checkId": "gate.roadmap.ready.03",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "026f5d26f489d6ec846cdc0cb96e48ffada4c7393cdbe149e0c33b20177326b7",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Evidence gates for horizon movement reference the highest-risk assumptions and actual discovery outputs; an untested hypothesis is not presented as an established predecessor result. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0017",
+      "elementId": "roadmap-001",
+      "fieldId": null,
+      "checkId": "gate.roadmap.ready.04",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "cdb82603df01980015bfb24b32bee1088b4340f405c9d78620c015c98aa15a8b",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Each allocated outcome has a linked release measure and review window or explicit pending decision; progress denominators and evidence describe outcomes without counting duplicate items. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0018",
+      "elementId": "roadmap-001",
+      "fieldId": null,
+      "checkId": "gate.roadmap.ready.05",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "b62b8ae8cbaa311d4a8d007bb7e2079320395bee0951f5986aecd357241b3b62",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Sequence rationale reflects child priority/size ranges, genuine predecessor outputs and capacity uncertainty; estimates/timing are sourced and confidence is explicit, not invented. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0019",
+      "elementId": "roadmap-001",
+      "fieldId": null,
+      "checkId": "gate.roadmap.ready.06",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "0a950c2a656073424e57d8554b58933c2226a15e47388f396e782d2213e685c6",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Assurance, approval and access prerequisites appear as actual dependency/decision gates, including AI evaluation/privacy/fallback where applicable; a horizon label never waives a safety obligation. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready. Unsampled conditional assurance: resolve product AI yes/no/unknown from the pinned actual context. If AI is used, AI-01 to AI-07 in the pinned module apply at their current-stage requirements: dataset quality/rights, predeclared overall and critical-slice metrics/thresholds, observed safety/refusal/fallback, exact model/prompt/configuration revision, applicable personal-data/jurisdiction decisions and monitoring/drift/rollback. An evidence-backed no-use exclusion must not waive other applicable obligations. Unknown applicability or absent required rights/results is unresolved, never N/A.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0020",
+      "elementId": "roadmap-001",
+      "fieldId": null,
+      "checkId": "gate.roadmap.ready.07",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "eafee24a4f800e5b6586d6733bda228d7c85857330b1fe7c3e88bdf52add632f",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Actual roadmap authority, blockers and precise resume conditions are current; measured learning changes priority/allocation or records a no-change rationale with a next decision and owner. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0021",
+      "elementId": "release_goal-001",
+      "fieldId": null,
+      "checkId": "gate.release_goal.ready.01",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "1e73d687e7d4b2bd74b975004cf7757ff790b6c24e6477ce947fbab90cc2d2ba",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: The release identifies actual users and an end-to-end usable outcome traceable to strategy/roadmap; included canonical items collectively deliver that outcome. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0022",
+      "elementId": "release_goal-001",
+      "fieldId": null,
+      "checkId": "gate.release_goal.ready.02",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "a3e167e49fda57d7d382eef829a016d6bbdcc7ae593c0e363ccf1ed77cc17570",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: In-scope and deferred items, operating context and preserved behaviour form a single versioned release boundary; dependencies and readiness assumptions are explicit. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0023",
+      "elementId": "release_goal-001",
+      "fieldId": null,
+      "checkId": "gate.release_goal.ready.03",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "c8a0055f411f4c7d1dc6a3f60397ac2e2a85902cbbf1a84d7b1498671b85b54e",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Value/readiness claims cite actual predecessor/discovery evidence with limitations; unresolved assumptions are tracked to an actual decision and exact resume condition. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0024",
+      "elementId": "release_goal-001",
+      "fieldId": null,
+      "checkId": "gate.release_goal.ready.04",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "dffe2910b21f69daaf6ad9579c5fd9758c1e16be7d738af54ec83ed0803816e5",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Outcome targets, baseline/population/method and acceptance evidence are predeclared; entry and exit requirements are testable and do not conflate tests, acceptance, release and availability. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0025",
+      "elementId": "release_goal-001",
+      "fieldId": null,
+      "checkId": "gate.release_goal.ready.05",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "1a76d053a61118f8103812fe3bc6ab7c4caca9de37808f118921cb8d2aa8f754",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Scope and sequence fit sourced epic/story priority and size/capacity assumptions; release dependencies, resource constraints and uncertain timing are explicit before any commitment. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0026",
+      "elementId": "release_goal-001",
+      "fieldId": null,
+      "checkId": "gate.release_goal.ready.06",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "6d2f238309760206780c123849e897460a4fcf8554522b923ecbfe781cd878f0",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Actual product/privacy/security/domain approval route, NFRs, recovery and applicable AI controls are specified; required dataset rights, measured thresholds, safety/fallback and monitoring gates cannot be sampled away. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready. Unsampled conditional assurance: resolve product AI yes/no/unknown from the pinned actual context. If AI is used, AI-01 to AI-07 in the pinned module apply at their current-stage requirements: dataset quality/rights, predeclared overall and critical-slice metrics/thresholds, observed safety/refusal/fallback, exact model/prompt/configuration revision, applicable personal-data/jurisdiction decisions and monitoring/drift/rollback. An evidence-backed no-use exclusion must not waive other applicable obligations. Unknown applicability or absent required rights/results is unresolved, never N/A.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0027",
+      "elementId": "release_goal-001",
+      "fieldId": null,
+      "checkId": "gate.release_goal.ready.07",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "05d302ebfc56405cc00c93bdd96e41bd64019a174cbe8c510227a70cee556fc1",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: The release retains separate quality, approval, readiness, acceptance, authorized publication and observed-availability evidence; actual outcome review ownership/window and strategy/roadmap feedback survive go-live. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0028",
+      "elementId": "epic-001",
+      "fieldId": null,
+      "checkId": "gate.epic.ready.01",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "cbac08d1018371fdc383a6f03059137e30880139147c0df1b3162409fdb5abad",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: One coherent capability addresses an evidenced user/operator problem and traces to current strategy/release requirements; its scope is not a collection of unrelated tasks. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0029",
+      "elementId": "epic-001",
+      "fieldId": null,
+      "checkId": "gate.epic.ready.02",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "6a646ca94fcac61a289ea323991b4a80b81a240f50f23904b7f6dec09abf06ae",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Included/excluded scope and hand-offs are explicit; canonical children have one primary parent and cross-epic contributions use related links rather than duplicate acceptance counts. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0030",
+      "elementId": "epic-001",
+      "fieldId": null,
+      "checkId": "gate.epic.ready.03",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "4380760ffb147747d4bf83bd2c688b4f722f5117dfad769c894cf6469733c336",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: The riskiest assumption is ranked by consequence/uncertainty and has a falsifiable test, authorized method/sample, predeclared decision threshold, observed result when due and documented continue/change/stop or bounded authorized risk decision. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0031",
+      "elementId": "epic-001",
+      "fieldId": null,
+      "checkId": "gate.epic.ready.04",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "fea9ff9eb4dfdd0d7e8a62d37d221753202cde18e858340912ae3a99187bf52e",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: The capability completion/outcome boundary has observable measures and child acceptance mapping; uncovered source requirements, unsuccessful children and scope denominators remain visible. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0032",
+      "elementId": "epic-001",
+      "fieldId": null,
+      "checkId": "gate.epic.ready.05",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "06143a8a9814073bc1a8268076aa6657dafb20ebb269336e4737125661a99607",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Priority compares meaningful alternatives and opportunity cost; size is a sourced range/coarse unit with scope, method, uncertainty and dependencies, and true prerequisites are separated from design relationships. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0033",
+      "elementId": "epic-001",
+      "fieldId": null,
+      "checkId": "gate.epic.ready.06",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "b6dfabe44efa481f8058f97ae5184534d020a74440914ff3ddf50d1ed75f76c5",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Shared experience/information/interface/quality contracts carry actual applicable access, safety, privacy, accessibility and AI requirements into children; no critical obligation falls between epics or into advisory-only samples. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready. Unsampled conditional assurance: resolve product AI yes/no/unknown from the pinned actual context. If AI is used, AI-01 to AI-07 in the pinned module apply at their current-stage requirements: dataset quality/rights, predeclared overall and critical-slice metrics/thresholds, observed safety/refusal/fallback, exact model/prompt/configuration revision, applicable personal-data/jurisdiction decisions and monitoring/drift/rollback. An evidence-backed no-use exclusion must not waive other applicable obligations. Unknown applicability or absent required rights/results is unresolved, never N/A.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0034",
+      "elementId": "epic-001",
+      "fieldId": null,
+      "checkId": "gate.epic.ready.07",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "4464c115548a31f2e028253b3a94819e40d4c81ce1e805ad3158be1289ca5ac4",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Actual epic owner/authority, revision, readiness/completion and gaps are distinct; accepted children alone do not prove capability value, and outcome learning feeds strategy/roadmap with an actual owner and next review. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0035",
+      "elementId": "user_story-001",
+      "fieldId": null,
+      "checkId": "gate.user_story.ready.01",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "62b4574cab6d6575294eec89c6db48588be6e826f967ed5a60f9523bee4bb83b",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: One bounded user/operator need and observable outcome resolves to its canonical epic/release and original source clauses; supporting/investigation items use their explicit variant rather than invented end-user value. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0036",
+      "elementId": "user_story-001",
+      "fieldId": null,
+      "checkId": "gate.user_story.ready.02",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "d28ecdf91d73ba39734276f5797f3e79c8221fc942d531af209a780b68b84ecd",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Trigger/preconditions, main journey, in/out of scope, preserved behaviour and affected users/operators are explicit; the experience can be understood without guessing. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0037",
+      "elementId": "user_story-001",
+      "fieldId": null,
+      "checkId": "gate.user_story.ready.03",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "348817e308de151d7c9e08d164f3ec96229a95c718c135390f1ac149ecd33871",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Evidence and inspected reuse sources support the need/design; unresolved assumptions/decisions retain exact source, actual owner and resume condition, and source criteria are distinguished from proposed supplements. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0038",
+      "elementId": "user_story-001",
+      "fieldId": null,
+      "checkId": "gate.user_story.ready.04",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "3b027d5278ce4c427fc6d7d429bd2b1439f75632c805fa79636ea93a05e84a81",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Identified criteria define observable positive/adverse/refusal/failure/authorization/recovery outcomes as applicable; every criterion maps to an approved evaluation context and expected evidence, with measurable thresholds where required. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0039",
+      "elementId": "user_story-001",
+      "fieldId": null,
+      "checkId": "gate.user_story.ready.05",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "f1a4564a1488a8481bef40e44641b02ec3a0c6d80da27c40a4711b4cbb141002",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Priority follows sourced outcome, urgency/risk and alternatives; size is an attributable range/coarse unit with method, uncertainty, scope and dependencies, supporting a feasible bounded item. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0040",
+      "elementId": "user_story-001",
+      "fieldId": null,
+      "checkId": "gate.user_story.ready.06",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "0494d76d552775860495918826b0142b1932447ba79431cef7dedd3c50c4352b",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Actual operation contracts and side effects, access/accountability, refusal, information continuity, accessibility and NFRs cover applicable risks; AI acceptance metrics/slices, safety/fallback, rights/versioning and monitoring use the pinned module. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready. Unsampled conditional assurance: resolve product AI yes/no/unknown from the pinned actual context. If AI is used, AI-01 to AI-07 in the pinned module apply at their current-stage requirements: dataset quality/rights, predeclared overall and critical-slice metrics/thresholds, observed safety/refusal/fallback, exact model/prompt/configuration revision, applicable personal-data/jurisdiction decisions and monitoring/drift/rollback. An evidence-backed no-use exclusion must not waive other applicable obligations. Unknown applicability or absent required rights/results is unresolved, never N/A.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0041",
+      "elementId": "user_story-001",
+      "fieldId": null,
+      "checkId": "gate.user_story.ready.07",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "ec305f44701652c852caf933b7508e0b15383132ec25bbc336ddf9c3707179fd",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Canonical team Ready/Done versions and item-specific additions are linked; quality, specification approval, execution readiness, criterion acceptance and delivery are distinct, with final revision and outcome-learning hand-off current. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0042",
+      "elementId": "acceptance_criterion-001",
+      "fieldId": null,
+      "checkId": "gate.acceptance_criterion.ready.01",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "add38f79bf9deb16b88bd71f115c3bbf4802ff18d7cd6f3bd5ce40e86eb6cc30",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Criterion ID and owning item resolve to exact source provenance/current specification; a proposed supplement is distinguished from a protected original requirement. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0043",
+      "elementId": "acceptance_criterion-001",
+      "fieldId": null,
+      "checkId": "gate.acceptance_criterion.ready.02",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "9a11b118c47b8fdd4c70a95326bc4b3f9f7902ce5ff88b219f48cffbba0ab4df",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Given/When/Then identify one scenario, trigger, expected observable result and applicable prohibited effects without implementation guesses or hidden side effects. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0044",
+      "elementId": "acceptance_criterion-001",
+      "fieldId": null,
+      "checkId": "gate.acceptance_criterion.ready.03",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "59094c78e2b7c474d062df70f293b3f7c308d71f23b6bed3a166253924b2bae2",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: The intended scenario and evaluation design use relevant source/risk evidence and an authorized reproducible context; missing facts or unavailable test inputs remain unresolved rather than guessed. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0045",
+      "elementId": "acceptance_criterion-001",
+      "fieldId": null,
+      "checkId": "gate.acceptance_criterion.ready.04",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "5a07cdb915e7547bdee4f5885c1992876da97d81021e390f92175d8cfadbdad1",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Measurement defines method, units, threshold, sample/population and uncertainty where relevant; expected evidence can distinguish pass/fail, and AI metrics use fixed dataset/slice/model/prompt revisions. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0046",
+      "elementId": "acceptance_criterion-001",
+      "fieldId": null,
+      "checkId": "gate.acceptance_criterion.ready.05",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "c5962175e36a143b16b548bc46e9bcfdb702f315cbf4cba2b2ff969f6aae00c4",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: The criterion maps to the owning item priority/risk and feasible verification method; any fixture/sample or predecessor constraint is explicit, and one result is not double-counted across competing criterion IDs. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0047",
+      "elementId": "acceptance_criterion-001",
+      "fieldId": null,
+      "checkId": "gate.acceptance_criterion.ready.06",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "a8a356b0e2afaa1e403d13e69624a3b204a344c1c193ae3946ab94b1acc7dcdd",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: The criterion covers its applicable safety/privacy/access/authorization/fallback obligation and prohibited effects; actual AI accuracy and critical-slice/safety thresholds are independently required when this criterion claims AI behaviour. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready. Unsampled conditional assurance: resolve product AI yes/no/unknown from the pinned actual context. If AI is used, AI-01 to AI-07 in the pinned module apply at their current-stage requirements: dataset quality/rights, predeclared overall and critical-slice metrics/thresholds, observed safety/refusal/fallback, exact model/prompt/configuration revision, applicable personal-data/jurisdiction decisions and monitoring/drift/rollback. An evidence-backed no-use exclusion must not waive other applicable obligations. Unknown applicability or absent required rights/results is unresolved, never N/A.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0048",
+      "elementId": "acceptance_criterion-001",
+      "fieldId": null,
+      "checkId": "gate.acceptance_criterion.ready.07",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "3023b9c723f088e12a79c2a7211025534a9fa2a3cb9ede2904b2ef28b71925a9",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Specification approval, not-run/planned execution, observed result and accepted state remain separate; evidence is bound to the current criterion/revision and a failed/skipped/blocked result has a precise follow-up. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0049",
+      "elementId": "technical_task-001",
+      "fieldId": null,
+      "checkId": "gate.technical_task.ready.01",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "d81eed4a3818717a0d5da65cbb70fd2c0e74a356ced8e46355b9fd34c51269b2",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: One bounded implementation/design/operational/manufacturing/verification result has a canonical parent and exact source/criterion links; completing it must contribute to the parent outcome. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0050",
+      "elementId": "technical_task-001",
+      "fieldId": null,
+      "checkId": "gate.technical_task.ready.02",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "776aaec6fc0bf7b1df578c5942265ac64e0234fce7e1f50c202548d179c89110",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Affected components/processes and exact contracts/specification revision, exclusions and preserved behaviour bound the change; work steps and deliverables are reviewable in the actual product process. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0051",
+      "elementId": "technical_task-001",
+      "fieldId": null,
+      "checkId": "gate.technical_task.ready.03",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "d8f37e62a2cce2ce3527312c0cbf3cd7f7c6a9dab1e30048e0bf71dafc6d862c",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Work/reuse/spike claims cite inspected sources and falsifiable investigation where relevant; required evaluation inputs/access and unresolved decisions remain explicit without fabricated facts. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0052",
+      "elementId": "technical_task-001",
+      "fieldId": null,
+      "checkId": "gate.technical_task.ready.04",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "045c70ba3fcc8f249c928f497f08f31f4a0d8771841087b945186e832f5ce635",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Verification cases and expected outputs map to parent acceptance criteria and actual product qualification method; no mirror-only demonstration substitutes for the declared user/operating requirement. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0053",
+      "elementId": "technical_task-001",
+      "fieldId": null,
+      "checkId": "gate.technical_task.ready.05",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "e00cef6f2970af39d535a5267b091bc97fb2f4f00eba502ddf2b2c65d5eb4dca",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Sequence relies on actual predecessor outputs and native completion blockers; parent priority/size and task effort/resource uncertainty support a feasible scope without invented commitments. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0054",
+      "elementId": "technical_task-001",
+      "fieldId": null,
+      "checkId": "gate.technical_task.ready.06",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "d14d69e9c47b2001169c316bb011342fae1100f2c9c8a77fa2523f41b1ec3a49",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Impacts cover applicable experience, information, interface, access, safety and quality; evaluation access is authorized and AI artifact/held-out/safety/version/promotion evidence meets the pinned module when applicable. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready. Unsampled conditional assurance: resolve product AI yes/no/unknown from the pinned actual context. If AI is used, AI-01 to AI-07 in the pinned module apply at their current-stage requirements: dataset quality/rights, predeclared overall and critical-slice metrics/thresholds, observed safety/refusal/fallback, exact model/prompt/configuration revision, applicable personal-data/jurisdiction decisions and monitoring/drift/rollback. An evidence-backed no-use exclusion must not waive other applicable obligations. Unknown applicability or absent required rights/results is unresolved, never N/A.",
+      "bindingVersion": "scoped-v1"
+    },
+    {
+      "id": "fixture-review-0055",
+      "elementId": "technical_task-001",
+      "fieldId": null,
+      "checkId": "gate.technical_task.ready.07",
+      "status": "passed",
+      "reviewerId": "fixture-reviewer",
+      "independent": true,
+      "subjectFingerprint": "acb41973647c5311ad21adcc0b95d3f02402b23a113b283c85897be17bba8659",
+      "evidenceIds": [
+        "fixture-audit"
+      ],
+      "rationale": "SYNTHETIC generated verdict for gate tests; not a real semantic review. Criterion: Actual task owner/state and canonical team Ready/Done versions are current; task completion, parent acceptance and release/availability remain distinct, and actual outputs plus learning/follow-up are handed to the owning story/release. Ready stage: the item can proceed through the declared actual process with the required scope/targets, feasible estimate/dependencies, evaluation access, controls and actual authority decisions resolved. Apply the canonical team Ready policy where linked. Quality PASS cannot grant approval: any independent human/business/legal/safety approval or access decision remains a separate prerequisite, and an unresolved required prerequisite blocks ready.",
+      "bindingVersion": "scoped-v1"
+    }
+  ],
+  "approvalRecords": [],
+  "history": [],
+  "readinessState": {
+    "status": "not_assessed",
+    "reason": "Documentation quality does not authorize implementation or launch."
+  },
+  "deliveryState": {
+    "status": "not_assessed",
+    "reason": "No implementation, launch, operational availability or acceptance inferred."
+  }
+}

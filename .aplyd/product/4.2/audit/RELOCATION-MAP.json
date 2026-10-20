@@ -1,0 +1,749 @@
+{
+  "schemaVersion": "1.0",
+  "packagingEdition": "4.2-generic",
+  "historicalEdition": "4.0-generic",
+  "sourceArchiveName": "product-management-agent-bundle-v4.zip",
+  "sourceArchiveSha256": "13632c60c252d2854e0357beb7ed4d057ab0247d7831e6b3ca5dd1d58f8832cf",
+  "pathBase": "All originalPath and preservedPath entries are relative to their respective extracted bundle roots.",
+  "referenceBases": {
+    "QUALIFICATION.json": "Bundle root, except preservedPreviousEditions which names separate historical archives.",
+    "checker/qualification-runs.json": "Pins are checker-root relative; command arguments retain original working-directory context.",
+    "checker/independent-engine-review.json": "pins, reviewEvidence and implementationRegressionEvidence paths are checker-root relative.",
+    "documentation/document-qualification-runs.json": "Receipt paths are original bundle-root relative; historical authoring/render assets may be explicitly excluded from the original package.",
+    "checker/verification/": "Module pins are checker-root relative; script and output identity retain original locations."
+  },
+  "historicalRecordsUnchanged": true,
+  "originalPayloadFilesPreserved": 81,
+  "files": [
+    {
+      "originalPath": "AI-ASSURANCE.md",
+      "preservedPath": "AI-ASSURANCE.md",
+      "sha256": "2daca863175de55394f2b063c0ffcf8da4db2b4345d01bbdcf190ba18c65e66b",
+      "bytes": 30437,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": ".",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "BUNDLE-MANIFEST.json",
+      "preservedPath": "audit/v4/BUNDLE-MANIFEST.json",
+      "sha256": "b24b07c1f2728529a982d5557de98f82f55036247830e8949d44de115e6be542",
+      "bytes": 13987,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": ".",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "FEEDBACK-RESOLUTION.md",
+      "preservedPath": "audit/v4/FEEDBACK-RESOLUTION.md",
+      "sha256": "675af346697255f631e836126ffd2ed34f7241b2b7e40f7d07f526203cda0f87",
+      "bytes": 13225,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": ".",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "PRODUCT-CONTEXT.md",
+      "preservedPath": "PRODUCT-CONTEXT.md",
+      "sha256": "1b23d990a8bb3efc550e79e52963e82b8872c2f5d4c1c0e8f2f7ffd6d4bf359a",
+      "bytes": 9101,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": ".",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "QUALIFICATION.json",
+      "preservedPath": "audit/v4/QUALIFICATION.json",
+      "sha256": "434839cdd9c9a387861fc445f704da9c02822b0b6af9a3890c1676b680a41dc3",
+      "bytes": 5402,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": ".",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "START-HERE.md",
+      "preservedPath": "audit/v4/START-HERE.md",
+      "sha256": "6d7677ebc1db01465231c18beb03eef8d87609c145ebc295adf76bc15d014d92",
+      "bytes": 6090,
+      "kind": "historical_instruction_copy",
+      "originalRelativeReferenceBase": ".",
+      "currentInstructionPath": "START-HERE.md"
+    },
+    {
+      "originalPath": "ai-assurance.template.json",
+      "preservedPath": "ai-assurance.template.json",
+      "sha256": "e27a340a426af567b6301ada3388ad1812696e7d60699f787279e1e68ea82983",
+      "bytes": 11790,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": ".",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/ASSISTANT-WORKFLOW.txt",
+      "preservedPath": "audit/v4/checker/ASSISTANT-WORKFLOW.txt",
+      "sha256": "78bdfbb5e6a8e82d987f6625883375eb1a9b4e0361c72da2c2210a773bc1118d",
+      "bytes": 7530,
+      "kind": "historical_instruction_copy",
+      "originalRelativeReferenceBase": "checker",
+      "currentInstructionPath": "checker/ASSISTANT-WORKFLOW.txt"
+    },
+    {
+      "originalPath": "checker/README.md",
+      "preservedPath": "audit/v4/checker/README.md",
+      "sha256": "3ea3a93093aab8c09231fadf044aadc2db0a787749b7f71b045491d5d813fa1a",
+      "bytes": 21800,
+      "kind": "historical_instruction_copy",
+      "originalRelativeReferenceBase": "checker",
+      "currentInstructionPath": "checker/README.md"
+    },
+    {
+      "originalPath": "checker/catalogue-audit.json",
+      "preservedPath": "audit/v4/checker/catalogue-audit.json",
+      "sha256": "7c3cc9ddc9f3d3bc170bfde0b9b7b67ddf73ff48e7cd1bf7abb35754fb191151",
+      "bytes": 1368,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "checker",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/catalogue.json",
+      "preservedPath": "checker/catalogue.json",
+      "sha256": "cec6bc14f5976dd7e1a48ba9f224e18b1258abb08ed0479a7f080b2dc6245456",
+      "bytes": 2125714,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/compatibility-map.json",
+      "preservedPath": "checker/compatibility-map.json",
+      "sha256": "046f8d7f5b93c08698be6785ef93f6ad8a70ed25e4feb72251e7054374b405eb",
+      "bytes": 14750,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/delivery-report.json",
+      "preservedPath": "audit/v4/checker/examples/delivery-report.json",
+      "sha256": "c1624e1bedcb85cae15fce6e93efeba9eea1d11cb96e5e0e8df93e7a6bb9a0c5",
+      "bytes": 240057,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "checker/examples",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/discovery-report.json",
+      "preservedPath": "audit/v4/checker/examples/discovery-report.json",
+      "sha256": "852a739195186e41adef30c62c49bdf202450f92b513826f901badeb63a57ef5",
+      "bytes": 234185,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "checker/examples",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/exhaustive-report.json",
+      "preservedPath": "audit/v4/checker/examples/exhaustive-report.json",
+      "sha256": "cfd3ac6366d3b6686748794440aac92cd01a10673509743e3ef95a146272649c",
+      "bytes": 4232007,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "checker/examples",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/generate_fixtures.py",
+      "preservedPath": "checker/examples/generate_fixtures.py",
+      "sha256": "c4a6cf93f42a1291bcf1b292baab354917d01a2d37e520f53297963a4c4a847d",
+      "bytes": 2001,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/examples",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/learning-report.json",
+      "preservedPath": "audit/v4/checker/examples/learning-report.json",
+      "sha256": "b8468abc1324de29f3094eaba7c1d53720f290d91302aa5095e4c14ef23fc26b",
+      "bytes": 239322,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "checker/examples",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/pass-report.json",
+      "preservedPath": "audit/v4/checker/examples/pass-report.json",
+      "sha256": "8bd00eb4be76050335e9ffdc7906572ce96d23e9996f0486446ec3b85d22ac8a",
+      "bytes": 236536,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "checker/examples",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/pending-loop/loop-state.json",
+      "preservedPath": "audit/v4/checker/examples/pending-loop/loop-state.json",
+      "sha256": "29ba4101a485582c9841c356968d308f1ba8953f1ba63015734fabee8333aa0b",
+      "bytes": 337126,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "checker/examples/pending-loop",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/pending-loop/questions.json",
+      "preservedPath": "audit/v4/checker/examples/pending-loop/questions.json",
+      "sha256": "c5855bb0c44230e7cf0e3c6fc4ce12f3600458b24754b696e0de2e205c66374b",
+      "bytes": 12497,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "checker/examples/pending-loop",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/pending-report.json",
+      "preservedPath": "audit/v4/checker/examples/pending-report.json",
+      "sha256": "e24cacfa01bedc25f1be03bdda576d9f206f517c233a3b70d5967e62aa7fb059",
+      "bytes": 252836,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "checker/examples",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/planning-report.json",
+      "preservedPath": "audit/v4/checker/examples/planning-report.json",
+      "sha256": "0d1da45d8720ccc6f1b024dfddc1e24a0e55e0fbe57c1387860667d01d8bb42d",
+      "bytes": 236536,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "checker/examples",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/ready-report.json",
+      "preservedPath": "audit/v4/checker/examples/ready-report.json",
+      "sha256": "691d50dbad740257c25f16fefa2d48783aceb6810fa43ef80d38633d916af85b",
+      "bytes": 239597,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "checker/examples",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/stale-report.json",
+      "preservedPath": "audit/v4/checker/examples/stale-report.json",
+      "sha256": "b74f6ad99b294923392434764743a936e0a5108f4336bf02430fdca99e37d857",
+      "bytes": 237115,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "checker/examples",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/synthetic-delivery-pass.json",
+      "preservedPath": "checker/examples/synthetic-delivery-pass.json",
+      "sha256": "68ca9e797d25be6470e88b9bd33aaff4b3e5f16d7cbd3e4424948135d8d0054e",
+      "bytes": 171606,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/examples",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/synthetic-discovery-pass.json",
+      "preservedPath": "checker/examples/synthetic-discovery-pass.json",
+      "sha256": "ea531ea4920f959187e15d78c917d7959a3239766ec678530bff413388ae030c",
+      "bytes": 169031,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/examples",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/synthetic-exhaustive-pass.json",
+      "preservedPath": "checker/examples/synthetic-exhaustive-pass.json",
+      "sha256": "f0c910aa6aa4605ddb7e6d6ddcdbe3b759782f1a69c00afbcef28f3165f918fc",
+      "bytes": 1750515,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/examples",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/synthetic-learning-pass.json",
+      "preservedPath": "checker/examples/synthetic-learning-pass.json",
+      "sha256": "d972d5d8fa4635b48356bd51236f5862bce14e09e47ed3f8be077aa0950ea024",
+      "bytes": 170990,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/examples",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/synthetic-pass.json",
+      "preservedPath": "checker/examples/synthetic-pass.json",
+      "sha256": "fead7af41fb6abdc7cec0537fa96eb4ce03fe6800c3571f1ba71c0adf4cf3541",
+      "bytes": 168974,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/examples",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/synthetic-pending.json",
+      "preservedPath": "checker/examples/synthetic-pending.json",
+      "sha256": "880cbafc50b5a9339f7de8e7032d76b83ab5e4d42a6f19869cb8e3fb22796ed0",
+      "bytes": 48898,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/examples",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/synthetic-planning-pass.json",
+      "preservedPath": "checker/examples/synthetic-planning-pass.json",
+      "sha256": "fead7af41fb6abdc7cec0537fa96eb4ce03fe6800c3571f1ba71c0adf4cf3541",
+      "bytes": 168974,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/examples",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/synthetic-ready-pass.json",
+      "preservedPath": "checker/examples/synthetic-ready-pass.json",
+      "sha256": "610a42e04e50c643e05c128aec9a89de6129c9e1200f26bc4da248c3b6e5dccf",
+      "bytes": 171715,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/examples",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/examples/synthetic-stale.json",
+      "preservedPath": "checker/examples/synthetic-stale.json",
+      "sha256": "b54e5f04070df1f9c2d68d6f8db58051e0782e713db18c333176b21e18ea6efd",
+      "bytes": 169111,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/examples",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/independent-engine-review.json",
+      "preservedPath": "audit/v4/checker/independent-engine-review.json",
+      "sha256": "b08659f38eee337ad0d316a2d5a5010e3e85592be3f84cd703acf9b9166ae2eb",
+      "bytes": 6650,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "checker",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/loop-quality-spec.md",
+      "preservedPath": "audit/v4/checker/loop-quality-spec.md",
+      "sha256": "b2d36804ba2d2bcf628186e3317b26fc2d28a363ecd867e3efe02d2b87ec4335",
+      "bytes": 19729,
+      "kind": "historical_instruction_copy",
+      "originalRelativeReferenceBase": "checker",
+      "currentInstructionPath": "checker/loop-quality-spec.md"
+    },
+    {
+      "originalPath": "checker/publication/acceptance_criterion.json",
+      "preservedPath": "checker/publication/acceptance_criterion.json",
+      "sha256": "234efd2152b7eeaf9319862d9136bb42a39dd3f28d82c1f3b110108e134bf7d8",
+      "bytes": 90962,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/publication",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/publication/common.json",
+      "preservedPath": "checker/publication/common.json",
+      "sha256": "33c1c1f222c97c21b71f6bb4d3f3229c7f972ed6010fca8543f6e350186012c5",
+      "bytes": 45368,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/publication",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/publication/epic.json",
+      "preservedPath": "checker/publication/epic.json",
+      "sha256": "a12e712f3ca06e723ea3383379d9d551a729c67638b3e31a1130c62396cca3e4",
+      "bytes": 97763,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/publication",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/publication/index.json",
+      "preservedPath": "checker/publication/index.json",
+      "sha256": "55e198030221a612eb175ec943abbf984441688e5985d6e11f66683cad381d1b",
+      "bytes": 3473,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/publication",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/publication/release_goal.json",
+      "preservedPath": "checker/publication/release_goal.json",
+      "sha256": "7a84d1081fe2a58a5d99e914937ea7358285b381a7bf230028999fc72f5d3772",
+      "bytes": 107917,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/publication",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/publication/roadmap.json",
+      "preservedPath": "checker/publication/roadmap.json",
+      "sha256": "fc45c074255e932854adc50bfe0442bb827cbea3bdbbc0035b50d30f6a57d194",
+      "bytes": 100450,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/publication",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/publication/strategy.json",
+      "preservedPath": "checker/publication/strategy.json",
+      "sha256": "2232c9c308eefa01324c83afd73d85caa1e2239a5a896f3d8e9a82a58196319e",
+      "bytes": 94477,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/publication",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/publication/technical_task.json",
+      "preservedPath": "checker/publication/technical_task.json",
+      "sha256": "1314e574f7091e26c4d1b7f44f0eaf511db43d03e5beced4f4313d6594426162",
+      "bytes": 113787,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/publication",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/publication/user_story.json",
+      "preservedPath": "checker/publication/user_story.json",
+      "sha256": "832ebebb2b82207862f331b03bf112be15c7dafdf3da63000cdc1e7dd4f82803",
+      "bytes": 143536,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/publication",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/publication/vision.json",
+      "preservedPath": "checker/publication/vision.json",
+      "sha256": "5f55c87a7ea84c52e02f8fdf822c3570718ced0bfc7b8e74ce53a64c9272dcb8",
+      "bytes": 88139,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/publication",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/qualification-runs.json",
+      "preservedPath": "audit/v4/checker/qualification-runs.json",
+      "sha256": "dc9d69a8b4d714f749d20719433ee0315841e40e5bb0693b75660410dc4723b4",
+      "bytes": 52270,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "checker",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/quality_checker.py",
+      "preservedPath": "audit/v4/checker/quality_checker.py",
+      "sha256": "ded9080be9a6d5be6a6bb837d217290f37dc1e22123c57b2279dcb5d5f97f94a",
+      "bytes": 81269,
+      "kind": "historical_changed_runtime_copy",
+      "originalRelativeReferenceBase": "checker",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/quality_loop.py",
+      "preservedPath": "checker/quality_loop.py",
+      "sha256": "ad589c27c5794d7b7854d4ab4932060940ccc5ec8bf751e1c539344a2faa62c7",
+      "bytes": 36621,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/quality_tools.py",
+      "preservedPath": "audit/v4/checker/quality_tools.py",
+      "sha256": "4b1d4db8e8041e0773b39776bde84983381d6501d2173be75ef032c09a46cceb",
+      "bytes": 11758,
+      "kind": "historical_changed_runtime_copy",
+      "originalRelativeReferenceBase": "checker",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/render_rulebooks.py",
+      "preservedPath": "checker/render_rulebooks.py",
+      "sha256": "8a4e50b680c6c48fe9c7e23945115f8ae4b273e9de7b3be9f2bc794ff2447699",
+      "bytes": 5675,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/source-standard.md",
+      "preservedPath": "checker/source-standard.md",
+      "sha256": "89c5b91203828ed7e07e9da370c1b90cd309dc9434c303142b830c953d699729",
+      "bytes": 437932,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/team-checklists.json",
+      "preservedPath": "checker/team-checklists.json",
+      "sha256": "e878966595dc1c938a7d3c6fa354f1d5c52551ed12b35c92338088d99a5f5183",
+      "bytes": 5886,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/test-execution.txt",
+      "preservedPath": "audit/v4/checker/test-execution.txt",
+      "sha256": "c3274f16ccc38c2adbe9746c702fb70892d51291c4baaf5c3d1ff94298911b18",
+      "bytes": 9432,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "checker",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/tests/test_checker.py",
+      "preservedPath": "audit/v4/checker/tests/test_checker.py",
+      "sha256": "667913da5952bcf1aad5d9628636c7b16344399756954a2ae045b1cb5dd6555a",
+      "bytes": 39543,
+      "kind": "historical_changed_runtime_copy",
+      "originalRelativeReferenceBase": "checker/tests",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/tests/test_core_v4.py",
+      "preservedPath": "checker/tests/test_core_v4.py",
+      "sha256": "7fbf04249106e3ebf0e2746ab8cf1a0e210b70867ffbbbac869e0aed9d45f009",
+      "bytes": 14183,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/tests",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/tests/test_loop_v4.py",
+      "preservedPath": "checker/tests/test_loop_v4.py",
+      "sha256": "c1655cbcc4f9bfc7fbc5817f8fb8bcd2fa6997a9eb45b88a31064c51c27a2736",
+      "bytes": 22367,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/tests",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/tests/test_tools_v4.py",
+      "preservedPath": "checker/tests/test_tools_v4.py",
+      "sha256": "ad1b6f5ae12098a8f7aa42fec783224b01154fd2cb076db2d7a103a66e928a4d",
+      "bytes": 7618,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/tests",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/verification/README.md",
+      "preservedPath": "audit/v4/checker/verification/README.md",
+      "sha256": "e66fdf2fb006de94440633fa855fc43fd6a175c9dba018c929ca8d942f14fa12",
+      "bytes": 3442,
+      "kind": "historical_instruction_copy",
+      "originalRelativeReferenceBase": "checker/verification",
+      "currentInstructionPath": "checker/verification/README.md"
+    },
+    {
+      "originalPath": "checker/verification/audit_helpers_v4.py",
+      "preservedPath": "checker/verification/audit_helpers_v4.py",
+      "sha256": "19f09b857319d072d73bd4ebd9a01476eb84a7e3cbdb00c645a66eb0b0caedfd",
+      "bytes": 11454,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/verification",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/verification/audit_loop_v4.py",
+      "preservedPath": "checker/verification/audit_loop_v4.py",
+      "sha256": "3d32fb1a1bd3b503e0eb0a008163a3397d54509a7da618548dd080631aebd7d4",
+      "bytes": 7285,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/verification",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/verification/audit_scoped_bindings.py",
+      "preservedPath": "checker/verification/audit_scoped_bindings.py",
+      "sha256": "5a78c0e8bdfc79aae7bb6f39f6c47c97f824d3eb1c36c50f096b382559debf8d",
+      "bytes": 8777,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/verification",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/verification/audit_trust_v4.py",
+      "preservedPath": "checker/verification/audit_trust_v4.py",
+      "sha256": "640703f572d03212a1aadb370458a1bd81964f1b3f6bae93b685996a2ef701d6",
+      "bytes": 6651,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/verification",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/verification/benchmark_v4.py",
+      "preservedPath": "checker/verification/benchmark_v4.py",
+      "sha256": "61369f98a06f38b257b5b3c6b8bd1f5fd108459c861ba0bfda66922abf8d6a63",
+      "bytes": 7380,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "checker/verification",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/verification/helper-review.json",
+      "preservedPath": "audit/v4/checker/verification/helper-review.json",
+      "sha256": "3344ccc12003d2a0b6afc3e3eae7974400e216bfd9df29dffeadb267a71d8cad",
+      "bytes": 11915,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "checker/verification",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/verification/v4-independent-loop-audit.json",
+      "preservedPath": "audit/v4/checker/verification/v4-independent-loop-audit.json",
+      "sha256": "9cb115ccc54336febfba51bb819c49719fdf5722fa1a0c30c12d2d3a5042b36d",
+      "bytes": 2476,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "checker/verification",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/verification/v4-independent-scale-audit.json",
+      "preservedPath": "audit/v4/checker/verification/v4-independent-scale-audit.json",
+      "sha256": "83953ba1b185e94260bb94016958ea86f28c3518f0bfa65fcdc47016690319b1",
+      "bytes": 1763,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "checker/verification",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/verification/v4-independent-scoped-audit.json",
+      "preservedPath": "audit/v4/checker/verification/v4-independent-scoped-audit.json",
+      "sha256": "f6ce762ce85aa60c56ef28eb314b06d1683db54970059705064858d38a2030b7",
+      "bytes": 6673,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "checker/verification",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "checker/verification/v4-independent-trust-audit.json",
+      "preservedPath": "audit/v4/checker/verification/v4-independent-trust-audit.json",
+      "sha256": "0ef6fc755cb1a6f4d434f3a1f16c9e9a5bb707930163c51830c4ff25d6f3b7be",
+      "bytes": 2471,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "checker/verification",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "documentation/Generic Product Management Operating Framework.docx",
+      "preservedPath": "documentation/Generic Product Management Operating Framework.docx",
+      "sha256": "9caf07514b99d4cb3e40fef35e8f5f76963358fa702de8cbbcd67307d153fac8",
+      "bytes": 106328,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "documentation",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "documentation/README.md",
+      "preservedPath": "audit/v4/documentation/README.md",
+      "sha256": "4eee0f8c1e32da6a22733038c3d5abd30e9b23f13f423ce10327d14ecc712e03",
+      "bytes": 1671,
+      "kind": "historical_instruction_copy",
+      "originalRelativeReferenceBase": "documentation",
+      "currentInstructionPath": "documentation/README.md"
+    },
+    {
+      "originalPath": "documentation/content-coverage-receipt.json",
+      "preservedPath": "audit/v4/documentation/content-coverage-receipt.json",
+      "sha256": "c9479a2e1cf059aec6e9bdfeeabbf100a429388e8eaeffe98290e2127643dc1c",
+      "bytes": 676,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "documentation",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "documentation/document-qualification-runs.json",
+      "preservedPath": "audit/v4/documentation/document-qualification-runs.json",
+      "sha256": "5df2d82a41ef48eddb6a39802d2e69a30c8e64b85e202f8940804d03a6fe5d20",
+      "bytes": 16515,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "documentation",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "documentation/guide-verification-receipt.json",
+      "preservedPath": "audit/v4/documentation/guide-verification-receipt.json",
+      "sha256": "8b4aca3af070524ffd19684f1f96119b3d8a80fcc6295e1f4681b9e1572e28f1",
+      "bytes": 11751,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "documentation",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "documentation/tests/test_verify_guide.py",
+      "preservedPath": "documentation/tests/test_verify_guide.py",
+      "sha256": "e579608ec670c2ccfbae9b3e6e7b85b953a78c7dbf4e7f327a9ad6e307519f15",
+      "bytes": 9010,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "documentation/tests",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "documentation/verifier-test-execution.txt",
+      "preservedPath": "audit/v4/documentation/verifier-test-execution.txt",
+      "sha256": "2129d4038171fba384b7466fe4d7004a224eae3f50b5e8be104734e3687ff7e6",
+      "bytes": 1313,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "documentation",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "documentation/verify_guide.py",
+      "preservedPath": "documentation/verify_guide.py",
+      "sha256": "46650d384f10c5907ce37acca49521395b03357223d1b75c8c00b46b2593a57c",
+      "bytes": 13977,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": "documentation",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "documentation/visual-review-appendix.json",
+      "preservedPath": "audit/v4/documentation/visual-review-appendix.json",
+      "sha256": "3394b6d8601e1dce35bec8e2b22a2d6e370f886967d1a9255a6a380a11d98650",
+      "bytes": 2122,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "documentation",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "documentation/visual-review-end.json",
+      "preservedPath": "audit/v4/documentation/visual-review-end.json",
+      "sha256": "4936b86a0b586a22dfd76550c6204ee5b99156e8eebc9cfe69a0bb9f3d18ff84",
+      "bytes": 14567,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "documentation",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "documentation/visual-review-middle.json",
+      "preservedPath": "audit/v4/documentation/visual-review-middle.json",
+      "sha256": "b126112578d60bcd7fe5335b53755753aacbddd9f6ae8be6d514d93686f9dea7",
+      "bytes": 27337,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "documentation",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "documentation/visual-review-start.json",
+      "preservedPath": "audit/v4/documentation/visual-review-start.json",
+      "sha256": "00a0a0d0453e3aec555bbcb8bd8194f3c6cf230f0b025725e74fb5bb76b2bf57",
+      "bytes": 5714,
+      "kind": "relocated_historical_record",
+      "originalRelativeReferenceBase": "documentation",
+      "currentInstructionPath": null
+    },
+    {
+      "originalPath": "product-context.template.json",
+      "preservedPath": "product-context.template.json",
+      "sha256": "ec305539b84b347259587a878297aebe4a7a7cb36bbe8647ac450669de05d112",
+      "bytes": 2701,
+      "kind": "unchanged_runtime_or_reference",
+      "originalRelativeReferenceBase": ".",
+      "currentInstructionPath": null
+    }
+  ],
+  "currentEngineUsesOriginalCriteriaWithFixedIdentityGuard": true
+}

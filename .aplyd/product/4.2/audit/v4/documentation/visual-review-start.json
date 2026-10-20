@@ -1,0 +1,125 @@
+{
+  "schemaVersion": "1.0",
+  "reviewerTask": "primary_document_reviewer",
+  "docxSha256": "9caf07514b99d4cb3e40fef35e8f5f76963358fa702de8cbbcd67307d153fac8",
+  "renderDirectory": "rendered-release",
+  "pageRange": [
+    1,
+    18
+  ],
+  "pageCount": 18,
+  "allPagesIndividuallyInspected": true,
+  "status": "passed",
+  "materialFindings": [],
+  "observations": "Cover, contents, workflow, stage clauses and level matrices are readable. Final changed headings preserve punctuation. Appendix G numbering starts at one, queue and result tables fit, and the earlier forced near-empty carry page has been removed. Tables have repeated headers, intact rows and legible identifiers. No clipping, overlap or missing glyphs.",
+  "pages": [
+    {
+      "page": 1,
+      "pngSha256": "4bffddfb60c51102d6f12aaf2eb6a64fb8f0a19f0286012552f2ec3822b1f251",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 2,
+      "pngSha256": "028d3bda90199007480040b56897842cf642f9ff7039254b658d9a3e840ec41b",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 3,
+      "pngSha256": "7416686168d2f653aeffcbf0e70b4eaf974f41820e01acb69eea19fdb15854db",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 4,
+      "pngSha256": "bd5af554be1837215e0f8ba1400bb223b8511cf9fa889064beedbac507e8eb24",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 5,
+      "pngSha256": "b9f6ccf119175639a8d87019e12c463a87d2717c1a528643937035975492559a",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 6,
+      "pngSha256": "c382e82d3b2514e4a353b3c1eafe10e50370a7f45a785f4e9680d649415cc474",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 7,
+      "pngSha256": "0962240f2dfc0ad9439a2096fc2f3a71c9e0b756fb43156be4711afca6bb80e3",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 8,
+      "pngSha256": "09d53060b1d09c3f15183b0a949998792b9945d8ee9cffea0ea9e3ab82767d1e",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 9,
+      "pngSha256": "46d34076ac7a8b5849aa3e63592656530ac4d516178ba7ace08ccefd85a843fe",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 10,
+      "pngSha256": "2643efe67e32cbdb4d0d03c2929353b56a81072950d9f6ccf85a1be35476236c",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 11,
+      "pngSha256": "28f8abcaa50cb98d056ae27cec4c7734226b482233221364a7374e79113594b0",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 12,
+      "pngSha256": "39acf2f6d32fd8a2bf7d813cfd5a86a3ca92f783694a62a1b9aaa3c6b4bce566",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 13,
+      "pngSha256": "c64bb98b76b18681cee69866c7c05d7c83639ef0afae29296d34aed52ed58c83",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 14,
+      "pngSha256": "708e3621b6de5ff2d420b9807a009caccc36ba6583ed41e31876e45079d58a9d",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 15,
+      "pngSha256": "b0a7089949788bb1c9d09173e74731f42a63499929b47a436f798463842812cc",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 16,
+      "pngSha256": "44a85c73a4c792b8e712ebeb68b79f0224b4b2fc097b9e0f50aa2a13b4112cbe",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 17,
+      "pngSha256": "f1a43522e946c7676c3d34a88ac7d0efd411735645a69d1fa682e5746a0bff92",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 18,
+      "pngSha256": "95013538c537706625e6a4b713c163b571bc41c0dc4dd3e4e93c85b8e329d39f",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    }
+  ]
+}

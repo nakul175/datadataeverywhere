@@ -1,0 +1,93 @@
+{
+  "checkerSha256": "ded9080be9a6d5be6a6bb837d217290f37dc1e22123c57b2279dcb5d5f97f94a",
+  "loopSha256": "ad589c27c5794d7b7854d4ab4932060940ccc5ec8bf751e1c539344a2faa62c7",
+  "catalogueSha256": "cec6bc14f5976dd7e1a48ba9f224e18b1258abb08ed0479a7f080b2dc6245456",
+  "syntheticOnly": true,
+  "results": {
+    "unansweredBatch": {
+      "ownerQuestions": 59,
+      "firstBatchId": "B-1bc70eed8e8ae70d846a",
+      "secondBatchId": "B-1bc70eed8e8ae70d846a",
+      "sameQuestions": true,
+      "generationAcknowledged": false
+    },
+    "staleReviewerRouting": {
+      "qualityStatus": "needs_input",
+      "loopStatus": "needs_review",
+      "ownerQuestions": 0,
+      "reviewerTasks": 8,
+      "staleChecks": 8
+    },
+    "missingReviewerRouting": {
+      "ownerQuestions": 0,
+      "reviewerTasks": 1,
+      "loopStatus": "needs_review"
+    },
+    "resolvedRegression": {
+      "oldStatus": "resolved",
+      "pending": 1,
+      "nextBatch": 1,
+      "newQuestionId": "Q-041e1c7fb2642f5ab60f",
+      "regressionOf": "Q-115480531815aa1e5934",
+      "occurrence": 2
+    },
+    "acknowledgedBatch": {
+      "newBatchId": "B-7f15824ef8f39e76c94c",
+      "previousQuestionsStillAwaiting": 3,
+      "allPendingRetained": 59,
+      "qualityStatus": "needs_input"
+    },
+    "answerDoesNotPass": {
+      "qualityStatus": "needs_input",
+      "answerRetained": true,
+      "loopStatus": "needs_input"
+    },
+    "boundedState": {
+      "bytesAtRuns": [
+        [
+          16,
+          568383
+        ],
+        [
+          32,
+          573772
+        ],
+        [
+          45,
+          573772
+        ]
+      ],
+      "iterationCount": 32,
+      "maxContextHistory": 8,
+      "archiveFiles": 37,
+      "archiveVerified": true,
+      "headRecords": 2200,
+      "historicalCheckTextRepeated": false
+    },
+    "archiveTamper": {
+      "refused": true,
+      "stateBytesPreserved": true
+    },
+    "malformedStates": [
+      "ValueError",
+      "ValueError",
+      "ValueError",
+      "ValueError",
+      "ValueError"
+    ],
+    "assertions": {
+      "unansweredBatchRepeats": true,
+      "generationNotAcknowledgement": true,
+      "staleToReviewerOnly": true,
+      "missingToReviewerOnly": true,
+      "regressionReopens": true,
+      "ackStillUnanswered": true,
+      "answerNotPass": true,
+      "historyBounded": true,
+      "noRepeatedHistoricCheckText": true,
+      "archiveTamperRefused": true,
+      "malformedStatesControlled": true
+    }
+  },
+  "allAssertionsPassed": true
+}

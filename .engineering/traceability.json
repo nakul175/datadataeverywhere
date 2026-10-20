@@ -1,0 +1,41 @@
+{
+  "schema_version": 2,
+  "records": [
+    {
+      "task_id": "nakul175/datadataeverywhere#1",
+      "kind": "engineering",
+      "authorization_ref": "https://github.com/nakul175/datadataeverywhere/issues/1",
+      "requirement_refs": [
+        "docs/product/BASELINE.md"
+      ],
+      "design_refs": [
+        "docs/architecture/ADR-001-existing-system.md"
+      ],
+      "rationale": "Retrospective standards adoption, not a new product feature or release acceptance.",
+      "paths": [
+        "AGENTS.md",
+        ".aplyd/",
+        ".engineering/",
+        ".quality/",
+        ".github/",
+        "docs/",
+        "scripts/",
+        "sidecar/"
+      ],
+      "status": "implemented",
+      "branch": "chore/aplyd-delivery-standards",
+      "commit": "f990d557fafc1c3a78fdd187a8effb2772662b79",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/2",
+      "review_ref": null,
+      "release": null,
+      "deployment_evidence": null,
+      "notes": "Implementation is draft and not reviewed, merged, deployed or accepted. Application source formatting is mechanical; production is unchanged.",
+      "tracker_ref": "https://github.com/nakul175/datadataeverywhere/issues/1",
+      "legacy_ids": [],
+      "story_ids": [],
+      "acceptance_criterion_ids": [],
+      "qa_case_ids": [],
+      "qa_run_ids": []
+    }
+  ]
+}
