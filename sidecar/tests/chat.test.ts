@@ -35,6 +35,23 @@ beforeEach(() => {
   process.env.OPENAI_API_KEY = 'test-only-not-real';
 });
 describe('Chat admission checks', () => {
+  it('assembles a read-only stream from bounded context without adding tools', async () => {
+    const release = vi.fn().mockResolvedValue(undefined);
+    mocks.reserve.mockResolvedValue(release);
+    mocks.context.mockResolvedValue({ rows: [{ Id: 1 }], complete: false, truncated: true });
+    mocks.stream.mockReturnValue({
+      toUIMessageStreamResponse: () =>
+        Response.json({ fixture: 'stream stub, not a provider response' }),
+    });
+    expect((await POST(request(valid))).status).toBe(200);
+    const config = mocks.stream.mock.calls[0][0];
+    expect(config.tools).toBeUndefined();
+    expect(config.maxOutputTokens).toBe(1024);
+    expect(config.system).toContain('untrusted DATA');
+    expect(config.system).toContain('"truncated":true');
+    await config.onFinish();
+    expect(release).toHaveBeenCalledOnce();
+  });
   it('rejects cross-origin requests before reserving budget or reading data', async () => {
     const res = await POST(request(valid, 'https://attacker.test'));
     expect(res.status).toBe(403);

@@ -2,7 +2,8 @@ import 'server-only';
 import { createClient } from 'redis';
 const client = createClient({
   url: process.env.REDIS_URL || 'redis://redis:6379',
-  socket: { connectTimeout: 3000, reconnectStrategy: (retries) => Math.min(100 * retries, 3000) },
+  // Fail this request within a bounded connect attempt; a later request can reconnect.
+  socket: { connectTimeout: 3000, reconnectStrategy: false },
   disableOfflineQueue: true,
 });
 client.on('error', () => console.error('Budget store unavailable'));

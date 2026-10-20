@@ -36,6 +36,16 @@ beforeEach(() => {
   mocks.tables.mockResolvedValue([]);
 });
 describe('Workspace permission boundaries', () => {
+  it('does not silently accept an oversized upstream records page', async () => {
+    mocks.engine.mockResolvedValueOnce(schema);
+    mocks.engine.mockResolvedValueOnce({
+      list: Array.from({ length: 51 }, () => ({ Id: 1, Name: 'fixture' })),
+    });
+    const res = await GET(
+      new Request('https://example.test/api/workspace?action=records&tableId=t1'),
+    );
+    expect(res.status).toBe(502);
+  });
   it('rejects cross-origin writes without reading data', async () => {
     const res = await POST(
       request({ action: 'createBase', title: 'Team' }, 'https://attacker.test'),

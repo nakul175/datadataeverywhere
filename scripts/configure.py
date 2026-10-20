@@ -27,7 +27,7 @@ values = {
     'TEAM_DB_PASSWORD':secrets.token_hex(32), 'NC_AUTH_JWT_SECRET':secrets.token_hex(48),
     'NC_CONNECTION_ENCRYPT_KEY':secrets.token_hex(16), 'PROXY_SECRET':secrets.token_hex(48), 'NC_ADMIN_EMAIL':email, 'NC_ADMIN_PASSWORD':admin_password,
     'AI_PROVIDER':provider, 'OPENAI_API_KEY':key if provider=='openai' else '',
-    'ANTHROPIC_API_KEY':key if provider=='anthropic' else '', 'ANTHROPIC_MODEL':'claude-sonnet-5-5',
+    'ANTHROPIC_API_KEY':key if provider=='anthropic' else '', 'OPENAI_MODEL':'gpt-4o', 'ANTHROPIC_MODEL':'',
     'NOCODB_API_TOKEN':'', 'USER_DAILY_TOKEN_BUDGET':'500000', 'GLOBAL_DAILY_TOKEN_BUDGET':'5000000',
     'NC_SMTP_HOST':'', 'NC_SMTP_PORT':'587', 'NC_SMTP_USERNAME':'', 'NC_SMTP_PASSWORD':'',
     'NC_SMTP_FROM':'', 'NC_SMTP_SECURE':'false',

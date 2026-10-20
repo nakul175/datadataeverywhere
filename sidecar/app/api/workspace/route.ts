@@ -2,6 +2,8 @@ import { z } from 'zod';
 import { currentSession } from '@/lib/session';
 import { engine, engineId, boundedBody, sameOrigin } from '@/lib/engine';
 import { tableSchemaFor, checkedValues } from '@/lib/workspace';
+import { recordQuery } from '@/lib/table-query';
+import { aiReadiness } from '@/lib/provider-config';
 import { allowedTables, HttpError, errorResponse } from '@/lib/access';
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -35,38 +37,35 @@ export async function GET(req: Request) {
       }
       case 'records': {
         const id = engineId(q.get('tableId'));
-        const offset = Number(q.get('offset') || 0);
-        if (!Number.isSafeInteger(offset) || offset < 0 || offset > 10000000)
-          throw new HttpError(400, 'Invalid page.');
         const columns = await tableSchemaFor(id, session.token);
-        const data = await engine(
-          `/api/v2/tables/${id}/records?limit=50&offset=${offset}`,
-          session.token,
-        );
-        if (!Array.isArray(data.list)) throw new HttpError(502, 'Unexpected records response.');
+        const { query, scope, offset } = recordQuery(q, columns);
+        const data = await engine(`/api/v2/tables/${id}/records?${query}`, session.token);
+        if (!Array.isArray(data.list) || data.list.length > 50)
+          throw new HttpError(502, 'Unexpected records response.');
         // Do not forward arbitrary metadata or nested attachment URLs to the client.
         const rows = data.list.map((row: Record<string, unknown>) =>
           Object.fromEntries(columns.map((c) => [c.title, row[c.title] ?? null])),
         );
         const approved = (await allowedTables(session.email)).find((t) => t.id === id);
-        const provider = process.env.AI_PROVIDER || 'openai';
-        const ready =
-          provider === 'anthropic'
-            ? Boolean(process.env.ANTHROPIC_API_KEY)
-            : Boolean(process.env.OPENAI_API_KEY);
+        const { ready, reason } = aiReadiness();
         return json({
           columns,
           rows,
           page: {
             offset,
             isLast: data.pageInfo?.isLastPage === true || rows.length < 50,
-            total: Number.isSafeInteger(data.pageInfo?.totalRows) ? data.pageInfo.totalRows : null,
+            total:
+              scope === 'page' && Number.isSafeInteger(data.pageInfo?.totalRows)
+                ? data.pageInfo.totalRows
+                : null,
+            scope,
+            consistency: 'live-offset',
           },
           ai: {
             ready: ready && Boolean(approved),
             fields: approved?.fields || [],
             reason: !ready
-              ? 'Your administrator needs to connect an AI provider.'
+              ? reason
               : !approved
                 ? 'This table needs approved AI fields before chatting.'
                 : '',

@@ -1,5 +1,5 @@
 'use client';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport } from 'ai';
 import { chatPayload } from '@/lib/payload';
@@ -31,6 +31,12 @@ function ChatSession({
   const { messages, sendMessage, status, error, stop, setMessages, clearError } = useChat({
     transport,
   });
+  useEffect(
+    () => () => {
+      void stop();
+    },
+    [stop],
+  );
   const busy = status === 'submitted' || status === 'streaming';
   return (
     <main className="min-h-screen md:grid md:grid-cols-[280px_1fr]">

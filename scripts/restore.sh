@@ -8,6 +8,7 @@ if [ -f "$backup/docker-compose.shared.yml" ] && ! systemctl is-active --quiet c
   echo 'Shared-host restore requires host Caddy installed and active. See SHARED-HOST.md.' >&2; exit 1
 fi
 (cd "$backup" && sha256sum -c SHA256SUMS)
+if [ -f "$backup/unified.json" ]; then python3 scripts/unified-state.py validate --backup "$backup"; fi
 read -r -p 'Type RESTORE-EMPTY to confirm this stack has no data to preserve: ' confirm
 [ "$confirm" = RESTORE-EMPTY ] || exit 1
 # Refuse existing database/data volumes, including a stopped installation.
@@ -16,6 +17,7 @@ for name in datadataeverywhere_pgdata datadataeverywhere_ncdata datadataeverywhe
     echo 'Existing data volume detected. Restore on a clean host or separately isolated Docker daemon.' >&2; exit 1
   fi
 done
+if [ -f "$backup/unified.json" ]; then python3 scripts/unified-state.py restore --backup "$backup"; fi
 mkdir -p config caddy
 install -m 600 "$backup/env" .env
 install -m 644 "$backup/access.json" config/access.json

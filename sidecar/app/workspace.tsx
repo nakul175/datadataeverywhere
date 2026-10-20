@@ -42,9 +42,11 @@ async function api(query: Record<string, string> | object, mutate = false) {
 export default function Workspace({
   user,
   nocodbUrl,
+  tasksUrl,
 }: {
   user: { email: string; name: string };
   nocodbUrl: string;
+  tasksUrl: string;
 }) {
   const [bases, setBases] = useState<Item[]>([]);
   const [base, setBase] = useState('');
@@ -53,6 +55,7 @@ export default function Workspace({
   const [data, setData] = useState<Data | null>(null);
   const [offset, setOffset] = useState(0);
   const [query, setQuery] = useState('');
+  const [tableQuery, setTableQuery] = useState<Record<string, string> | null>(null);
   const [sort, setSort] = useState('');
   const [descending, setDescending] = useState(false);
   const [error, setError] = useState('');
@@ -91,6 +94,7 @@ export default function Workspace({
     setTable('');
     setData(null);
     setError('');
+    setTableQuery(null);
     api({ action: 'tables', baseId: base })
       .then((d) => {
         if (!live) return;
@@ -150,7 +154,7 @@ export default function Workspace({
     setLoading(true);
     setData(null);
     setError('');
-    api({ action: 'records', tableId: table, offset: String(offset) })
+    api({ action: 'records', tableId: table, offset: String(offset), ...(tableQuery || {}) })
       .then((d) => {
         if (reload.current === version) setData(d);
       })
@@ -159,7 +163,7 @@ export default function Workspace({
     return () => {
       reload.current++;
     };
-  }, [table, offset, recordRefresh]);
+  }, [table, offset, recordRefresh, tableQuery]);
   const rows = useMemo(() => {
     const rows = (data?.rows || []).filter((row) =>
       Object.values(row).some((v) => display(v).toLowerCase().includes(query.toLowerCase())),
@@ -180,6 +184,7 @@ export default function Workspace({
   const primary = data?.columns.filter((c) => c.primary) || [];
   const editable = data?.columns.filter((c) => c.editable) || [];
   function choose(id: string) {
+    setTableQuery(null);
     setTable(id);
     setOffset(0);
     setQuery('');
@@ -312,12 +317,7 @@ export default function Workspace({
         <a className="nav-item" href={nocodbUrl} target="_blank" rel="noreferrer">
           <span>↗</span> Advanced spreadsheet
         </a>
-        <a
-          className="nav-item"
-          href="https://app.sheethappensofficer.com"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a className="nav-item" href={tasksUrl} target="_blank" rel="noreferrer">
           <span>☑</span> SheetHappensOfficer
         </a>
         <div className="nav-section">
@@ -395,6 +395,89 @@ export default function Workspace({
         )}
         {active && (
           <>
+            <details className="table-help">
+              <summary>Search or sort the entire table</summary>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const form = new FormData(e.currentTarget);
+                  setOffset(0);
+                  setQuery('');
+                  setSort('');
+                  setTableQuery({
+                    scope: 'table',
+                    fieldId: String(form.get('fieldId') || ''),
+                    query: String(form.get('query') || ''),
+                    sortId: String(form.get('sortId') || ''),
+                    direction: String(form.get('direction') || 'asc'),
+                  });
+                }}
+              >
+                <label>
+                  Text field{' '}
+                  <select name="fieldId" aria-label="Full-table search field">
+                    {data?.columns
+                      .filter((c) =>
+                        ['SingleLineText', 'LongText', 'Email', 'PhoneNumber', 'URL'].includes(
+                          c.type,
+                        ),
+                      )
+                      .map((c) => (
+                        <option key={c.id} value={c.id}>
+                          {c.title}
+                        </option>
+                      ))}
+                  </select>
+                </label>
+                <label>
+                  Contains{' '}
+                  <input name="query" aria-label="Full-table search text" maxLength={200} />
+                </label>
+                <label>
+                  Sort{' '}
+                  <select name="sortId" aria-label="Full-table sort field">
+                    <option value="">Primary key</option>
+                    {data?.columns
+                      .filter((c) => c.primary || c.editable)
+                      .map((c) => (
+                        <option key={c.id} value={c.id}>
+                          {c.title}
+                        </option>
+                      ))}
+                  </select>
+                </label>
+                <label>
+                  Direction{' '}
+                  <select name="direction" aria-label="Full-table sort direction">
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                  </select>
+                </label>
+                <button disabled={loading} className="primary">
+                  Apply table query
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setOffset(0);
+                    setTableQuery(null);
+                  }}
+                >
+                  Clear table query
+                </button>
+              </form>
+              <p>
+                Searches a permitted text field across all pages. Letters, numbers, spaces, dots, @,
+                +, - and _ are supported. Paging reads live data; concurrent edits can move rows.
+                This is not a consistent export.
+              </p>
+            </details>
+            {tableQuery && (
+              <p role="status" className="table-help">
+                Full-table query active · page search and page sort below apply only to these loaded
+                results.
+              </p>
+            )}
             <div className="grid-toolbar">
               <span className="view-label">▦ Grid view</span>
               <label className="search-box">
@@ -685,6 +768,10 @@ export default function Workspace({
 }
 function Analyst({ table, ai, close }: { table?: Item; ai?: Data['ai']; close: () => void }) {
   const [input, setInput] = useState('');
+  const [preview, setPreview] = useState('');
+  const [previewError, setPreviewError] = useState('');
+  const [previewBusy, setPreviewBusy] = useState(false);
+  const previewRequest = useRef<AbortController | null>(null);
   const messagesEnd = useRef<HTMLDivElement>(null);
   const transport = useMemo(
     () =>
@@ -699,6 +786,13 @@ function Analyst({ table, ai, close }: { table?: Item; ai?: Data['ai']; close: (
   const { messages, sendMessage, status, error, stop, setMessages, clearError } = useChat({
     transport,
   });
+  useEffect(
+    () => () => {
+      void stop();
+      previewRequest.current?.abort();
+    },
+    [stop],
+  );
   const busy = status === 'submitted' || status === 'streaming';
   useEffect(() => {
     if (messages.length)
@@ -728,6 +822,57 @@ function Analyst({ table, ai, close }: { table?: Item; ai?: Data['ai']; close: (
         <small>TABLE CONTEXT</small>
       </div>
       <div className="ai-messages" aria-live="polite">
+        {Boolean(ai?.fields.length) && (
+          <div className="setup-note">
+            <p>
+              Approved AI fields: {ai?.fields.join(', ')}. Configuration presence does not certify
+              answer quality.
+            </p>
+            <button
+              disabled={previewBusy || busy}
+              onClick={async () => {
+                const controller = new AbortController();
+                previewRequest.current = controller;
+                setPreviewBusy(true);
+                setPreviewError('');
+                setPreview('');
+                try {
+                  const res = await fetch('/api/ai/context', {
+                    method: 'POST',
+                    headers: { 'content-type': 'application/json' },
+                    body: JSON.stringify({ tableId: table?.id }),
+                    signal: controller.signal,
+                  });
+                  const body = await res.json();
+                  if (!res.ok) throw new Error(body.error || 'Preview unavailable.');
+                  setPreview(JSON.stringify(body.context, null, 2));
+                } catch (e) {
+                  if (!controller.signal.aborted)
+                    setPreviewError(e instanceof Error ? e.message : 'Preview unavailable.');
+                } finally {
+                  if (!controller.signal.aborted) setPreviewBusy(false);
+                }
+              }}
+            >
+              {previewBusy ? 'Reading preview…' : 'Preview AI context'}
+            </button>
+            <p>
+              Preview uses up to 100 unfiltered rows and reserves 32,000 budget units. It calls no
+              AI provider. A later question reads a fresh sample.
+            </p>
+            {previewError && (
+              <p role="alert" className="error">
+                {previewError}
+              </p>
+            )}
+            {preview && (
+              <details>
+                <summary>Inspect bounded JSON context</summary>
+                <pre style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}>{preview}</pre>
+              </details>
+            )}
+          </div>
+        )}
         {!messages.length && (
           <>
             <div className="analyst-intro">
@@ -814,6 +959,7 @@ function Analyst({ table, ai, close }: { table?: Item; ai?: Data['ai']; close: (
             onClick={() => {
               setMessages([]);
               clearError();
+              setInput('');
             }}
           >
             New chat

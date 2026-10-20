@@ -3,6 +3,7 @@ import { currentSession } from '@/lib/session';
 import { HttpError } from '@/lib/errors';
 import { Brand, Mascot } from '../brand';
 import SignIn from './signin';
+import { publicUrls } from '@/lib/public-urls';
 export const dynamic = 'force-dynamic';
 export default async function SignInPage() {
   let authenticated = false;
@@ -17,12 +18,7 @@ export default async function SignInPage() {
     <main className="signin-page">
       <header>
         <Brand />
-        <a
-          className="subtle-link"
-          href="https://app.sheethappensofficer.com"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a className="subtle-link" href={publicUrls().tasks} target="_blank" rel="noreferrer">
           Meet the rest of Aplyd ↗
         </a>
       </header>

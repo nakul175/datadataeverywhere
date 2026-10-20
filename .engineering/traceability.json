@@ -36,6 +36,286 @@
       "acceptance_criterion_ids": [],
       "qa_case_ids": [],
       "qa_run_ids": []
+    },
+    {
+      "task_id": "APL-3001",
+      "kind": "engineering",
+      "authorization_ref": "Direct user request: Complete all stories, 20 October 2026",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3001/technical-taskdde-48-implement-typed-full-table-querying-while",
+      "story_ids": [
+        "APL-2991"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-48-AC01",
+        "DDE-48-AC02",
+        "DDE-48-AC03"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2991"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Implement typed full-table querying while preserving page-local controls",
+      "paths": [
+        "sidecar/lib/table-query.ts",
+        "sidecar/app/api/workspace/route.ts",
+        "sidecar/app/workspace.tsx"
+      ],
+      "status": "in_progress",
+      "branch": "feat/story-completion",
+      "commit": null,
+      "pr": null,
+      "review_ref": null,
+      "release": null,
+      "deployment_evidence": null,
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived."
+    },
+    {
+      "task_id": "APL-3002",
+      "kind": "engineering",
+      "authorization_ref": "Direct user request: Complete all stories, 20 October 2026",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3002/technical-taskdde-39-refuse-nested-ai-disclosure-and-provide-a-bounded",
+      "story_ids": [
+        "APL-2982"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-39-AC02"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2982"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Refuse nested AI disclosure and provide a bounded no-provider preview",
+      "paths": [
+        "sidecar/lib/nocodb.ts",
+        "sidecar/app/api/ai/context/route.ts",
+        "sidecar/app/workspace.tsx"
+      ],
+      "status": "in_progress",
+      "branch": "feat/story-completion",
+      "commit": null,
+      "pr": null,
+      "review_ref": null,
+      "release": null,
+      "deployment_evidence": null,
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived."
+    },
+    {
+      "task_id": "APL-3003",
+      "kind": "engineering",
+      "authorization_ref": "Direct user request: Complete all stories, 20 October 2026",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3003/technical-taskdde-42-include-unified-app-artifacts-and-sqlite-state-in",
+      "story_ids": [
+        "APL-2985"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-42-AC01",
+        "DDE-42-AC02"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2985"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Include unified app artifacts and SQLite state in coordinated backup/recovery",
+      "paths": [
+        "scripts/unified-state.py",
+        "scripts/backup.sh",
+        "scripts/restore.sh",
+        "tests/test_unified_state.py"
+      ],
+      "status": "in_progress",
+      "branch": "feat/story-completion",
+      "commit": null,
+      "pr": null,
+      "review_ref": null,
+      "release": null,
+      "deployment_evidence": null,
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived."
+    },
+    {
+      "task_id": "APL-3004",
+      "kind": "engineering",
+      "authorization_ref": "Direct user request: Complete all stories, 20 October 2026",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3004/technical-taskdde-47-configure-https-tool-handoffs-and-use-the",
+      "story_ids": [
+        "APL-2990"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-47-AC01",
+        "DDE-47-AC02",
+        "DDE-47-AC03"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2990"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Configure HTTPS tool handoffs and use the verified Aplyd task-tool default",
+      "paths": [
+        "sidecar/lib/public-urls.ts",
+        "sidecar/app/page.tsx",
+        "sidecar/app/signin/page.tsx"
+      ],
+      "status": "in_progress",
+      "branch": "feat/story-completion",
+      "commit": null,
+      "pr": null,
+      "review_ref": null,
+      "release": null,
+      "deployment_evidence": null,
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived."
+    },
+    {
+      "task_id": "APL-3005",
+      "kind": "engineering",
+      "authorization_ref": "Direct user request: Complete all stories, 20 October 2026",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3005/technical-taskdde-40-separate-authenticated-dependency-readiness-from",
+      "story_ids": [
+        "APL-2983"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-40-AC02",
+        "DDE-40-AC03"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2983"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Separate authenticated dependency readiness from process liveness",
+      "paths": [
+        "sidecar/app/api/health/ready/route.ts",
+        "sidecar/lib/local-limits.ts"
+      ],
+      "status": "in_progress",
+      "branch": "feat/story-completion",
+      "commit": null,
+      "pr": null,
+      "review_ref": null,
+      "release": null,
+      "deployment_evidence": null,
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived."
+    },
+    {
+      "task_id": "APL-3006",
+      "kind": "engineering",
+      "authorization_ref": "Direct user request: Complete all stories, 20 October 2026",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3006/technical-taskdde-34-cancel-active-chat-work-when-its-table-or-panel",
+      "story_ids": [
+        "APL-2977"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-34-AC02"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2977"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Cancel active chat work when its table or panel is unmounted",
+      "paths": [
+        "sidecar/app/workspace.tsx",
+        "sidecar/app/chat.tsx"
+      ],
+      "status": "in_progress",
+      "branch": "feat/story-completion",
+      "commit": null,
+      "pr": null,
+      "review_ref": null,
+      "release": null,
+      "deployment_evidence": null,
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived."
+    },
+    {
+      "task_id": "APL-3007",
+      "kind": "engineering",
+      "authorization_ref": "Direct user request: Complete all stories, 20 October 2026",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3007/technical-taskdde-36-bound-redis-connectcommand-failures-and-retain",
+      "story_ids": [
+        "APL-2979"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-36-AC01",
+        "DDE-36-AC02",
+        "DDE-36-AC03"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2979"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Bound Redis connect/command failures and retain conservative accounting",
+      "paths": [
+        "sidecar/lib/redis.ts",
+        "sidecar/lib/budget.ts"
+      ],
+      "status": "in_progress",
+      "branch": "feat/story-completion",
+      "commit": null,
+      "pr": null,
+      "review_ref": null,
+      "release": null,
+      "deployment_evidence": null,
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived."
+    },
+    {
+      "task_id": "APL-3008",
+      "kind": "engineering",
+      "authorization_ref": "Direct user request: Complete all stories, 20 October 2026",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3008/technical-taskdde-38-require-explicit-anthropic-model-configuration",
+      "story_ids": [
+        "APL-2981"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-38-AC01",
+        "DDE-38-AC02"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2981"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Require explicit Anthropic model configuration and consistent AI readiness",
+      "paths": [
+        "sidecar/lib/provider-config.ts",
+        "sidecar/app/api/chat/route.ts",
+        "docker-compose.yml",
+        "docker-compose.shared.yml"
+      ],
+      "status": "in_progress",
+      "branch": "feat/story-completion",
+      "commit": null,
+      "pr": null,
+      "review_ref": null,
+      "release": null,
+      "deployment_evidence": null,
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived."
     }
   ]
 }

@@ -1,0 +1,60 @@
+# Story completion implementation and qualification
+
+This is a C2 development change authorized by the owner's request to complete the backlog. Work is on `feat/story-completion`, stacked on the unmerged standards-adoption branch. Native plan, task allocation, QA mappings and independent acceptance remain draft; no release gate or exception is silently approved. Linear technical tasks APL-3001–3008 own the eight bounded changes below. Their descriptions and `.engineering/traceability.json` identify exact criterion allocation, not accepted coverage.
+
+## Implemented development scope
+
+| Story | Technical task | Change | Evidence boundary |
+| --- | --- | --- | --- |
+| DDE-48 | APL-3001 | Explicit whole-table query alongside unchanged page search/sort; schema-based text/sort allowlists and primary-key tie-break; 50-row pages | Typed contract and compiled-app synthetic test. Actual installed NocoDB compatibility still requires isolated qualification. |
+| DDE-39 | APL-3002 | Refuse complex/unknown AI field types and any object/array value; authenticated bounded preview uses the same reader and no provider | Controlled refusal/preview tests. No nested sharing consent or legal/privacy approval inferred. |
+| DDE-42 | APL-3003 | Coordinated stopped-service archive includes compiled app, protected runtime/access files, service unit and all SQLite state; checksummed isolated restore refuses overwrites/traversal | Unified file/SQLite restore tested locally; full PostgreSQL/NocoDB restore and recovery objectives remain pending. |
+| DDE-47 | APL-3004 | Checked server-side HTTPS task/native URLs; default task host is the responding Aplyd deployment | HTTPS target checked; the modified navigation is not deployed. |
+| DDE-40 | APL-3005 | Keep process liveness; add authenticated dependency readiness without provider calls or secret output | Compiled fixture checks do not certify production readiness. |
+| DDE-34 | APL-3006 | Abort chat and preview work on panel/table unmount | Real provider cancellation and billing still need qualification. |
+| DDE-36 | APL-3007 | Bound Redis connect/command attempts; preserve no-refund atomic reservations | Disposable Redis and SQLite tests; not a 50-user workload result. |
+| DDE-38 | APL-3008 | Central provider/model readiness; explicit Anthropic model required; no guessed replacement alias | Configuration tests and stream-construction stub; no actual provider inference. |
+
+The context reader also enforces its 100-row ceiling when an upstream ignores requested page size. Oversized workspace pages are refused rather than silently truncated. CI runs the Python recovery suite and compiled-app smoke in addition to all application tests; native readiness remains a separate required gate.
+
+## Query API contract
+
+`GET /api/workspace?action=records&tableId=...&scope=table` accepts optional `query`, `fieldId`, `sortId`, `direction=asc|desc` and bounded integer `offset`. `fieldId` and `sortId` are IDs from the currently authorized schema, never raw names/operators. A nonempty search requires a supported simple text field. Search text is at most 200 letters/numbers/spaces/dots/at/plus/minus/underscore; underscore is escaped as a literal LIKE character. Unknown/repeated parameters, raw filter syntax, unsupported field names/types and ambiguous keys are refused. Full-table queries require one supported primary key and add it as a deterministic tie-break.
+
+This follows the [NocoDB v2 query contract](https://nocodb.com/apis/v2/data). Response scope is explicit; filtered totals are not inferred from an upstream unqualified count. Ordering is deterministic for a quiescent dataset; live offset pages can still shift under writes. This is not a consistent export. Existing page-local search/sort remains separate and clearly labeled.
+
+## AI and operations contracts
+
+`POST /api/ai/context` requires the same origin, current identity and explicit user/table/field grant as chat. It reserves 32,000 conservative units with the existing rate/concurrency/daily gate, reads the same 100-row/24,000-byte context and releases its lease. It makes no model call and returns no-store. The UI warns that a later question fetches a new sample. Complex fields and unexpected nested values fail closed; no automatic grant expansion or recursive disclosure occurs.
+
+OpenAI uses `OPENAI_MODEL` or the existing `gpt-4o` default. Anthropic requires an explicit `ANTHROPIC_MODEL`. Both require privately configured credentials. Readiness reports configuration presence separately from provider connectivity/quality. No model is claimed available or qualified from its source default.
+
+`GET /api/health` remains process liveness. Authenticated `/api/health/ready` checks the engine health endpoint, budget store and access-policy parse with bounded I/O. It does not certify database recovery, role semantics or provider quality. Public tool URLs require HTTPS without embedded credentials, query or fragment; `TASKS_PUBLIC_URL` defaults to `https://sheethappensofficer.aplyd.org` and `NOCODB_PUBLIC_URL` preserves the native-host default.
+
+The unified backup helper requires Python 3.12 and a stopped service. The coordinated backup script stops/restarts only the previously active unified service around engine snapshots and refuses unknown service state. The root Docker backup and the user's shared directory must be captured together. Backup files include secrets and must be encrypted and access-controlled before offsite transfer. Restore is for a new isolated installation, requires the original service user/home/path, rejects existing app/unit/data volumes and never starts the restored user service automatically. Operator review and a full database restore drill remain mandatory.
+
+## Isolated actual-engine qualification
+
+`docker-compose.qualification.yml` creates a separate `dde-qualification` project, internal network, new PostgreSQL/NocoDB volumes, loopback-only port 19080 and bounded memory. It never mounts production volumes or imports the production environment file. The runner refuses startup below 2 GiB available memory; this is a containment preflight, not a service-level objective. Prefer a dedicated test host.
+
+On an approved Ubuntu test host with Docker administration, Python 3.12 and Node 22+:
+
+```bash
+bash scripts/start-qualification.sh
+```
+
+This creates private random fixture credentials in ignored `.qualification/stack.env`, starts the isolated stack, then checks actual v1 authentication, the starter schema, 257 synthetic rows, pagination, full-table filter/sort and PATCH persistence. The report is private `.quality/evidence/engine-qualification.json`. The Compose configuration has been validated with the existing server's CLI without starting containers. No actual-engine qualification result is claimed until the runner succeeds. Keep the isolated data until evidence is reviewed; do not substitute production for this test environment.
+
+The deploy account currently cannot run Docker/root operations. No broad privilege was granted. An actual operator must execute the approved test/restore work. Production and its neighboring app are unchanged.
+
+## Why governed feeds remain held
+
+DDE-01–04 require explicit delegable permissions, consistent complete snapshots, resumable export, schema/change semantics and live revocation. The current NocoDB REST reader exposes paging, not an authenticated change watermark or transaction snapshot. Two equal scans, modified timestamps and webhooks alone cannot prove that relevant inserts/deletes/ABA changes were absent. Reusing the AI sample or labeling a mixed REST extraction consistent would violate the original criteria.
+
+A viable next design is an explicitly configured PostgreSQL read-only snapshot adapter with reviewed physical table/column mapping and an effective row/delegation policy, or a source API with a qualified snapshot/change contract. Snapshot materialization must be bounded, permission checks remain live on every page, and policy/schema changes invalidate cursors. No source database credentials, RLS/delegation contract or independently reviewed access adapter has been supplied. Do not invent that authority from a UI session or silently bypass NocoDB access rules. These decisions must be resolved before implementing a purportedly complete external feed. No feed is published by this branch.
+
+## Verification and outstanding completion gates
+
+Run format/lint, types/build, all application tests with a disposable `TEST_REDIS_URL`, all Python tests, syntax/security/reference checks and the compiled fixture smoke. The smoke uses a local test double and manual HTTP cookie forwarding; it is not real-engine roles, browser-cookie qualification, recovery or production acceptance. Never use a production Redis URL: the integration suite deliberately flushes its disposable database.
+
+Formal completion still needs independently verified native bindings/reviews, actual engine-role/native-feature evidence, provider keys plus approved evaluation data/targets, a representative workload/recovery contract, full restore/capacity runs and separately authorized release evidence. Existing, implemented, reviewed, merged, deployed and accepted remain separate. The implementation request does not create missing results.

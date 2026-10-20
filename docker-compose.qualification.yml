@@ -1,0 +1,43 @@
+name: dde-qualification
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: "no"
+    environment:
+      POSTGRES_PASSWORD: ${QA_DB_PASSWORD:?Run the qualification setup script}
+    volumes: [qa_pg:/var/lib/postgresql/data]
+    mem_limit: 512m
+    networks: [qa]
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U postgres]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+  nocodb:
+    image: ${QA_NOCODB_IMAGE:-nocodb/nocodb:2026.09.1}
+    restart: "no"
+    depends_on:
+      postgres: {condition: service_healthy}
+    environment:
+      NC_DB: "pg://postgres:5432?u=postgres&p=${QA_DB_PASSWORD}&d=postgres"
+      NC_AUTH_JWT_SECRET: ${QA_JWT_SECRET:?Run the qualification setup script}
+      NC_CONNECTION_ENCRYPT_KEY: ${QA_CONNECTION_KEY:?Run the qualification setup script}
+      NC_ADMIN_EMAIL: qa@example.test
+      NC_ADMIN_PASSWORD: ${QA_ADMIN_PASSWORD:?Run the qualification setup script}
+      NC_DISABLE_TELE: "true"
+      NC_INVITE_ONLY_SIGNUP: "true"
+    ports: ["127.0.0.1:19080:8080"]
+    volumes: [qa_nc:/usr/app/data]
+    mem_limit: 768m
+    networks: [qa]
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:8080/api/v1/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+networks:
+  qa: {internal: true}
+volumes:
+  qa_pg:
+  qa_nc:
