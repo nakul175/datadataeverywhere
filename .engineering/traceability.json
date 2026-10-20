@@ -451,6 +451,40 @@
       "qa_case_ids": [],
       "qa_run_ids": [],
       "notes": "Candidate code independently technically reviewed. CI run 39470919968 passed engineering/reference checks, including actual Chromium, scoped viewer/editor/access-removal and reconstructed engine/unified-state recovery. Not criterion acceptance, trusted native approval, complete production shell/systemd/Caddy/Redis qualification, merge or deployment."
+    },
+    {
+      "task_id": "APL-3023",
+      "kind": "engineering",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3023",
+      "story_ids": [
+        "APL-2992"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-49-AC03"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2946"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Align native-host HSTS/referrer headers with existing policy after actual public readback, without live reload.",
+      "paths": [
+        "caddy/unified-site.caddy",
+        ".github/workflows/delivery.yml"
+      ],
+      "status": "implemented",
+      "branch": "feat/story-completion",
+      "commit": null,
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": null,
+      "release": null,
+      "deployment_evidence": null,
+      "legacy_ids": [],
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Candidate-only C1 template correction; isolated Caddy validation pending. No live header, firewall, renewal, release or product acceptance claim."
     }
   ]
 }

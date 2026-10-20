@@ -49,6 +49,11 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npm ci --ignore-scripts
         working-directory: sidecar
+      - name: Validate the unified proxy without network access
+        run: >-
+          docker run --rm --network none
+          --mount "type=bind,source=$GITHUB_WORKSPACE/caddy/unified-site.caddy,target=/etc/caddy/Caddyfile,readonly"
+          caddy:2.11.7-alpine caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
       - run: npm run format:check
       - run: npm run lint
       - run: npm run typecheck
