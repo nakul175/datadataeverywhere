@@ -40,7 +40,7 @@
     {
       "task_id": "APL-3001",
       "kind": "engineering",
-      "authorization_ref": "Direct user request: Complete all stories, 20 October 2026",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
       "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3001/technical-taskdde-48-implement-typed-full-table-querying-while",
       "story_ids": [
         "APL-2991"
@@ -62,21 +62,22 @@
         "sidecar/app/api/workspace/route.ts",
         "sidecar/app/workspace.tsx"
       ],
-      "status": "in_progress",
+      "status": "implemented",
       "branch": "feat/story-completion",
-      "commit": null,
-      "pr": null,
-      "review_ref": null,
+      "commit": "8b50191f2bcdb4650ccc56c942c1c6bc3725b79e",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/engineering/TECHNICAL-REVIEW.md",
       "release": null,
       "deployment_evidence": null,
       "qa_case_ids": [],
       "qa_run_ids": [],
-      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived."
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived. Candidate code and separate technical review exist; production/criterion acceptance and externally trusted native approvals remain pending.",
+      "legacy_ids": []
     },
     {
       "task_id": "APL-3002",
       "kind": "engineering",
-      "authorization_ref": "Direct user request: Complete all stories, 20 October 2026",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
       "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3002/technical-taskdde-39-refuse-nested-ai-disclosure-and-provide-a-bounded",
       "story_ids": [
         "APL-2982"
@@ -96,21 +97,22 @@
         "sidecar/app/api/ai/context/route.ts",
         "sidecar/app/workspace.tsx"
       ],
-      "status": "in_progress",
+      "status": "implemented",
       "branch": "feat/story-completion",
-      "commit": null,
-      "pr": null,
-      "review_ref": null,
+      "commit": "8b50191f2bcdb4650ccc56c942c1c6bc3725b79e",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/engineering/TECHNICAL-REVIEW.md",
       "release": null,
       "deployment_evidence": null,
       "qa_case_ids": [],
       "qa_run_ids": [],
-      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived."
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived. Candidate code and separate technical review exist; production/criterion acceptance and externally trusted native approvals remain pending.",
+      "legacy_ids": []
     },
     {
       "task_id": "APL-3003",
       "kind": "engineering",
-      "authorization_ref": "Direct user request: Complete all stories, 20 October 2026",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
       "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3003/technical-taskdde-42-include-unified-app-artifacts-and-sqlite-state-in",
       "story_ids": [
         "APL-2985"
@@ -132,21 +134,22 @@
         "scripts/restore.sh",
         "tests/test_unified_state.py"
       ],
-      "status": "in_progress",
+      "status": "implemented",
       "branch": "feat/story-completion",
-      "commit": null,
-      "pr": null,
-      "review_ref": null,
+      "commit": "8b50191f2bcdb4650ccc56c942c1c6bc3725b79e",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/engineering/TECHNICAL-REVIEW.md",
       "release": null,
       "deployment_evidence": null,
       "qa_case_ids": [],
       "qa_run_ids": [],
-      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived."
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived. Candidate code and separate technical review exist; production/criterion acceptance and externally trusted native approvals remain pending.",
+      "legacy_ids": []
     },
     {
       "task_id": "APL-3004",
       "kind": "engineering",
-      "authorization_ref": "Direct user request: Complete all stories, 20 October 2026",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
       "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3004/technical-taskdde-47-configure-https-tool-handoffs-and-use-the",
       "story_ids": [
         "APL-2990"
@@ -168,21 +171,22 @@
         "sidecar/app/page.tsx",
         "sidecar/app/signin/page.tsx"
       ],
-      "status": "in_progress",
+      "status": "implemented",
       "branch": "feat/story-completion",
-      "commit": null,
-      "pr": null,
-      "review_ref": null,
+      "commit": "8b50191f2bcdb4650ccc56c942c1c6bc3725b79e",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/engineering/TECHNICAL-REVIEW.md",
       "release": null,
       "deployment_evidence": null,
       "qa_case_ids": [],
       "qa_run_ids": [],
-      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived."
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived. Candidate code and separate technical review exist; production/criterion acceptance and externally trusted native approvals remain pending.",
+      "legacy_ids": []
     },
     {
       "task_id": "APL-3005",
       "kind": "engineering",
-      "authorization_ref": "Direct user request: Complete all stories, 20 October 2026",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
       "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3005/technical-taskdde-40-separate-authenticated-dependency-readiness-from",
       "story_ids": [
         "APL-2983"
@@ -202,21 +206,22 @@
         "sidecar/app/api/health/ready/route.ts",
         "sidecar/lib/local-limits.ts"
       ],
-      "status": "in_progress",
+      "status": "implemented",
       "branch": "feat/story-completion",
-      "commit": null,
-      "pr": null,
-      "review_ref": null,
+      "commit": "8b50191f2bcdb4650ccc56c942c1c6bc3725b79e",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/engineering/TECHNICAL-REVIEW.md",
       "release": null,
       "deployment_evidence": null,
       "qa_case_ids": [],
       "qa_run_ids": [],
-      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived."
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived. Candidate code and separate technical review exist; production/criterion acceptance and externally trusted native approvals remain pending.",
+      "legacy_ids": []
     },
     {
       "task_id": "APL-3006",
       "kind": "engineering",
-      "authorization_ref": "Direct user request: Complete all stories, 20 October 2026",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
       "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3006/technical-taskdde-34-cancel-active-chat-work-when-its-table-or-panel",
       "story_ids": [
         "APL-2977"
@@ -235,21 +240,22 @@
         "sidecar/app/workspace.tsx",
         "sidecar/app/chat.tsx"
       ],
-      "status": "in_progress",
+      "status": "implemented",
       "branch": "feat/story-completion",
-      "commit": null,
-      "pr": null,
-      "review_ref": null,
+      "commit": "8b50191f2bcdb4650ccc56c942c1c6bc3725b79e",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/engineering/TECHNICAL-REVIEW.md",
       "release": null,
       "deployment_evidence": null,
       "qa_case_ids": [],
       "qa_run_ids": [],
-      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived."
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived. Candidate code and separate technical review exist; production/criterion acceptance and externally trusted native approvals remain pending.",
+      "legacy_ids": []
     },
     {
       "task_id": "APL-3007",
       "kind": "engineering",
-      "authorization_ref": "Direct user request: Complete all stories, 20 October 2026",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
       "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3007/technical-taskdde-36-bound-redis-connectcommand-failures-and-retain",
       "story_ids": [
         "APL-2979"
@@ -270,21 +276,22 @@
         "sidecar/lib/redis.ts",
         "sidecar/lib/budget.ts"
       ],
-      "status": "in_progress",
+      "status": "implemented",
       "branch": "feat/story-completion",
-      "commit": null,
-      "pr": null,
-      "review_ref": null,
+      "commit": "8b50191f2bcdb4650ccc56c942c1c6bc3725b79e",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/engineering/TECHNICAL-REVIEW.md",
       "release": null,
       "deployment_evidence": null,
       "qa_case_ids": [],
       "qa_run_ids": [],
-      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived."
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived. Candidate code and separate technical review exist; production/criterion acceptance and externally trusted native approvals remain pending.",
+      "legacy_ids": []
     },
     {
       "task_id": "APL-3008",
       "kind": "engineering",
-      "authorization_ref": "Direct user request: Complete all stories, 20 October 2026",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
       "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3008/technical-taskdde-38-require-explicit-anthropic-model-configuration",
       "story_ids": [
         "APL-2981"
@@ -306,16 +313,17 @@
         "docker-compose.yml",
         "docker-compose.shared.yml"
       ],
-      "status": "in_progress",
+      "status": "implemented",
       "branch": "feat/story-completion",
-      "commit": null,
-      "pr": null,
-      "review_ref": null,
+      "commit": "8b50191f2bcdb4650ccc56c942c1c6bc3725b79e",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/engineering/TECHNICAL-REVIEW.md",
       "release": null,
       "deployment_evidence": null,
       "qa_case_ids": [],
       "qa_run_ids": [],
-      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived."
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived. Candidate code and separate technical review exist; production/criterion acceptance and externally trusted native approvals remain pending.",
+      "legacy_ids": []
     }
   ]
 }

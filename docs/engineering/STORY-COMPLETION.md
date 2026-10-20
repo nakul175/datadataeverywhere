@@ -1,5 +1,7 @@
 # Story completion implementation and qualification
 
+Authorization record: the user requested “Complete all stories” on 20 October 2026, then explicitly requested “make an agent for yourself to act as a reviewr”. This authorizes bounded development and a separate technical reviewer; it does not fill the native owner/release approvals described below.
+
 This is a C2 development change authorized by the owner's request to complete the backlog. Work is on `feat/story-completion`, stacked on the unmerged standards-adoption branch. Native plan, task allocation, QA mappings and independent acceptance remain draft; no release gate or exception is silently approved. Linear technical tasks APL-3001–3008 own the eight bounded changes below. Their descriptions and `.engineering/traceability.json` identify exact criterion allocation, not accepted coverage.
 
 ## Implemented development scope
