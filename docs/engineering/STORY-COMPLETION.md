@@ -37,7 +37,7 @@ The unified backup helper requires Python 3.12 and a stopped service. The coordi
 
 ## Isolated actual-engine qualification
 
-`docker-compose.qualification.yml` creates a separate `dde-qualification` project, internal network, new PostgreSQL/NocoDB volumes, loopback-only port 19080 and bounded memory. The qualification-only NocoDB limit is 1536 MiB with a 1024 MiB JavaScript heap; the previous 768 MiB container failed startup with a recorded V8 heap exhaustion. It never mounts production volumes or imports the production environment file. The runner refuses startup below 3 GiB available memory; this is a containment preflight, not a service-level objective. Prefer a dedicated test host.
+`docker-compose.qualification.yml` creates a separate `dde-qualification` project, internal database network plus an engine-only HTTP bridge, new PostgreSQL/NocoDB volumes, loopback-only port 19080 and bounded memory. The qualification-only NocoDB limit is 1536 MiB with a 1024 MiB JavaScript heap; the previous 768 MiB container failed startup with a recorded V8 heap exhaustion. It never mounts production volumes or imports the production environment file. The runner refuses startup below 3 GiB available memory; this is a containment preflight, not a service-level objective. Prefer a dedicated test host.
 
 On an approved Ubuntu test host with Docker administration, Python 3.12 and Node 22+:
 
