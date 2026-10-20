@@ -1,0 +1,13 @@
+{
+  "decisionId": null,
+  "subject": null,
+  "oldContractVersion": null,
+  "newContractVersion": null,
+  "rationale": null,
+  "alternatives": [],
+  "authorityIdentity": null,
+  "authorityEvidenceUrl": null,
+  "affectedCriteria": [],
+  "staleRunsAndApprovals": [],
+  "timestampUTC": null
+}

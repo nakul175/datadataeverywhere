@@ -23,3 +23,10 @@ id_rsa*
 id_ed25519*
 shared/
 Caddyfile.before-*
+
+# Local-only standards execution evidence; publish reviewed/redacted reports deliberately.
+.aplyd/evidence/
+.aplyd/proposals/*/native-connections-*/
+.quality/evidence/
+coverage/
+reports/

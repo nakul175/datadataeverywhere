@@ -1,0 +1,333 @@
+{
+  "schemaVersion": "1.0",
+  "reviewerTask": "v4_loop",
+  "document": "Generic Product Management Operating Framework.docx",
+  "documentSha256": "9caf07514b99d4cb3e40fef35e8f5f76963358fa702de8cbbcd67307d153fac8",
+  "renderDirectory": "rendered-release",
+  "documentTotalPages": 77,
+  "reviewedPageNumbers": [
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72
+  ],
+  "inspectionMethod": "Every assigned page was individually viewed at original resolution using view_image. Eight changed final-release pages were individually reinspected. Eighteen unchanged pages reuse their prior individual reviews only after exact PNG byte comparison; no contact-sheet inspection or sampling was used. Supplemental PDF text-coordinate checks were used on the earlier continuation-header/cell review.",
+  "priorReviewDocumentSha256": "0255e16a7cb96c570249cb93beb911faa5f5810052780ad6770166f1e00b78a1",
+  "freshlyReinspectedFinalPages": [
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71
+  ],
+  "unchangedPagesVerifiedByExactByteComparison": [
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    72
+  ],
+  "criteriaInspected": [
+    "body and table readability",
+    "clipping and overlap",
+    "table continuation headers",
+    "row and cell breaks",
+    "glyphs and punctuation",
+    "pagination and footer separation",
+    "visible prose quality"
+  ],
+  "pages": [
+    {
+      "page": 47,
+      "png": "rendered-release/page-47.png",
+      "pngSha256": "8835a2d3ad99944b1b32e0189dabf95816659777afffd1a3660931e07e7cccb7",
+      "inspectionBasis": "prior_individual_original_resolution_review_reused_after_exact_png_byte_comparison",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "Release-goal change/history, post-release outcome feedback and AI controls have readable columns; table rows remain whole."
+    },
+    {
+      "page": 48,
+      "png": "rendered-release/page-48.png",
+      "pngSha256": "d7151709de59e8b6968a7ef453adf2e4c64bf8589ae8000c59e5c8ce2059f17b",
+      "inspectionBasis": "prior_individual_original_resolution_review_reused_after_exact_png_byte_comparison",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "Epic continuation table has readable field IDs and descriptions; row boundaries and header are clear."
+    },
+    {
+      "page": 49,
+      "png": "rendered-release/page-49.png",
+      "pngSha256": "8dffad1d6026cda5df4ba1c459089bc3bcdff1a9e45a14fc2344c9616c9efe33",
+      "inspectionBasis": "prior_individual_original_resolution_review_reused_after_exact_png_byte_comparison",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "Epic assumption, discovery and applicability details are readable; continuation header and cells remain complete."
+    },
+    {
+      "page": 50,
+      "png": "rendered-release/page-50.png",
+      "pngSha256": "3dd99d60a44d5d38708af180027f7c5a37057fb47e2a99d104d55f2bf70449fb",
+      "inspectionBasis": "prior_individual_original_resolution_review_reused_after_exact_png_byte_comparison",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "Epic priority, size and outcome-learning fields are readable; long IDs wrap within cells."
+    },
+    {
+      "page": 51,
+      "png": "rendered-release/page-51.png",
+      "pngSha256": "7ded72243771287e67ab9d9ba28c150468942fa4416ee0d00a0ba9b012279299",
+      "inspectionBasis": "prior_individual_original_resolution_review_reused_after_exact_png_byte_comparison",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "User-story identity and scope table has stable columns and complete rows."
+    },
+    {
+      "page": 52,
+      "png": "rendered-release/page-52.png",
+      "pngSha256": "298db557ee768f1f1528e0405ca55883f35b1de0600c717b74ce753ecc313f8a",
+      "inspectionBasis": "prior_individual_original_resolution_review_reused_after_exact_png_byte_comparison",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "User-story scenarios and access details are readable; continued table header is clear."
+    },
+    {
+      "page": 53,
+      "png": "rendered-release/page-53.png",
+      "pngSha256": "02651c97283ea9b815569c94530ab1ee9517de3fb97799f2779f2a5cdcb15c77",
+      "inspectionBasis": "prior_individual_original_resolution_review_reused_after_exact_png_byte_comparison",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "User-story continuity, evidence and related field details wrap within their cells without overlap."
+    },
+    {
+      "page": 54,
+      "png": "rendered-release/page-54.png",
+      "pngSha256": "8712edf5b1806f35dea9d0c6581d74663359c6570b3aef1618adee80300b92c6",
+      "inspectionBasis": "prior_individual_original_resolution_review_reused_after_exact_png_byte_comparison",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "User-story readiness, completion and learning continuation text is readable; repeated header remains complete."
+    },
+    {
+      "page": 55,
+      "png": "rendered-release/page-55.png",
+      "pngSha256": "292d8d33a214c06814916695c35d91575d17b3ccf68d54a72976434a64e201a7",
+      "inspectionBasis": "prior_individual_original_resolution_review_reused_after_exact_png_byte_comparison",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "The final user-story AI field is a complete readable row; remaining whitespace is an intentional section ending."
+    },
+    {
+      "page": 56,
+      "png": "rendered-release/page-56.png",
+      "pngSha256": "1413b0e5b00057a2a5e0d710514c7e3dae196658146ed6ccd684565107a42392",
+      "inspectionBasis": "prior_individual_original_resolution_review_reused_after_exact_png_byte_comparison",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "Acceptance-criterion conditions, measures and evaluation fields are readable; whole rows and clear header."
+    },
+    {
+      "page": 57,
+      "png": "rendered-release/page-57.png",
+      "pngSha256": "5cc7408ff43ae5dd6d2a230dbc526d612867d50705e90b9b7e5ecf12c1591877",
+      "inspectionBasis": "prior_individual_original_resolution_review_reused_after_exact_png_byte_comparison",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "Acceptance-criterion evidence, gaps and AI details are readable; long field IDs wrap without overlap."
+    },
+    {
+      "page": 58,
+      "png": "rendered-release/page-58.png",
+      "pngSha256": "0f6988027c8506aa7230fffa385ff8f271c3524112e4849d2caeed969c6da222",
+      "inspectionBasis": "prior_individual_original_resolution_review_reused_after_exact_png_byte_comparison",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "Technical-task implementation and verification fields remain readable in stable table columns."
+    },
+    {
+      "page": 59,
+      "png": "rendered-release/page-59.png",
+      "pngSha256": "99fbe8e8ca8010f2fbea422e63431e6fb9e50343619ba4c2e61fb1cc9d553c4c",
+      "inspectionBasis": "prior_individual_original_resolution_review_reused_after_exact_png_byte_comparison",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "Technical-task proof and completion details are readable; row and cell boundaries are clear."
+    },
+    {
+      "page": 60,
+      "png": "rendered-release/page-60.png",
+      "pngSha256": "ea68616caa36645557bcda82df125925818845ba1ac81526347066235c53e3d7",
+      "inspectionBasis": "prior_individual_original_resolution_review_reused_after_exact_png_byte_comparison",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "Technical-task readiness/completion and AI evidence continuation is readable with a repeated header."
+    },
+    {
+      "page": 61,
+      "png": "rendered-release/page-61.png",
+      "pngSha256": "bb7ad8201dfc841d5ef8c0e9bb4203f847e8176de4fb96287dfcd1446d42e498",
+      "inspectionBasis": "prior_individual_original_resolution_review_reused_after_exact_png_byte_comparison",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "All twenty quality-factor table entries fit legibly on the page; no row clipping observed."
+    },
+    {
+      "page": 62,
+      "png": "rendered-release/page-62.png",
+      "pngSha256": "cfdcefaa319ff025a1db36751f348a00658ce596f1a7792c35b1c5ba84117b82",
+      "inspectionBasis": "prior_individual_original_resolution_review_reused_after_exact_png_byte_comparison",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "Team Ready checklist is legible; Done heading, version and adoption paragraph remain together at the page bottom."
+    },
+    {
+      "page": 63,
+      "png": "rendered-release/page-63.png",
+      "pngSha256": "16ec28b8bfcc592ca2ee3f3325d1bfe0c5cb06842dc8f52500f191c8100df33c",
+      "inspectionBasis": "prior_individual_original_resolution_review_reused_after_exact_png_byte_comparison",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "Team Done checklist entries and adoption guidance fit legibly with complete rows."
+    },
+    {
+      "page": 64,
+      "png": "rendered-release/page-64.png",
+      "pngSha256": "0403e0e9662a6b1be714194836c10d144eb716410cdbb6383b01ad19ca4fae3d",
+      "inspectionBasis": "fresh_individual_original_resolution_review_of_final_release_png",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "Numbered AI applicability and seven-group headings retain punctuation; prose and evidence-group table are readable."
+    },
+    {
+      "page": 65,
+      "png": "rendered-release/page-65.png",
+      "pngSha256": "78c67dc8f358cb0a166bfdeb0f7701b30bab4591eb602a2f1a23cd5bfabb4e58",
+      "inspectionBasis": "fresh_individual_original_resolution_review_of_final_release_png",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "AI-01 heading retains hyphen, em dash and comma; group criteria, authority and intended-use prose are clear."
+    },
+    {
+      "page": 66,
+      "png": "rendered-release/page-66.png",
+      "pngSha256": "d831cde7c12718907846458be9a90618858d2008eedb650dd4dab4b2a55910db",
+      "inspectionBasis": "fresh_individual_original_resolution_review_of_final_release_png",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "AI-02 and AI-03 headings retain punctuation; dataset and acceptance-evidence prose is readable with intact glyphs."
+    },
+    {
+      "page": 67,
+      "png": "rendered-release/page-67.png",
+      "pngSha256": "f799f3f1b9156ac858fcc2f5307f524a5a21c6be6ed89b3573a60b3506561668",
+      "inspectionBasis": "fresh_individual_original_resolution_review_of_final_release_png",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "AI-04 heading retains em dash and comma; acceptance example and safety/refusal/fallback prose are readable; footer is separated."
+    },
+    {
+      "page": 68,
+      "png": "rendered-release/page-68.png",
+      "pngSha256": "923ca92055f3892c17e0a40fc8140075c569401c032172001c149fe3a10ea02f",
+      "inspectionBasis": "fresh_individual_original_resolution_review_of_final_release_png",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "AI-05 and AI-06 headings retain em dashes and commas; versioning, privacy and India applicability prose remains readable."
+    },
+    {
+      "page": 69,
+      "png": "rendered-release/page-69.png",
+      "pngSha256": "260fd920726cb4792cdc1c0dd1e0d0af48453d71e67a203b60a7e6d460be5d92",
+      "inspectionBasis": "fresh_individual_original_resolution_review_of_final_release_png",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "AI-07 heading retains punctuation; learning guidance and stage-specific evidence table have readable text and whole rows."
+    },
+    {
+      "page": 70,
+      "png": "rendered-release/page-70.png",
+      "pngSha256": "82654486abc106bba476a76f3c336d0b14c38100c88437ad6d3f6766fd3d7529",
+      "inspectionBasis": "fresh_individual_original_resolution_review_of_final_release_png",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "Stage-specific evidence continuation repeats its header; numbered mapping heading retains punctuation and mapping rows fit."
+    },
+    {
+      "page": 71,
+      "png": "rendered-release/page-71.png",
+      "pngSha256": "52f06aaaaf294772b8d9fcb4d5fbc424cdd3addc96b636de5a648c9b2939a4b0",
+      "inspectionBasis": "fresh_individual_original_resolution_review_of_final_release_png",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "Mapping continuation repeats its header; numbered questions/loop and primary-source headings retain punctuation; links are legible."
+    },
+    {
+      "page": 72,
+      "png": "rendered-release/page-72.png",
+      "pngSha256": "fe674f4b9481c3ccc1a5fcdf37876c8bf154f8af00f11c7798bb6d1dc57ebf68",
+      "inspectionBasis": "prior_individual_original_resolution_review_reused_after_exact_png_byte_comparison",
+      "layoutStatus": "passed",
+      "visibleProseStatus": "passed",
+      "observations": "Primary legal-source continuation and visible links remain readable; remaining whitespace is an intentional appendix ending."
+    }
+  ],
+  "mandatoryFindings": [],
+  "resolvedFindings": [
+    {
+      "kind": "heading_punctuation",
+      "pages": [
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71
+      ],
+      "status": "fixed_and_visually_reverified",
+      "detail": "The earlier heading sanitizer removed punctuation from source AI headings. The final release retains the visible hyphens, em dashes, commas and numbered-heading dots; changed pages were individually reinspected."
+    }
+  ],
+  "result": "passed_for_assigned_pages",
+  "scope": "Visual layout, readability and visibly written text on pages47–72 only. This receipt does not certify product evidence, identity, approval authority or legal applicability."
+}

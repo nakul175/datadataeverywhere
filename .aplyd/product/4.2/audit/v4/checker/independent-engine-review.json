@@ -1,0 +1,176 @@
+{
+  "schemaVersion": "1.0",
+  "edition": "4.0-generic",
+  "reviewType": "independent_engine_and_helper_counterexample_review",
+  "reviewedAt": "2026-10-10T16:17:09.615491+00:00",
+  "scope": "Implementation mechanics, scope-preserving invalidation, durable work routing, input/approval guards and portable helper acceptance against the actual retained catalogue. No actual product plan or identity is certified.",
+  "status": "passed_with_disclosed_advisory_boundary",
+  "pins": {
+    "quality_checker.py": "ded9080be9a6d5be6a6bb837d217290f37dc1e22123c57b2279dcb5d5f97f94a",
+    "quality_loop.py": "ad589c27c5794d7b7854d4ab4932060940ccc5ec8bf751e1c539344a2faa62c7",
+    "quality_tools.py": "4b1d4db8e8041e0773b39776bde84983381d6501d2173be75ef032c09a46cceb",
+    "catalogue.json": "cec6bc14f5976dd7e1a48ba9f224e18b1258abb08ed0479a7f080b2dc6245456"
+  },
+  "catalogueVersion": "3.0-generic",
+  "catalogueCanonicalHash": "a72502ce4dcfe5ec1e8537cd377f93e77ad32b9d998fdad62c252605089759fe",
+  "reviewEvidence": [
+    {
+      "scope": "scoped_bindings",
+      "path": "verification/v4-independent-scoped-audit.json",
+      "sha256": "f6ce762ce85aa60c56ef28eb314b06d1683db54970059705064858d38a2030b7",
+      "assertionsPassed": 11,
+      "assertionsTotal": 11,
+      "allAssertionsPassed": true
+    },
+    {
+      "scope": "loop_delivery_and_history",
+      "path": "verification/v4-independent-loop-audit.json",
+      "sha256": "9cb115ccc54336febfba51bb819c49719fdf5722fa1a0c30c12d2d3a5042b36d",
+      "assertionsPassed": 11,
+      "assertionsTotal": 11,
+      "allAssertionsPassed": true
+    },
+    {
+      "scope": "review_scope_approval_and_input",
+      "path": "verification/v4-independent-trust-audit.json",
+      "sha256": "0ef6fc755cb1a6f4d434f3a1f16c9e9a5bb707930163c51830c4ff25d6f3b7be",
+      "assertionsPassed": 13,
+      "assertionsTotal": 13,
+      "allAssertionsPassed": true
+    },
+    {
+      "scope": "302_item_scale_and_real_advisory_receipt",
+      "path": "verification/v4-independent-scale-audit.json",
+      "sha256": "83953ba1b185e94260bb94016958ea86f28c3518f0bfa65fcdc47016690319b1",
+      "assertionsPassed": 7,
+      "assertionsTotal": 7,
+      "allAssertionsPassed": true
+    },
+    {
+      "scope": "portable_cli_helpers",
+      "path": "verification/helper-review.json",
+      "sha256": "3344ccc12003d2a0b6afc3e3eae7974400e216bfd9df29dffeadb267a71d8cad",
+      "assertionsPassed": 30,
+      "assertionsTotal": 30,
+      "allAssertionsPassed": true
+    }
+  ],
+  "assertionsPassed": 72,
+  "assertionsTotal": 72,
+  "implementationRegressionEvidence": {
+    "path": "qualification-runs.json",
+    "sha256": "dc9d69a8b4d714f749d20719433ee0315841e40e5bb0693b75660410dc4723b4",
+    "testsPassed": 95,
+    "testsTotal": 95,
+    "rootRunsWithExpectedExitCodes": 17,
+    "retainedTestOutput": "test-execution.txt"
+  },
+  "remainingMandatoryFindings": [],
+  "resolvedDefectClasses": [
+    "whole_document_review_invalidation",
+    "queue_metadata_invalidating_external_receipt",
+    "missing_and_stale_reviews_sent_to_owners",
+    "unacknowledged_batches_advanced_on_generation",
+    "resolved_question_regression_deadend",
+    "unbounded_copied_context_history",
+    "unverified_archive_history",
+    "whole_hierarchy_author_and_rights_bypass",
+    "approved_content_in_place_overwrite",
+    "placeholder_approval_reference",
+    "synthetic_mode_shared_success_and_implicit_invocation",
+    "malformed_input_tracebacks",
+    "confirmed_absence_and_unresolved_owner_presence",
+    "generic_cycle_message_and_undifferentiated_relationships",
+    "nonportable_rulebook_text_encoding",
+    "oversized_agent_inspection_and_missing_hash_helpers"
+  ],
+  "measuredEvidence": {
+    "syntheticScale": {
+      "syntheticOnly": true,
+      "elements": 302,
+      "countsByLevel": {
+        "vision": 1,
+        "strategy": 1,
+        "roadmap": 1,
+        "release_goal": 1,
+        "epic": 8,
+        "user_story": 40,
+        "acceptance_criterion": 150,
+        "technical_task": 100
+      },
+      "reviewVerdicts": 2114,
+      "blockingChecks": 2430,
+      "baselineStatus": "synthetic_checks_satisfied",
+      "bindingSeconds": 18.243,
+      "checkingSeconds": 5.44,
+      "leafEditCheckingSeconds": 5.499,
+      "reportCanonicalBytes": 6972464,
+      "leafEditStaleReviews": 8,
+      "leafEditAffectedElements": [
+        "technical_task-100",
+        "user_story-020"
+      ],
+      "unchangedReviewsPreserved": 2106,
+      "wholeUnrelatedBranchPreserved": true
+    },
+    "realAdvisoryReceipt": {
+      "baselineStatus": "stage_checks_satisfied",
+      "metadataOnlyStatus": "stage_checks_satisfied",
+      "metadataOnlyStale": 0,
+      "identityAuthenticated": "not_authenticated_offline",
+      "advisoryOnly": true,
+      "certificationGranted": false,
+      "sourceChangeStatus": "needs_input",
+      "sourceChangeStale": 57,
+      "metadataReceiptCurrent": "passed",
+      "sourceBaselineRefused": true
+    },
+    "boundedLoopState": {
+      "bytesAtRuns": [
+        [
+          16,
+          568383
+        ],
+        [
+          32,
+          573772
+        ],
+        [
+          45,
+          573772
+        ]
+      ],
+      "iterationCount": 32,
+      "maxContextHistory": 8,
+      "archiveFiles": 37,
+      "archiveVerified": true,
+      "headRecords": 2200,
+      "historicalCheckTextRepeated": false
+    },
+    "historicArchiveTamper": {
+      "refused": true,
+      "stateBytesPreserved": true
+    },
+    "helperMetrics": {
+      "elements": 302,
+      "generatedFixtureVerdicts": 2114,
+      "reportFileBytes": 9226723,
+      "summaryStdoutBytes": 2220,
+      "reviewHashesStdoutBytes": 152545,
+      "syntheticOnly": true
+    },
+    "helperCommandsObserved": 17
+  },
+  "retainedCriterionBoundary": "The edition-3 stage catalogue and earlier AI/privacy, sampling, alias, checklist and learning safeguards are retained. Current regression-suite evidence covers those contracts; the listed independent counterexamples specifically verify the edition-4 engine, loop and helper corrections.",
+  "assuranceBoundary": {
+    "generatedPositiveVerdicts": "Explicitly labelled synthetic mechanics setup, never semantic product review.",
+    "offlineRealMode": "advisory_only",
+    "reviewerIdentityAuthenticated": false,
+    "actualProductCertificationGranted": false,
+    "ownerApprovalGranted": false,
+    "readinessGranted": false,
+    "deliveryClaimed": false,
+    "performanceGuarantee": false
+  },
+  "documentEvidenceBoundary": "Word source coverage and every-page layout inspection are separate records referenced by edition qualification. This implementation review does not imply document rendering or visual verification."
+}

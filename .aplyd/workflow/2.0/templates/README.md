@@ -1,0 +1,1 @@
+Use native PM records and QA templates/registers for product criteria, scenarios, cases, runs, exceptions and acceptance. Workflow templates contain dispatch/handoff and contract-change references only; they are not substitute ledgers or approvals. Save populated project records outside this sealed distribution.

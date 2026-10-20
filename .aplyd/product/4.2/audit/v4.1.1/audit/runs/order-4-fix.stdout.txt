@@ -1,0 +1,5 @@
+{
+  "revision": 2,
+  "preservedSnapshot": "<temporary-working-copy>/review-state/revision-1-7a45588693c0.json",
+  "nextAction": "Rerun integrity and scoped checks. Only changed targets and their actual declared dependency closures lose review/evidence validity; unchanged scoped-v1 reviews remain eligible."
+}

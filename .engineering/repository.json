@@ -1,0 +1,85 @@
+{
+  "schema_version": 2,
+  "package_version": "2.1.0",
+  "package_path": ".aplyd/engineering/2.1.0",
+  "repository_name": "nakul175/datadataeverywhere",
+  "adoption_state": "draft",
+  "maturity": "production",
+  "owners": {
+    "product": "nakul175",
+    "engineering": null,
+    "security": null,
+    "operations": null
+  },
+  "approval_ref": null,
+  "design_depth": "docs/architecture/ADR-001-existing-system.md",
+  "components": [
+    "Next.js interface",
+    "NocoDB REST engine",
+    "PostgreSQL",
+    "Caddy",
+    "Persistent AI budget admission"
+  ],
+  "languages": [
+    "TypeScript",
+    "Python",
+    "Bash",
+    "CSS"
+  ],
+  "product_docs": {
+    "index": "docs/product/BASELINE.md",
+    "baseline": "d819af9c539d063b98b96df89ea5c54ec054c193",
+    "bindings": [
+      {
+        "role": "architecture",
+        "reference": "docs/architecture/ADR-001-existing-system.md",
+        "version": "1"
+      }
+    ]
+  },
+  "required_paths": [
+    "README.md",
+    "AGENTS.md",
+    "docs/engineering/README.md",
+    "docs/delivery/GAPS.md",
+    "docs/delivery/READY-DONE.md",
+    ".github/workflows/delivery.yml"
+  ],
+  "default_branch": "main",
+  "branch_policy_evidence_ref": null,
+  "toolchain": [
+    {
+      "tool": "Node.js",
+      "version": "22.23.3",
+      "provisioning_ref": ".github/workflows/delivery.yml"
+    },
+    {
+      "tool": "Python",
+      "version": "3.12.15",
+      "provisioning_ref": ".github/workflows/delivery.yml"
+    },
+    {
+      "tool": "Biome",
+      "version": "2.5.15",
+      "provisioning_ref": "package-lock.json"
+    }
+  ],
+  "tracker": {
+    "system": "github",
+    "namespace": "nakul175/datadataeverywhere",
+    "reference": "https://github.com/nakul175/datadataeverywhere/issues/1"
+  },
+  "team_dod_ref": "docs/delivery/READY-DONE.md",
+  "exception_register": {
+    "path": ".governance/exceptions.json",
+    "format": "json",
+    "field_map": {},
+    "status_map": {},
+    "list_separator": ";"
+  },
+  "evidence_root": ".aplyd/evidence",
+  "integration_mode": "combined",
+  "component_mode_approval_ref": null,
+  "integration_manifest": ".aplyd/integration.json",
+  "executable_code": true
+}

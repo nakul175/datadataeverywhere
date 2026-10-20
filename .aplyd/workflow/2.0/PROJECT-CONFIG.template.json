@@ -1,0 +1,43 @@
+{
+  "templateVersion": "2.0",
+  "projectId": null,
+  "productPlanUrl": null,
+  "repositoryUrl": null,
+  "planningTool": "Linear or equivalent",
+  "evidenceStore": "GitHub artifacts or equivalent",
+  "targetEnvironment": null,
+  "authorizedScope": null,
+  "readyChecklistVersion": null,
+  "doneChecklistVersion": null,
+  "requiredChecks": [],
+  "authorizedReviewerSource": null,
+  "requiredHumanApprovals": [],
+  "runnerCommands": {
+    "unit": null,
+    "api": null,
+    "browser": null,
+    "performance": null
+  },
+  "syntheticDataPolicy": null,
+  "loadLimits": null,
+  "retentionAndAccessPolicy": null,
+  "releaseAndRollbackPolicy": null,
+  "outcomeReviewDate": null,
+  "unresolvedCriticalInputsBlockDependentWork": true,
+  "integrationManifest": null,
+  "nativeProductDocument": null,
+  "nativeQAScope": null,
+  "team_dod_ref": null,
+  "exception_register": null,
+  "parallelism": {
+    "maxWorkers": 1,
+    "leaseBackend": null,
+    "atomicAcquisitionVerified": false
+  },
+  "ciPolicy": {
+    "requiredCheckNames": [],
+    "trustedReportingSource": null,
+    "serverProtectionVerified": false
+  },
+  "liveActivationVerified": false
+}

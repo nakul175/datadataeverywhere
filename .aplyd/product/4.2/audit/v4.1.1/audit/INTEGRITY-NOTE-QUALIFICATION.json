@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0",
+  "packagingEdition": "4.1.1-generic",
+  "recordedAt": "2026-10-10T16:56:19.072402+00:00",
+  "scope": "One added AGENTS.md integrity-selection instruction and refreshed current archive manifest only.",
+  "sourceArchiveName": "product-management-agent-bundle-v4.1.zip",
+  "sourceArchiveSha256": "64cad939254f9527b0b803631577193d7eb6d7506f836ced7be717ffb5a8d953",
+  "addedInstruction": "For integrity checks use only `audit/BUNDLE-MANIFEST.json`; the v4 manifest is historical.",
+  "agentsPreviousSha256": "55fefbe2e9a9f9e7d8ef303cb9ee906b6dd997e2736581934d9639bd0ac1f211",
+  "agentsCurrentSha256": "7cc658d69b7902762c4edab5d52c41338c94fa0d46298cf68f48bbb21e57afa6",
+  "historicalV4ManifestSha256": "b24b07c1f2728529a982d5557de98f82f55036247830e8949d44de115e6be542",
+  "changedExistingPayloadFiles": [
+    "AGENTS.md",
+    "audit/BUNDLE-MANIFEST.json"
+  ],
+  "unchangedExistingPayloadFiles": 110,
+  "checkerCatalogueWordAndHistoricalRecordsUnchanged": true,
+  "priorTestResultsAreHistoricalNotRerun": true,
+  "integrityManifestToUse": "audit/BUNDLE-MANIFEST.json",
+  "assurance": "File integrity and instruction delta only; no new product-quality or approval claim."
+}

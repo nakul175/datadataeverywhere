@@ -1,0 +1,137 @@
+{
+  "schemaVersion": "1.0",
+  "version": "3.0-generic",
+  "status": "unapproved_generic_template",
+  "adoption": "The real team authority must version and adopt these policies through a pinned canonical source; this file invents no team, owner or approval. Story/task fields link exact adopted policy ID/version/content hash and applicable check evidence; keep item-specific additions separately.",
+  "policies": [
+    {
+      "id": "team.DOR.v1",
+      "version": "1.0",
+      "title": "Team Definition of Ready",
+      "status": "proposed_template",
+      "actualOwner": null,
+      "adoptionEvidence": null,
+      "checks": [
+        {
+          "id": "DOR-01",
+          "title": "Bounded and traceable",
+          "criterion": "One canonical item, current source/parent/scope revision and no competing duplicates.",
+          "gate": "documentation_quality",
+          "required": true
+        },
+        {
+          "id": "DOR-02",
+          "title": "Testable outcome",
+          "criterion": "User/operator outcome, acceptance/evaluation contract, source supplements and applicable adverse/refusal/failure/recovery scenarios are explicit.",
+          "gate": "documentation_quality",
+          "required": true
+        },
+        {
+          "id": "DOR-03",
+          "title": "Feasible and prioritised",
+          "criterion": "Sourced priority rationale, size range/unit/uncertainty, required predecessor outputs, resources and access support the next step.",
+          "gate": "readiness",
+          "required": true
+        },
+        {
+          "id": "DOR-04",
+          "title": "Risk and discovery resolved",
+          "criterion": "Required riskiest-assumption test and decision exist; residual uncertainty has an actual authorized bounded risk decision if permitted.",
+          "gate": "readiness",
+          "required": true
+        },
+        {
+          "id": "DOR-05",
+          "title": "Applicable assurance prepared",
+          "criterion": "Safety/security/privacy/accessibility and product AI dataset/rights/metrics/fallback/versioning/promotion/monitoring design prerequisites meet current-stage requirements.",
+          "gate": "readiness",
+          "required": true
+        },
+        {
+          "id": "DOR-06",
+          "title": "Actual approval recorded",
+          "criterion": "Every actual required product, human, legal/privacy/security/domain approval is independently evidenced at the current specification; quality review is not approval.",
+          "gate": "specification_approval",
+          "required": true
+        },
+        {
+          "id": "DOR-07",
+          "title": "Execution can proceed",
+          "criterion": "Canonical team policy is actually adopted; required owner/assignee, evaluation environment/access and decisions are resolved, item-specific additions satisfied, and blockers have actual owners/resume conditions.",
+          "gate": "readiness",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "team.DOD.v1",
+      "version": "1.0",
+      "title": "Team Definition of Done",
+      "status": "proposed_template",
+      "actualOwner": null,
+      "adoptionEvidence": null,
+      "checks": [
+        {
+          "id": "DOD-01",
+          "title": "Current final revision qualified",
+          "criterion": "Reviewable deliverable revision and actual meaningful evaluation outputs meet the declared qualification method.",
+          "gate": "documentation_quality",
+          "required": true
+        },
+        {
+          "id": "DOD-02",
+          "title": "Acceptance observed",
+          "criterion": "Each applicable frozen criterion has current original observed evidence; failures/refusals/recovery/prohibited effects and AI overall/critical-slice/safety thresholds meet the contract.",
+          "gate": "accepted",
+          "required": true
+        },
+        {
+          "id": "DOD-03",
+          "title": "Independent review current",
+          "criterion": "Required actual independent review and separate approvals exist at this revision; changed evidence invalidates old reviews. Offline advice cannot assert authorized review.",
+          "gate": "documentation_quality",
+          "required": true
+        },
+        {
+          "id": "DOD-04",
+          "title": "Item-specific scope met",
+          "criterion": "Canonical team policy and item additions apply, scope/denominator is current, no required work hidden in done or silently skipped.",
+          "gate": "accepted",
+          "required": true
+        },
+        {
+          "id": "DOD-05",
+          "title": "Release authorised and observed",
+          "criterion": "Within declared item scope, actual required publication/integration authority and observations are recorded; task completion is not release approval.",
+          "gate": "integrated_or_published",
+          "required": true
+        },
+        {
+          "id": "DOD-06",
+          "title": "Availability and recovery verified",
+          "criterion": "Where the declared delivery gate requires it, observe exact operational revision and user/operator journey, actual recovery/fallback and live monitoring; published is not automatically available.",
+          "gate": "observed_available",
+          "required": true
+        },
+        {
+          "id": "DOD-07",
+          "title": "Learning hand-off active",
+          "criterion": "Actual measurement owner, agreed review window, original target/data source and strategy/roadmap feedback route exist; observed learning remains a separate post-release gate.",
+          "gate": "learning_handoff",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "separateStates": [
+    "documentation_quality",
+    "specification_approval",
+    "readiness",
+    "accepted",
+    "integrated_or_published",
+    "observed_available",
+    "user_verified",
+    "learning_handoff",
+    "outcome_learning"
+  ]
+}

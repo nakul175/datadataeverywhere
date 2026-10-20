@@ -1,0 +1,16 @@
+flowchart TD
+ A[Pin Product QA Engineering and Workflow packages] --> B[Qualify native bindings and project authority]
+ B --> C[Ready tasks and dependency graph]
+ C --> D[Atomic lease and isolated worker A]
+ C --> E[Atomic lease and isolated worker B]
+ D --> F[Native engineering and actual QA tests]
+ E --> G[Native engineering and actual QA tests]
+ F --> H[Serialized evidence integration and current CI]
+ G --> H
+ H --> I{All required checks executed and pass?}
+ I -->|No| J[Retain failure fix and new run]
+ J --> C
+ I -->|Yes| K[Independent review and required acceptance]
+ K --> L[Protected integration and authorized release]
+ L --> M[Observed artifact live checks and team Done]
+ M --> N[Outcome learning and next eligible tasks]

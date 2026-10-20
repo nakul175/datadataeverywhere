@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0",
+  "reviewType": "author_mechanical_catalogue_audit_not_product_approval",
+  "catalogueVersion": "3.0-generic",
+  "catalogueFileSha256": "cec6bc14f5976dd7e1a48ba9f224e18b1258abb08ed0479a7f080b2dc6245456",
+  "catalogueCanonicalHash": "a72502ce4dcfe5ec1e8537cd377f93e77ad32b9d998fdad62c252605089759fe",
+  "sourceSha256": "89c5b91203828ed7e07e9da370c1b90cd309dc9434c303142b830c953d699729",
+  "coverage": {
+    "totalFields": 189,
+    "requiredFieldComponents": 587,
+    "independentComponentChecks": 0,
+    "referenceFieldChecks": 1231,
+    "referenceElementChecks": 48,
+    "referenceHierarchyChecks": 28,
+    "dimensions": 20,
+    "mandatoryStageGateDefinitions": 280,
+    "mandatoryGatesPerItemCurrentStage": 7,
+    "stages": 5,
+    "hierarchyLevels": 8,
+    "maximumAdvisorySampleChecksPerHierarchyLevel": 2
+  },
+  "audits": {
+    "exactFieldAnchors": 189,
+    "mergedComponentAnchors": 587,
+    "independentComponentVerdicts": 0,
+    "sevenGateProfiles": 40,
+    "validGateFieldReferences": 280,
+    "unsampledAIAndPersonalDataAssuranceGates": 40,
+    "canonicalLegacyFieldAliases": 13,
+    "canonicalTeamPolicyTemplates": 2,
+    "authoritativeRegistryRequiredOfflineAdvisoryDisclosed": true,
+    "noncriticalAdvisoryTargetsPerHierarchyLevelMaximum": 2,
+    "noActualProductPlanCertified": true
+  },
+  "errors": [],
+  "status": "passed"
+}

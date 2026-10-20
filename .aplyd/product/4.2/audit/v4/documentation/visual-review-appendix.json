@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "reviewerTask": "primary_document_reviewer",
+  "docxSha256": "9caf07514b99d4cb3e40fef35e8f5f76963358fa702de8cbbcd67307d153fac8",
+  "renderDirectory": "rendered-release",
+  "pageRange": [
+    73,
+    77
+  ],
+  "pageCount": 5,
+  "allPagesIndividuallyInspected": true,
+  "status": "passed",
+  "materialFindings": [],
+  "observations": "Cover, contents, workflow, stage clauses and level matrices are readable. Final changed headings preserve punctuation. Appendix G numbering starts at one, queue and result tables fit, and the earlier forced near-empty carry page has been removed. Tables have repeated headers, intact rows and legible identifiers. No clipping, overlap or missing glyphs.",
+  "pages": [
+    {
+      "page": 73,
+      "pngSha256": "ca0c2c91f43a8b372bd122f5dd000a96eacfbe918569ca52facfab7c5fbc3725",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 74,
+      "pngSha256": "a2332c9f3d1651649f5de1c3b20c74e3fc65b702f4a90e567370a744c3363183",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 75,
+      "pngSha256": "0796edf5435bb5302975d46a0347524304ab4008c119d1206c7d11ee48d28f04",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 76,
+      "pngSha256": "e5d8f7e61de19b340fad5b85fceab2c1b73d7b17deb7408f52338b9a6a1e81dd",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    },
+    {
+      "page": 77,
+      "pngSha256": "611eb9a02055e16873491fc7b0200b1811a21cc03d4fbbfcb284140a2811dc50",
+      "result": "passed",
+      "inspection": "Individually viewed at original resolution; unchanged pages reused only after exact final PNG byte comparison."
+    }
+  ]
+}

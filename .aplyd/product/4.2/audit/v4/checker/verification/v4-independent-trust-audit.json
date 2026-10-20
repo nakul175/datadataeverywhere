@@ -1,0 +1,79 @@
+{
+  "checkerSha256": "ded9080be9a6d5be6a6bb837d217290f37dc1e22123c57b2279dcb5d5f97f94a",
+  "catalogueSha256": "cec6bc14f5976dd7e1a48ba9f224e18b1258abb08ed0479a7f080b2dc6245456",
+  "syntheticOnly": true,
+  "results": {
+    "exhaustiveBaseline": "synthetic_checks_satisfied",
+    "storyAuthorHierarchy": {
+      "checks": 28,
+      "passed": 0,
+      "invalid": 28
+    },
+    "narrowNonAuthorHierarchy": {
+      "checks": 28,
+      "passed": 0,
+      "invalid": 28
+    },
+    "ancestorAuthorRefused": {
+      "invalid": 1,
+      "reasons": [
+        "Reviewer must be registered and distinct from the document and element authors."
+      ]
+    },
+    "approvedRewriteRefused": true,
+    "placeholderApproval": {
+      "status": "needs_input",
+      "referenceStatus": [
+        "missing"
+      ]
+    },
+    "placeholderPresence": {
+      "None — no external dependencies (confirmed with platform team)": true,
+      "TBD by product owner": false,
+      "Owner: TBD": false,
+      "Agreed owner: Morgan": true
+    },
+    "exactCyclePath": [
+      "Cycle in dependencyIds: technical_task-001 -> technical_task-002 -> technical_task-001"
+    ],
+    "designReferenceCycleDoesNotBlock": true,
+    "cliCases": {
+      "syntheticWithoutFlag": {
+        "exitCode": 3,
+        "traceback": false,
+        "error": "Synthetic fixture input requires explicit --allow-synthetic. This flag authorizes only a labelled mechanics test, never real product qualification."
+      },
+      "syntheticWithFlag": {
+        "exitCode": 0,
+        "traceback": false,
+        "qualityStatus": "synthetic_checks_satisfied"
+      },
+      "malformedList": {
+        "exitCode": 3,
+        "traceback": false,
+        "error": "Document must be a JSON object."
+      },
+      "malformedScope": {
+        "exitCode": 3,
+        "traceback": false,
+        "error": "scope must be a JSON object."
+      }
+    },
+    "assertions": {
+      "exhaustiveMechanicalBaselinePasses": true,
+      "hierarchyAuthorExcluded": true,
+      "wholeHierarchyRightsRequired": true,
+      "ancestorAuthorExcluded": true,
+      "approvedOriginalPreserved": true,
+      "approvalReferencePlaceholderBlocked": true,
+      "confirmedAbsenceNotPlaceholder": true,
+      "unresolvedOwnersRefused": true,
+      "cyclePathPresent": true,
+      "designCycleDistinct": true,
+      "syntheticFlagRequired": true,
+      "syntheticStateDistinct": true,
+      "malformedControlled": true
+    }
+  },
+  "allAssertionsPassed": true
+}

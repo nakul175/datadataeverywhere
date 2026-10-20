@@ -1,0 +1,226 @@
+{
+  "schemaVersion": "1.0",
+  "reviewedAt": "2026-10-10T17:08:36.840036+00:00",
+  "reviewType": "independent_focused_catalogue_integrity_regression",
+  "pins": {
+    "quality_checker.py": "48477e9e7a522ab37cbcb66203041781d014bfdc7479f339e8e67f4011e8c327",
+    "quality_loop.py": "ad589c27c5794d7b7854d4ab4932060940ccc5ec8bf751e1c539344a2faa62c7",
+    "quality_tools.py": "059c416a3ddac30c99194dd861757c08658822a3e0ee24954bb61edeb58adeb0",
+    "catalogue.json": "cec6bc14f5976dd7e1a48ba9f224e18b1258abb08ed0479a7f080b2dc6245456"
+  },
+  "verificationScriptSha256": "0ef2ddfbe7d2bdba67d2bc9fb89b2c32569dfe3f42f9aede8ca7864b064b6552",
+  "canonicalStandardSha256": "a72502ce4dcfe5ec1e8537cd377f93e77ad32b9d998fdad62c252605089759fe",
+  "commandPathNormalization": "Argument paths replace the reviewed checker, external labelled fixtures and ephemeral working directory with <reviewed-checker>, <external-labelled-counterexamples> and <temporary-guard-review>. Exit codes, byte counts and output hashes come from actual unnormalized execution.",
+  "syntheticOnly": true,
+  "productionGuardUnpatched": true,
+  "toyTestHarnessImported": false,
+  "assertions": {
+    "freshProductionModuleHasLiteralUnpatchedStandardPin": true,
+    "altered_real_mode_self_repin_bypass:check": true,
+    "altered_synthetic_self_repin_bypass:check": true,
+    "altered_empty_fields_real_mode_self_repin_bypass:check": true,
+    "altered_empty_fields_synthetic_self_repin_bypass:check": true,
+    "altered_synthetic_self_repin_bypass:fingerprint": true,
+    "altered_synthetic_self_repin_bypass:scaffold": true,
+    "altered_synthetic_self_repin_bypass:trust-template": true,
+    "sameCanonicalFormattingRemainsAcceptedAdvisoryOnly": true,
+    "altered_synthetic_self_repin_bypass:check:default_file": true,
+    "constructorSnapshotsAcceptedCatalogue": true,
+    "postInitializationMutationRefusedWithExpectedAndActualHashes": true,
+    "publicScopedPayloadRefusesInternalCatalogueMutation": true,
+    "legacyToyMockCannotChangeFreshProductionGuard": true
+  },
+  "executedCommands": [
+    {
+      "label": "altered_real_mode_self_repin_bypass:check",
+      "arguments": [
+        "--catalogue",
+        "<external-labelled-counterexamples>/altered_real_mode_self_repin_bypass-catalogue.json",
+        "check",
+        "--document",
+        "<external-labelled-counterexamples>/altered_real_mode_self_repin_bypass-document.json",
+        "--report",
+        "<temporary-guard-review>/altered_real_mode_self_repin_bypass-check-report.json",
+        "--trust-store",
+        "<external-labelled-counterexamples>/altered_real_mode_self_repin_bypass-trust.json"
+      ],
+      "exitCode": 3,
+      "expectedExitCode": 3,
+      "stdoutBytes": 0,
+      "stderrBytes": 626,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "31a6d4914aa1e6d31fe401b680d4f588ac1b0e1536a166d26dc0c44fd340257c"
+    },
+    {
+      "label": "altered_synthetic_self_repin_bypass:check",
+      "arguments": [
+        "--catalogue",
+        "<external-labelled-counterexamples>/altered_synthetic_self_repin_bypass-catalogue.json",
+        "check",
+        "--document",
+        "<external-labelled-counterexamples>/altered_synthetic_self_repin_bypass-document.json",
+        "--report",
+        "<temporary-guard-review>/altered_synthetic_self_repin_bypass-check-report.json",
+        "--allow-synthetic"
+      ],
+      "exitCode": 3,
+      "expectedExitCode": 3,
+      "stdoutBytes": 0,
+      "stderrBytes": 626,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "31a6d4914aa1e6d31fe401b680d4f588ac1b0e1536a166d26dc0c44fd340257c"
+    },
+    {
+      "label": "altered_empty_fields_real_mode_self_repin_bypass:check",
+      "arguments": [
+        "--catalogue",
+        "<external-labelled-counterexamples>/altered_empty_fields_real_mode_self_repin_bypass-catalogue.json",
+        "check",
+        "--document",
+        "<external-labelled-counterexamples>/altered_empty_fields_real_mode_self_repin_bypass-document.json",
+        "--report",
+        "<temporary-guard-review>/altered_empty_fields_real_mode_self_repin_bypass-check-report.json",
+        "--trust-store",
+        "<external-labelled-counterexamples>/altered_empty_fields_real_mode_self_repin_bypass-trust.json"
+      ],
+      "exitCode": 3,
+      "expectedExitCode": 3,
+      "stdoutBytes": 0,
+      "stderrBytes": 626,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "dd642fcc0ceaf9afdb17e6bfafc593a1b0e4bbd8060a0a4b8da7f2f3437bb7dd"
+    },
+    {
+      "label": "altered_empty_fields_synthetic_self_repin_bypass:check",
+      "arguments": [
+        "--catalogue",
+        "<external-labelled-counterexamples>/altered_empty_fields_synthetic_self_repin_bypass-catalogue.json",
+        "check",
+        "--document",
+        "<external-labelled-counterexamples>/altered_empty_fields_synthetic_self_repin_bypass-document.json",
+        "--report",
+        "<temporary-guard-review>/altered_empty_fields_synthetic_self_repin_bypass-check-report.json",
+        "--allow-synthetic"
+      ],
+      "exitCode": 3,
+      "expectedExitCode": 3,
+      "stdoutBytes": 0,
+      "stderrBytes": 626,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "dd642fcc0ceaf9afdb17e6bfafc593a1b0e4bbd8060a0a4b8da7f2f3437bb7dd"
+    },
+    {
+      "label": "altered_synthetic_self_repin_bypass:fingerprint",
+      "arguments": [
+        "--catalogue",
+        "<external-labelled-counterexamples>/altered_synthetic_self_repin_bypass-catalogue.json",
+        "fingerprint",
+        "--document",
+        "<external-labelled-counterexamples>/altered_synthetic_self_repin_bypass-document.json",
+        "--allow-synthetic"
+      ],
+      "exitCode": 3,
+      "expectedExitCode": 3,
+      "stdoutBytes": 0,
+      "stderrBytes": 626,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "31a6d4914aa1e6d31fe401b680d4f588ac1b0e1536a166d26dc0c44fd340257c"
+    },
+    {
+      "label": "altered_synthetic_self_repin_bypass:scaffold",
+      "arguments": [
+        "--catalogue",
+        "<external-labelled-counterexamples>/altered_synthetic_self_repin_bypass-catalogue.json",
+        "scaffold",
+        "--output",
+        "<temporary-guard-review>/altered_synthetic_self_repin_bypass-scaffold-report.json"
+      ],
+      "exitCode": 3,
+      "expectedExitCode": 3,
+      "stdoutBytes": 0,
+      "stderrBytes": 626,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "31a6d4914aa1e6d31fe401b680d4f588ac1b0e1536a166d26dc0c44fd340257c"
+    },
+    {
+      "label": "altered_synthetic_self_repin_bypass:trust-template",
+      "arguments": [
+        "--catalogue",
+        "<external-labelled-counterexamples>/altered_synthetic_self_repin_bypass-catalogue.json",
+        "trust-template",
+        "--document",
+        "<external-labelled-counterexamples>/altered_synthetic_self_repin_bypass-document.json",
+        "--output",
+        "<temporary-guard-review>/altered_synthetic_self_repin_bypass-trust-template-report.json"
+      ],
+      "exitCode": 3,
+      "expectedExitCode": 3,
+      "stdoutBytes": 0,
+      "stderrBytes": 626,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "31a6d4914aa1e6d31fe401b680d4f588ac1b0e1536a166d26dc0c44fd340257c"
+    },
+    {
+      "label": "same_canonical_formatting_positive_control",
+      "arguments": [
+        "--catalogue",
+        "<temporary-guard-review>/equivalent-catalogue.json",
+        "check",
+        "--document",
+        "<external-labelled-counterexamples>/canonical_real_mode_positive_control-document.json",
+        "--trust-store",
+        "<external-labelled-counterexamples>/canonical_real_mode_positive_control-trust.json",
+        "--report",
+        "<temporary-guard-review>/equivalent-report.json"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "stdoutBytes": 1680,
+      "stderrBytes": 0,
+      "stdoutSha256": "000273b5bce88a78b3036141505b4fbbf3d4905e1aa26d786fa6dfc0c1066cee",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "altered_synthetic_self_repin_bypass:check:default_file",
+      "arguments": [
+        "check",
+        "--document",
+        "<external-labelled-counterexamples>/altered_synthetic_self_repin_bypass-document.json",
+        "--report",
+        "<temporary-guard-review>/altered_synthetic_self_repin_bypass-check-report.json",
+        "--allow-synthetic"
+      ],
+      "exitCode": 3,
+      "expectedExitCode": 3,
+      "stdoutBytes": 0,
+      "stderrBytes": 626,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "31a6d4914aa1e6d31fe401b680d4f588ac1b0e1536a166d26dc0c44fd340257c"
+    }
+  ],
+  "mandatoryFindings": [],
+  "assuranceBoundary": "Catalogue-content integrity only. Constructed real-mode inputs are still labelled synthetic counterexamples. No actual semantic product review, authenticated identity, approval, readiness or delivery is established.",
+  "testHarnessBoundary": {
+    "separateEngineObjects": true,
+    "actualGuardUnchanged": true,
+    "toyMockLimitedToTestEngine": true
+  },
+  "isolatedBoundarySubprocesses": 1,
+  "testHarnessBoundaryOutputSha256": "0cbf0b1b7d7bde64c42490be9ca824cfb99ef72f1828644849df8530ca77e77f",
+  "testHarnessBoundaryProbeSourceSha256": "17e096afe1576c453c698dbffe7c5f62b8e3b2f6720c2a406b4fc87dc1866a14",
+  "assertionsPassed": 14,
+  "executedCommandCount": 9,
+  "allAssertionsPassed": true,
+  "status": "passed_focused_catalogue_guard_counterexamples",
+  "coreRegressionTestSourceInspection": {
+    "testSource": "checker/tests/test_catalogue_integrity.py",
+    "testSourceSha256": "ec394301b451c4ae228a1f1e3e284e289466ee6330f07826a71b8ef320a8a078",
+    "testCount": 15,
+    "engineImportName": "actual_catalogue_guard_engine",
+    "freshProductionModuleUsed": true,
+    "productionGuardUnpatched": true,
+    "legacyImportsUsedForFixtureConstructionOnly": true,
+    "actualCliSubprocessUsed": true,
+    "suiteExecutionClaim": "Source inspection and isolated mock-boundary probe only in this independent receipt; the parent retains the actual 110-test full-suite execution separately."
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "1.0",
+  "bundleEdition": "4.2-generic",
+  "status": "passed",
+  "executedCommand": "python3 -m unittest discover -s outputs/product-management-generic-v4.2/checker/tests -v",
+  "executionDirectory": "workspace root; all file pins below are relative to the v4.2 bundle",
+  "actualExitCode": 0,
+  "observedTestsRun": 110,
+  "observedFailures": 0,
+  "observedErrors": 0,
+  "observedUnittestElapsedSeconds": 85.389,
+  "countBreakdown": {
+    "preservedSemanticAndMechanicsTests": 95,
+    "newCatalogueIntegrityTests": 15
+  },
+  "observedUnittestSummary": [
+    "Ran 110 tests in 85.389s",
+    "OK"
+  ],
+  "evidenceCapture": {
+    "fullStdoutLogSaved": false,
+    "fullStderrLogSaved": false,
+    "explanation": "The command ran through the tool session with incremental output. No complete stdout/stderr file was saved. This receipt records the observed completed tool result and summary; it does not reconstruct or claim a missing full log.",
+    "providerSessionId": 81126,
+    "observedToolChunkIds": [
+      "7c7f69",
+      "cfb40d",
+      "178c79"
+    ],
+    "finalToolResult": {
+      "chunk_id": "178c79",
+      "exit_code": 0,
+      "original_token_count": 1647,
+      "wall_time_seconds": 9e-06
+    },
+    "rerunPerformedForThisReceipt": false
+  },
+  "fileSha256": {
+    "checker/quality_checker.py": "48477e9e7a522ab37cbcb66203041781d014bfdc7479f339e8e67f4011e8c327",
+    "checker/quality_tools.py": "059c416a3ddac30c99194dd861757c08658822a3e0ee24954bb61edeb58adeb0",
+    "checker/quality_loop.py": "ad589c27c5794d7b7854d4ab4932060940ccc5ec8bf751e1c539344a2faa62c7",
+    "checker/catalogue.json": "cec6bc14f5976dd7e1a48ba9f224e18b1258abb08ed0479a7f080b2dc6245456",
+    "checker/tests/test_catalogue_integrity.py": "ec394301b451c4ae228a1f1e3e284e289466ee6330f07826a71b8ef320a8a078",
+    "checker/tests/test_checker.py": "09f4a6f3ea42dc668bae8d8ef88ad6888d7f788e48959b1215c9c33860550a66",
+    "checker/tests/test_core_v4.py": "7fbf04249106e3ebf0e2746ab8cf1a0e210b70867ffbbbac869e0aed9d45f009",
+    "checker/tests/test_loop_v4.py": "c1655cbcc4f9bfc7fbc5817f8fb8bcd2fa6997a9eb45b88a31064c51c27a2736",
+    "checker/tests/test_tools_v4.py": "ad1b6f5ae12098a8f7aa42fec783224b01154fd2cb076db2d7a103a66e928a4d"
+  },
+  "testHarnessScope": {
+    "isolatedMockFile": "checker/tests/test_checker.py",
+    "mockedImportedModule": "Only the separate qc module instance loaded by the legacy test harness.",
+    "mockedFunction": "require_canonical_catalogue",
+    "scope": "Legacy toy catalogues without catalogueVersion 3.0-generic may exercise small-model semantic/mechanics logic. Shipped 3.0-generic catalogues still call the production guard in that test module.",
+    "newIntegrityTests": "checker/tests/test_catalogue_integrity.py loads a distinct fresh actual_catalogue_guard_engine module, retains literal expected version/hash, and executes actual CLI subprocesses. It does not patch the production guard.",
+    "negativeInputPreparation": "Generated self-repinned reviews/trust and the private raw serializer are used solely to construct hostile mechanics test inputs. They do not assess a real product or authenticate independent authority.",
+    "productionBypassAdded": false
+  },
+  "scopeLimit": "Tests qualify these pinned engine mechanics and labelled test fixtures. They do not certify a real product plan, reviewer identity, independent approval, readiness or delivery.",
+  "reuseInstruction": "Reuse this already executed final110 result. A full log is unavailable; do not imply one exists or rerun solely to recreate it."
+}

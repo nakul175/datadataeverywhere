@@ -1,0 +1,125 @@
+{
+  "documentId": "SYNTHETIC-PENDING-FIXTURE",
+  "revision": 1,
+  "qualityState": {
+    "status": "needs_input",
+    "passed": 19,
+    "applicable": 78,
+    "exemptions": 0,
+    "counts": {
+      "passed": 19,
+      "not_applicable": 0,
+      "missing": 58,
+      "failed": 0,
+      "stale": 1,
+      "invalid": 0
+    },
+    "score": null,
+    "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+    "certificationGranted": false
+  },
+  "assessmentCoverage": {
+    "assessmentMode": "profile",
+    "stage": "planning",
+    "selectedMandatoryReviewCount": 58,
+    "integrityChecksAlwaysRun": true,
+    "referenceCheckInstances": 1909,
+    "referenceChecksFullyAssessed": false,
+    "referenceInstancesDeferred": 1909,
+    "advisorySampleCount": 16,
+    "advisoryUnreviewedCount": 16,
+    "legacyDefaultWarning": null,
+    "conclusion": "Only the selected stage's seven mandatory gates per assessed item were checked. Advisory samples and deferred reference details do not count as passed."
+  },
+  "unresolvedByResolutionKind": {
+    "author_repair_or_owner_decision": 59
+  },
+  "unresolvedBlockingCount": 59,
+  "advisorySamples": {
+    "count": 16,
+    "unreviewed": 16,
+    "failed": 0
+  },
+  "reviewerAuthentication": {
+    "status": "synthetic_test_only",
+    "advisoryOnly": true,
+    "registryCanBeAuthorCreated": true,
+    "externalApprovalRequired": true
+  },
+  "readinessState": {
+    "status": "supplied_unverified",
+    "suppliedClaim": {
+      "status": "not_assessed",
+      "reason": "Documentation quality does not authorize implementation or launch."
+    },
+    "assessedByChecker": false,
+    "authorizationGranted": false
+  },
+  "deliveryState": {
+    "status": "supplied_unverified",
+    "suppliedClaim": {
+      "status": "not_assessed",
+      "reason": "No implementation, launch, operational availability or acceptance inferred."
+    },
+    "assessedByChecker": false,
+    "deliveryObservedByChecker": false
+  },
+  "assurance": "SYNTHETIC FIXTURE ONLY — not product approval or real delivery.",
+  "inspectionOnly": true,
+  "next": {
+    "loopStatus": "needs_input",
+    "currentBatchId": "B-1bc70eed8e8ae70d846a",
+    "pendingQuestionCount": 59,
+    "awaitingAnswerIds": [],
+    "inspectionOnly": true,
+    "ownerQueue": [
+      {
+        "id": "Q-eda3b0d01e132262a663",
+        "groupId": "check:workspace:source_pin_source-001",
+        "elementId": null,
+        "fieldId": null,
+        "checkId": "source_pin_source-001",
+        "question": "For workspace, resolve source_pin_source-001: Retain and pin exact source text, source version and approval/originality state. What verified fact, explicit decision or evidence resolves this current gap? The decision owner is unresolved; identify the actual accountable decision owner if this requires a decision.",
+        "reason": "Retain and pin exact source text, source version and approval/originality state.",
+        "decisionOwnerId": null,
+        "status": "unanswered",
+        "resolutionKind": "author_repair_or_owner_decision",
+        "occurrence": 1
+      },
+      {
+        "id": "Q-c5659ff90451df93ba3e",
+        "groupId": "profile:ai",
+        "elementId": null,
+        "fieldId": null,
+        "checkId": "profile_decision_ai",
+        "question": "For workspace, resolve productProfile.ai: Resolve ai applicability from authoritative scope before this decision-dependent stage; all branch obligations remain unsampled. What verified fact, explicit decision or evidence resolves this current gap? The decision owner is unresolved; identify the actual accountable decision owner if this requires a decision.",
+        "reason": "Resolve ai applicability from authoritative scope before this decision-dependent stage; all branch obligations remain unsampled.",
+        "decisionOwnerId": null,
+        "status": "unanswered",
+        "resolutionKind": "author_repair_or_owner_decision",
+        "occurrence": 1
+      },
+      {
+        "id": "Q-64d4b9c65de425beed66",
+        "groupId": "profile:personalData",
+        "elementId": null,
+        "fieldId": null,
+        "checkId": "profile_decision_personalData",
+        "question": "For workspace, resolve productProfile.personalData: Resolve personalData applicability from authoritative scope before this decision-dependent stage; all branch obligations remain unsampled. What verified fact, explicit decision or evidence resolves this current gap? The decision owner is unresolved; identify the actual accountable decision owner if this requires a decision.",
+        "reason": "Resolve personalData applicability from authoritative scope before this decision-dependent stage; all branch obligations remain unsampled.",
+        "decisionOwnerId": null,
+        "status": "unanswered",
+        "resolutionKind": "author_repair_or_owner_decision",
+        "occurrence": 1
+      }
+    ],
+    "ownerQueueTotal": 3,
+    "ownerQueueTruncated": false,
+    "reviewerQueue": [],
+    "reviewerQueueTotal": 0,
+    "reviewerQueueTruncated": false,
+    "repairQueue": [],
+    "repairQueueTotal": 0,
+    "repairQueueTruncated": false
+  }
+}

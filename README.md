@@ -1,3 +1,5 @@
+> **Delivery standards:** APLYD adoption is proposed in [docs/delivery/ADOPTION.md](docs/delivery/ADOPTION.md). Code checks and native readiness are separate; see [remaining activation gaps](docs/delivery/GAPS.md).
+
 > **Live interface update — 20 October 2026:** The existing Aplyd server now runs the consolidated Holy Sheet! workspace at https://datadataeverywhere.aplyd.org. See [UNIFIED-WORKSPACE.md](UNIFIED-WORKSPACE.md) for its deployed service, account sign-in, AI setup, rollback and operating notes. The Docker instructions below describe the original engine/sidecar installation; rebuilding that legacy sidecar alone does not update the active native interface.
 
 # DataDataEverywhere — production deployment bundle

@@ -1,0 +1,15 @@
+{
+  "name": "datadataeverywhere-delivery",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "format:check": "biome format .",
+    "format": "biome format --write .",
+    "lint": "biome lint .",
+    "standards:check": "python3 scripts/check-standards.py",
+    "secrets:check": "python3 scripts/check-secrets.py"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "qualityState": {
+    "status": "synthetic_checks_satisfied",
+    "passed": 78,
+    "applicable": 78,
+    "exemptions": 0,
+    "counts": {
+      "passed": 78,
+      "not_applicable": 0,
+      "missing": 0,
+      "failed": 0,
+      "stale": 0,
+      "invalid": 0
+    },
+    "score": null,
+    "exitRule": "Every selected mandatory stage gate and integrity check must pass with current evidence and supplied review. Deferred/reference-sampled checks cannot certify the full catalogue. No averaging, timeout or iteration limit grants a pass.",
+    "certificationGranted": false
+  },
+  "readinessState": {
+    "status": "supplied_unverified",
+    "suppliedClaim": {
+      "status": "not_assessed",
+      "reason": "Documentation quality does not authorize implementation or launch."
+    },
+    "assessedByChecker": false,
+    "authorizationGranted": false
+  },
+  "deliveryState": {
+    "status": "supplied_unverified",
+    "suppliedClaim": {
+      "status": "not_assessed",
+      "reason": "No implementation, launch, operational availability or acceptance inferred."
+    },
+    "assessedByChecker": false,
+    "deliveryObservedByChecker": false
+  },
+  "assurance": "SYNTHETIC FIXTURE ONLY — not product approval or real delivery.",
+  "report": "/var/folders/wm/vfx1992n25g3q8n5myd2gy0c0000gn/T/generic-pm-pin-qualification-q8hisrw5/report.json"
+}
