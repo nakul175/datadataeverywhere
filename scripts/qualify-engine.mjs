@@ -23,7 +23,7 @@ try {
   assert.ok(table.id);checks.push('Actual engine creates the custom starter base/table schema');
   const schema=await call(`/api/v2/meta/tables/${table.id}`);
   assert.ok(schema.columns.some(c=>c.title==='Id'&&c.pk));
-  const fixture=Array.from({length:257},(_,i)=>({Title:i===200?'Needle beyond page one':`Fixture ${String(i).padStart(3,'0')}`,Notes:'Synthetic qualification data only'}));
+  const fixture=Array.from({length:257},(_,i)=>({Title:i===200?'Needle beyond page one':i===250?'Literal_under':i===251?'LiteralXunder':`Fixture ${String(i).padStart(3,'0')}`,Notes:'Synthetic qualification data only'}));
   for(let i=0;i<fixture.length;i+=50)await call(`/api/v2/tables/${table.id}/records`,'POST',fixture.slice(i,i+50));
   const rows=[];
   for(let offset=0;offset<300;offset+=50){
@@ -37,6 +37,10 @@ try {
   const filtered=await call(`/api/v2/tables/${table.id}/records?${q}`);
   assert.equal(filtered.list.length,1);assert.equal(filtered.list[0].Title,'Needle beyond page one');
   checks.push('Actual v2 engine finds an authorized match beyond page one using the typed query grammar');
+  const literalQuery=new URLSearchParams({limit:'50',where:'(Title,like,%Literal\\_under%)',sort:'Id'});
+  const literal=await call(`/api/v2/tables/${table.id}/records?${literalQuery}`);
+  assert.equal(literal.list.length,1);assert.equal(literal.list[0].Title,'Literal_under');
+  checks.push('Escaped underscore matches the literal character rather than the LIKE wildcard');
   await call(`/api/v2/tables/${table.id}/records`,'PATCH',{Id:filtered.list[0].Id,Notes:'Qualification update'});
   const updated=await call(`/api/v2/tables/${table.id}/records?${q}`);
   assert.equal(updated.list[0].Notes,'Qualification update');checks.push('Single-primary-key PATCH persists on the actual isolated engine');
