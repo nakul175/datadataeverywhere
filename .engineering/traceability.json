@@ -324,6 +324,55 @@
       "qa_run_ids": [],
       "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived. Candidate code and separate technical review exist; production/criterion acceptance and externally trusted native approvals remain pending.",
       "legacy_ids": []
+    },
+    {
+      "task_id": "APL-3018",
+      "kind": "engineering",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3018",
+      "story_ids": [
+        "APL-2946",
+        "APL-2954",
+        "APL-2957",
+        "APL-2971"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-05-AC01",
+        "DDE-05-AC02",
+        "DDE-05-AC03",
+        "DDE-05-AC04",
+        "DDE-11-AC01",
+        "DDE-14-AC01",
+        "DDE-14-AC02",
+        "DDE-14-AC03",
+        "DDE-28-AC01",
+        "DDE-28-AC02",
+        "DDE-28-AC03"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2946"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Real Chromium qualification of existing workspace, keyboard/mobile and cookie journeys against disposable engine data.",
+      "paths": [
+        "scripts/qualify-browser.mjs",
+        "scripts/qualify-workspace.mjs",
+        ".github/workflows/delivery.yml",
+        "sidecar/app/workspace.tsx"
+      ],
+      "status": "planned",
+      "branch": "feat/story-completion",
+      "commit": null,
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": null,
+      "release": null,
+      "deployment_evidence": null,
+      "legacy_ids": [],
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Execution and review pending. Original criteria preserved; no accepted verdict or production change."
     }
   ]
 }

@@ -52,7 +52,7 @@ try {
   console.log(JSON.stringify({status:report.status,checks:checks.length,records:257}));
 } catch(e) {
   await mkdir('.quality/evidence',{recursive:true});
-  await writeFile('.quality/evidence/engine-qualification.json',JSON.stringify({status:'failed',startedAt,endedAt:new Date().toISOString(),checks,error:e instanceof Error?e.message:'Qualification failed',networkCode:typeof e?.cause?.code==='string'?e.cause.code:null},null,2),{mode:0o600});
+  await writeFile('.quality/evidence/engine-qualification.json',JSON.stringify({status:'failed',startedAt,endedAt:new Date().toISOString(),checks,error:(e instanceof Error?e.message:'Qualification failed').replaceAll(settings.QA_ADMIN_PASSWORD,'[redacted-fixture-secret]').replaceAll(token||'__no_token__','[redacted-fixture-token]'),networkCode:typeof e?.cause?.code==='string'?e.cause.code:null},null,2),{mode:0o600});
   console.error('Isolated engine qualification failed; inspect the private evidence report. No production data was used.');
   process.exitCode=1;
 }

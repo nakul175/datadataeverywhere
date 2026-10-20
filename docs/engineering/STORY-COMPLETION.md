@@ -60,3 +60,8 @@ A viable next design is an explicitly configured PostgreSQL read-only snapshot a
 Run format/lint, types/build, all application tests with a disposable `TEST_REDIS_URL`, all Python tests, syntax/security/reference checks and the compiled fixture smoke. The smoke uses a local test double and manual HTTP cookie forwarding; it is not real-engine roles, browser-cookie qualification, recovery or production acceptance. Never use a production Redis URL: the integration suite deliberately flushes its disposable database.
 
 Formal completion still needs independently verified native bindings/reviews, actual engine-role/native-feature evidence, provider keys plus approved evaluation data/targets, a representative workload/recovery contract, full restore/capacity runs and separately authorized release evidence. Existing, implemented, reviewed, merged, deployed and accepted remain separate. The implementation request does not create missing results.
+
+
+## Browser qualification follow-up — APL-3018
+
+The user requested continued completion on 20 October 2026. Extend the existing isolated qualifier with exact Playwright 1.64.1 / Chromium, production-mode compiled app cookies, synthetic invalid/valid login, pagination, full-table query, dialog focus/saving states, create/edit/reload, failure correction, mobile navigation and logout/back/re-login. No trace/video/storage-state exports or provider calls; report errors redact fixture credentials. Browser state remains ephemeral. CI installs its matching headless browser and cleans up the existing isolated engine project. This executes engineering qualification against the original criterion allocation, without inventing accessibility conformance, trusted approval, acceptance or live deployment.

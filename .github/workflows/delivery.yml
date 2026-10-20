@@ -66,6 +66,8 @@ jobs:
       - run: npm run build
         working-directory: sidecar
       - run: node scripts/workspace-smoke.mjs
+      - name: Install the pinned Chromium headless browser
+        run: npx playwright install --with-deps --only-shell chromium
       - name: Qualify the actual engine with disposable synthetic data
         run: bash scripts/start-qualification.sh
       - name: Remove only the disposable qualification stack
