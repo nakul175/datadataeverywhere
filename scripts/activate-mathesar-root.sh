@@ -131,10 +131,14 @@ for private_file in config/access.json config/feed-sources.json caddy/users.cadd
     install -D -m "$(stat -c '%a' "$app_root/$private_file")" "$app_root/$private_file" "$candidate_root/$private_file"
   fi
 done
-if [[ -d "$app_root/backups" ]]; then mv "$app_root/backups" "$candidate_root/backups"; fi
 mv "$app_root" "$previous_root"
 source_switched=true
 mv "$candidate_root" "$app_root"
+if [[ -d "$previous_root/backups" ]]; then mv "$previous_root/backups" "$app_root/backups"; fi
+if [[ "${DDE_ACTIVATION_FAILPOINT:-}" == after-backup-move ]]; then
+  echo 'Injected failure after backup move.' >&2
+  exit 97
+fi
 cd "$app_root"
 
 python3 scripts/prepare-mathesar.py
