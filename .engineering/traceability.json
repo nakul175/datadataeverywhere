@@ -36,6 +36,574 @@
       "acceptance_criterion_ids": [],
       "qa_case_ids": [],
       "qa_run_ids": []
+    },
+    {
+      "task_id": "APL-3001",
+      "kind": "engineering",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3001/technical-taskdde-48-implement-typed-full-table-querying-while",
+      "story_ids": [
+        "APL-2991"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-48-AC01",
+        "DDE-48-AC02",
+        "DDE-48-AC03"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2991"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Implement typed full-table querying while preserving page-local controls",
+      "paths": [
+        "sidecar/lib/table-query.ts",
+        "sidecar/app/api/workspace/route.ts",
+        "sidecar/app/workspace.tsx"
+      ],
+      "status": "implemented",
+      "branch": "feat/story-completion",
+      "commit": "8b50191f2bcdb4650ccc56c942c1c6bc3725b79e",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/engineering/TECHNICAL-REVIEW.md",
+      "release": null,
+      "deployment_evidence": null,
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived. Candidate code and separate technical review exist; production/criterion acceptance and externally trusted native approvals remain pending.",
+      "legacy_ids": []
+    },
+    {
+      "task_id": "APL-3002",
+      "kind": "engineering",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3002/technical-taskdde-39-refuse-nested-ai-disclosure-and-provide-a-bounded",
+      "story_ids": [
+        "APL-2982"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-39-AC02"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2982"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Refuse nested AI disclosure and provide a bounded no-provider preview",
+      "paths": [
+        "sidecar/lib/nocodb.ts",
+        "sidecar/app/api/ai/context/route.ts",
+        "sidecar/app/workspace.tsx"
+      ],
+      "status": "implemented",
+      "branch": "feat/story-completion",
+      "commit": "8b50191f2bcdb4650ccc56c942c1c6bc3725b79e",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/engineering/TECHNICAL-REVIEW.md",
+      "release": null,
+      "deployment_evidence": null,
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived. Candidate code and separate technical review exist; production/criterion acceptance and externally trusted native approvals remain pending.",
+      "legacy_ids": []
+    },
+    {
+      "task_id": "APL-3003",
+      "kind": "engineering",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3003/technical-taskdde-42-include-unified-app-artifacts-and-sqlite-state-in",
+      "story_ids": [
+        "APL-2985"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-42-AC01",
+        "DDE-42-AC02"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2985"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Include unified app artifacts and SQLite state in coordinated backup/recovery",
+      "paths": [
+        "scripts/unified-state.py",
+        "scripts/backup.sh",
+        "scripts/restore.sh",
+        "tests/test_unified_state.py"
+      ],
+      "status": "implemented",
+      "branch": "feat/story-completion",
+      "commit": "8b50191f2bcdb4650ccc56c942c1c6bc3725b79e",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/engineering/TECHNICAL-REVIEW.md",
+      "release": null,
+      "deployment_evidence": null,
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived. Candidate code and separate technical review exist; production/criterion acceptance and externally trusted native approvals remain pending.",
+      "legacy_ids": []
+    },
+    {
+      "task_id": "APL-3004",
+      "kind": "engineering",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3004/technical-taskdde-47-configure-https-tool-handoffs-and-use-the",
+      "story_ids": [
+        "APL-2990"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-47-AC01",
+        "DDE-47-AC02",
+        "DDE-47-AC03"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2990"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Configure HTTPS tool handoffs and use the verified Aplyd task-tool default",
+      "paths": [
+        "sidecar/lib/public-urls.ts",
+        "sidecar/app/page.tsx",
+        "sidecar/app/signin/page.tsx"
+      ],
+      "status": "implemented",
+      "branch": "feat/story-completion",
+      "commit": "8b50191f2bcdb4650ccc56c942c1c6bc3725b79e",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/engineering/TECHNICAL-REVIEW.md",
+      "release": null,
+      "deployment_evidence": null,
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived. Candidate code and separate technical review exist; production/criterion acceptance and externally trusted native approvals remain pending.",
+      "legacy_ids": []
+    },
+    {
+      "task_id": "APL-3005",
+      "kind": "engineering",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3005/technical-taskdde-40-separate-authenticated-dependency-readiness-from",
+      "story_ids": [
+        "APL-2983"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-40-AC02",
+        "DDE-40-AC03"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2983"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Separate authenticated dependency readiness from process liveness",
+      "paths": [
+        "sidecar/app/api/health/ready/route.ts",
+        "sidecar/lib/local-limits.ts"
+      ],
+      "status": "implemented",
+      "branch": "feat/story-completion",
+      "commit": "8b50191f2bcdb4650ccc56c942c1c6bc3725b79e",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/engineering/TECHNICAL-REVIEW.md",
+      "release": null,
+      "deployment_evidence": null,
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived. Candidate code and separate technical review exist; production/criterion acceptance and externally trusted native approvals remain pending.",
+      "legacy_ids": []
+    },
+    {
+      "task_id": "APL-3006",
+      "kind": "engineering",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3006/technical-taskdde-34-cancel-active-chat-work-when-its-table-or-panel",
+      "story_ids": [
+        "APL-2977"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-34-AC02"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2977"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Cancel active chat work when its table or panel is unmounted",
+      "paths": [
+        "sidecar/app/workspace.tsx",
+        "sidecar/app/chat.tsx"
+      ],
+      "status": "implemented",
+      "branch": "feat/story-completion",
+      "commit": "8b50191f2bcdb4650ccc56c942c1c6bc3725b79e",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/engineering/TECHNICAL-REVIEW.md",
+      "release": null,
+      "deployment_evidence": null,
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived. Candidate code and separate technical review exist; production/criterion acceptance and externally trusted native approvals remain pending.",
+      "legacy_ids": []
+    },
+    {
+      "task_id": "APL-3007",
+      "kind": "engineering",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3007/technical-taskdde-36-bound-redis-connectcommand-failures-and-retain",
+      "story_ids": [
+        "APL-2979"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-36-AC01",
+        "DDE-36-AC02",
+        "DDE-36-AC03"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2979"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Bound Redis connect/command failures and retain conservative accounting",
+      "paths": [
+        "sidecar/lib/redis.ts",
+        "sidecar/lib/budget.ts"
+      ],
+      "status": "implemented",
+      "branch": "feat/story-completion",
+      "commit": "8b50191f2bcdb4650ccc56c942c1c6bc3725b79e",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/engineering/TECHNICAL-REVIEW.md",
+      "release": null,
+      "deployment_evidence": null,
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived. Candidate code and separate technical review exist; production/criterion acceptance and externally trusted native approvals remain pending.",
+      "legacy_ids": []
+    },
+    {
+      "task_id": "APL-3008",
+      "kind": "engineering",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3008/technical-taskdde-38-require-explicit-anthropic-model-configuration",
+      "story_ids": [
+        "APL-2981"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-38-AC01",
+        "DDE-38-AC02"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2981"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Require explicit Anthropic model configuration and consistent AI readiness",
+      "paths": [
+        "sidecar/lib/provider-config.ts",
+        "sidecar/app/api/chat/route.ts",
+        "docker-compose.yml",
+        "docker-compose.shared.yml"
+      ],
+      "status": "implemented",
+      "branch": "feat/story-completion",
+      "commit": "8b50191f2bcdb4650ccc56c942c1c6bc3725b79e",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/engineering/TECHNICAL-REVIEW.md",
+      "release": null,
+      "deployment_evidence": null,
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Bounded development and isolated verification authorized by the user. Native baseline/mappings and independent acceptance remain unapproved; no release gate is waived. Candidate code and separate technical review exist; production/criterion acceptance and externally trusted native approvals remain pending.",
+      "legacy_ids": []
+    },
+    {
+      "task_id": "APL-3018",
+      "kind": "engineering",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3018",
+      "story_ids": [
+        "APL-2946",
+        "APL-2954",
+        "APL-2957",
+        "APL-2971"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-05-AC01",
+        "DDE-05-AC02",
+        "DDE-05-AC03",
+        "DDE-05-AC04",
+        "DDE-11-AC01",
+        "DDE-14-AC01",
+        "DDE-14-AC02",
+        "DDE-14-AC03",
+        "DDE-28-AC01",
+        "DDE-28-AC02",
+        "DDE-28-AC03"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2946"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Real Chromium qualification of existing workspace, keyboard/mobile and cookie journeys against disposable engine data.",
+      "paths": [
+        "scripts/qualify-browser.mjs",
+        "scripts/qualify-workspace.mjs",
+        ".github/workflows/delivery.yml",
+        "sidecar/app/workspace.tsx"
+      ],
+      "status": "implemented",
+      "branch": "feat/story-completion",
+      "commit": "9deb62421652a248ff9a90db13408a035a141a33",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/engineering/STORY-COMPLETION.md",
+      "release": null,
+      "deployment_evidence": null,
+      "legacy_ids": [],
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Candidate code independently technically reviewed. CI run 39470919968 passed engineering/reference checks, including actual Chromium, scoped viewer/editor/access-removal and reconstructed engine/unified-state recovery. Not criterion acceptance, trusted native approval, complete production shell/systemd/Caddy/Redis qualification, merge or deployment."
+    },
+    {
+      "task_id": "APL-3020",
+      "kind": "engineering",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3020",
+      "story_ids": [
+        "APL-2947"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-06-AC01",
+        "DDE-06-AC02",
+        "DDE-06-AC03",
+        "DDE-06-AC04",
+        "DDE-06-AC05"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2946"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Qualify actual viewer/editor base-role isolation and immediate membership revocation using documented offline native invitations.",
+      "paths": [
+        "scripts/qualify-roles.mjs",
+        "scripts/qualify-workspace.mjs",
+        "scripts/qualify-engine.mjs"
+      ],
+      "status": "implemented",
+      "branch": "feat/story-completion",
+      "commit": "9deb62421652a248ff9a90db13408a035a141a33",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/engineering/STORY-COMPLETION.md",
+      "release": null,
+      "deployment_evidence": null,
+      "legacy_ids": [],
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Candidate code independently technically reviewed. CI run 39470919968 passed engineering/reference checks, including actual Chromium, scoped viewer/editor/access-removal and reconstructed engine/unified-state recovery. Not criterion acceptance, trusted native approval, complete production shell/systemd/Caddy/Redis qualification, merge or deployment."
+    },
+    {
+      "task_id": "APL-3022",
+      "kind": "engineering",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3022",
+      "story_ids": [
+        "APL-2985"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-42-AC01",
+        "DDE-42-AC02",
+        "DDE-42-AC03"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2946"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Reconcile actual stopped-write engine and unified-state fixture recovery without production operations or invented recovery objectives.",
+      "paths": [
+        "scripts/qualify-recovery.mjs",
+        "scripts/qualify-workspace.mjs",
+        "scripts/qualify-engine.mjs",
+        "docker-compose.qualification.yml",
+        ".github/workflows/delivery.yml"
+      ],
+      "status": "implemented",
+      "branch": "feat/story-completion",
+      "commit": "9deb62421652a248ff9a90db13408a035a141a33",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/engineering/STORY-COMPLETION.md",
+      "release": null,
+      "deployment_evidence": null,
+      "legacy_ids": [],
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Candidate code independently technically reviewed. CI run 39470919968 passed engineering/reference checks, including actual Chromium, scoped viewer/editor/access-removal and reconstructed engine/unified-state recovery. Not criterion acceptance, trusted native approval, complete production shell/systemd/Caddy/Redis qualification, merge or deployment."
+    },
+    {
+      "task_id": "APL-3023",
+      "kind": "engineering",
+      "authorization_ref": "docs/engineering/STORY-COMPLETION.md",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3023",
+      "story_ids": [
+        "APL-2992"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-49-AC03"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2946"
+      ],
+      "design_refs": [
+        "docs/engineering/STORY-COMPLETION.md"
+      ],
+      "rationale": "Align native-host HSTS/referrer headers with existing policy after actual public readback, without live reload.",
+      "paths": [
+        "caddy/unified-site.caddy",
+        ".github/workflows/delivery.yml"
+      ],
+      "status": "implemented",
+      "branch": "feat/story-completion",
+      "commit": null,
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": null,
+      "release": null,
+      "deployment_evidence": null,
+      "legacy_ids": [],
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Candidate-only C1 template correction; isolated Caddy validation pending. No live header, firewall, renewal, release or product acceptance claim."
+    },
+    {
+      "task_id": "APL-3026",
+      "kind": "engineering",
+      "authorization_ref": "docs/engineering/GOVERNED-FEEDS.md",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3026",
+      "story_ids": [
+        "APL-2934",
+        "APL-2935",
+        "APL-2936",
+        "APL-2937"
+      ],
+      "acceptance_criterion_ids": [
+        "DDE-01-AC01",
+        "DDE-01-AC02",
+        "DDE-01-AC03",
+        "DDE-01-AC04",
+        "DDE-01-AC05",
+        "DDE-01-AC06",
+        "DDE-01-AC07",
+        "DDE-02-AC01",
+        "DDE-02-AC02",
+        "DDE-02-AC03",
+        "DDE-02-AC04",
+        "DDE-02-AC05",
+        "DDE-02-AC06",
+        "DDE-02-AC07",
+        "DDE-03-AC01",
+        "DDE-03-AC02",
+        "DDE-03-AC03",
+        "DDE-03-AC04",
+        "DDE-03-AC05",
+        "DDE-03-AC06",
+        "DDE-03-AC07",
+        "DDE-04-AC01",
+        "DDE-04-AC02",
+        "DDE-04-AC03",
+        "DDE-04-AC04",
+        "DDE-04-AC05",
+        "DDE-04-AC06",
+        "DDE-04-AC07",
+        "DDE-04-AC08"
+      ],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-2934",
+        "https://linear.app/aplyd-sandbox/issue/APL-2935",
+        "https://linear.app/aplyd-sandbox/issue/APL-2936",
+        "https://linear.app/aplyd-sandbox/issue/APL-2937"
+      ],
+      "design_refs": [
+        "docs/engineering/GOVERNED-FEEDS.md"
+      ],
+      "rationale": "Owner explicitly approved development of the proposed opt-in read-only PostgreSQL connector on 21 October 2026. No live source access or sharing activation.",
+      "paths": [
+        "sidecar/lib/feeds/",
+        "sidecar/app/api/feeds/",
+        "sidecar/app/feeds/",
+        "sidecar/app/workspace.tsx",
+        "sidecar/tests/feeds.test.ts",
+        "scripts/qualify-feeds.mjs",
+        "docker-compose.feeds-qualification.yml",
+        ".github/workflows/delivery.yml",
+        "sidecar/package.json",
+        "sidecar/package-lock.json",
+        ".env.example",
+        ".gitignore"
+      ],
+      "status": "implemented",
+      "branch": "feat/story-completion",
+      "commit": "43ac62fa6903295eb946fcf6631200f6d9fc34db",
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/engineering/GOVERNED-FEEDS.md",
+      "release": null,
+      "deployment_evidence": null,
+      "legacy_ids": [],
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Candidate-only connector implemented and independently technically reviewed. CI39480268021 passed 99 application tests, 29 actual-engine/browser/roles/feed groups including nine governed-feed groups, and three scoped recovery groups. Final state-based removal-version correction has focused regression coverage and final full CI pending. No native criterion acceptance, production mapping attestation, feed-state recovery, merge or deployment."
+    },
+    {
+      "task_id": "APL-3034",
+      "kind": "engineering",
+      "authorization_ref": "https://linear.app/aplyd-sandbox/issue/APL-3034",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3034/dde-50incomplete-replace-the-member-facing-nocodb-surface-with-a",
+      "story_ids": [
+        "APL-3034"
+      ],
+      "acceptance_criterion_ids": [],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-3034"
+      ],
+      "design_refs": [
+        "docs/architecture/ADR-002-mathesar-transition.md",
+        "MATHESAR.md"
+      ],
+      "rationale": "Replace the member-facing native-tool surface with one branded product while providing administrators a private, code-editable Mathesar studio over PostgreSQL.",
+      "paths": [
+        "docker-compose.yml",
+        "docker-compose.shared.yml",
+        "mathesar/",
+        "postgres/init.sh",
+        "scripts/prepare-mathesar.py",
+        "scripts/backup.sh",
+        "scripts/restore.sh",
+        "sidecar/",
+        "Caddyfile",
+        "caddy/unified-site.caddy"
+      ],
+      "status": "implemented",
+      "branch": "feat/story-completion",
+      "commit": null,
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/architecture/ADR-002-mathesar-transition.md",
+      "release": null,
+      "deployment_evidence": null,
+      "legacy_ids": [],
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Candidate implementation independently reviewed with no outstanding actionable findings. Local application checks passed. Docker qualification, isolated recovery, merge and production activation remain pending; NocoDB remains a private compatibility dependency during migration."
     }
   ]
 }

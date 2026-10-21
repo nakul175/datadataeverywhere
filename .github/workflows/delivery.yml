@@ -23,14 +23,14 @@ jobs:
       - run: python scripts/check-standards.py
       - run: python scripts/check-secrets.py
   engineering:
-    name: Code checks and 33 tests
+    name: Code checks and application tests
     runs-on: ubuntu-24.04
     timeout-minutes: 25
     services:
       redis:
         image: redis:7.4.2-alpine
         ports: ['6379:6379']
-        options: --health-cmd 'redis-cli ping' --health-interval 5s --health-timeout 3s --health-retries 10
+        options: --health-cmd "redis-cli ping" --health-interval 5s --health-timeout 3s --health-retries 10
     env:
       TEST_REDIS_URL: redis://127.0.0.1:6379/15
       NEXT_TELEMETRY_DISABLED: '1'
@@ -49,6 +49,30 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npm ci --ignore-scripts
         working-directory: sidecar
+      - name: Validate the unified proxy without network access
+        run: >-
+          docker run --rm --network none
+          --mount "type=bind,source=$GITHUB_WORKSPACE/caddy/unified-site.caddy,target=/etc/caddy/Caddyfile,readonly"
+          caddy:2.11.7-alpine caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
+      - name: Validate production Compose definitions
+        env:
+          POSTGRES_PASSWORD: fixture-postgres
+          NOCODB_DB_PASSWORD: fixture-nocodb
+          MATHESAR_DB_PASSWORD: fixture-mathesar
+          TEAM_DB_PASSWORD: fixture-team
+          NC_AUTH_JWT_SECRET: fixture-jwt
+          NC_CONNECTION_ENCRYPT_KEY: fixture-encryption
+          PROXY_SECRET: fixture-proxy
+          NC_ADMIN_EMAIL: fixture@example.test
+          NC_ADMIN_PASSWORD: fixture-admin
+        run: |
+          docker compose -f docker-compose.yml config --quiet
+          docker compose -f docker-compose.shared.yml config --quiet
+      - name: Validate the loopback-only Mathesar gateway
+        run: >-
+          docker run --rm --network none
+          --mount "type=bind,source=$GITHUB_WORKSPACE/mathesar/Caddyfile,target=/etc/caddy/Caddyfile,readonly"
+          caddy:2.11.7-alpine caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
       - run: npm run format:check
       - run: npm run lint
       - run: npm run typecheck
@@ -56,7 +80,7 @@ jobs:
       - run: npm audit --audit-level=high
       - run: npm audit --audit-level=high
         working-directory: sidecar
-      - run: python -m unittest discover -s tests -p test_delivery_controls.py
+      - run: python -m unittest discover -s tests -v
       - run: python -m compileall -q scripts
       - run: for script in scripts/*.sh; do bash -n "$script"; done
       - name: Execute tests and retain a nonempty JUnit report
@@ -65,6 +89,32 @@ jobs:
       - run: python scripts/check-test-report.py reports/vitest.xml
       - run: npm run build
         working-directory: sidecar
+      - run: node scripts/workspace-smoke.mjs
+      - name: Install the pinned Chromium headless browser
+        run: npx playwright install --with-deps --only-shell chromium
+      - name: Qualify the actual engine with disposable synthetic data
+        run: bash scripts/start-qualification.sh
+      - name: Restore and reconcile the disposable recovery fixture
+        run: node scripts/qualify-recovery.mjs
+      - name: Remove only the disposable qualification stack
+        if: always()
+        run: |
+          if [ -f .qualification/stack.env ]; then
+            docker compose --env-file .qualification/stack.env -f docker-compose.qualification.yml -p dde-qualification down --volumes
+            if [ -f .qualification/recovery-target-created ]; then
+              docker compose --env-file .qualification/stack.env -f docker-compose.qualification.yml -p dde-recovery-qualification down --volumes
+            fi
+          fi
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: engine-qualification-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            .quality/evidence/engine-qualification.json
+            .quality/evidence/recovery-qualification.json
+            .quality/evidence/feed-qualification.json
+          if-no-files-found: warn
+          retention-days: 14
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:

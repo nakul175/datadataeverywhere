@@ -29,7 +29,7 @@ export async function reserve(user: string, cost: number) {
   const day = new Date(now).toISOString().slice(0, 10);
   const userLease = `dde:active:user:${user}`;
   const globalLease = 'dde:active:global';
-  const result = await r.eval(reserveLua, {
+  const result = await r.withAbortSignal(AbortSignal.timeout(3000)).eval(reserveLua, {
     keys: [
       `dde:rpm:${user}:${Math.floor(now / 60000)}`,
       `dde:day:${day}:user:${user}`,
@@ -52,6 +52,7 @@ export async function reserve(user: string, cost: number) {
   return async () => {
     if (released) return;
     released = true;
-    await Promise.all([r.zRem(userLease, id), r.zRem(globalLease, id)]).catch(() => {});
+    const bounded = r.withAbortSignal(AbortSignal.timeout(3000));
+    await Promise.all([bounded.zRem(userLease, id), bounded.zRem(globalLease, id)]).catch(() => {});
   };
 }

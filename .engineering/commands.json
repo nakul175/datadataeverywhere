@@ -156,8 +156,7 @@
             "discover",
             "-s",
             "tests",
-            "-p",
-            "test_delivery_controls.py"
+            "-v"
           ],
           "cwd": ".",
           "timeout_seconds": 120

@@ -18,8 +18,8 @@ datadataeverywhere.aplyd.org {
 		request_body {
 			max_size 64KB
 		}
-		@nocodb path /nocodb /nocodb/* /dashboard /dashboard/*
-		redir @nocodb https://nocodb.datadataeverywhere.aplyd.org 302
+		@retired_admin path /nocodb /nocodb/* /dashboard /dashboard/*
+		respond @retired_admin 404
 		reverse_proxy sidecar:3000 {
 			# Always replace client-supplied identity and trust headers.
 			header_up X-DDE-User {http.auth.user.id}
@@ -28,15 +28,4 @@ datadataeverywhere.aplyd.org {
 			flush_interval -1
 		}
 	}
-}
-
-nocodb.datadataeverywhere.aplyd.org {
-	encode zstd gzip
-	header {
-		Strict-Transport-Security "max-age=31536000"
-		X-Content-Type-Options nosniff
-		Referrer-Policy same-origin
-		-Server
-	}
-	reverse_proxy nocodb:8080
 }

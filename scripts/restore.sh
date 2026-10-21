@@ -8,19 +8,35 @@ if [ -f "$backup/docker-compose.shared.yml" ] && ! systemctl is-active --quiet c
   echo 'Shared-host restore requires host Caddy installed and active. See SHARED-HOST.md.' >&2; exit 1
 fi
 (cd "$backup" && sha256sum -c SHA256SUMS)
+if [ -f "$backup/unified.json" ]; then python3 scripts/unified-state.py validate --backup "$backup"; fi
+mathesar_artifacts=(mathesar-Caddyfile mathesar-static.tgz mathesar-media.tgz mathesar-secrets.tgz)
+mathesar_count=0
+for artifact in "${mathesar_artifacts[@]}"; do
+  [ -f "$backup/$artifact" ] && mathesar_count=$((mathesar_count+1))
+done
+if [ "$mathesar_count" -ne 0 ] && [ "$mathesar_count" -ne "${#mathesar_artifacts[@]}" ]; then
+  echo 'Incomplete Mathesar backup artifacts; refusing restore.' >&2; exit 1
+fi
+mathesar_backup=false
+[ "$mathesar_count" -eq "${#mathesar_artifacts[@]}" ] && mathesar_backup=true
 read -r -p 'Type RESTORE-EMPTY to confirm this stack has no data to preserve: ' confirm
 [ "$confirm" = RESTORE-EMPTY ] || exit 1
 # Refuse existing database/data volumes, including a stopped installation.
-for name in datadataeverywhere_pgdata datadataeverywhere_ncdata datadataeverywhere_redisdata; do
+for name in datadataeverywhere_pgdata datadataeverywhere_ncdata datadataeverywhere_redisdata datadataeverywhere_mathesarstatic datadataeverywhere_mathesarmedia datadataeverywhere_mathesarsecrets; do
   if docker volume inspect "$name" >/dev/null 2>&1; then
     echo 'Existing data volume detected. Restore on a clean host or separately isolated Docker daemon.' >&2; exit 1
   fi
 done
+if [ -f "$backup/unified.json" ]; then python3 scripts/unified-state.py restore --backup "$backup"; fi
 mkdir -p config caddy
 install -m 600 "$backup/env" .env
 install -m 644 "$backup/access.json" config/access.json
 install -m 644 "$backup/users.caddy" caddy/users.caddy
 cp "$backup/docker-compose.yml" "$backup/Caddyfile" .
+if [ "$mathesar_backup" = true ]; then
+  mkdir -p mathesar
+  install -m 644 "$backup/mathesar-Caddyfile" mathesar/Caddyfile
+fi
 if [ -f "$backup/docker-compose.shared.yml" ]; then cp "$backup/docker-compose.shared.yml" .; fi
 # Skip init script because pg_dumpall contains roles and CREATE DATABASE statements.
 docker compose run -d --name dde-restore-pg --no-deps --volume /dev/null:/docker-entrypoint-initdb.d/10-init.sh:ro postgres
@@ -36,5 +52,11 @@ for service in nocodb redis; do
   if [ "$service" = nocodb ]; then path=/usr/app/data; else path=/data; fi
   docker compose run --rm --no-deps -T --user root --entrypoint tar "$service" -C "$path" -xzf - < "$backup/$service.tgz"
 done
+if [ "$mathesar_backup" = true ]; then
+  for item in static:/code/static media:/code/.media secrets:/code/.secrets; do
+    name=${item%%:*}; path=${item#*:}
+    docker compose --profile admin run --rm --no-deps -T --user root --entrypoint tar mathesar -C "$path" -xzf - < "$backup/mathesar-$name.tgz"
+  done
+fi
 docker compose up -d --build --wait
 if [ -f "$backup/docker-compose.shared.yml" ]; then python3 scripts/install-host-proxy.py; fi

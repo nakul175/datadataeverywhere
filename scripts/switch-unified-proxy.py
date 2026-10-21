@@ -8,7 +8,7 @@ if old.count(expected) != 1 or 'datadataeverywhere.aplyd.org {' in old:
 for path in ['/api/health', '/signin']:
     with urllib.request.urlopen('http://127.0.0.1:3301' + path, timeout=5) as res:
         if res.status != 200: raise SystemExit('New app readiness failed.')
-addition = '''# DataDataEverywhere unified workspace; native data engine remains on 8080.
+addition = '''# DataDataEverywhere unified workspace; admin engines are not public.
 datadataeverywhere.aplyd.org {
   encode zstd gzip
   header {
@@ -21,16 +21,11 @@ datadataeverywhere.aplyd.org {
   request_body {
     max_size 64KB
   }
-  @native path /nocodb /nocodb/*
-  redir @native https://nocodb.datadataeverywhere.aplyd.org 302
+  @retired_admin path /nocodb /nocodb/* /dashboard /dashboard/*
+  respond @retired_admin 404
   reverse_proxy 127.0.0.1:3301 {
     flush_interval -1
   }
-}
-nocodb.datadataeverywhere.aplyd.org {
-  encode zstd gzip
-  header X-Content-Type-Options "nosniff"
-  reverse_proxy 127.0.0.1:8080
 }
 '''
 new = old.replace(expected, addition)

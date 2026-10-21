@@ -15,6 +15,55 @@ beforeEach(() => {
 });
 afterEach(() => vi.unstubAllGlobals());
 describe('NocoDB context boundaries', () => {
+  it('keeps the 100-row limit even if an upstream ignores requested page size', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi
+        .fn()
+        .mockResolvedValueOnce(Response.json(meta))
+        .mockResolvedValueOnce(
+          Response.json({
+            list: Array.from({ length: 150 }, (_, i) => ({ Id: i, Total: 1 })),
+            pageInfo: { isLastPage: true },
+          }),
+        ),
+    );
+    const context = await tableContext(table, new AbortController().signal);
+    expect(context.rows).toHaveLength(100);
+    expect(context.truncated).toBe(true);
+  });
+  it('refuses nested values even in an approved top-level field', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi
+        .fn()
+        .mockResolvedValueOnce(Response.json(meta))
+        .mockResolvedValueOnce(
+          Response.json({
+            list: [{ Id: 1, Total: { linkedSecret: 'must not leave' } }],
+            pageInfo: { isLastPage: true },
+          }),
+        ),
+    );
+    await expect(tableContext(table, new AbortController().signal)).rejects.toMatchObject({
+      status: 409,
+    });
+  });
+  it('refuses structurally sensitive fields before reading records', async () => {
+    const fetcher = vi.fn().mockResolvedValueOnce(
+      Response.json({
+        columns: [
+          { title: 'Id', uidt: 'ID' },
+          { title: 'Total', uidt: 'Attachment' },
+        ],
+      }),
+    );
+    vi.stubGlobal('fetch', fetcher);
+    await expect(tableContext(table, new AbortController().signal)).rejects.toMatchObject({
+      status: 409,
+    });
+    expect(fetcher).toHaveBeenCalledTimes(1);
+  });
   it('projects approved columns and strips unapproved schema/rows', async () => {
     const fetcher = vi
       .fn()

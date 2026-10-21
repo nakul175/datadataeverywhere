@@ -2,6 +2,24 @@ import 'server-only';
 import { HttpError, type Table } from './access';
 const MAX_ROWS = 100;
 const MAX_JSON_BYTES = 24000;
+const SIMPLE_CONTEXT_TYPES = new Set([
+  'ID',
+  'SingleLineText',
+  'LongText',
+  'Email',
+  'PhoneNumber',
+  'URL',
+  'Number',
+  'Decimal',
+  'Currency',
+  'Percent',
+  'Checkbox',
+  'Date',
+  'DateTime',
+  'Duration',
+  'Year',
+  'SingleSelect',
+]);
 async function get(path: string, signal: AbortSignal) {
   if (process.env.AUTH_MODE === 'nocodb') {
     const { currentSession } = await import('./session');
@@ -50,6 +68,11 @@ export async function tableContext(table: Table, signal: AbortSignal) {
       409,
       'Approved fields changed. Ask an administrator to update access.json.',
     );
+  if (columns.some((c: { uidt?: string }) => !SIMPLE_CONTEXT_TYPES.has(c.uidt || '')))
+    throw new HttpError(
+      409,
+      'AI context supports approved simple fields only. Remove linked, attachment, JSON or unsupported fields from the AI grant.',
+    );
   const schema = columns.map((c: { title: string; uidt: string; dt: string; pk?: boolean }) => ({
     name: c.title,
     type: c.uidt || c.dt,
@@ -74,8 +97,19 @@ export async function tableContext(table: Table, signal: AbortSignal) {
     );
     if (!Array.isArray(page.list)) throw new HttpError(502, 'Unexpected NocoDB row response.');
     for (const row of page.list) {
+      if (rows.length >= MAX_ROWS) {
+        truncatedForSize = true;
+        break;
+      }
+      if (!row || typeof row !== 'object' || Array.isArray(row))
+        throw new HttpError(502, 'Unexpected NocoDB record shape.');
       // Defense in depth: only approved top-level columns reach the model.
       const projected = Object.fromEntries(table.fields.map((f) => [f, row[f] ?? null]));
+      if (Object.values(projected).some((value) => typeof value === 'object' && value !== null))
+        throw new HttpError(
+          409,
+          'An approved AI field contains nested data. No table context was sent; ask an administrator to review the field grant.',
+        );
       if (Buffer.byteLength(JSON.stringify([...rows, projected])) > MAX_JSON_BYTES) {
         truncatedForSize = true;
         break;

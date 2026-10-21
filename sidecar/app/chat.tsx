@@ -1,5 +1,5 @@
 'use client';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport } from 'ai';
 import { chatPayload } from '@/lib/payload';
@@ -31,6 +31,12 @@ function ChatSession({
   const { messages, sendMessage, status, error, stop, setMessages, clearError } = useChat({
     transport,
   });
+  useEffect(
+    () => () => {
+      void stop();
+    },
+    [stop],
+  );
   const busy = status === 'submitted' || status === 'streaming';
   return (
     <main className="min-h-screen md:grid md:grid-cols-[280px_1fr]">
@@ -64,14 +70,6 @@ function ChatSession({
           Answers use up to 100 rows and approved columns. This selection is independent of your
           open spreadsheet view. Changing tables starts a fresh chat.
         </p>
-        <a
-          href="/nocodb"
-          target="_blank"
-          rel="noreferrer"
-          className="mt-8 block rounded-xl border border-slate-700 px-4 py-3 text-sm hover:border-teal-400"
-        >
-          Open NocoDB ↗
-        </a>
         <button
           type="button"
           disabled={busy}

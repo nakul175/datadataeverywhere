@@ -10,6 +10,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Run scripts/configure.py}
       NOCODB_DB_PASSWORD: ${NOCODB_DB_PASSWORD:?Run scripts/configure.py}
+      MATHESAR_DB_PASSWORD: ${MATHESAR_DB_PASSWORD:?Run scripts/configure.py}
       TEAM_DB_PASSWORD: ${TEAM_DB_PASSWORD:?Run scripts/configure.py}
     command: ["postgres", "-c", "max_connections=120", "-c", "shared_buffers=512MB", "-c", "effective_cache_size=2GB", "-c", "work_mem=4MB", "-c", "maintenance_work_mem=128MB", "-c", "password_encryption=scram-sha-256", "-c", "idle_in_transaction_session_timeout=60s", "-c", "log_min_duration_statement=1000"]
     volumes:
@@ -86,6 +87,57 @@ services:
     mem_limit: 2g
     networks: [backend]
     logging: *logging
+  mathesar:
+    image: ${MATHESAR_IMAGE:-mathesar/mathesar:0.12.0}
+    profiles: ["admin"]
+    restart: unless-stopped
+    depends_on:
+      postgres: {condition: service_healthy}
+    environment:
+      POSTGRES_DB: mathesar_meta
+      POSTGRES_USER: mathesar
+      POSTGRES_PASSWORD: ${MATHESAR_DB_PASSWORD:?Run scripts/configure.py}
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: "5432"
+      DJANGO_SETTINGS_MODULE: config.settings.production
+      ALLOWED_HOSTS: 127.0.0.1,localhost,mathesar
+      DEBUG: "false"
+      WEB_CONCURRENCY: "3"
+      PER_USER_DATABASES_ENABLED: "false"
+      MATHESAR_INSTANCE_NAME: DataDataEverywhere Studio
+    expose: ["8000"]
+    volumes:
+      - mathesarstatic:/code/static
+      - mathesarmedia:/code/.media
+      - mathesarsecrets:/code/.secrets
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:8000/healthz/ready/"]
+      interval: 20s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    mem_limit: 1g
+    networks: [backend]
+    logging: *logging
+  mathesar-gateway:
+    image: ${CADDY_IMAGE:-caddy:2-alpine}
+    profiles: ["admin"]
+    restart: unless-stopped
+    depends_on:
+      mathesar: {condition: service_healthy}
+    ports: ["127.0.0.1:8090:8000"]
+    volumes:
+      - ./mathesar/Caddyfile:/etc/caddy/Caddyfile:ro
+      - mathesarstatic:/srv/static:ro
+      - mathesarmedia:/srv/media:ro
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:8000/caddy-health-check"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+    mem_limit: 128m
+    networks: [backend]
+    logging: *logging
   sidecar:
     ports: ["127.0.0.1:3300:3000"]
     build:
@@ -100,7 +152,8 @@ services:
       AI_PROVIDER: ${AI_PROVIDER:-openai}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
-      ANTHROPIC_MODEL: ${ANTHROPIC_MODEL:-claude-sonnet-5-5}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4o}
+      ANTHROPIC_MODEL: ${ANTHROPIC_MODEL:-}
       NOCODB_API_TOKEN: ${NOCODB_API_TOKEN:-}
       PROXY_SECRET: ${PROXY_SECRET}
       USER_DAILY_TOKEN_BUDGET: ${USER_DAILY_TOKEN_BUDGET:-500000}
@@ -127,3 +180,6 @@ volumes:
   redisdata:
   caddydata:
   caddyconfig:
+  mathesarstatic:
+  mathesarmedia:
+  mathesarsecrets:

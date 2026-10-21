@@ -2,6 +2,8 @@
 
 > **Live interface update — 20 October 2026:** The existing Aplyd server now runs the consolidated Holy Sheet! workspace at https://datadataeverywhere.aplyd.org. See [UNIFIED-WORKSPACE.md](UNIFIED-WORKSPACE.md) for its deployed service, account sign-in, AI setup, rollback and operating notes. The Docker instructions below describe the original engine/sidecar installation; rebuilding that legacy sidecar alone does not update the active native interface.
 
+> **Architecture transition — 21 October 2026:** Mathesar 0.12.0 is now the selected internal PostgreSQL studio. It is loopback-only and is never exposed or named in the member interface. NocoDB remains a temporary private compatibility dependency until direct PostgreSQL auth/data/feed contracts are qualified. See [MATHESAR.md](MATHESAR.md) and [ADR-002](docs/architecture/ADR-002-mathesar-transition.md). This source change is not yet a production deployment.
+
 # DataDataEverywhere — production deployment bundle
 
 For the existing `aplyd-productivity-suite` server, follow [SHARED-HOST.md](SHARED-HOST.md); it uses the host’s existing Caddy instead of starting a second proxy.
@@ -64,7 +66,7 @@ GET /api/v2/tables/{approvedTableId}/records?limit=25&offset=0&fields=...
 
 It paginates at most four 25-row pages, includes only explicitly approved field titles, strips other response fields, and inserts raw JSON into the system prompt. Limits: 100 rows, 24,000 UTF-8 bytes of rows, 4,000 bytes of schema, 2 MB per upstream response, 64 KB incoming body, 20 conversation messages, and 1,024 output tokens. Oversized individual rows may yield an empty sample. Completeness is reported conservatively. Changing columns fails closed until the operator updates the policy. [NocoDB Meta API](https://nocodb.com/apis/v2/meta).
 
-The selector identifies the sidecar's active table. It does not track another browser tab's selection, NocoDB view filters, row-level roles, or hidden UI columns. There is no supported cross-tab selection bridge included here. Every grant is table-wide over the approved columns. The NocoDB token's permissions and dashboard grants are separate controls: the operator must align them. For different row-level access, add server-enforced filters or a per-user NocoDB credential design before granting that table. Lookup, JSON, and linked-record columns can themselves contain sensitive nested values; approve those only when their full contents may be sent to the AI provider.
+The selector identifies the sidecar's active table. It does not track another browser tab's selection, NocoDB view filters, row-level roles, or hidden UI columns. There is no supported cross-tab selection bridge included here. Every grant is table-wide over the approved columns. The NocoDB token's permissions and dashboard grants are separate controls: the operator must align them. For different row-level access, add server-enforced filters or a per-user NocoDB credential design before granting that table. AI context now refuses JSON, linked, attachment and unsupported field types, and any object/array value even inside an approved simple field. Nested data requires a separately reviewed projection implementation; broad field approval does not bypass this refusal. The authenticated context preview uses the same reader and calls no model provider.
 
 Dashboard authentication uses one Caddy Basic Auth account per person over HTTPS. Caddy replaces identity headers and supplies an independent proxy secret. No Next.js port is exposed, and the application verifies that secret. This is deliberately separate from NocoDB's own sign-in. Basic Auth is suitable for this small internal baseline; there is no SSO, MFA, or unified logout in this bundle. Keep a separate dashboard username per person. The app checks the live policy on every request.
 
@@ -72,9 +74,9 @@ Only user/assistant text is accepted. Client-supplied system messages, attachmen
 
 ### Providers
 
-The default is **GPT-4o**, using `openai.chat('gpt-4o')`. Availability depends on your provider account; no live provider call was made while preparing this bundle. [Official GPT-4o model documentation](https://developers.openai.com/api/docs/models/gpt-4o).
+The OpenAI default is **GPT-4o**, with an optional server-side `OPENAI_MODEL` override. Availability and qualification depend on your provider account and actual evaluation; configuration presence is not a verified connection or quality result.
 
-**Claude 3.5 Sonnet retired on October 28, 2025**, so it is not a deployable Anthropic API target. The optional Anthropic configuration defaults to `claude-sonnet-5-5`, currently listed as its replacement; change `ANTHROPIC_MODEL` to an active model you have access to. This is an explicit substitution for the retired model, not a claim that 3.5 still works. [Anthropic model lifecycle](https://platform.claude.com/docs/en/about-claude/model-deprecations).
+Anthropic requires an explicit `ANTHROPIC_MODEL` selected and qualified by the operator. There is no assumed replacement alias. Missing model/key or an unsupported provider fails closed; the browser cannot select another provider or model.
 
 ```bash
 python3 scripts/set-secret.py AI_PROVIDER

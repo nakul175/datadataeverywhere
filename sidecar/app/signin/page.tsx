@@ -3,6 +3,7 @@ import { currentSession } from '@/lib/session';
 import { HttpError } from '@/lib/errors';
 import { Brand, Mascot } from '../brand';
 import SignIn from './signin';
+import { publicUrls } from '@/lib/public-urls';
 export const dynamic = 'force-dynamic';
 export default async function SignInPage() {
   let authenticated = false;
@@ -17,12 +18,7 @@ export default async function SignInPage() {
     <main className="signin-page">
       <header>
         <Brand />
-        <a
-          className="subtle-link"
-          href="https://app.sheethappensofficer.com"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a className="subtle-link" href={publicUrls().tasks} target="_blank" rel="noreferrer">
           Meet the rest of Aplyd ↗
         </a>
       </header>
@@ -49,12 +45,12 @@ export default async function SignInPage() {
           <SignIn />
           <div className="login-note">
             One login. Your whole workspace.
-            <small>Use your existing NocoDB account email and password.</small>
+            <small>Use your DataDataEverywhere work email and password.</small>
           </div>
         </section>
       </div>
       <footer>
-        An Aplyd tool <span>·</span> Powered by NocoDB <span>·</span> Hosted on your team’s server
+        An Aplyd tool <span>·</span> Hosted on your team’s server
       </footer>
     </main>
   );

@@ -29,14 +29,14 @@ export async function engine(
   if (!res.ok) {
     if (res.status === 401) throw new HttpError(401, 'Please sign in again.');
     if (res.status === 403)
-      throw new HttpError(403, 'Your NocoDB role does not allow this action.');
+      throw new HttpError(403, 'Your workspace role does not allow this action.');
     if (res.status === 404)
       throw new HttpError(404, 'This item is unavailable or you do not have access.');
     if (res.status === 429) throw new HttpError(429, 'Too many requests. Please try in a minute.');
     if (res.status === 400 || res.status === 422)
       throw new HttpError(
         400,
-        'NocoDB could not save this change. Check the field values and required fields.',
+        'The workspace could not save this change. Check the field values and required fields.',
       );
     throw new HttpError(502, 'The data engine is temporarily unavailable.');
   }

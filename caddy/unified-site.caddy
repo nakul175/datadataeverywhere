@@ -1,4 +1,4 @@
-# DataDataEverywhere unified workspace; native data engine remains on 8080.
+# DataDataEverywhere unified workspace; admin engines are not public.
 datadataeverywhere.aplyd.org {
   encode zstd gzip
   header {
@@ -11,14 +11,9 @@ datadataeverywhere.aplyd.org {
   request_body {
     max_size 64KB
   }
-  @native path /nocodb /nocodb/*
-  redir @native https://nocodb.datadataeverywhere.aplyd.org 302
+  @retired_admin path /nocodb /nocodb/* /dashboard /dashboard/*
+  respond @retired_admin 404
   reverse_proxy 127.0.0.1:3301 {
     flush_interval -1
   }
-}
-nocodb.datadataeverywhere.aplyd.org {
-  encode zstd gzip
-  header X-Content-Type-Options "nosniff"
-  reverse_proxy 127.0.0.1:8080
 }

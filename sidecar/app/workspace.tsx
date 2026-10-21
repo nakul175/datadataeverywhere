@@ -41,10 +41,10 @@ async function api(query: Record<string, string> | object, mutate = false) {
 }
 export default function Workspace({
   user,
-  nocodbUrl,
+  tasksUrl,
 }: {
   user: { email: string; name: string };
-  nocodbUrl: string;
+  tasksUrl: string;
 }) {
   const [bases, setBases] = useState<Item[]>([]);
   const [base, setBase] = useState('');
@@ -53,6 +53,7 @@ export default function Workspace({
   const [data, setData] = useState<Data | null>(null);
   const [offset, setOffset] = useState(0);
   const [query, setQuery] = useState('');
+  const [tableQuery, setTableQuery] = useState<Record<string, string> | null>(null);
   const [sort, setSort] = useState('');
   const [descending, setDescending] = useState(false);
   const [error, setError] = useState('');
@@ -60,9 +61,11 @@ export default function Workspace({
   const [chatOpen, setChatOpen] = useState(false);
   const [refresh, setRefresh] = useState(0);
   const [navOpen, setNavOpen] = useState(false);
-  const [modal, setModal] = useState<'createBase' | 'createTable' | 'record' | null>(null);
+  const [modal, setModal] = useState<'createTable' | 'record' | null>(null);
   const [edit, setEdit] = useState<Record<string, unknown> | null>(null);
   const [saving, setSaving] = useState(false);
+  const savingRef = useRef(false);
+  const modalReturnFocus = useRef<HTMLElement | null>(null);
   const [modalError, setModalError] = useState('');
   const router = useRouter();
   useEffect(() => {
@@ -91,6 +94,7 @@ export default function Workspace({
     setTable('');
     setData(null);
     setError('');
+    setTableQuery(null);
     api({ action: 'tables', baseId: base })
       .then((d) => {
         if (!live) return;
@@ -105,8 +109,11 @@ export default function Workspace({
     };
   }, [base, refresh]);
   useEffect(() => {
+    savingRef.current = saving;
+  }, [saving]);
+  useEffect(() => {
     if (!modal) return;
-    const previous = document.activeElement as HTMLElement | null;
+    const previous = modalReturnFocus.current;
     const dialog = document.querySelector<HTMLElement>('[role=dialog]');
     const focusables = () =>
       Array.from(
@@ -116,7 +123,7 @@ export default function Workspace({
       );
     (dialog?.querySelector<HTMLElement>('input,textarea') || focusables()[0])?.focus();
     const keydown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && !saving) {
+      if (e.key === 'Escape' && !savingRef.current) {
         e.preventDefault();
         setModal(null);
       }
@@ -136,9 +143,9 @@ export default function Workspace({
     document.addEventListener('keydown', keydown);
     return () => {
       document.removeEventListener('keydown', keydown);
-      previous?.focus();
+      if (previous?.isConnected) previous.focus();
     };
-  }, [modal, saving]);
+  }, [modal]);
   const reload = useRef(0);
   const [recordRefresh, setRecordRefresh] = useState(0);
   useEffect(() => {
@@ -150,7 +157,7 @@ export default function Workspace({
     setLoading(true);
     setData(null);
     setError('');
-    api({ action: 'records', tableId: table, offset: String(offset) })
+    api({ action: 'records', tableId: table, offset: String(offset), ...(tableQuery || {}) })
       .then((d) => {
         if (reload.current === version) setData(d);
       })
@@ -159,7 +166,7 @@ export default function Workspace({
     return () => {
       reload.current++;
     };
-  }, [table, offset, recordRefresh]);
+  }, [table, offset, recordRefresh, tableQuery]);
   const rows = useMemo(() => {
     const rows = (data?.rows || []).filter((row) =>
       Object.values(row).some((v) => display(v).toLowerCase().includes(query.toLowerCase())),
@@ -180,16 +187,15 @@ export default function Workspace({
   const primary = data?.columns.filter((c) => c.primary) || [];
   const editable = data?.columns.filter((c) => c.editable) || [];
   function choose(id: string) {
+    setTableQuery(null);
     setTable(id);
     setOffset(0);
     setQuery('');
     setSort('');
     setNavOpen(false);
   }
-  function openModal(
-    kind: 'createBase' | 'createTable' | 'record',
-    row: Record<string, unknown> | null = null,
-  ) {
+  function openModal(kind: 'createTable' | 'record', row: Record<string, unknown> | null = null) {
+    modalReturnFocus.current = document.activeElement as HTMLElement | null;
     setEdit(row);
     setModalError('');
     setModal(kind);
@@ -200,24 +206,18 @@ export default function Workspace({
     setModalError('');
     const formData = new FormData(form);
     try {
-      if (modal === 'createBase' || modal === 'createTable') {
+      if (modal === 'createTable') {
         const created = await api(
           {
             action: modal,
             title: formData.get('title'),
-            ...(modal === 'createTable' ? { baseId: base } : {}),
+            baseId: base,
           },
           true,
         );
-        if (modal === 'createBase') {
-          const list = await api({ action: 'bases' });
-          setBases(list.bases);
-          setBase(created.id);
-        } else {
-          const list = await api({ action: 'tables', baseId: base });
-          setTables(list.tables);
-          choose(created.id);
-        }
+        const list = await api({ action: 'tables', baseId: base });
+        setTables(list.tables);
+        choose(created.id);
       } else {
         const values: Record<string, unknown> = {};
         for (const col of editable) {
@@ -274,15 +274,19 @@ export default function Workspace({
           <button
             className="subtle-link"
             onClick={async () => {
-              const res = await fetch('/api/auth/logout', {
-                method: 'POST',
-                headers: { 'content-type': 'application/json' },
-                body: '{}',
-              });
-              if (res.ok) {
-                router.replace('/signin');
-                router.refresh();
-              } else setError('Unable to sign out. Please try again.');
+              try {
+                const res = await fetch('/api/auth/logout', {
+                  method: 'POST',
+                  headers: { 'content-type': 'application/json' },
+                  body: '{}',
+                });
+                if (res.ok) {
+                  router.replace('/signin');
+                  router.refresh();
+                } else setError('Unable to sign out. Please try again.');
+              } catch {
+                setError('Unable to sign out. Please try again.');
+              }
             }}
           >
             Sign out
@@ -309,15 +313,10 @@ export default function Workspace({
         <button className="nav-item selected" onClick={() => setNavOpen(false)}>
           <span>▦</span> Tables <span className="count">{tables.length}</span>
         </button>
-        <a className="nav-item" href={nocodbUrl} target="_blank" rel="noreferrer">
-          <span>↗</span> Advanced spreadsheet
+        <a className="nav-item" href="/feeds">
+          <span>⇄</span> Governed feeds
         </a>
-        <a
-          className="nav-item"
-          href="https://app.sheethappensofficer.com"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a className="nav-item" href={tasksUrl} target="_blank" rel="noreferrer">
           <span>☑</span> SheetHappensOfficer
         </a>
         <div className="nav-section">
@@ -344,9 +343,6 @@ export default function Workspace({
           ))}
           {!tables.length && <p className="nav-empty">Your next good idea starts with a table.</p>}
         </div>
-        <button className="new-workspace" onClick={() => openModal('createBase')}>
-          ＋ New workspace
-        </button>
         <div className="nav-bottom">
           <Mascot />
           <strong>
@@ -354,7 +350,7 @@ export default function Workspace({
             <br />
             More knowing.
           </strong>
-          <small>An Aplyd tool · Powered by NocoDB</small>
+          <small>An Aplyd tool · Hosted on your team’s server</small>
         </div>
       </aside>
       <main className="data-main">
@@ -395,6 +391,89 @@ export default function Workspace({
         )}
         {active && (
           <>
+            <details className="table-help">
+              <summary>Search or sort the entire table</summary>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const form = new FormData(e.currentTarget);
+                  setOffset(0);
+                  setQuery('');
+                  setSort('');
+                  setTableQuery({
+                    scope: 'table',
+                    fieldId: String(form.get('fieldId') || ''),
+                    query: String(form.get('query') || ''),
+                    sortId: String(form.get('sortId') || ''),
+                    direction: String(form.get('direction') || 'asc'),
+                  });
+                }}
+              >
+                <label>
+                  Text field{' '}
+                  <select name="fieldId" aria-label="Full-table search field">
+                    {data?.columns
+                      .filter((c) =>
+                        ['SingleLineText', 'LongText', 'Email', 'PhoneNumber', 'URL'].includes(
+                          c.type,
+                        ),
+                      )
+                      .map((c) => (
+                        <option key={c.id} value={c.id}>
+                          {c.title}
+                        </option>
+                      ))}
+                  </select>
+                </label>
+                <label>
+                  Contains{' '}
+                  <input name="query" aria-label="Full-table search text" maxLength={200} />
+                </label>
+                <label>
+                  Sort{' '}
+                  <select name="sortId" aria-label="Full-table sort field">
+                    <option value="">Primary key</option>
+                    {data?.columns
+                      .filter((c) => c.primary || c.editable)
+                      .map((c) => (
+                        <option key={c.id} value={c.id}>
+                          {c.title}
+                        </option>
+                      ))}
+                  </select>
+                </label>
+                <label>
+                  Direction{' '}
+                  <select name="direction" aria-label="Full-table sort direction">
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                  </select>
+                </label>
+                <button disabled={loading} className="primary">
+                  Apply table query
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setOffset(0);
+                    setTableQuery(null);
+                  }}
+                >
+                  Clear table query
+                </button>
+              </form>
+              <p>
+                Searches a permitted text field across all pages. Letters, numbers, spaces, dots, @,
+                +, - and _ are supported. Paging reads live data; concurrent edits can move rows.
+                This is not a consistent export.
+              </p>
+            </details>
+            {tableQuery && (
+              <p role="status" className="table-help">
+                Full-table query active · page search and page sort below apply only to these loaded
+                results.
+              </p>
+            )}
             <div className="grid-toolbar">
               <span className="view-label">▦ Grid view</span>
               <label className="search-box">
@@ -531,10 +610,7 @@ export default function Workspace({
               </div>
             </div>
             <p className="table-help">
-              Need more field types, imports, relations or views?{' '}
-              <a href={nocodbUrl} target="_blank" rel="noreferrer">
-                Open the advanced spreadsheet ↗
-              </a>
+              Need another field type or view? Ask your workspace administrator.
             </p>
           </>
         )}
@@ -547,13 +623,14 @@ export default function Workspace({
             <p>
               {bases.length
                 ? 'Create a table, then add your first few records.'
-                : 'Create a workspace to keep related tables together.'}
+                : 'Ask your workspace administrator to add you to the team workspace.'}
             </p>
             <button
               className="primary"
-              onClick={() => openModal(bases.length ? 'createTable' : 'createBase')}
+              disabled={!bases.length}
+              onClick={() => openModal('createTable')}
             >
-              ＋ {bases.length ? 'Create your first table' : 'Create your workspace'}
+              {bases.length ? '＋ Create your first table' : 'Workspace access required'}
             </button>
           </section>
         )}
@@ -589,9 +666,7 @@ export default function Workspace({
                 ? edit
                   ? 'Edit this record'
                   : 'One more good entry.'
-                : modal === 'createTable'
-                  ? 'Meet your next table.'
-                  : 'A home for your data.'}
+                : 'Meet your next table.'}
             </h2>
             <form
               onSubmit={(e) => {
@@ -607,16 +682,20 @@ export default function Workspace({
                   </p>
                   {editable.map((col) => (
                     <label className="record-field" key={col.id}>
-                      {col.title}
-                      {col.required && ' *'}
+                      <span id={`record-label-${col.id}`}>
+                        {col.title}
+                        {col.required && ' *'}
+                      </span>
                       {col.type === 'Checkbox' ? (
                         <input
+                          aria-labelledby={`record-label-${col.id}`}
                           name={col.id}
                           type="checkbox"
                           defaultChecked={Boolean(edit?.[col.title])}
                         />
                       ) : col.type === 'LongText' ? (
                         <textarea
+                          aria-labelledby={`record-label-${col.id}`}
                           name={col.id}
                           defaultValue={display(edit?.[col.title])}
                           maxLength={10000}
@@ -625,6 +704,7 @@ export default function Workspace({
                         />
                       ) : (
                         <input
+                          aria-labelledby={`record-label-${col.id}`}
                           name={col.id}
                           defaultValue={display(edit?.[col.title])}
                           maxLength={10000}
@@ -651,12 +731,10 @@ export default function Workspace({
                 </>
               ) : (
                 <label className="record-field">
-                  {modal === 'createTable' ? 'Table name' : 'Workspace name'}
+                  Table name
                   <input
                     name="title"
-                    placeholder={
-                      modal === 'createTable' ? 'e.g. Customer accounts' : 'e.g. Team operations'
-                    }
+                    placeholder="e.g. Customer accounts"
                     required
                     maxLength={80}
                     autoFocus
@@ -685,6 +763,10 @@ export default function Workspace({
 }
 function Analyst({ table, ai, close }: { table?: Item; ai?: Data['ai']; close: () => void }) {
   const [input, setInput] = useState('');
+  const [preview, setPreview] = useState('');
+  const [previewError, setPreviewError] = useState('');
+  const [previewBusy, setPreviewBusy] = useState(false);
+  const previewRequest = useRef<AbortController | null>(null);
   const messagesEnd = useRef<HTMLDivElement>(null);
   const transport = useMemo(
     () =>
@@ -699,6 +781,13 @@ function Analyst({ table, ai, close }: { table?: Item; ai?: Data['ai']; close: (
   const { messages, sendMessage, status, error, stop, setMessages, clearError } = useChat({
     transport,
   });
+  useEffect(
+    () => () => {
+      void stop();
+      previewRequest.current?.abort();
+    },
+    [stop],
+  );
   const busy = status === 'submitted' || status === 'streaming';
   useEffect(() => {
     if (messages.length)
@@ -728,6 +817,57 @@ function Analyst({ table, ai, close }: { table?: Item; ai?: Data['ai']; close: (
         <small>TABLE CONTEXT</small>
       </div>
       <div className="ai-messages" aria-live="polite">
+        {Boolean(ai?.fields.length) && (
+          <div className="setup-note">
+            <p>
+              Approved AI fields: {ai?.fields.join(', ')}. Configuration presence does not certify
+              answer quality.
+            </p>
+            <button
+              disabled={previewBusy || busy}
+              onClick={async () => {
+                const controller = new AbortController();
+                previewRequest.current = controller;
+                setPreviewBusy(true);
+                setPreviewError('');
+                setPreview('');
+                try {
+                  const res = await fetch('/api/ai/context', {
+                    method: 'POST',
+                    headers: { 'content-type': 'application/json' },
+                    body: JSON.stringify({ tableId: table?.id }),
+                    signal: controller.signal,
+                  });
+                  const body = await res.json();
+                  if (!res.ok) throw new Error(body.error || 'Preview unavailable.');
+                  setPreview(JSON.stringify(body.context, null, 2));
+                } catch (e) {
+                  if (!controller.signal.aborted)
+                    setPreviewError(e instanceof Error ? e.message : 'Preview unavailable.');
+                } finally {
+                  if (!controller.signal.aborted) setPreviewBusy(false);
+                }
+              }}
+            >
+              {previewBusy ? 'Reading preview…' : 'Preview AI context'}
+            </button>
+            <p>
+              Preview uses up to 100 unfiltered rows and reserves 32,000 budget units. It calls no
+              AI provider. A later question reads a fresh sample.
+            </p>
+            {previewError && (
+              <p role="alert" className="error">
+                {previewError}
+              </p>
+            )}
+            {preview && (
+              <details>
+                <summary>Inspect bounded JSON context</summary>
+                <pre style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}>{preview}</pre>
+              </details>
+            )}
+          </div>
+        )}
         {!messages.length && (
           <>
             <div className="analyst-intro">
@@ -814,6 +954,7 @@ function Analyst({ table, ai, close }: { table?: Item; ai?: Data['ai']; close: (
             onClick={() => {
               setMessages([]);
               clearError();
+              setInput('');
             }}
           >
             New chat

@@ -3,6 +3,7 @@ import { identity, allowedTables, HttpError } from '@/lib/access';
 import { currentSession } from '@/lib/session';
 import Chat from './chat';
 import Workspace from './workspace';
+import { publicUrls } from '@/lib/public-urls';
 export const dynamic = 'force-dynamic';
 export default async function Page() {
   if (process.env.AUTH_MODE === 'nocodb') {
@@ -16,7 +17,7 @@ export default async function Page() {
     return (
       <Workspace
         user={{ email: session.email, name: session.name }}
-        nocodbUrl={process.env.NOCODB_PUBLIC_URL || 'https://nocodb.datadataeverywhere.aplyd.org'}
+        tasksUrl={publicUrls().tasks}
       />
     );
   }

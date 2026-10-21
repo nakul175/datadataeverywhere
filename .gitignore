@@ -30,3 +30,6 @@ Caddyfile.before-*
 .quality/evidence/
 coverage/
 reports/
+.qualification/
+# Private operator-approved source mappings and feed runtime state
+config/feed-sources.json

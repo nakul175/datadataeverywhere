@@ -1,6 +1,6 @@
 # Deployment on aplyd-productivity-suite
 
-The shared host has an existing systemd Caddy service and the Sheet Happens Officer production/staging apps on ports 3000, 3001, and 3101–3108. Use `docker-compose.shared.yml`, which omits the standalone Caddy container and publishes the new sidecar on 127.0.0.1:3300 and NocoDB on 127.0.0.1:8080. It does not publish PostgreSQL or Redis.
+The shared host has an existing systemd Caddy service and the Sheet Happens Officer production/staging apps on ports 3000, 3001, and 3101–3108. Use `docker-compose.shared.yml`, which omits the public Caddy container, publishes the sidecar on 127.0.0.1:3300, retains the temporary private NocoDB engine on 127.0.0.1:8080, and exposes the internal Mathesar studio only on 127.0.0.1:8090. It does not publish PostgreSQL or Redis.
 
 Both application DNS names must point to the Droplet’s public IPv4 address. DNS alone does not make the application available; the containers and host routes must be installed.
 

@@ -5,6 +5,9 @@ import { dirname } from 'node:path';
 import { createHash, randomUUID } from 'node:crypto';
 import { HttpError } from './errors';
 let database: DatabaseSync | undefined;
+export async function localStoreHealth() {
+  db().prepare('SELECT 1').get();
+}
 function db() {
   if (database) return database;
   const path = process.env.SQLITE_BUDGET_FILE;
