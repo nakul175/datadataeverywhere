@@ -3,7 +3,7 @@
 import subprocess
 from settings import load, save
 values=load()
-for key in ('NODE_IMAGE','POSTGRES_IMAGE','REDIS_IMAGE','NOCODB_IMAGE','CADDY_IMAGE'):
+for key in ('NODE_IMAGE','POSTGRES_IMAGE','REDIS_IMAGE','NOCODB_IMAGE','MATHESAR_IMAGE','CADDY_IMAGE'):
     image=values[key]
     subprocess.run(['docker','pull',image],check=True)
     digest=subprocess.check_output(['docker','image','inspect',image,'--format','{{index .RepoDigests 0}}'],text=True).strip()

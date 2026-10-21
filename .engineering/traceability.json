@@ -563,6 +563,47 @@
       "qa_case_ids": [],
       "qa_run_ids": [],
       "notes": "Candidate-only connector implemented and independently technically reviewed. CI39480268021 passed 99 application tests, 29 actual-engine/browser/roles/feed groups including nine governed-feed groups, and three scoped recovery groups. Final state-based removal-version correction has focused regression coverage and final full CI pending. No native criterion acceptance, production mapping attestation, feed-state recovery, merge or deployment."
+    },
+    {
+      "task_id": "APL-3034",
+      "kind": "engineering",
+      "authorization_ref": "https://linear.app/aplyd-sandbox/issue/APL-3034",
+      "tracker_ref": "https://linear.app/aplyd-sandbox/issue/APL-3034/dde-50incomplete-replace-the-member-facing-nocodb-surface-with-a",
+      "story_ids": [
+        "APL-3034"
+      ],
+      "acceptance_criterion_ids": [],
+      "requirement_refs": [
+        "https://linear.app/aplyd-sandbox/issue/APL-3034"
+      ],
+      "design_refs": [
+        "docs/architecture/ADR-002-mathesar-transition.md",
+        "MATHESAR.md"
+      ],
+      "rationale": "Replace the member-facing native-tool surface with one branded product while providing administrators a private, code-editable Mathesar studio over PostgreSQL.",
+      "paths": [
+        "docker-compose.yml",
+        "docker-compose.shared.yml",
+        "mathesar/",
+        "postgres/init.sh",
+        "scripts/prepare-mathesar.py",
+        "scripts/backup.sh",
+        "scripts/restore.sh",
+        "sidecar/",
+        "Caddyfile",
+        "caddy/unified-site.caddy"
+      ],
+      "status": "implemented",
+      "branch": "feat/story-completion",
+      "commit": null,
+      "pr": "https://github.com/nakul175/datadataeverywhere/pull/3",
+      "review_ref": "docs/architecture/ADR-002-mathesar-transition.md",
+      "release": null,
+      "deployment_evidence": null,
+      "legacy_ids": [],
+      "qa_case_ids": [],
+      "qa_run_ids": [],
+      "notes": "Candidate implementation independently reviewed with no outstanding actionable findings. Local application checks passed. Docker qualification, isolated recovery, merge and production activation remain pending; NocoDB remains a private compatibility dependency during migration."
     }
   ]
 }

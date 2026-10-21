@@ -86,7 +86,6 @@ const name = z
   .max(80)
   .regex(/^[\p{L}\p{N} _-]+$/u, 'Use letters, numbers, spaces, dashes or underscores.');
 const mutation = z.discriminatedUnion('action', [
-  z.object({ action: z.literal('createBase'), title: name }).strict(),
   z.object({ action: z.literal('createTable'), baseId: z.string(), title: name }).strict(),
   z
     .object({
@@ -112,10 +111,6 @@ export async function POST(req: Request) {
     if (!parsed.success)
       throw new HttpError(400, parsed.error.issues[0]?.message || 'Invalid change.');
     const body = parsed.data;
-    if (body.action === 'createBase') {
-      const data = await engine('/api/v2/meta/bases', session.token, 'POST', { title: body.title });
-      return json({ id: data.id, title: data.title });
-    }
     if (body.action === 'createTable') {
       const data = await engine(
         `/api/v2/meta/bases/${engineId(body.baseId)}/tables`,

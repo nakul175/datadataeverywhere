@@ -45,12 +45,12 @@ export default async function SignInPage() {
           <SignIn />
           <div className="login-note">
             One login. Your whole workspace.
-            <small>Use your existing NocoDB account email and password.</small>
+            <small>Use your DataDataEverywhere work email and password.</small>
           </div>
         </section>
       </div>
       <footer>
-        An Aplyd tool <span>·</span> Powered by NocoDB <span>·</span> Hosted on your team’s server
+        An Aplyd tool <span>·</span> Hosted on your team’s server
       </footer>
     </main>
   );

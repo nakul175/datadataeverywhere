@@ -41,11 +41,9 @@ async function api(query: Record<string, string> | object, mutate = false) {
 }
 export default function Workspace({
   user,
-  nocodbUrl,
   tasksUrl,
 }: {
   user: { email: string; name: string };
-  nocodbUrl: string;
   tasksUrl: string;
 }) {
   const [bases, setBases] = useState<Item[]>([]);
@@ -63,7 +61,7 @@ export default function Workspace({
   const [chatOpen, setChatOpen] = useState(false);
   const [refresh, setRefresh] = useState(0);
   const [navOpen, setNavOpen] = useState(false);
-  const [modal, setModal] = useState<'createBase' | 'createTable' | 'record' | null>(null);
+  const [modal, setModal] = useState<'createTable' | 'record' | null>(null);
   const [edit, setEdit] = useState<Record<string, unknown> | null>(null);
   const [saving, setSaving] = useState(false);
   const savingRef = useRef(false);
@@ -196,10 +194,7 @@ export default function Workspace({
     setSort('');
     setNavOpen(false);
   }
-  function openModal(
-    kind: 'createBase' | 'createTable' | 'record',
-    row: Record<string, unknown> | null = null,
-  ) {
+  function openModal(kind: 'createTable' | 'record', row: Record<string, unknown> | null = null) {
     modalReturnFocus.current = document.activeElement as HTMLElement | null;
     setEdit(row);
     setModalError('');
@@ -211,24 +206,18 @@ export default function Workspace({
     setModalError('');
     const formData = new FormData(form);
     try {
-      if (modal === 'createBase' || modal === 'createTable') {
+      if (modal === 'createTable') {
         const created = await api(
           {
             action: modal,
             title: formData.get('title'),
-            ...(modal === 'createTable' ? { baseId: base } : {}),
+            baseId: base,
           },
           true,
         );
-        if (modal === 'createBase') {
-          const list = await api({ action: 'bases' });
-          setBases(list.bases);
-          setBase(created.id);
-        } else {
-          const list = await api({ action: 'tables', baseId: base });
-          setTables(list.tables);
-          choose(created.id);
-        }
+        const list = await api({ action: 'tables', baseId: base });
+        setTables(list.tables);
+        choose(created.id);
       } else {
         const values: Record<string, unknown> = {};
         for (const col of editable) {
@@ -324,9 +313,6 @@ export default function Workspace({
         <button className="nav-item selected" onClick={() => setNavOpen(false)}>
           <span>▦</span> Tables <span className="count">{tables.length}</span>
         </button>
-        <a className="nav-item" href={nocodbUrl} target="_blank" rel="noreferrer">
-          <span>↗</span> Advanced spreadsheet
-        </a>
         <a className="nav-item" href="/feeds">
           <span>⇄</span> Governed feeds
         </a>
@@ -357,9 +343,6 @@ export default function Workspace({
           ))}
           {!tables.length && <p className="nav-empty">Your next good idea starts with a table.</p>}
         </div>
-        <button className="new-workspace" onClick={() => openModal('createBase')}>
-          ＋ New workspace
-        </button>
         <div className="nav-bottom">
           <Mascot />
           <strong>
@@ -367,7 +350,7 @@ export default function Workspace({
             <br />
             More knowing.
           </strong>
-          <small>An Aplyd tool · Powered by NocoDB</small>
+          <small>An Aplyd tool · Hosted on your team’s server</small>
         </div>
       </aside>
       <main className="data-main">
@@ -627,10 +610,7 @@ export default function Workspace({
               </div>
             </div>
             <p className="table-help">
-              Need more field types, imports, relations or views?{' '}
-              <a href={nocodbUrl} target="_blank" rel="noreferrer">
-                Open the advanced spreadsheet ↗
-              </a>
+              Need another field type or view? Ask your workspace administrator.
             </p>
           </>
         )}
@@ -643,13 +623,14 @@ export default function Workspace({
             <p>
               {bases.length
                 ? 'Create a table, then add your first few records.'
-                : 'Create a workspace to keep related tables together.'}
+                : 'Ask your workspace administrator to add you to the team workspace.'}
             </p>
             <button
               className="primary"
-              onClick={() => openModal(bases.length ? 'createTable' : 'createBase')}
+              disabled={!bases.length}
+              onClick={() => openModal('createTable')}
             >
-              ＋ {bases.length ? 'Create your first table' : 'Create your workspace'}
+              {bases.length ? '＋ Create your first table' : 'Workspace access required'}
             </button>
           </section>
         )}
@@ -685,9 +666,7 @@ export default function Workspace({
                 ? edit
                   ? 'Edit this record'
                   : 'One more good entry.'
-                : modal === 'createTable'
-                  ? 'Meet your next table.'
-                  : 'A home for your data.'}
+                : 'Meet your next table.'}
             </h2>
             <form
               onSubmit={(e) => {
@@ -752,12 +731,10 @@ export default function Workspace({
                 </>
               ) : (
                 <label className="record-field">
-                  {modal === 'createTable' ? 'Table name' : 'Workspace name'}
+                  Table name
                   <input
                     name="title"
-                    placeholder={
-                      modal === 'createTable' ? 'e.g. Customer accounts' : 'e.g. Team operations'
-                    }
+                    placeholder="e.g. Customer accounts"
                     required
                     maxLength={80}
                     autoFocus

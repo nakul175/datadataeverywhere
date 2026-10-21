@@ -22,9 +22,9 @@ if provider not in ('openai','anthropic'): raise SystemExit('Invalid provider')
 key = getpass.getpass('Provider API key (blank to configure later): ')
 values = {
     'NODE_IMAGE':'node:24-alpine', 'POSTGRES_IMAGE':'postgres:17-alpine', 'REDIS_IMAGE':'redis:7-alpine',
-    'NOCODB_IMAGE':'nocodb/nocodb:2026.09.1', 'CADDY_IMAGE':'caddy:2-alpine',
+    'NOCODB_IMAGE':'nocodb/nocodb:2026.09.1', 'MATHESAR_IMAGE':'mathesar/mathesar:0.12.0', 'CADDY_IMAGE':'caddy:2-alpine',
     'POSTGRES_PASSWORD':secrets.token_hex(32), 'NOCODB_DB_PASSWORD':secrets.token_hex(32),
-    'TEAM_DB_PASSWORD':secrets.token_hex(32), 'NC_AUTH_JWT_SECRET':secrets.token_hex(48),
+    'MATHESAR_DB_PASSWORD':secrets.token_hex(32), 'TEAM_DB_PASSWORD':secrets.token_hex(32), 'NC_AUTH_JWT_SECRET':secrets.token_hex(48),
     'NC_CONNECTION_ENCRYPT_KEY':secrets.token_hex(16), 'PROXY_SECRET':secrets.token_hex(48), 'NC_ADMIN_EMAIL':email, 'NC_ADMIN_PASSWORD':admin_password,
     'AI_PROVIDER':provider, 'OPENAI_API_KEY':key if provider=='openai' else '',
     'ANTHROPIC_API_KEY':key if provider=='anthropic' else '', 'OPENAI_MODEL':'gpt-4o', 'ANTHROPIC_MODEL':'',

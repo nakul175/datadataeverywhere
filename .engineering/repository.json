@@ -15,7 +15,8 @@
   "design_depth": "docs/architecture/ADR-001-existing-system.md",
   "components": [
     "Next.js interface",
-    "NocoDB REST engine",
+    "NocoDB compatibility engine (temporary)",
+    "Mathesar internal PostgreSQL studio",
     "PostgreSQL",
     "Caddy",
     "Persistent AI budget admission"

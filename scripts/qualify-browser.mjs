@@ -40,14 +40,15 @@ export async function qualifyBrowser({origin,password,baseId,email='qa@example.t
   await page.getByRole('button',{name:'Apply table query',exact:true}).click();await ready();
   await expect(page.locator('.data-grid tbody tr')).toHaveCount(1);await expect(page.locator('.data-grid')).toContainText('Needle beyond page one');
   checks.push('Browser reconciles all 257 rows over six pages and distinguishes full-table from page-local queries');
-  const trigger=page.getByRole('button',{name:/New workspace/});await trigger.click();
-  const dialog=page.getByRole('dialog');await expect(dialog.getByLabel('Workspace name')).toBeFocused();
+  await expect(page.getByText('New workspace',{exact:true})).toHaveCount(0);
+  const refused=await context.request.post(origin+'/api/workspace',{headers:{origin},data:{action:'createBase',title:'Browser qualification'}});assert.equal(refused.status(),400);
+  const trigger=page.getByRole('button',{name:'Create table',exact:true});await trigger.click();
+  const dialog=page.getByRole('dialog');await expect(dialog.getByLabel('Table name')).toBeFocused();
   await dialog.getByRole('button',{name:'Create',exact:true}).focus();await page.keyboard.press('Tab');await expect(dialog.getByRole('button',{name:'Close dialog'})).toBeFocused();
   await page.keyboard.press('Shift+Tab');await expect(dialog.getByRole('button',{name:'Create',exact:true})).toBeFocused();
   await page.keyboard.press('Escape');await expect(dialog).toHaveCount(0);await expect(trigger).toBeFocused();
   checks.push('Dialog Tab/Shift+Tab wraps, Escape cancels and focus returns to its trigger');
-  await trigger.click();await dialog.getByLabel('Workspace name').fill('Browser qualification');await dialog.getByRole('button',{name:'Create',exact:true}).click();await expect(dialog).toHaveCount(0);
-  await page.getByRole('button',{name:'Create table',exact:true}).click();await dialog.getByLabel('Table name').fill('Browser records');await dialog.getByRole('button',{name:'Create',exact:true}).click();await expect(dialog).toHaveCount(0);await ready();
+  await trigger.click();await dialog.getByLabel('Table name').fill('Browser records');await dialog.getByRole('button',{name:'Create',exact:true}).click();await expect(dialog).toHaveCount(0);await ready();
   await page.getByRole('button',{name:/Add record/}).click();await dialog.getByLabel('Title',{exact:true}).fill('Browser created record');await dialog.getByLabel('Notes',{exact:true}).fill('Created in Chromium');
   let saveStarted;const started=new Promise(resolve=>saveStarted=resolve);const blocked=new Promise(resolve=>releaseSave=resolve);
   await page.route('**/api/workspace',async route=>{
@@ -58,9 +59,9 @@ export async function qualifyBrowser({origin,password,baseId,email='qa@example.t
   let startTimer;try{await Promise.race([started,new Promise((_,reject)=>{startTimer=setTimeout(()=>reject(new Error('Browser save did not issue a create request within 15 seconds')),15000);})]);}finally{clearTimeout(startTimer);}
   await expect(dialog.getByRole('button',{name:'Close dialog'})).toBeDisabled();await expect(dialog.getByRole('button',{name:'Cancel',exact:true})).toBeDisabled();await page.keyboard.press('Escape');await expect(dialog).toBeVisible();await page.locator('.modal-shade').click({position:{x:5,y:5}});await expect(dialog).toBeVisible();
   releaseSave();await expect(dialog).toHaveCount(0);await page.unroute('**/api/workspace');await ready();await expect(page.locator('.data-grid')).toContainText('Browser created record');
-  checks.push('Browser creates workspace/table/record; pending save prevents dismissal and persists through the configured engine');
+  checks.push('Browser refuses additional workspaces, creates a table/record in a provisioned workspace, and protects a pending save');
   await page.getByRole('button',{name:'Edit record 1',exact:true}).click();await dialog.getByRole('button',{name:'Save record'}).click();await expect(dialog.getByRole('alert')).toContainText('No changed fields');
-  await dialog.getByLabel('Notes',{exact:true}).fill('Browser persisted edit');await dialog.getByRole('button',{name:'Save record'}).click();await expect(dialog).toHaveCount(0);await page.reload();await page.getByLabel('Workspace',{exact:true}).selectOption({label:'Browser qualification'});await expect(page.getByRole('heading',{name:'Browser records',exact:true})).toBeVisible();await ready();await expect(page.locator('.data-grid')).toContainText('Browser persisted edit');
+  await dialog.getByLabel('Notes',{exact:true}).fill('Browser persisted edit');await dialog.getByRole('button',{name:'Save record'}).click();await expect(dialog).toHaveCount(0);await page.reload();await page.getByLabel('Workspace',{exact:true}).selectOption(baseId);await page.getByRole('button',{name:/Browser records/}).click();await expect(page.getByRole('heading',{name:'Browser records',exact:true})).toBeVisible();await ready();await expect(page.locator('.data-grid')).toContainText('Browser persisted edit');
   await page.getByRole('button',{name:'Edit record 1',exact:true}).click();await dialog.getByLabel('Notes',{exact:true}).fill('Unsaved after refusal');
   await page.route('**/api/workspace',route=>route.request().method()==='POST'?route.fulfill({status:503,contentType:'application/json',body:JSON.stringify({error:'Controlled fixture save refusal'})}):route.continue());
   await dialog.getByRole('button',{name:'Save record'}).click();await expect(dialog.getByRole('alert')).toContainText('Controlled fixture save refusal');await expect(dialog.getByLabel('Notes',{exact:true})).toHaveValue('Unsaved after refusal');await page.unroute('**/api/workspace');await dialog.getByRole('button',{name:'Cancel',exact:true}).click();
@@ -78,7 +79,7 @@ export async function qualifyBrowser({origin,password,baseId,email='qa@example.t
   await page.goBack();await expect(page).toHaveURL(origin+'/signin');
   const denied=await context.request.get(origin+'/api/workspace');assert.equal(denied.status(),401);
   await page.setViewportSize({width:1440,height:1000});
-  await page.getByLabel('Email address').fill(email);await page.getByLabel('Password',{exact:true}).fill(password);await page.getByRole('button',{name:/make sense/}).click();await expect(page.getByRole('button',{name:'Sign out',exact:true})).toBeVisible();await page.getByLabel('Workspace',{exact:true}).selectOption({label:'Browser qualification'});await expect(page.getByRole('heading',{name:'Browser records',exact:true})).toBeVisible();await ready();await expect(page.locator('.data-grid')).toContainText('Browser persisted edit');
+  await page.getByLabel('Email address').fill(email);await page.getByLabel('Password',{exact:true}).fill(password);await page.getByRole('button',{name:/make sense/}).click();await expect(page.getByRole('button',{name:'Sign out',exact:true})).toBeVisible();await page.getByLabel('Workspace',{exact:true}).selectOption(baseId);await page.getByRole('button',{name:/Browser records/}).click();await expect(page.getByRole('heading',{name:'Browser records',exact:true})).toBeVisible();await ready();await expect(page.locator('.data-grid')).toContainText('Browser persisted edit');
   checks.push('Logout failure is retryable, successful logout expires cookies/browser-back access, and re-login retains data');
   return checks;
  }catch(error){

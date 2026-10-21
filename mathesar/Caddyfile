@@ -1,0 +1,25 @@
+:8000 {
+	encode zstd gzip
+	respond /caddy-health-check 200
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy same-origin
+		X-Frame-Options DENY
+		-Server
+	}
+	handle_path /media/* {
+		@downloads query dl=*
+		header @downloads Content-Disposition "attachment; filename={query.dl}"
+		file_server {
+			precompressed br zstd gzip
+			root /srv/media
+		}
+	}
+	handle_path /static/* {
+		file_server {
+			precompressed br zstd gzip
+			root /srv/static
+		}
+	}
+	reverse_proxy mathesar:8000
+}

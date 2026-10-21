@@ -70,14 +70,6 @@ function ChatSession({
           Answers use up to 100 rows and approved columns. This selection is independent of your
           open spreadsheet view. Changing tables starts a fresh chat.
         </p>
-        <a
-          href="/nocodb"
-          target="_blank"
-          rel="noreferrer"
-          className="mt-8 block rounded-xl border border-slate-700 px-4 py-3 text-sm hover:border-teal-400"
-        >
-          Open NocoDB ↗
-        </a>
         <button
           type="button"
           disabled={busy}

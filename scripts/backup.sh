@@ -30,6 +30,9 @@ services=(sidecar nocodb redis)
 service_names=$(docker compose config --services)
 service_names=${service_names//$'\n'/ }
 if [[ " $service_names " == *" caddy "* ]]; then services+=(caddy); fi
+admin_running=$(docker compose --profile admin ps --status running --services)
+if grep -qx mathesar <<<"$admin_running"; then services+=(mathesar); fi
+if grep -qx mathesar-gateway <<<"$admin_running"; then services+=(mathesar-gateway); fi
 cleanup() {
   result=$?
   set +e
@@ -48,10 +51,15 @@ for service in nocodb redis; do
   if [ "$service" = nocodb ]; then path=/usr/app/data; else path=/data; fi
   docker compose run --rm --no-deps -T --user root --entrypoint tar "$service" -C "$path" -czf - . > "$dest/$service.tgz"
 done
+for item in static:/code/static media:/code/.media secrets:/code/.secrets; do
+  name=${item%%:*}; path=${item#*:}
+  docker compose --profile admin run --rm --no-deps -T --user root --entrypoint tar mathesar -C "$path" -czf - . > "$dest/mathesar-$name.tgz"
+done
 cp .env "$dest/env"
 cp config/access.json "$dest/access.json"
 cp caddy/users.caddy "$dest/users.caddy"
 cp docker-compose.yml Caddyfile "$dest/"
+cp mathesar/Caddyfile "$dest/mathesar-Caddyfile"
 if [ -f docker-compose.shared.yml ]; then cp docker-compose.shared.yml "$dest/"; fi
 # Includes database passwords and provider keys. Encrypt before off-site transfer.
 python3 - "$dest" <<'PYSUM'

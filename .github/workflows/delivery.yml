@@ -54,6 +54,25 @@ jobs:
           docker run --rm --network none
           --mount "type=bind,source=$GITHUB_WORKSPACE/caddy/unified-site.caddy,target=/etc/caddy/Caddyfile,readonly"
           caddy:2.11.7-alpine caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
+      - name: Validate production Compose definitions
+        env:
+          POSTGRES_PASSWORD: fixture-postgres
+          NOCODB_DB_PASSWORD: fixture-nocodb
+          MATHESAR_DB_PASSWORD: fixture-mathesar
+          TEAM_DB_PASSWORD: fixture-team
+          NC_AUTH_JWT_SECRET: fixture-jwt
+          NC_CONNECTION_ENCRYPT_KEY: fixture-encryption
+          PROXY_SECRET: fixture-proxy
+          NC_ADMIN_EMAIL: fixture@example.test
+          NC_ADMIN_PASSWORD: fixture-admin
+        run: |
+          docker compose -f docker-compose.yml config --quiet
+          docker compose -f docker-compose.shared.yml config --quiet
+      - name: Validate the loopback-only Mathesar gateway
+        run: >-
+          docker run --rm --network none
+          --mount "type=bind,source=$GITHUB_WORKSPACE/mathesar/Caddyfile,target=/etc/caddy/Caddyfile,readonly"
+          caddy:2.11.7-alpine caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
       - run: npm run format:check
       - run: npm run lint
       - run: npm run typecheck

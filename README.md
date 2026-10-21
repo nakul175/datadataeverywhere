@@ -2,6 +2,8 @@
 
 > **Live interface update — 20 October 2026:** The existing Aplyd server now runs the consolidated Holy Sheet! workspace at https://datadataeverywhere.aplyd.org. See [UNIFIED-WORKSPACE.md](UNIFIED-WORKSPACE.md) for its deployed service, account sign-in, AI setup, rollback and operating notes. The Docker instructions below describe the original engine/sidecar installation; rebuilding that legacy sidecar alone does not update the active native interface.
 
+> **Architecture transition — 21 October 2026:** Mathesar 0.12.0 is now the selected internal PostgreSQL studio. It is loopback-only and is never exposed or named in the member interface. NocoDB remains a temporary private compatibility dependency until direct PostgreSQL auth/data/feed contracts are qualified. See [MATHESAR.md](MATHESAR.md) and [ADR-002](docs/architecture/ADR-002-mathesar-transition.md). This source change is not yet a production deployment.
+
 # DataDataEverywhere — production deployment bundle
 
 For the existing `aplyd-productivity-suite` server, follow [SHARED-HOST.md](SHARED-HOST.md); it uses the host’s existing Caddy instead of starting a second proxy.

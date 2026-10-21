@@ -17,7 +17,6 @@ export default async function Page() {
     return (
       <Workspace
         user={{ email: session.email, name: session.name }}
-        nocodbUrl={publicUrls().nocodb}
         tasksUrl={publicUrls().tasks}
       />
     );

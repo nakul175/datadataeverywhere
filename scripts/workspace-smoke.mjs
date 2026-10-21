@@ -33,10 +33,10 @@ try{
  await request('/api/workspace',{action:'updateRecord',tableId:'t-fixture',id:201,values:{Calculated:900}},400);checks.push('Raw query syntax and calculated-field writes are refused');
  await request('/api/workspace',{action:'updateRecord',tableId:'t-fixture',id:201,values:{Notes:'Persisted fixture update'}});
  const updated=await(await request('/api/workspace?action=records&tableId=t-fixture&offset=200')).json();assert.equal(updated.rows[0].Notes,'Persisted fixture update');
- const base=await(await request('/api/workspace',{action:'createBase',title:'Smoke workspace'})).json();
- const table=await(await request('/api/workspace',{action:'createTable',baseId:base.id,title:'Smoke table'})).json();
+ await request('/api/workspace',{action:'createBase',title:'Smoke workspace'},400);
+ const table=await(await request('/api/workspace',{action:'createTable',baseId:bases.bases[0].id,title:'Smoke table'})).json();
  await request('/api/workspace',{action:'createRecord',tableId:table.id,values:{Title:'Created through compiled app',Notes:'Synthetic only'}});
- const created=await(await request(`/api/workspace?action=records&tableId=${table.id}`)).json();assert.equal(created.rows[0].Title,'Created through compiled app');checks.push('Compiled routes create a workspace/table/record and persist edits in the fixture');
+ const created=await(await request(`/api/workspace?action=records&tableId=${table.id}`)).json();assert.equal(created.rows[0].Title,'Created through compiled app');checks.push('Additional workspaces are refused; compiled routes create a table/record in a provisioned workspace and persist edits');
  const reader=await login('reader@example.test');
  await request('/api/workspace?action=records&tableId=t-private',undefined,403,reader);
  await request('/api/workspace',{action:'createRecord',tableId:'t-fixture',values:{Title:'Not allowed'}},403,reader);checks.push('Reader direct requests cannot access a private table or mutate records');

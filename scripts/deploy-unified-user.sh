@@ -17,7 +17,6 @@ if [[ ! -f "$app_root/shared/runtime.env" ]]; then
 AUTH_MODE=nocodb
 APP_ORIGIN=https://datadataeverywhere.aplyd.org
 NOCODB_URL=http://127.0.0.1:8080
-NOCODB_PUBLIC_URL=https://nocodb.datadataeverywhere.aplyd.org
 ACCESS_FILE=$app_root/shared/access.json
 SQLITE_BUDGET_FILE=$app_root/shared/data/budget.sqlite
 AI_PROVIDER=openai

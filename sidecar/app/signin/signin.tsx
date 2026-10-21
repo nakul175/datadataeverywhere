@@ -36,7 +36,7 @@ export default function SignIn() {
         name="email"
         type="email"
         autoComplete="username"
-        placeholder="Your NocoDB account email"
+        placeholder="Your work email"
         maxLength={254}
         required
       />
@@ -58,9 +58,7 @@ export default function SignIn() {
       <button className="primary login-button" disabled={busy}>
         {busy ? 'Opening your workspace…' : 'Let’s make sense of it'} <span>↗</span>
       </button>
-      <a className="account-help" href="/nocodb" target="_blank" rel="noreferrer">
-        Need account help? Open NocoDB ↗
-      </a>
+      <p className="account-help">Need account help? Contact your workspace administrator.</p>
     </form>
   );
 }

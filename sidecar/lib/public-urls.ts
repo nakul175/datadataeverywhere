@@ -9,10 +9,6 @@ function checkedUrl(value: string | undefined, fallback: string) {
 
 export function publicUrls() {
   return {
-    nocodb: checkedUrl(
-      process.env.NOCODB_PUBLIC_URL,
-      'https://nocodb.datadataeverywhere.aplyd.org',
-    ),
     tasks: checkedUrl(process.env.TASKS_PUBLIC_URL, 'https://sheethappensofficer.aplyd.org'),
   };
 }

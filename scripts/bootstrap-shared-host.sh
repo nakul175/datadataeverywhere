@@ -9,7 +9,7 @@ if ! systemctl is-active --quiet caddy; then echo 'Existing host Caddy must be a
 # Refuse port conflicts before installing anything.
 python3 - <<'PYPORT'
 import socket
-for port in (8080,3300):
+for port in (8080,3300,8090):
     with socket.socket() as s:
         try: s.bind(('127.0.0.1',port))
         except OSError: raise SystemExit('Required local port is occupied: '+str(port))
@@ -41,7 +41,11 @@ EOF
   apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 fi
 systemctl enable --now docker
-if [ ! -f .env ]; then python3 scripts/configure.py; fi
+if [ ! -f .env ]; then
+  python3 scripts/configure.py
+else
+  python3 scripts/prepare-mathesar.py
+fi
 python3 - <<'PYENV'
 import sys
 sys.path.insert(0,'scripts')
@@ -56,5 +60,5 @@ curl --fail --silent --show-error http://127.0.0.1:3300/api/health
 python3 scripts/install-host-proxy.py
 # Show status without disclosing environment variables or credentials.
 docker compose ps
-printf '\nDeployment installed. Verify HTTPS at:\nhttps://datadataeverywhere.aplyd.org\nhttps://nocodb.datadataeverywhere.aplyd.org\n'
-printf 'Set the NocoDB service token, approve tables, and configure a provider key before using AI chat.\n'
+printf '\nDeployment installed. Verify HTTPS at:\nhttps://datadataeverywhere.aplyd.org\n'
+printf 'Mathesar is internal only. Use an SSH tunnel to 127.0.0.1:8090 for administrator setup.\n'

@@ -53,6 +53,11 @@ describe('Workspace permission boundaries', () => {
     expect(res.status).toBe(403);
     expect(mocks.engine).not.toHaveBeenCalled();
   });
+  it('does not expose creation of additional licensed workspaces', async () => {
+    const res = await POST(request({ action: 'createBase', title: 'Another workspace' }));
+    expect(res.status).toBe(400);
+    expect(mocks.engine).not.toHaveBeenCalled();
+  });
   it('projects base results without leaking connection metadata', async () => {
     mocks.engine.mockResolvedValue({
       list: [{ id: 'b1', title: 'Team', sources: [{ password: 'secret' }] }],
