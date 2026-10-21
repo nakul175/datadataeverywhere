@@ -17,6 +17,8 @@ backup_root='/var/backups/datadataeverywhere'
 unified_root='/home/deploy/datadataeverywhere'
 unified_release="$unified_root/releases/bcbd48a"
 release_manifest_digest='b96dd782886b27e624e84dd3b37e280eb182c820ac42cfc2f37aedff5c085c4c'
+release_archive='/home/deploy/datadataeverywhere-bcbd48a.tar.gz'
+release_archive_digest='abd7a837201608753345b2f6cc3c9d3cb2e13ea680a5aecbcd305ab8d511accb'
 unified_uid="$(id -u deploy)"
 unified_previous="$(readlink "$unified_root/current" || true)"
 release_marker="$unified_root/shared/release.current"
@@ -26,8 +28,13 @@ previous_marker=''
 exec 9>/var/lock/datadataeverywhere-mathesar-activation.lock
 flock -n 9 || { echo 'Another DataDataEverywhere activation is running.' >&2; exit 1; }
 
-[[ -d "$app_root/.git" ]] || { echo 'Production checkout is missing.' >&2; exit 1; }
+[[ -d "$app_root" && -f "$app_root/.env" ]] || { echo 'Production installation is missing.' >&2; exit 1; }
 [[ -f "$unified_release/scripts/deploy-unified-user.sh" ]] || { echo 'Validated unified release is missing.' >&2; exit 1; }
+[[ -f "$release_archive" ]] || { echo 'Validated production archive is missing.' >&2; exit 1; }
+[[ "$(sha256sum "$release_archive" | cut -d ' ' -f1)" == "$release_archive_digest" ]] || {
+  echo 'Production archive failed digest verification.' >&2
+  exit 1
+}
 [[ "$(sha256sum "$unified_release/SHA256SUMS" | cut -d ' ' -f1)" == "$release_manifest_digest" ]] || {
   echo 'Unified release manifest does not identify the validated commit.' >&2
   exit 1
@@ -41,13 +48,12 @@ systemctl is-active --quiet caddy || { echo 'Host Caddy must be active.' >&2; ex
 systemctl is-active --quiet docker || { echo 'Docker must be active.' >&2; exit 1; }
 
 cd "$app_root"
-[[ -z "$(git status --porcelain --untracked-files=no)" ]] || {
-  echo 'Production checkout has tracked changes; refusing activation.' >&2
-  exit 1
-}
-old_commit="$(git rev-parse HEAD)"
 mkdir -p "$backup_root"
 stamp="$(date -u +%Y%m%dT%H%M%SZ)"
+candidate_root="/opt/datadataeverywhere.next-$stamp"
+previous_root="/opt/datadataeverywhere.previous-$stamp"
+failed_root="/opt/datadataeverywhere.failed-$stamp"
+source_switched=false
 env_backup="$backup_root/env.before-mathesar-$stamp"
 caddy_backup="$backup_root/Caddyfile.before-mathesar-$stamp"
 cp -p .env "$env_backup"
@@ -61,10 +67,26 @@ rollback() {
   result=$?
   [[ $result -eq 0 ]] && return
   set +e
-  cd "$app_root"
-  docker compose --profile admin stop mathesar-gateway mathesar >/dev/null 2>&1
-  cp -p "$env_backup" .env
-  git checkout --detach "$old_commit" >/dev/null 2>&1
+  cd "$app_root" 2>/dev/null || cd /opt
+  if [[ -f docker-compose.shared.yml || -f docker-compose.yml ]]; then
+    docker compose --profile admin stop mathesar-gateway mathesar >/dev/null 2>&1
+  fi
+  if [[ "$source_switched" == true && -d "$previous_root" ]]; then
+    active_candidate="$app_root"
+    [[ -d "$active_candidate" ]] || active_candidate="$candidate_root"
+    if [[ -d "$active_candidate/backups" && ! -e "$previous_root/backups" ]]; then
+      mv "$active_candidate/backups" "$previous_root/backups"
+    fi
+    if [[ -d "$app_root" ]]; then
+      mv "$app_root" "$failed_root"
+    elif [[ -d "$candidate_root" ]]; then
+      mv "$candidate_root" "$failed_root"
+    fi
+    mv "$previous_root" "$app_root"
+  else
+    cp -p "$env_backup" "$app_root/.env"
+    rm -rf "$candidate_root"
+  fi
   if [[ -n "$unified_previous" ]]; then
     runuser -u deploy -- env HOME=/home/deploy XDG_RUNTIME_DIR="/run/user/$unified_uid" \
       ln -sfn "$unified_previous" "$unified_root/.current-next"
@@ -83,6 +105,7 @@ rollback() {
   chown "$caddy_uid:$caddy_gid" /etc/caddy/Caddyfile
   chmod "$caddy_mode" /etc/caddy/Caddyfile
   caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile >/dev/null 2>&1 && systemctl reload caddy
+  cd "$app_root"
   docker compose up -d >/dev/null 2>&1
   echo 'Activation failed; source, private environment and Caddyfile were restored.' >&2
   exit "$result"
@@ -92,10 +115,27 @@ trap rollback EXIT
 # Capture a consistent pre-change backup using the currently deployed release.
 bash scripts/backup.sh
 
-git fetch --quiet origin feat/story-completion
-resolved="$(git rev-parse "${expected_commit}^{commit}")"
-[[ "$resolved" == "$expected_commit" ]] || { echo 'Validated commit is unavailable.' >&2; exit 1; }
-git checkout --detach "$expected_commit"
+mkdir -m 700 "$candidate_root"
+tar -xzf "$release_archive" -C "$candidate_root"
+[[ "$(sha256sum "$candidate_root/SHA256SUMS" | cut -d ' ' -f1)" == "$release_manifest_digest" ]] || {
+  echo 'Extracted production manifest does not identify the validated commit.' >&2
+  exit 1
+}
+(cd "$candidate_root" && sha256sum --quiet -c SHA256SUMS) || {
+  echo 'Extracted production source failed byte-integrity verification.' >&2
+  exit 1
+}
+cp -p "$app_root/.env" "$candidate_root/.env"
+for private_file in config/access.json config/feed-sources.json caddy/users.caddy; do
+  if [[ -f "$app_root/$private_file" ]]; then
+    install -D -m "$(stat -c '%a' "$app_root/$private_file")" "$app_root/$private_file" "$candidate_root/$private_file"
+  fi
+done
+if [[ -d "$app_root/backups" ]]; then mv "$app_root/backups" "$candidate_root/backups"; fi
+mv "$app_root" "$previous_root"
+source_switched=true
+mv "$candidate_root" "$app_root"
+cd "$app_root"
 
 python3 scripts/prepare-mathesar.py
 python3 scripts/pin-images.py
